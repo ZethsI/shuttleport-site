@@ -1,87 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="ShuttlePort VIP Airport Transfers, City Tours, and Private Rides. Book with us now for a safe, reliable, and comfortable experience.">
-    <meta name="keywords" content="airport transfer, private rides, shuttle, city tours, shuttleport, luxury transfer">
-    <meta name="author" content="ShuttlePort">
-    <title>ShuttlePort - VIP Airport Transfers & City Tours</title>
-
-    <!-- Add any external CSS files here if needed -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShuttlePort | VIP Airport Transfers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header, footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    form {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      background-color: #003366;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00509e;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to ShuttlePort</h1>
-        <p>Your trusted partner for VIP Airport Transfers, City Tours, and Private Rides.</p>
-    </header>
 
+  <header>
+    <h1>Welcome to ShuttlePort</h1>
+    <p>VIP Airport Transfers | City Tours | Private Rides</p>
+  </header>
+
+  <div class="container">
     <section>
-        <h2>Our Services</h2>
-        <ul>
-            <li>Airport to Hotel Transfers (Istanbul, Antalya, Izmir, Bursa, Dalaman)</li>
-            <li>Daily City Tours with a Guide</li>
-            <li>Factory, Office or Hotel In-city Transfers</li>
-            <li>Multi-language Support: English, German, Spanish, Japanese</li>
-        </ul>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Airport to Hotel Transfers (Istanbul, Antalya, Izmir, Bursa, Dalaman)</li>
+        <li>Daily City Tours with Guide</li>
+        <li>Factory, Office or Hotel In-city Transfers</li>
+        <li>Multi-language Support: English, German, Spanish, Japanese</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>Safe and Reliable Transportation</li>
-            <li>Cash Payment at the End of the Trip</li>
-            <li>Fixed Pricing per Kilometer</li>
-            <li>TripAdvisor-like Customer Reviews</li>
-        </ul>
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Safe and Reliable Transportation</li>
+        <li>Cash Payment at End of Trip</li>
+        <li>Fixed Pricing per Kilometer</li>
+        <li>TripAdvisor-like Customer Reviews</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Booking Request</h2>
-        <"https://formspree.io/f/xblgnewv"method="POST">
-            <label for="name">Full Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+      <h2>Booking Request</h2>
+      <form action="https://formspree.io/f/xblgnewv" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" required>
 
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Your Email</label>
+        <input type="email" name="_replyto" id="email" required>
 
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone">
 
-            <label for="pickup-location">Pickup Location:</label><br>
-            <input type="text" id="pickup-location" name="pickup-location" required><br><br>
+        <label for="pickup">Pickup Location</label>
+        <input type="text" name="pickup" id="pickup" required>
 
-            <label for="dropoff-location">Dropoff Location:</label><br>
-            <input type="text" id="dropoff-location" name="dropoff-location" required><br><br>
+        <label for="dropoff">Drop-off Location</label>
+        <input type="text" name="dropoff" id="dropoff" required>
 
-            <label for="transfer-date">Transfer Date & Time:</label><br>
-            <input type="datetime-local" id="transfer-date" name="transfer-date" required><br><br>
+        <label for="datetime">Transfer Date & Time</label>
+        <input type="datetime-local" name="datetime" id="datetime" required>
 
-            <label for="passengers">Number of Passengers:</label><br>
-            <input type="number" id="passengers" name="passengers" required><br><br>
+        <label for="passengers">Number of Passengers</label>
+        <input type="number" name="passengers" id="passengers" required>
 
-            <label for="payment-method">Payment Method (Cash at Arrival):</label><br>
-            <input type="text" id="payment-method" name="payment-method" value="Cash at Arrival" readonly><br><br>
+        <label for="notes">Notes</label>
+        <textarea name="notes" id="notes" rows="4"></textarea>
 
-            <label for="notes">Additional Notes:</label><br>
-            <textarea id="notes" name="notes"></textarea><br><br>
-
-            <button type="submit">Submit Booking Request</button>
-        </form>
+        <input type="hidden" name="payment" value="Cash at Arrival">
+        <button type="submit">Submit Booking</button>
+      </form>
     </section>
 
     <section>
-        <h2>FAQ</h2>
-        <ul>
-            <li><strong>How can I pay?</strong> - Pay in cash at the end of your trip.</li>
-            <li><strong>Can I book in my language?</strong> - Yes, we support English, German, Spanish, and Japanese.</li>
-            <li><strong>Is the transfer private?</strong> - Yes, all rides are private and direct.</li>
-        </ul>
+      <h2>FAQ</h2>
+      <ul>
+        <li><strong>How can I pay?</strong> - Pay in cash at the end of your trip.</li>
+        <li><strong>Can I book in my language?</strong> - Yes, we support EN/DE/ES/JP.</li>
+        <li><strong>Is the transfer private?</strong> - Yes, all rides are private and direct.</li>
+      </ul>
     </section>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 ShuttlePort.net - All rights reserved.</p>
-    </footer>
+  <footer>
+    &copy; 2025 ShuttlePort.net - All rights reserved.
+  </footer>
+
 </body>
 </html>
