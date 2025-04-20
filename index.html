@@ -1,43 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ShuttlePort - VIP Transfers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShuttlePort | VIP Transfers</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Welcome to ShuttlePort</h1>
-  <h2>VIP Airport Transfers | City Tours | Private Rides</h2>
+  <header>
+    <h1>Welcome to ShuttlePort</h1>
+    <p>VIP Airport Transfers | City Tours | Private Rides</p>
+  </header>  <section>
+    <h2>Our Services</h2>
+    <ul>
+      <li>Airport to Hotel Transfers (Istanbul, Antalya, Izmir, Bursa, Dalaman)</li>
+      <li>Daily City Tours with Guide</li>
+      <li>Factory, Office or Hotel In-city Transfers</li>
+      <li>Multi-language Support: English, German, Spanish, Japanese</li>
+    </ul>
+  </section>  <section>
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Safe and Reliable Transportation</li>
+      <li>Cash Payment at End of Trip</li>
+      <li>Fixed Pricing per Kilometer</li>
+      <li>TripAdvisor-like Customer Reviews</li>
+    </ul>
+  </section>  <section>
+    <h2>Booking Request</h2>
+    <form id="bookingForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required /><label for="email">Email:</label>
+  <input type="email" id="email" name="email" required />
 
-  <h3>Our Services</h3>
-  <ul>
-    <li>Airport to Hotel Transfers (Istanbul, Antalya, Izmir, Bursa, Dalaman)</li>
-    <li>Daily City Tours with Guide</li>
-    <li>Factory, Office or Hotel In-city Transfers</li>
-    <li>Multi-language Support: English, German, Spanish, Japanese</li>
-  </ul>
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" name="phone" required />
 
-  <h3>Why Choose Us?</h3>
-  <ul>
-    <li>Safe and Reliable Transportation</li>
-    <li>Cash Payment at End of Trip</li>
-    <li>Fixed Pricing per Kilometer</li>
-    <li>TripAdvisor-like Customer Reviews</li>
-  </ul>
+  <label for="pickup">Pickup Location:</label>
+  <input type="text" id="pickup" name="pickup" required />
 
-  <h3>Booking Request</h3>
-  <p>Email: <strong>unalanserdar10@gmail.com</strong></p>
-  <p>Please include in your message: Name, Phone, Pickup & Drop-off Locations, Date & Time, Number of Passengers, Payment Method (Cash at Arrival), and Notes.</p>
+  <label for="dropoff">Drop-off Location:</label>
+  <input type="text" id="dropoff" name="dropoff" required />
 
-  <h3>FAQ</h3>
-  <ul>
-    <li><strong>How can I pay?</strong> - Pay in cash at the end of your trip.</li>
-    <li><strong>Can I book in my language?</strong> - Yes, we support EN/DE/ES/JP.</li>
-    <li><strong>Is the transfer private?</strong> - Yes, all rides are private and direct.</li>
-  </ul>
+  <label for="datetime">Date & Time:</label>
+  <input type="datetime-local" id="datetime" name="datetime" required />
 
-  <footer>
-    <p>© 2025 ShuttlePort.net - All rights reserved.</p>
-  </footer>
-</body>
+  <label for="passengers">Number of Passengers:</label>
+  <input type="number" id="passengers" name="passengers" required />
+
+  <label for="notes">Additional Notes:</label>
+  <textarea id="notes" name="notes"></textarea>
+
+  <input type="hidden" name="payment" value="Cash at Arrival" />
+
+  <button type="submit">Submit Booking</button>
+</form>
+<div id="response"></div>
+
+  </section>  <section>
+    <h2>FAQ</h2>
+    <p><strong>How can I pay?</strong> Pay in cash at the end of your trip.</p>
+    <p><strong>Can I book in my language?</strong> Yes, we support EN/DE/ES/JP.</p>
+    <p><strong>Is the transfer private?</strong> Yes, all rides are private and direct.</p>
+  </section>  <footer>
+    <p>&copy; 2025 ShuttlePort.net - All rights reserved.</p>
+  </footer>  <script>
+    document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const response = await fetch("https://formspree.io/f/xoqgzbqp", {
+        method: "POST",
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      const result = await response.json();
+      document.getElementById("response").innerText = result.ok
+        ? "Thank you for your booking! We will contact you soon."
+        : "Oops! Something went wrong. Please try again later.";
+      this.reset();
+    });
+  </script></body>
 </html>
