@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/index-en.html", "permanent": true }
+    { "source": "/", "destination": "/detect-language.html" }
   ]
 }
