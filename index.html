@@ -89,41 +89,16 @@
     <section>
       <h2>Booking Request</h2>
      <form action="https://formsubmit.co/el/kebavu" method="POST">
-  <!-- Yönlendirme: başarılı gönderim sonrası -->
-  <input type="hidden" name="_redirect" value="https://shuttleport.net/thank-you-en.html">
-
-  <!-- Spam botlarını engellemek için -->
-  <input type="text" name="_honey" style="display:none">
-
-  <!-- Formu captcha'sız çalıştırmak için -->
-  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
+  <input type="hidden" name="_template" value="table">
 
   <label for="name">Full Name</label>
-  <input type="text" name="name" id="name" required>
+  <input type="text" name="name" required>
 
-  <label for="email">Your Email</label>
-  <input type="email" name="email" id="email" required>
+  <label for="email">Email</label>
+  <input type="email" name="email" required>
 
-  <label for="phone">Phone Number</label>
-  <input type="tel" name="phone" id="phone">
-
-  <label for="pickup">Pickup Location</label>
-  <input type="text" name="pickup" id="pickup" required>
-
-  <label for="dropoff">Drop-off Location</label>
-  <input type="text" name="dropoff" id="dropoff" required>
-
-  <label for="datetime">Transfer Date & Time</label>
-  <input type="datetime-local" name="datetime" id="datetime" required>
-
-  <label for="passengers">Number of Passengers</label>
-  <input type="number" name="passengers" id="passengers" required>
-
-  <label for="notes">Notes</label>
-  <textarea name="notes" id="notes" rows="4"></textarea>
-
-  <input type="hidden" name="payment" value="Cash at Arrival">
-  <button type="submit">Submit Booking</button>
+  <button type="submit">Submit</button>
 </form>
     </section>
 
