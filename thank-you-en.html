@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Thank You - ShuttlePort</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | ShuttlePort</title>
   <style>
     body {
-      background-color: #f8f9fa;
-      color: #003366;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #003366;
+      color: white;
       text-align: center;
-      padding: 4rem;
-      font-family: Arial, sans-serif;
+      padding: 1rem 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
     }
     h1 {
-      font-size: 2.5rem;
+      color: #003366;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    a {
+    a.button {
       display: inline-block;
       margin-top: 2rem;
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 1.5rem;
       background-color: #003366;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
-    a:hover {
+    a.button:hover {
       background-color: #00509e;
     }
   </style>
 </head>
 <body>
 
-  <h1>Thank you for your booking!</h1>
-  <p>We have received your request. We’ll contact you shortly via email or phone.</p>
-  <a href="index.html">Return to Homepage</a>
+  <header>
+    <h1>ShuttlePort</h1>
+    <p>VIP Airport Transfers & Private Rides</p>
+  </header>
+
+  <div class="container">
+    <h1>Thank You!</h1>
+    <p>Your booking request has been successfully received.  
+    <br>We’ll contact you shortly to confirm your transfer details.</p>
+    <p>If you have any urgent questions, feel free to reply to our confirmation email.</p>
+    <a class="button" href="https://shuttleport.net">Return to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 ShuttlePort.net – All rights reserved.
+  </footer>
 
 </body>
 </html>
