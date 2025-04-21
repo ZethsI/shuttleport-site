@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShuttlePort - VIP Flughafentransfer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Willkommen bei ShuttlePort</h1>
+    <p>Ihr VIP-Flughafentransfer in Istanbul, Antalya, Izmir, Bursa und Dalaman</p>
+  </header>  <main>
+    <section>
+      <h2>Buchungsformular</h2>
+      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+        <input type="hidden" name="_redirect" value="https://shuttleport.net/thank-you-de.html">
+        <input type="hidden" name="_captcha" value="false"><label for="name">Name & Nachname:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Telefonnummer:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="pickup">Abholort:</label>
+    <input type="text" id="pickup" name="pickup" required>
+
+    <label for="dropoff">Zielort:</label>
+    <input type="text" id="dropoff" name="dropoff" required>
+
+    <label for="datetime">Datum & Uhrzeit:</label>
+    <input type="datetime-local" id="datetime" name="datetime" required>
+
+    <label for="passengers">Anzahl der Passagiere:</label>
+    <input type="number" id="passengers" name="passengers" min="1" required>
+
+    <label for="payment">Zahlungsmethode:</label>
+    <input type="text" id="payment" name="payment" value="Barzahlung am Ende der Fahrt" readonly>
+
+    <label for="note">Zusätzliche Notiz:</label>
+    <textarea id="note" name="note"></textarea>
+
+    <button type="submit">Jetzt buchen</button>
+  </form>
+</section>
+
+  </main>  <footer>
+    <p>&copy; 2025 ShuttlePort. Alle Rechte vorbehalten.</p>
+  </footer>
+</body>
+</html>
