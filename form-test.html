@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Submit Test</title>
+</head>
+<body>
+  <h1>Live Test Form</h1>
+
+  <form action="https://formsubmit.co/el/kebavu" method="POST">
+    <!-- Redirect to thank-you page -->
+    <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
+
+    <!-- Use table-style email -->
+    <input type="hidden" name="_template" value="table">
+
+    <!-- Required Fields -->
+    <label>Full Name:
+      <input type="text" name="name" required>
+    </label><br><br>
+
+    <label>Email:
+      <input type="email" name="email" required>
+    </label><br><br>
+
+    <label>Message:
+      <textarea name="message" rows="4"></textarea>
+    </label><br><br>
+
+    <button type="submit">Send Test</button>
+  </form>
+</body>
+</html>
