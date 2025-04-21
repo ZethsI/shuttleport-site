@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShuttlePort - 空港送迎サービス</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>ShuttlePort へようこそ</h1>
+    <p>VIP 空港送迎および都市間移動サービス</p>
+  </header>
+
+  <main>
+    <section id="services">
+      <h2>私たちのサービス</h2>
+      <ul>
+        <li>空港〜ホテル間送迎</li>
+        <li>日帰り観光ツアー</li>
+        <li>市内移動（例：ホテル〜工場）</li>
+      </ul>
+    </section>
+
+    <section id="booking">
+      <h2>予約リクエスト</h2>
+      <form action="https://formsubmit.co/your-form-id" method="POST">
+        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-ja.html">
+        <input type="hidden" name="_captcha" value="false">
+        <label for="name">名前:</label>
+        <input type="text" id="name" name="Name" required />
+
+        <label for="email">メールアドレス:</label>
+        <input type="email" id="email" name="Email" required />
+
+        <label for="pickup">出発地:</label>
+        <input type="text" id="pickup" name="Pickup Location" required />
+
+        <label for="dropoff">到着地:</label>
+        <input type="text" id="dropoff" name="Dropoff Location" required />
+
+        <label for="date">日付と時間:</label>
+        <input type="datetime-local" id="date" name="Transfer Date & Time" required />
+
+        <label for="passengers">乗客数:</label>
+        <input type="number" id="passengers" name="Number of Passengers" min="1" required />
+
+        <label for="payment">支払い方法:</label>
+        <input type="text" id="payment" name="Payment Method" value="旅行終了時に現金払い" readonly />
+
+        <label for="notes">備考:</label>
+        <textarea id="notes" name="Notes"></textarea>
+
+        <button type="submit">送信</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
+  </footer>
+</body>
+</html>
