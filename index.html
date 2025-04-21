@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -58,14 +57,10 @@
     }
   </style>
 </head>
-<body>
-
-  <header>
+<body>  <header>
     <h1>Welcome to ShuttlePort</h1>
     <p>VIP Airport Transfers | City Tours | Private Rides</p>
-  </header>
-
-  <div class="container">
+  </header>  <div class="container">
     <section>
       <h2>Our Services</h2>
       <ul>
@@ -74,47 +69,61 @@
         <li>Factory, Office or Hotel In-city Transfers</li>
         <li>Multi-language Support: English, German, Spanish, Japanese</li>
       </ul>
-    </section>
+    </section><section>
+  <h2>Why Choose Us?</h2>
+  <ul>
+    <li>Safe and Reliable Transportation</li>
+    <li>Cash Payment at End of Trip</li>
+    <li>Fixed Pricing per Kilometer</li>
+    <li>TripAdvisor-like Customer Reviews</li>
+  </ul>
+</section>
 
-    <section>
-      <h2>Why Choose Us?</h2>
-      <ul>
-        <li>Safe and Reliable Transportation</li>
-        <li>Cash Payment at End of Trip</li>
-        <li>Fixed Pricing per Kilometer</li>
-        <li>TripAdvisor-like Customer Reviews</li>
-      </ul>
-    </section>
+<section>
+  <h2>Booking Request</h2>
+  <form action="https://formsubmit.co/unalanserdar10@gmail.com" method="POST">
+    <input type="hidden" name="_redirect" value="https://shuttleport.net/thank-you-en.html">
+    <input type="hidden" name="_captcha" value="false">
 
-    <section>
-      <h2>Booking Request</h2>
-    <form action="https://formsubmit.co/unalanserdar10@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
-  <input type="hidden" name="_captcha" value="false">
+    <label for="name">Full Name</label>
+    <input type="text" name="name" id="name" required>
 
-  <label for="name">Full Name</label>
-  <input type="text" name="name" required>
+    <label for="email">Your Email</label>
+    <input type="email" name="email" id="email" required>
 
-  <label for="email">Email</label>
-  <input type="email" name="email" required>
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone">
 
-  <button type="submit">Submit</button>
-</form>
-    </section>
+    <label for="pickup">Pickup Location</label>
+    <input type="text" name="pickup" id="pickup" required>
 
-    <section>
-      <h2>FAQ</h2>
-      <ul>
-        <li><strong>How can I pay?</strong> - Pay in cash at the end of your trip.</li>
-        <li><strong>Can I book in my language?</strong> - Yes, we support EN/DE/ES/JP.</li>
-        <li><strong>Is the transfer private?</strong> - Yes, all rides are private and direct.</li>
-      </ul>
-    </section>
-  </div>
+    <label for="dropoff">Drop-off Location</label>
+    <input type="text" name="dropoff" id="dropoff" required>
 
-  <footer>
+    <label for="datetime">Transfer Date & Time</label>
+    <input type="datetime-local" name="datetime" id="datetime" required>
+
+    <label for="passengers">Number of Passengers</label>
+    <input type="number" name="passengers" id="passengers" required>
+
+    <label for="notes">Notes</label>
+    <textarea name="notes" id="notes" rows="4"></textarea>
+
+    <input type="hidden" name="payment" value="Cash at Arrival">
+    <button type="submit">Submit Booking</button>
+  </form>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>How can I pay?</strong> - Pay in cash at the end of your trip.</li>
+    <li><strong>Can I book in my language?</strong> - Yes, we support EN/DE/ES/JP.</li>
+    <li><strong>Is the transfer private?</strong> - Yes, all rides are private and direct.</li>
+  </ul>
+</section>
+
+  </div>  <footer>
     &copy; 2025 ShuttlePort.net - All rights reserved.
-  </footer>
-
-</body>
+  </footer></body>
 </html>
