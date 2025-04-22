@@ -5,11 +5,15 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
+
+  <!-- Fallback: JavaScript çalışmazsa 2 saniye sonra İngilizce sayfaya -->
+  <meta http-equiv="refresh" content="2;url=/index-en.html" />
+
   <script>
-    // Tarayıcı dili tespiti
+    // Tarayıcı dilini tespit et
     const userLang = navigator.language || navigator.userLanguage;
 
-    // Dil yönlendirmesi
+    // Uygun dile yönlendirme
     if (userLang.startsWith("de")) {
       window.location.href = "/index-de.html";
     } else if (userLang.startsWith("es")) {
@@ -20,6 +24,7 @@
       window.location.href = "/index-en.html";
     }
   </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
