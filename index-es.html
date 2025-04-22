@@ -1,61 +1,127 @@
-<!-- index-es.html --><!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Traslados VIP de aeropuertos y tours privados - ShuttlePort.net" />
-  <meta name="keywords" content="traslado VIP, aeropuertos, tour de la ciudad" />
-  <title>ShuttlePort - Traslados VIP</title>
+  <meta name="description" content="Servicio de traslado VIP desde aeropuertos a hoteles en Estambul, Antalya, Esmirna, Bursa y Dalaman.">
+  <meta name="keywords" content="traslado al aeropuerto, transporte VIP, traslado en Estambul">
+  <meta name="author" content="ShuttlePort">
+  <title>Reserva de Transfer VIP - ShuttlePort</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-    header, footer { background: #003366; color: #fff; text-align: center; padding: 1rem; }
-    .language-selector { text-align: right; padding: 0.5rem 1rem; background: #eaeaea; }
-    .container { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #003366; }
-    ul { list-style: disc inside; margin: 1rem 0; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input, select, textarea, button { width: 100%; padding: 0.6rem; margin-top: 0.5rem; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
-    button { background: #003366; color: #fff; border: none; font-size: 1rem; cursor: pointer; }
-    button:hover { background: #00509e; }
-  </style>
-  <script>
-    function changeLanguage(el) {
-      window.location.href = /index-${el.value}.html;
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f6f6f6;
     }
-  </script>
+    form, .section, footer {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .language-selector {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Bienvenido a ShuttlePort</h1>
-    <p>Traslados VIP | Tours Privados | Transporte Seguro</p>
-  </header>
+
   <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="en">English</option>
-      <option value="de">Deutsch</option>
-      <option value="es" selected>Español</option>
-      <option value="ja">日本語</option>
+    <select onchange="changeLanguage(this.value)">
+      <option value="index-en.html">English</option>
+      <option value="index-de.html">Deutsch</option>
+      <option value="index-es.html" selected>Español</option>
+      <option value="index-ja.html">日本語</option>
     </select>
   </div>
-  <div class="container">
-    <section>
-      <h2>Nuestros Servicios</h2>
-      <ul>
-        <li>Traslados Aeropuerto-Hotel (Estambul, Antalya, Esmirna, Bursa, Dalaman)</li>
-        <li>Tours de Ciudad con Guía</li>
-        <li>Traslados Urbanos (Hotel-Fábrica)</li>
-        <li>Soporte Multilenguaje: EN/DE/ES/JP</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Por Qué Elegirnos?</h2>
-      <ul>
-        <li>Seguro y Confiable</li>
-        <li>Pago en Efectivo al Final</li>
-        <li>Precio Fijo por Kilómetro</li>
-        <li>Reseñas como TripAdvisor</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Solicitud de Reserva</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-es.html">
+
+  <div class="section">
+    <h2>Nuestros Servicios</h2>
+    <ul>
+      <li>Traslados desde el aeropuerto al hotel</li>
+      <li>Excursiones urbanas de un día</li>
+      <li>Traslados dentro de la ciudad (por ejemplo, del hotel a una fábrica)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>¿Por Qué Elegirnos?</h2>
+    <ul>
+      <li>Servicio puntual y confiable</li>
+      <li>Conductores experimentados y vehículos cómodos</li>
+      <li>Precios transparentes sin cargos ocultos</li>
+    </ul>
+  </div>
+
+  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <h2>Formulario de Reserva</h2>
+
+    <input type="text" name="name" placeholder="Nombre y Apellido" required>
+    <input type="email" name="email" placeholder="Correo Electrónico" required>
+    <input type="tel" name="phone" placeholder="Teléfono" required>
+    <input type="text" name="pickup" placeholder="Lugar de Recogida" required>
+    <input type="text" name="dropoff" placeholder="Destino" required>
+    <input type="datetime-local" name="datetime" required>
+    <input type="number" name="passengers" placeholder="Número de Pasajeros" min="1" required>
+    
+    <select name="payment" required>
+      <option value="">Método de Pago</option>
+      <option value="cash">Pago en Efectivo al Final del Viaje</option>
+    </select>
+
+    <textarea name="notes" placeholder="Notas Adicionales (opcional)"></textarea>
+
+    <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-es.html">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">Enviar Reserva</button>
+  </form>
+
+  <div class="section">
+    <h2>Preguntas Frecuentes (FAQ)</h2>
+    <ul>
+      <li><strong>¿Puedo pagar en moneda extranjera?</strong> Sí, aceptamos euros y dólares estadounidenses.</li>
+      <li><strong>¿Cuál es la política de cancelación?</strong> Puedes cancelar gratis hasta 24 horas antes del traslado.</li>
+      <li><strong>¿Desde qué aeropuertos ofrecen el servicio?</strong> Atendemos Estambul, Sabiha Gökçen, Antalya, entre otros.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ShuttlePort - Servicio de Transfer VIP de Alta Calidad</p>
+  </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      window.location.href = lang;
+    }
+  </script>
+
+</body>
+</html>
