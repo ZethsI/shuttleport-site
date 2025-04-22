@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gracias - ShuttlePort</title>
-  <meta name="description" content="Gracias por reservar su traslado VIP con ShuttlePort.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gracias | ShuttlePort</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-      text-align: center;
-      padding: 50px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
-    .thank-you-container {
-      background-color: #ffffff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      display: inline-block;
-      max-width: 600px;
-      width: 100%;
+    header, footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
     }
     h1 {
-      color: #28a745;
+      color: #003366;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
     }
     p {
-      font-size: 18px;
-      color: #333;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
     a.button {
       display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background-color: #007bff;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #003366;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
     a.button:hover {
-      background-color: #0056b3;
-    }
-    .language-selector {
-      text-align: right;
-      margin-bottom: 30px;
+      background-color: #00509e;
     }
   </style>
 </head>
 <body>
 
-  <div class="language-selector">
-    <select onchange="changeLanguage(this.value)">
-      <option value="thank-you-en.html">English</option>
-      <option value="thank-you-de.html">Deutsch</option>
-      <option value="thank-you-es.html" selected>Español</option>
-      <option value="thank-you-ja.html">日本語</option>
-    </select>
+  <header>
+    <h1>ShuttlePort</h1>
+    <p>Traslados VIP desde el aeropuerto y viajes privados</p>
+  </header>
+
+  <div class="container">
+    <h1>¡Gracias!</h1>
+    <p>Hemos recibido correctamente tu solicitud de reserva.  
+    <br>Nos pondremos en contacto contigo en breve para confirmar los detalles del traslado.</p>
+    <p>Si tienes alguna pregunta urgente, no dudes en responder al correo de confirmación.</p>
+    <a class="button" href="https://shuttleport.net">Volver al Inicio</a>
   </div>
 
-  <div class="thank-you-container">
-    <h1>¡Gracias por su Reserva!</h1>
-    <p>Hemos recibido su solicitud. Nuestro equipo se pondrá en contacto con usted lo antes posible.</p>
-    <p>Si necesita asistencia inmediata, no dude en contactarnos.</p>
-    <a class="button" href="index-es.html">Volver a la Página Principal</a>
-  </div>
-
-  <script>
-    function changeLanguage(lang) {
-      window.location.href = lang;
-    }
-  </script>
+  <footer>
+    &copy; 2025 ShuttlePort.net – Todos los derechos reservados.
+  </footer>
 
 </body>
 </html>
