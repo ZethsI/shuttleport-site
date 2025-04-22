@@ -1,15 +1,76 @@
-<!-- thank-you-ja.html --><!DOCTYPE html><html lang="ja">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ご予約ありがとうございます - ShuttlePort</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>ありがとうございました - ShuttlePort</title>
+  <meta name="description" content="ShuttlePortへのご予約ありがとうございました。">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    .language-selector {
+      text-align: right;
+      margin: 20px;
+    }
+    select {
+      padding: 8px;
+      font-size: 14px;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <section class="thank-you">
-    <h1>ご予約ありがとうございます！</h1>
-    <p>ご依頼を受け付けました。まもなくご連絡いたします。</p>
-    <a href="/" class="button">ホームに戻る</a>
-  </section>
+
+  <div class="language-selector">
+    <select onchange="changeLanguage(this.value)">
+      <option value="thank-you-en.html">English</option>
+      <option value="thank-you-de.html">Deutsch</option>
+      <option value="thank-you-es.html">Español</option>
+      <option value="thank-you-ja.html" selected>日本語</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <h1>ご予約ありがとうございました！</h1>
+    <p>ShuttlePortをご利用いただきありがとうございます。<br>
+    確認のためのメールを送信しました。担当者よりまもなくご連絡いたします。</p>
+    <a href="index-ja.html">トップページに戻る</a>
+  </div>
+
+  <script>
+    function changeLanguage(lang) {
+      window.location.href = lang;
+    }
+  </script>
+
 </body>
 </html>
