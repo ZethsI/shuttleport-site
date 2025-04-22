@@ -2,39 +2,73 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vielen Dank für Ihre Buchung bei ShuttlePort. Wir haben Ihre Anfrage erfolgreich erhalten." />
-  <title>Vielen Dank – ShuttlePort</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vielen Dank | ShuttlePort</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+    h1 {
+      color: #003366;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #00509e;
+    }
+  </style>
 </head>
 <body>
-  <div style="padding: 2rem; text-align: center;">
+
+  <header>
+    <h1>ShuttlePort</h1>
+    <p>VIP-Flughafentransfers & Private Fahrten</p>
+  </header>
+
+  <div class="container">
     <h1>Vielen Dank!</h1>
-    <p>Wir haben Ihre Anfrage erfolgreich erhalten.</p>
-    <p>Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen.</p>
-    <a href="index-de.html">Zurück zur Startseite</a>
+    <p>Ihre Buchungsanfrage wurde erfolgreich übermittelt.  
+    <br>Wir werden uns in Kürze bei Ihnen melden, um die Transferdetails zu bestätigen.</p>
+    <p>Wenn Sie dringende Fragen haben, antworten Sie bitte auf unsere Bestätigungs-E-Mail.</p>
+    <a class="button" href="https://shuttleport.net">Zur Startseite</a>
   </div>
 
-  <!-- Language Dropdown -->
-  <div style="position: fixed; top: 1rem; right: 1rem;">
-    <select onchange="changeLanguage(this.value)">
-      <option value="index-en.html">English</option>
-      <option value="index-de.html" selected>Deutsch</option>
-      <option value="index-es.html">Español</option>
-      <option value="index-ja.html">日本語</option>
-    </select>
-  </div>
+  <footer>
+    &copy; 2025 ShuttlePort.net – Alle Rechte vorbehalten.
+  </footer>
 
-  <script>
-    function changeLanguage(url) {
-      const thankYouUrl = {
-        "index-en.html": "thank-you-en.html",
-        "index-de.html": "thank-you-de.html",
-        "index-es.html": "thank-you-es.html",
-        "index-ja.html": "thank-you-ja.html"
-      };
-      window.location.href = thankYouUrl[url];
-    }
-  </script>
 </body>
 </html>
