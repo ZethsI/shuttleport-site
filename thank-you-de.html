@@ -1,15 +1,40 @@
-<!-- thank-you-de.html --><!DOCTYPE html><html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vielen Dank - ShuttlePort</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vielen Dank für Ihre Buchung bei ShuttlePort. Wir haben Ihre Anfrage erfolgreich erhalten." />
+  <title>Vielen Dank – ShuttlePort</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <section class="thank-you">
-    <h1>Vielen Dank für Ihre Buchung!</h1>
-    <p>Wir haben Ihre Anfrage erhalten und werden Sie in Kürze kontaktieren.</p>
-    <a href="/" class="button">Zurück zur Startseite</a>
-  </section>
+  <div style="padding: 2rem; text-align: center;">
+    <h1>Vielen Dank!</h1>
+    <p>Wir haben Ihre Anfrage erfolgreich erhalten.</p>
+    <p>Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen.</p>
+    <a href="index-de.html">Zurück zur Startseite</a>
+  </div>
+
+  <!-- Language Dropdown -->
+  <div style="position: fixed; top: 1rem; right: 1rem;">
+    <select onchange="changeLanguage(this.value)">
+      <option value="index-en.html">English</option>
+      <option value="index-de.html" selected>Deutsch</option>
+      <option value="index-es.html">Español</option>
+      <option value="index-ja.html">日本語</option>
+    </select>
+  </div>
+
+  <script>
+    function changeLanguage(url) {
+      const thankYouUrl = {
+        "index-en.html": "thank-you-en.html",
+        "index-de.html": "thank-you-de.html",
+        "index-es.html": "thank-you-es.html",
+        "index-ja.html": "thank-you-ja.html"
+      };
+      window.location.href = thankYouUrl[url];
+    }
+  </script>
 </body>
 </html>
