@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="イスタンブール、アンタルヤ、イズミル、ブルサ、ダラマンの空港からホテルまでのVIP送迎サービス。">
+  <meta name="description" content="イスタンブール、アンタルヤ、イズミル、ブルサ、ダラマンの空港からホテルへのVIP送迎サービス。">
   <meta name="keywords" content="空港送迎, VIPトランスファー, イスタンブール送迎">
   <meta name="author" content="ShuttlePort">
   <title>VIP送迎予約 - ShuttlePort</title>
@@ -13,12 +13,12 @@
       padding: 20px;
       background-color: #f6f6f6;
     }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
+    form, .section, footer {
+      background-color: #fff;
+      padding: 25px;
       border-radius: 8px;
+      max-width: 800px;
+      margin: 20px auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     input, select, textarea {
@@ -46,6 +46,9 @@
       text-align: right;
       margin-bottom: 20px;
     }
+    h2 {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
@@ -59,31 +62,60 @@
     </select>
   </div>
 
-  <div class="container">
-    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-      <h2>予約フォーム</h2>
+  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <h2>予約フォーム</h2>
 
-      <input type="text" name="name" placeholder="氏名" required>
-      <input type="email" name="email" placeholder="メールアドレス" required>
-      <input type="tel" name="phone" placeholder="電話番号" required>
-      <input type="text" name="pickup" placeholder="出発場所" required>
-      <input type="text" name="dropoff" placeholder="目的地" required>
-      <input type="datetime-local" name="datetime" required>
-      <input type="number" name="passengers" placeholder="乗客数" min="1" required>
-      
-      <select name="payment" required>
-        <option value="">支払い方法を選択</option>
-        <option value="cash">乗車終了時に現金で支払い</option>
-      </select>
+    <input type="text" name="name" placeholder="氏名" required>
+    <input type="email" name="email" placeholder="メールアドレス" required>
+    <input type="tel" name="phone" placeholder="電話番号" required>
+    <input type="text" name="pickup" placeholder="出発地" required>
+    <input type="text" name="dropoff" placeholder="目的地" required>
+    <input type="datetime-local" name="datetime" required>
+    <input type="number" name="passengers" placeholder="乗客数" min="1" required>
+    
+    <select name="payment" required>
+      <option value="">支払い方法を選択</option>
+      <option value="cash">乗車終了時に現金支払い</option>
+    </select>
 
-      <textarea name="notes" placeholder="追加メモ（任意）"></textarea>
+    <textarea name="notes" placeholder="追加のメモ（任意）"></textarea>
 
-      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-ja.html">
-      <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-ja.html">
+    <input type="hidden" name="_captcha" value="false">
 
-      <button type="submit">予約を送信</button>
-    </form>
+    <button type="submit">予約を送信</button>
+  </form>
+
+  <div class="section">
+    <h2>当社のサービス</h2>
+    <ul>
+      <li>空港からホテルへの送迎</li>
+      <li>日帰り市内ツアー</li>
+      <li>市内間移動（例：ホテル〜工場）</li>
+    </ul>
   </div>
+
+  <div class="section">
+    <h2>なぜ私たちを選ぶのか？</h2>
+    <ul>
+      <li>時間厳守で信頼性のあるサービス</li>
+      <li>経験豊富なドライバーと快適な車両</li>
+      <li>明確な価格設定と隠れた料金なし</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>よくある質問（FAQ）</h2>
+    <ul>
+      <li><strong>現地通貨以外での支払いは可能ですか？</strong> はい、ユーロや米ドルも受け付けています。</li>
+      <li><strong>キャンセルポリシーは？</strong> 予約の24時間前まで無料でキャンセル可能です。</li>
+      <li><strong>どの空港からサービスを提供していますか？</strong> イスタンブール空港、サビハ・ギョクチェン空港、アンタルヤ空港などです。</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ShuttlePort - 高品質なVIP送迎サービス</p>
+  </footer>
 
   <script>
     function changeLanguage(lang) {
