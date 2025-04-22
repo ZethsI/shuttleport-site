@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ありがとうございました - ShuttlePort</title>
-  <meta name="description" content="ShuttlePortへのご予約ありがとうございました。">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ありがとうございます | ShuttlePort</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
       margin: 0;
       padding: 0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
     }
     .container {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
       text-align: center;
     }
     h1 {
-      color: #333;
-      margin-bottom: 20px;
+      color: #003366;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
     }
     p {
-      font-size: 18px;
-      color: #555;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-    .language-selector {
-      text-align: right;
-      margin: 20px;
-    }
-    select {
-      padding: 8px;
-      font-size: 14px;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
+    a.button {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+    a.button:hover {
+      background-color: #00509e;
     }
   </style>
 </head>
 <body>
 
-  <div class="language-selector">
-    <select onchange="changeLanguage(this.value)">
-      <option value="thank-you-en.html">English</option>
-      <option value="thank-you-de.html">Deutsch</option>
-      <option value="thank-you-es.html">Español</option>
-      <option value="thank-you-ja.html" selected>日本語</option>
-    </select>
-  </div>
+  <header>
+    <h1>ShuttlePort</h1>
+    <p>VIP空港送迎 ＆ プライベートライド</p>
+  </header>
 
   <div class="container">
-    <h1>ご予約ありがとうございました！</h1>
-    <p>ShuttlePortをご利用いただきありがとうございます。<br>
-    確認のためのメールを送信しました。担当者よりまもなくご連絡いたします。</p>
-    <a href="index-ja.html">トップページに戻る</a>
+    <h1>ありがとうございます！</h1>
+    <p>ご予約リクエストは正常に送信されました。
+    <br>間もなくご連絡し、送迎の詳細を確認いたします。</p>
+    <p>お急ぎのご質問がある場合は、確認メールにご返信ください。</p>
+    <a class="button" href="https://shuttleport.net">ホームに戻る</a>
   </div>
 
-  <script>
-    function changeLanguage(lang) {
-      window.location.href = lang;
-    }
-  </script>
+  <footer>
+    &copy; 2025 ShuttlePort.net – 全著作権所有。
+  </footer>
 
 </body>
 </html>
