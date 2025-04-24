@@ -1,12 +1,63 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Book VIP airport transfers, city tours, and private shuttles with ShuttlePort. Reliable, multilingual, and customer-friendly service.">
   <meta name="keywords" content="VIP transfer, airport shuttle, Istanbul transfers, city tours, private driver">
   <meta name="author" content="ShuttlePort">
-  <title>ShuttlePort - Thank You</title>
+  <title>ShuttlePort - Booking</title>
   <link rel="stylesheet" href="style.css" />
-</head><body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    nav ul li {
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #0056b3;
+      font-weight: bold;
+    }
+    header, footer {
+      background-color: #f9f9f9;
+      padding: 10px;
+    }
+    main {
+      max-width: 50%;
+      margin: 20px auto;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      color: #0056b3;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    h2, h1 {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
   <header>
     <nav>
       <ul>
@@ -16,23 +67,28 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
-  </header>  <main style="max-width: 50%; margin: auto;">
-    <h1>Thank You</h1>
-    <p>Your booking request has been received. We will get back to you shortly!</p><form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-  <label for="name">Name & Surname:</label>
-  <input type="text" id="name" name="name" required />
-
-  <label for="email">Email:</label>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li><a href="#vip-airport">VIP Airport Transfers</a></li>
+        <li><a href="city-tours.html">City Tours</a></li>
+        <li><a href="private-shuttle.html">Private Shuttle</a></li>
+      </ul>
+    </section>
+    <section id="why">
+      <h2>Why Choose Us?</h2>
+      <p>We provide safe, comfortable, and multilingual transfer services tailored to your needs. Our team is committed to punctuality, professionalism, and exceptional customer experience. Whether you're arriving at the airport or exploring the city, ShuttlePort ensures your journey is smooth and stress-free.</p>
+    </section>
+  </header>
+  <main>
+    <h1>Booking Form</h1>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <label for="name">Name & Surname:</label>
+      <input type="text" id="name" name="name" required /><label for="email">Email:</label>
   <input type="email" id="email" name="email" required />
 
   <label for="phone">Phone:</label>
   <input type="tel" id="phone" name="phone" required />
-
-  <label for="pickup">Pick-up Location:</label>
-  <input type="text" id="pickup" name="pickup" required />
-
-  <label for="dropoff">Drop-off Location:</label>
-  <input type="text" id="dropoff" name="dropoff" required />
 
   <label for="datetime">Date & Time:</label>
   <input type="datetime-local" id="datetime" name="datetime" required />
@@ -61,22 +117,11 @@
   <button type="submit">Booking</button>
 </form>
 
-  </main>  <footer>
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li><a href="index-en.html#vip-airport">VIP Airport Transfers</a></li>
-        <li><a href="city-tours.html">City Tours</a></li>
-        <li><a href="private-shuttle.html">Private Shuttle</a></li>
-      </ul>
-    </section>
-    <section id="why">
-      <h2>Why Choose Us?</h2>
-      <p>We provide safe, comfortable, and multilingual transfer services tailored to your needs.</p>
-    </section>
+  </main>
+  <footer>
     <section id="faq">
       <h2>FAQ</h2>
-      <p>Have questions? Check our FAQ or contact us anytime.</p>
+      <p>Have questions? Check our FAQ or contact us anytime via email or phone.</p>
     </section>
     <section>
       <h2>Destinations We Serve</h2>
@@ -88,26 +133,28 @@
         <li><a href="https://www.dalamanairport.aero/">Dalaman Airport</a></li>
       </ul>
     </section>
-  </footer>  <script>
+  </footer>
+  <script>
     const hotels = {
       istanbul: ["Swissôtel The Bosphorus", "Çırağan Palace Kempinski", "Four Seasons Sultanahmet", "The Marmara Taksim", "Raffles Istanbul", "W Istanbul", "Hilton Istanbul Bosphorus", "Pera Palace Hotel", "Radisson Blu Şişli", "InterContinental Istanbul"],
       antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Beach Lara", "Delphin Imperial", "Lara Barut Collection", "Concorde De Luxe", "Swandor Topkapi Palace", "Aska Lara Resort", "Royal Seginus", "Fame Residence Lara"],
       izmir: ["Swissôtel Grand Efes", "Mövenpick Izmir", "Hilton Garden Inn", "DoubleTree by Hilton", "Izmir Marriott", "Wyndham Grand Izmir", "Key Hotel", "Renaissance Izmir", "Tav Airport Hotel", "Orty Hotel"],
       bursa: ["Almira Hotel", "Sheraton Bursa", "Hilton Bursa", "Holiday Inn Bursa", "Ramada Bursa", "Crowne Plaza Bursa", "Hotel Anatolia", "Tiara Termal Hotel", "Baia Bursa", "Divan Bursa"],
       dalaman: ["Hilton Dalaman", "TUI Blue Sarigerme", "D Resort Gocek", "Robinson Club Sarigerme", "Liberty Hotels Lykia", "Jiva Beach Resort", "Sentido Lykia Resort", "Hotel Greenland", "Blue Lagoon Hotel", "Alesta Yacht Hotel"]
-    };
+    };function updateHotels() {
+  const city = document.getElementById("city").value;
+  const hotelSelect = document.getElementById("hotel");
+  hotelSelect.innerHTML = "<option value=''>Select Hotel</option>";
+  if (hotels[city]) {
+    hotels[city].forEach(hotel => {
+      const option = document.createElement("option");
+      option.value = hotel;
+      option.textContent = hotel;
+      hotelSelect.appendChild(option);
+    });
+  }
+}
 
-    function updateHotels() {
-      const city = document.getElementById("city").value;
-      const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>Select Hotel</option>";
-      if (hotels[city]) {
-        hotels[city].forEach(hotel => {
-          const option = document.createElement("option");
-          option.value = hotel;
-          option.textContent = hotel;
-          hotelSelect.appendChild(option);
-        });
-      }
-    }
-  </script></body></html>
+  </script>
+</body>
+</html>
