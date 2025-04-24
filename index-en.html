@@ -2,121 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VIP Airport Transfer Services from Istanbul, Antalya, Izmir, Dalaman, and Bursa airports to 10 top hotels per city. Multilingual, secure, and reliable." />
-  <meta name="keywords" content="Airport Transfer, Istanbul Shuttle, VIP Transport, ShuttlePort, Antalya transfer, Izmir airport shuttle, Bursa transport service" />
-  <meta name="author" content="ShuttlePort" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index, follow" />
   <title>ShuttlePort | VIP Airport Transfers</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #000; color: #fff; padding: 20px; text-align: center; }
-    nav select { padding: 5px; }
-    .hero { background: #f2f2f2; padding: 40px 20px; text-align: center; }
-    .section { padding: 40px 20px; }
-    .form-container { display: flex; justify-content: center; }
-    form { width: 50%; max-width: 600px; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    form input, form textarea, form select { width: 100%; padding: 10px; margin-bottom: 15px; }
-    form button { padding: 10px 20px; background: #000; color: #fff; border: none; }
-    ul { list-style: none; padding-left: 0; }
-    ul li a { color: #000; text-decoration: none; }
-    .footer-columns { display: flex; justify-content: space-around; flex-wrap: wrap; }
-    .footer-columns div { margin: 10px; min-width: 200px; }
-    .airport-links a { display: inline-block; margin: 5px; color: #007bff; text-decoration: none; }
-    .airport-links a:hover { text-decoration: underline; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header, footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background-color: #fff;
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    a {
+      color: #00509e;
+      text-decoration: none;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    select, input, textarea, button {
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00509e;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>ShuttlePort</h1>
-  <p>Reliable VIP Airport Transfers in Turkey</p>
-  <nav>
-    <select onchange="location = this.value;">
-      <option selected disabled>Select Language</option>
-      <option value="index-en.html">English</option>
-      <option value="index-de.html">Deutsch</option>
-      <option value="index-es.html">Español</option>
-      <option value="index-ja.html">日本語</option>
-    </select>
-  </nav>
-</header>
+  <header>
+    <h1>ShuttlePort</h1>
+    <p>VIP Airport Transfers & Private Rides</p>
+  </header>
 
-<section class="hero">
-  <h2>Book Your VIP Shuttle Transfer</h2>
-  <p>From major airports to the top 10 hotels in Istanbul, Antalya, Izmir, Dalaman, and Bursa</p>
-</section>
+  <div class="container">
+    <h2>Our Services</h2>
+    <p>
+      We provide professional airport transfer services to and from the following airports:
+      <br>
+      <a href="/airports/airport-istanbul-en.html">Istanbul Airport (IST)</a>,
+      <a href="/airports/airport-saw-en.html">Sabiha Gökçen Airport (SAW)</a>,
+      <a href="/airports/airport-antalya-en.html">Antalya Airport (AYT)</a>,
+      <a href="/airports/airport-izmir-en.html">Izmir Adnan Menderes (ADB)</a>,
+      <a href="/airports/airport-bursa-en.html">Bursa Yenişehir Airport (YEI)</a>,
+      <a href="/airports/airport-dalaman-en.html">Dalaman Airport (DLM)</a>.
+    </p>
+    <p>
+      You can also explore nearby hotels such as
+      <a href="/hotels/hotel-hilton-istanbul.html">Hilton Istanbul</a>,
+      <a href="/hotels/hotel-swissotel-bosphorus.html">Swissotel Bosphorus</a>,
+      <a href="/hotels/hotel-mardan-palace.html">Mardan Palace Antalya</a>, and more.
+    </p>
+    <p>
+      For <a href="/services/roundtrip.html">roundtrip transfers</a> or <a href="/services/city-tours.html">city tours</a>, click on the respective links.
+    </p>
 
-<div class="form-container">
-  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-    <input type="text" name="Full Name" placeholder="Full Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <input type="tel" name="Phone" placeholder="Phone Number" required>
-    
-    <input type="datetime-local" name="Transfer Date and Time" required>
-    <input type="number" name="Number of Passengers" placeholder="Passengers" required>
-    <textarea name="Additional Notes" placeholder="Additional Notes"></textarea>
-    <input type="hidden" name="_next" value="thank-you-en.html" />
-    <button type="submit">Booking</button>
-  </form>
-</div>
+    <h2>Book Your Transfer</h2>
+    <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+      <label>
+        Select City:
+        <select name="city" required>
+          <option value="">-- Choose a City --</option>
+          <option value="Istanbul">Istanbul</option>
+          <option value="Antalya">Antalya</option>
+          <option value="Izmir">Izmir</option>
+          <option value="Bursa">Bursa</option>
+          <option value="Mugla">Muğla (Dalaman)</option>
+        </select>
+      </label>
 
-<section class="section">
-  <h3>Our Services</h3>
-  <ul>
-    <li>Airport - Hotel Transfers</li>
-    <li>Daily City Tours</li>
-    <li>Inner-city Business Transfers</li>
-  </ul>
-</section>
+      <label>
+        Direction:
+        <select name="direction" required>
+          <option value="">-- Select Direction --</option>
+          <option value="Airport to Hotel">Airport to Hotel</option>
+          <option value="Hotel to Airport">Hotel to Airport</option>
+        </select>
+      </label>
 
-<section class="section">
-  <h3>Why Choose ShuttlePort?</h3>
-  <ul>
-    <li>Multilingual Support (EN, DE, ES, JA)</li>
-    <li>Safe and Punctual Drivers</li>
-    <li>Fixed Pricing – No Hidden Costs</li>
-    <li>Pay at the End of Your Ride (Cash Only)</li>
-    <li>High Customer Satisfaction</li>
-  </ul>
-</section>
+      <label>
+        Select Airport:
+        <select name="airport" required>
+          <option value="">-- Choose Airport --</option>
+          <option value="Istanbul IST">Istanbul Airport (IST)</option>
+          <option value="Sabiha SAW">Sabiha Gökçen Airport (SAW)</option>
+          <option value="Antalya AYT">Antalya Airport (AYT)</option>
+          <option value="Izmir ADB">Izmir Airport (ADB)</option>
+          <option value="Bursa YEI">Bursa Yenişehir Airport (YEI)</option>
+          <option value="Dalaman DLM">Dalaman Airport (DLM)</option>
+        </select>
+      </label>
 
-<section class="section airport-links">
-  <h3>Airports We Serve</h3>
-  <a href="istanbul-airport.html">Istanbul Airport</a>
-  <a href="sabiha-gokcen.html">Sabiha Gökçen Airport</a>
-  <a href="antalya-airport.html">Antalya Airport</a>
-  <a href="izmir-airport.html">Izmir Airport</a>
-  <a href="dalaman-airport.html">Dalaman Airport</a>
-  <a href="bursa-airport.html">Bursa Airport</a>
-</section>
+      <label>
+        Select Hotel:
+        <select name="hotel" required>
+          <option value="">-- Choose Hotel --</option>
+          <option value="Hilton Istanbul">Hilton Istanbul</option>
+          <option value="Swissotel Bosphorus">Swissotel Bosphorus</option>
+          <option value="Mardan Palace">Mardan Palace Antalya</option>
+          <option value="Kaya Palazzo">Kaya Palazzo Belek</option>
+          <option value="Sheraton Izmir">Sheraton Grand Izmir</option>
+          <option value="DoubleTree Bursa">DoubleTree by Hilton Bursa</option>
+          <option value="D Resort Gocek">D-Resort Göcek</option>
+          <!-- Diğer 40 hotel buraya eklenebilir -->
+        </select>
+      </label>
 
-<footer>
-  <div class="footer-columns">
-    <div>
-      <h4>Contact</h4>
-      <p>Email: support@shuttleport.net</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Languages</h4>
-      <ul>
-        <li><a href="index-en.html">English</a></li>
-        <li><a href="index-de.html">Deutsch</a></li>
-        <li><a href="index-es.html">Español</a></li>
-        <li><a href="index-ja.html">日本語</a></li>
-      </ul>
-    </div>
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="datetime-local" name="date_time" required>
+      <input type="number" name="passengers" placeholder="Number of Passengers" required>
+      <textarea name="note" placeholder="Additional Notes (Optional)" rows="3"></textarea>
+
+      <p><strong>Payment Method:</strong> Cash at the end of the trip.</p>
+
+      <button type="submit">Submit Booking Request</button>
+    </form>
   </div>
-  <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
-</footer>
+
+  <footer>
+    &copy; 2025 ShuttlePort.net – All rights reserved.
+  </footer>
 
 </body>
 </html>
