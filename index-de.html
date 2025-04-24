@@ -1,106 +1,152 @@
-<!-- index-de.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VIP-Flughafentransfers | Stadttouren | Private Fahrten - ShuttlePort.net" />
-  <meta name="keywords" content="VIP Transfer, Flughafenshuttle, Stadttour, private Fahrt" />
-  <title>ShuttlePort - VIP-Flughafentransfers</title>
+  <meta name="description" content="Buchen Sie VIP-Flughafentransfers, Stadtrundfahrten und private Shuttles mit ShuttlePort. Zuverlässiger, mehrsprachiger und kundenorientierter Service.">
+  <meta name="keywords" content="VIP Transfer, Flughafenshuttle, Istanbul Transfer, Stadtrundfahrten, Privatchauffeur">
+  <meta name="author" content="ShuttlePort">
+  <title>ShuttlePort - VIP-Transferservice</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-    header, footer { background: #003366; color: #fff; text-align: center; padding: 1rem; }
-    .language-selector select {
-  width: 100px; /* max. 7 karakterlik alan için ideal */
-  padding: 4px;
-  font-weight: bold;
-  text-align-last: center;
-}
-    .container { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #003366; }
-    ul { list-style: disc inside; margin: 1rem 0; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input, select, textarea, button { width: 100%; padding: 0.6rem; margin-top: 0.5rem; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
-    button { background: #003366; color: #fff; border: none; font-size: 1rem; cursor: pointer; }
-    button:hover { background: #00509e; }
-  </style>
-  <script>
-    function changeLanguage(el) {
-      window.location.href = `index-${el.value}.html`;
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #f2f2f2; padding: 1em; }
+    nav ul { list-style-type: none; display: flex; justify-content: center; gap: 2em; padding: 0; }
+    nav ul li a { text-decoration: none; color: #007BFF; font-weight: bold; }
+    .language-selector { text-align: right; margin-top: 0.5em; }
+    .language-selector select { padding: 0.3em; font-size: 1em; }
+    main { padding: 2em; }
+    form { max-width: 600px; margin: auto; }
+    form label { display: block; margin-top: 1em; }
+    form input, form select, form textarea, form button {
+      width: 100%; padding: 0.5em; margin-top: 0.5em;
     }
-  </script>
+    section { margin-bottom: 2em; }
+    h2 { color: #007BFF; }
+    footer ul { list-style-type: none; padding: 0; }
+    footer ul li a { color: #007BFF; text-decoration: none; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Willkommen bei ShuttlePort</h1>
-    <p>VIP-Flughafentransfers | Stadttouren | Private Fahrten</p>
+    <nav>
+      <ul>
+        <li><a href="index-de.html">Startseite</a></li>
+        <li><a href="city-tours.html">Stadttouren</a></li>
+        <li><a href="private-shuttle.html">Privater Shuttle</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="language-selector">
+      <select onchange="changeLanguage(this)">
+        <option value="index-en.html">English</option>
+        <option value="index-de.html" selected>Deutsch</option>
+        <option value="index-es.html">Español</option>
+        <option value="index-ja.html">日本語</option>
+      </select>
+    </div>
   </header>
-  <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="en">English</option>
-      <option value="de" selected>Deutsch</option>
-      <option value="es">Español</option>
-      <option value="ja">日本語</option>
-    </select>
-  </div>
-  <div class="container">
-    <section>
+
+  <main>
+    <section id="services">
       <h2>Unsere Dienstleistungen</h2>
       <ul>
-        <li>Flughafen-zu-Hotel Transfers (Istanbul, Antalya, Izmir, Bursa, Dalaman)</li>
-        <li>Tägliche Stadttouren mit Guide</li>
-        <li>Stadttransfers: Hotel, Büro oder Fabrik</li>
-        <li>Mehrsprachiger Support: Englisch, Deutsch, Spanisch, Japanisch</li>
+        <li><a href="index-de.html#vip-airport">VIP-Flughafentransfers</a></li>
+        <li><a href="city-tours.html">Stadttouren</a></li>
+        <li><a href="private-shuttle.html">Privater Shuttle</a></li>
       </ul>
     </section>
-    <section>
-      <h2>Warum ShuttlePort?</h2>
-      <ul>
-        <li>Sichere und zuverlässige Beförderung</li>
-        <li>Barzahlung am Ende der Fahrt</li>
-        <li>Festpreis pro Kilometer</li>
-        <li>Kundenbewertungen wie bei TripAdvisor</li>
-      </ul>
+
+    <section id="why">
+      <h2>Warum ShuttlePort wählen?</h2>
+      <p>Wir bieten sichere, komfortable und mehrsprachige Transferservices, die auf Ihre Bedürfnisse zugeschnitten sind. Unsere erfahrenen Fahrer sorgen für eine reibungslose und angenehme Fahrt. ShuttlePort ist Ihr zuverlässiger Partner für luxuriösen Transport in der ganzen Türkei.</p>
     </section>
-    <section>
-      <h2>Buchungsanfrage</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-de.html">
-        <input type="hidden" name="_captcha" value="false">
-        <label for="name">Vollständiger Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">E-Mail-Adresse</label>
-        <input type="email" id="email" name="email" required>
-        <label for="phone">Telefonnummer</label>
-        <input type="tel" id="phone" name="phone">
-        <label for="pickup">Abholort</label>
-        <input type="text" id="pickup" name="pickup" required>
-        <label for="dropoff">Zielort</label>
-        <input type="text" id="dropoff" name="dropoff" required>
-        <label for="datetime">Datum & Uhrzeit des Transfers</label>
-        <input type="datetime-local" id="datetime" name="datetime" required>
-        <label for="passengers">Anzahl der Passagiere</label>
-        <input type="number" id="passengers" name="passengers" min="1" required>
-        <label for="payment">Zahlungsmethode</label>
-        <select id="payment" name="payment" required>
-          <option value="Cash at the end of the trip">Barzahlung am Ende der Fahrt</option>
-        </select>
-        <label for="notes">Zusätzliche Hinweise</label>
-        <textarea id="notes" name="notes" rows="4"></textarea>
-        <button type="submit">Buchung absenden</button>
-      </form>
-    </section>
+
+    <h1>Buchen Sie Ihren Transfer</h1>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-de.html" />
+
+      <label for="name">Vollständiger Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">E-Mail-Adresse:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Telefonnummer:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="datetime">Datum & Uhrzeit des Transfers:</label>
+      <input type="datetime-local" id="datetime" name="datetime" required />
+
+      <label for="passengers">Anzahl der Passagiere:</label>
+      <input type="number" id="passengers" name="passengers" required />
+
+      <label for="city">Stadt:</label>
+      <select id="city" name="city" required onchange="updateHotels()">
+        <option value="">Stadt wählen</option>
+        <option value="istanbul">Istanbul</option>
+        <option value="antalya">Antalya</option>
+        <option value="izmir">Izmir</option>
+        <option value="bursa">Bursa</option>
+        <option value="dalaman">Dalaman</option>
+      </select>
+
+      <label for="hotel">Hotel auswählen:</label>
+      <select id="hotel" name="hotel" required>
+        <option value="">Hotel wählen</option>
+      </select>
+
+      <label for="notes">Zusätzliche Hinweise:</label>
+      <textarea id="notes" name="notes"></textarea>
+
+      <button type="submit">Jetzt buchen</button>
+    </form>
+  </main>
+
+  <footer>
     <section>
       <h2>FAQ</h2>
+      <p>Haben Sie Fragen? Schauen Sie in unsere FAQs oder kontaktieren Sie uns jederzeit.</p>
+    </section>
+    <section>
+      <h2>Bediente Flughäfen</h2>
       <ul>
-        <li><strong>Wie kann ich bezahlen?</strong> - Barzahlung am Ende Ihrer Fahrt.</li>
-        <li><strong>Kann ich in meiner Sprache buchen?</strong> - Ja, wir unterstützen EN/DE/ES/JP.</li>
-        <li><strong>Ist der Transfer privat?</strong> - Ja, alle Fahrten sind privat und direkt.</li>
+        <li><a href="https://www.istairport.com/en">Istanbul Flughafen</a></li>
+        <li><a href="https://www.sabihagokcen.aero/homepage">Sabiha Gökçen Flughafen</a></li>
+        <li><a href="https://www.antalya-airport.aero/">Antalya Flughafen</a></li>
+        <li><a href="https://www.adnanmenderesairport.com/">Izmir Flughafen</a></li>
+        <li><a href="https://www.dalamanairport.aero/">Dalaman Flughafen</a></li>
       </ul>
     </section>
-  </div>
-  <footer>
-    &copy; 2025 ShuttlePort.net - Alle Rechte vorbehalten.
   </footer>
+
+  <script>
+    const hotels = {
+      istanbul: ["Swissôtel The Bosphorus", "Çırağan Palace Kempinski", "Four Seasons Sultanahmet", "The Marmara Taksim", "Raffles Istanbul", "W Istanbul", "Hilton Istanbul Bosphorus", "Pera Palace Hotel", "Radisson Blu Şişli", "InterContinental Istanbul"],
+      antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Beach Lara", "Delphin Imperial", "Lara Barut Collection", "Concorde De Luxe", "Swandor Topkapi Palace", "Aska Lara Resort", "Royal Seginus", "Fame Residence Lara"],
+      izmir: ["Swissôtel Grand Efes", "Mövenpick Izmir", "Hilton Garden Inn", "DoubleTree by Hilton", "Izmir Marriott", "Wyndham Grand Izmir", "Key Hotel", "Renaissance Izmir", "Tav Airport Hotel", "Orty Hotel"],
+      bursa: ["Almira Hotel", "Sheraton Bursa", "Hilton Bursa", "Holiday Inn Bursa", "Ramada Bursa", "Crowne Plaza Bursa", "Hotel Anatolia", "Tiara Termal Hotel", "Baia Bursa", "Divan Bursa"],
+      dalaman: ["Hilton Dalaman", "TUI Blue Sarigerme", "D Resort Gocek", "Robinson Club Sarigerme", "Liberty Hotels Lykia", "Jiva Beach Resort", "Sentido Lykia Resort", "Hotel Greenland", "Blue Lagoon Hotel", "Alesta Yacht Hotel"]
+    };
+
+    function updateHotels() {
+      const city = document.getElementById("city").value;
+      const hotelSelect = document.getElementById("hotel");
+      hotelSelect.innerHTML = "<option value=''>Hotel wählen</option>";
+      if (hotels[city]) {
+        hotels[city].forEach(hotel => {
+          const option = document.createElement("option");
+          option.value = hotel;
+          option.textContent = hotel;
+          hotelSelect.appendChild(option);
+        });
+      }
+    }
+
+    function changeLanguage(select) {
+      const selectedPage = select.value;
+      window.location.href = selectedPage;
+    }
+  </script>
 </body>
 </html>
