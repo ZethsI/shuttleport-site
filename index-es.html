@@ -9,12 +9,17 @@
   <style>
     body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
     header, footer { background: #003366; color: #fff; text-align: center; padding: 1rem; }
-   .language-selector select {
-  width: 100px; /* max. 7 karakterlik alan için ideal */
-  padding: 4px;
-  font-weight: bold;
-  text-align-last: center;
-}
+    .language-selector {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .language-selector select {
+      width: 100px;
+      padding: 4px;
+      font-weight: bold;
+      text-align-last: center;
+    }
     .container { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     h1, h2 { color: #003366; }
     ul { list-style: disc inside; margin: 1rem 0; }
@@ -63,7 +68,7 @@
     </section>
     <section>
       <h2>Formulario de reserva</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
         <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-es.html">
         <input type="hidden" name="_captcha" value="false">
         <label for="name">Nombre completo</label>
