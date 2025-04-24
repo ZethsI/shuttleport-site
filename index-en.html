@@ -1,165 +1,121 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reserva traslados VIP al aeropuerto, tours por la ciudad y traslados privados con ShuttlePort. Servicio confiable, multilingüe y orientado al cliente.">
-  <meta name="keywords" content="traslado VIP, traslado aeropuerto, traslados Estambul, tours por la ciudad, conductor privado">
+  <meta name="description" content="Book VIP airport transfers, city tours, and private transportation with ShuttlePort. Reliable multilingual service.">
+  <meta name="keywords" content="VIP transfer, airport transfer, Istanbul shuttle, city tour, private driver">
   <meta name="author" content="ShuttlePort">
-  <title>ShuttlePort - Servicios de Transfer VIP</title>
+  <title>ShuttlePort - VIP Transfer Services</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header, footer {
-      background-color: #f2f2f2;
-      padding: 1em;
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      padding: 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-    }
-    .language-selector {
-      text-align: right;
-      margin-top: 0.5em;
-    }
-    .language-selector select {
-      padding: 0.3em;
-      font-size: 1em;
-    }
-    main {
-      padding: 2em;
-    }
-    form {
-      max-width: 600px;
-      margin: auto;
-    }
-    form label {
-      display: block;
-      margin-top: 1em;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #f2f2f2; padding: 1em; }
+    nav ul { list-style-type: none; display: flex; justify-content: center; gap: 2em; padding: 0; }
+    nav ul li a { text-decoration: none; color: #007BFF; font-weight: bold; }
+    .language-selector { position: absolute; top: 1em; right: 1em; }
+    main { padding: 2em; }
+    form { max-width: 600px; margin: auto; }
+    form label { display: block; margin-top: 1em; }
     form input, form select, form textarea, form button {
-      width: 100%;
-      padding: 0.5em;
-      margin-top: 0.5em;
+      width: 100%; padding: 0.5em; margin-top: 0.5em;
     }
-    section {
-      margin-bottom: 2em;
-    }
-    h2 {
-      color: #007BFF;
-    }
-    footer ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    footer ul li a {
-      color: #007BFF;
-      text-decoration: none;
-    }
+    section { margin-bottom: 2em; }
+    h2 { color: #007BFF; }
+    footer ul { list-style-type: none; padding: 0; }
+    footer ul li a { color: #007BFF; text-decoration: none; }
   </style>
 </head>
 <body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this)">
+      <option value="en" selected>English</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="ja">日本語</option>
+    </select>
+  </div>
+
   <header>
     <nav>
       <ul>
-        <li><a href="index-es.html">Inicio</a></li>
-        <li><a href="city-tours.html">Tours por la Ciudad</a></li>
-        <li><a href="private-shuttle.html">Traslado Privado</a></li>
+        <li><a href="index-en.html">Home</a></li>
+        <li><a href="city-tours.html">City Tours</a></li>
+        <li><a href="private-shuttle.html">Private Shuttle</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
-
-    <div class="language-selector">
-      <select onchange="changeLanguage(this)">
-        <option value="index-en.html">English</option>
-        <option value="index-de.html">Deutsch</option>
-        <option value="index-es.html" selected>Español</option>
-        <option value="index-ja.html">日本語</option>
-      </select>
-    </div>
   </header>
 
   <main>
     <section id="services">
-      <h2>Nuestros Servicios</h2>
+      <h2>Our Services</h2>
       <ul>
-        <li><a href="index-es.html#vip-airport">Traslados VIP al Aeropuerto</a></li>
-        <li><a href="city-tours.html">Tours por la Ciudad</a></li>
-        <li><a href="private-shuttle.html">Traslado Privado</a></li>
+        <li><a href="index-en.html#vip-airport">VIP Airport Transfers</a></li>
+        <li><a href="city-tours.html">City Tours</a></li>
+        <li><a href="private-shuttle.html">Private Transfers</a></li>
       </ul>
     </section>
 
     <section id="why">
-      <h2>¿Por qué elegirnos?</h2>
-      <p>Ofrecemos servicios de traslado seguros, cómodos y multilingües adaptados a tus necesidades. Nuestros conductores experimentados aseguran que tu viaje sea fluido y agradable. ShuttlePort es tu puerta de entrada al transporte confiable, accesible y lujoso en Turquía.</p>
+      <h2>Why Choose Us?</h2>
+      <p>We offer safe and comfortable multilingual transfer services. Our experienced drivers ensure a smooth and pleasant journey. ShuttlePort is your trusted gateway to luxury transportation in Turkey.</p>
     </section>
 
-    <h1>Reserva tu Traslado</h1>
+    <h1>Book Your Transfer</h1>
     <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-es.html" />
-      
-      <label for="name">Nombre y Apellido:</label>
+      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html" />
+
+      <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required />
 
-      <label for="email">Correo Electrónico:</label>
+      <label for="email">Email Address:</label>
       <input type="email" id="email" name="email" required />
 
-      <label for="phone">Teléfono:</label>
+      <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" name="phone" required />
 
-      <label for="datetime">Fecha y Hora:</label>
+      <label for="datetime">Date & Time:</label>
       <input type="datetime-local" id="datetime" name="datetime" required />
 
-      <label for="passengers">Número de Pasajeros:</label>
+      <label for="passengers">Number of Passengers:</label>
       <input type="number" id="passengers" name="passengers" required />
 
-      <label for="city">Ciudad:</label>
+      <label for="city">Select City:</label>
       <select id="city" name="city" required onchange="updateHotels()">
-        <option value="">Seleccionar Ciudad</option>
-        <option value="istanbul">Estambul</option>
+        <option value="">Choose a city</option>
+        <option value="istanbul">Istanbul</option>
         <option value="antalya">Antalya</option>
-        <option value="izmir">Esmirna</option>
+        <option value="izmir">Izmir</option>
         <option value="bursa">Bursa</option>
         <option value="dalaman">Dalaman</option>
       </select>
 
-      <label for="hotel">Seleccionar Hotel:</label>
+      <label for="hotel">Select Hotel:</label>
       <select id="hotel" name="hotel" required>
-        <option value="">Seleccionar Hotel</option>
+        <option value="">Choose a hotel</option>
       </select>
 
-      <label for="notes">Notas Adicionales:</label>
+      <label for="notes">Additional Notes:</label>
       <textarea id="notes" name="notes"></textarea>
 
-      <button type="submit">Reservar Ahora</button>
+      <button type="submit">Book Now</button>
     </form>
   </main>
 
   <footer>
     <section>
       <h2>FAQ</h2>
-      <p>¿Tienes preguntas? Consulta nuestras FAQ o contáctanos en cualquier momento.</p>
+      <p>If you have any questions, please check our FAQ or contact us directly.</p>
     </section>
     <section>
-      <h2>Destinos que Atendemos</h2>
+      <h2>Supported Airports</h2>
       <ul>
-        <li><a href="https://www.istairport.com/en">Aeropuerto de Estambul</a></li>
-        <li><a href="https://www.sabihagokcen.aero/homepage">Aeropuerto Sabiha Gökçen</a></li>
-        <li><a href="https://www.antalya-airport.aero/">Aeropuerto de Antalya</a></li>
-        <li><a href="https://www.adnanmenderesairport.com/">Aeropuerto de Esmirna</a></li>
-        <li><a href="https://www.dalamanairport.aero/">Aeropuerto de Dalaman</a></li>
+        <li><a href="https://www.istairport.com/en">Istanbul Airport</a></li>
+        <li><a href="https://www.sabihagokcen.aero/homepage">Sabiha Gökçen Airport</a></li>
+        <li><a href="https://www.antalya-airport.aero/">Antalya Airport</a></li>
+        <li><a href="https://www.adnanmenderesairport.com/">Izmir Airport</a></li>
+        <li><a href="https://www.dalamanairport.aero/">Dalaman Airport</a></li>
       </ul>
     </section>
   </footer>
@@ -176,7 +132,7 @@
     function updateHotels() {
       const city = document.getElementById("city").value;
       const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>Seleccionar Hotel</option>";
+      hotelSelect.innerHTML = "<option value=''>Choose a hotel</option>";
       if (hotels[city]) {
         hotels[city].forEach(hotel => {
           const option = document.createElement("option");
@@ -188,8 +144,8 @@
     }
 
     function changeLanguage(select) {
-      const selectedPage = select.value;
-      window.location.href = selectedPage;
+      const lang = select.value;
+      location.href = `index-${lang}.html`;
     }
   </script>
 </body>
