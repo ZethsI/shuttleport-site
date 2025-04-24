@@ -2,117 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VIP Airport Transfers | City Tours | Private Shuttle - ShuttlePort.net" />
-  <meta name="keywords" content="airport transfer, VIP shuttle, city tour, private transport" />
-  <title>ShuttlePort - VIP Airport Transfers</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-    header, footer { background: #003366; color: #fff; text-align: center; padding: 1rem; }
-    .language-selector select {
-  width: 100px; /* max. 7 karakterlik alan için ideal */
-  padding: 4px;
-  font-weight: bold;
-  text-align-last: center;
-}
-    .container { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #003366; }
-    ul { list-style: disc inside; margin: 1rem 0; }
-    label { display: block; margin-top: 1rem; font-weight: bold; }
-    input, select, textarea, button { width: 100%; padding: 0.6rem; margin-top: 0.5rem; border-radius: 4px; border: 1px solid #ccc; box-sizing: border-box; }
-    button { background: #003366; color: #fff; border: none; font-size: 1rem; cursor: pointer; }
-    button:hover { background: #00509e; }
-  </style>
-  <script>
-    function changeLanguage(el) {
-      window.location.href = `index-${el.value}.html`;
-    }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShuttlePort VIP Transfers</title>
 </head>
 <body>
-  <header>
-    <h1>Welcome to ShuttlePort</h1>
-    <p>VIP Airport Transfers | City Tours | Private Shuttle</p>
-  </header>
-  <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="en" selected>English</option>
-      <option value="de">Deutsch</option>
-      <option value="es">Español</option>
-      <option value="ja">日本語</option>
+  <h1>Airport Transfers in Turkey</h1>
+  <p>
+    We provide transfers to and from the following airports: 
+    <a href="/airports/airport-istanbul-en.html">Istanbul Airport (IST)</a>, 
+    <a href="/airports/airport-saw-en.html">Sabiha Gökçen Airport (SAW)</a>, 
+    <a href="/airports/airport-antalya-en.html">Antalya Airport (AYT)</a>, 
+    <a href="/airports/airport-izmir-en.html">Izmir Airport (ADB)</a>, 
+    <a href="/airports/airport-bursa-en.html">Bursa Yenişehir Airport (YEI)</a>. 
+    You can choose from 50 of the most visited hotels such as 
+    <a href="/hotels/istanbul/hilton-bosphorus-en.html">Hilton Bosphorus</a>, 
+    <a href="/hotels/antalya/mardan-palace-en.html">Mardan Palace</a>, and more.
+  </p>
+  <p>
+    For <strong>roundtrip transfers</strong>, please <a href="/roundtrip.html">click here</a>.  
+    For <strong>city tours</strong>, <a href="/tours.html">click here</a>.
+  </p>
+
+  <h2>Book Your Transfer</h2>
+  <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+    <label for="city">Select City:</label>
+    <select name="city" id="city" required>
+      <option value="">-- Choose City --</option>
+      <option value="Istanbul">Istanbul</option>
+      <option value="Antalya">Antalya</option>
+      <option value="Izmir">Izmir</option>
+      <option value="Bursa">Bursa</option>
+      <option value="Mugla">Muğla</option>
     </select>
-  </div>
-  <div class="container">
-    <section>
-      <h2>Our Services</h2>
-      <ul>
-        <li>Airport Transfers (Istanbul, Antalya, Izmir, Bursa, Dalaman)</li>
-        <li>Guided Daily City Tours</li>
-        <li>City Transfers (Factory, Office, Hotel)</li>
-        <li>Multilingual Support: English, German, Spanish, Japanese</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Why Choose Us?</h2>
-      <ul>
-        <li>Safe & Reliable Transport</li>
-        <li>Cash Payment at the End of the Journey</li>
-        <li>Fixed Rate Based on Distance</li>
-        <li>TripAdvisor-like Customer Reviews</li>
-      </ul>
-    </section>
-   
-    <section id="popular-airports">
-  <h2>Popular Airports</h2>
-  <ul>
-    <li><a href="/airports/airport-istanbul-en.html">Istanbul Airport (IST)</a></li>
-     <li><a href="/airports/airport-sabiha-en.html">Sabiha Gökçen Airport (SAW)</a></li>
-     <li><a href="/airports/airport-antalya-en.html">Antalya Airport (AYT)</a></li>
-     <li><a href="/airports/airport-izmir-en.html">Izmir Airport (ADM)</a></li>
-     <li><a href="/airports/airport-bursa-en.html">Bursa Yenişehir Airport (BY)</a></li>
-     <li><a href="/airports/airport-dalaman-en.html">Dalaman Airport (IST)</a></li>
-  </ul>
-</section>
-    
-    <section>
-      <h2>Reservation Form</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
-        <input type="hidden" name="_captcha" value="false">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
-        <label for="pickup">Pick-up Location</label>
-        <input type="text" id="pickup" name="pickup" required>
-        <label for="dropoff">Drop-off Location</label>
-        <input type="text" id="dropoff" name="dropoff" required>
-        <label for="datetime">Transfer Date & Time</label>
-        <input type="datetime-local" id="datetime" name="datetime" required>
-        <label for="passengers">Number of Passengers</label>
-        <input type="number" id="passengers" name="passengers" min="1" required>
-        <label for="payment">Payment Method</label>
-        <select id="payment" name="payment" required>
-          <option value="Cash payment at the end of the trip">Cash payment at the end of the trip</option>
-        </select>
-        <label for="notes">Additional Notes</label>
-        <textarea id="notes" name="notes" rows="4"></textarea>
-        <button type="submit">Submit Reservation</button>
-      </form>
-    </section>
-    <section>
-      <h2>FAQ</h2>
-      <ul>
-        <li><strong>How do I pay?</strong> – You can pay in cash at the end of the trip.</li>
-        <li><strong>Can I book in my native language?</strong> – Yes, we support EN/DE/ES/JP.</li>
-        <li><strong>Are transfers private?</strong> – Yes, all transfers are private and direct.</li>
-      </ul>
-    </section>
-  </div>
-  <footer>
-    &copy; 2025 ShuttlePort.net - All rights reserved.
-  </footer>
+
+    <label for="direction">Direction:</label>
+    <select name="direction" id="direction" required>
+      <option value="">-- Choose Direction --</option>
+      <option value="Airport to Hotel">Airport → Hotel</option>
+      <option value="Hotel to Airport">Hotel → Airport</option>
+    </select>
+
+    <label for="airport">Select Airport:</label>
+    <select name="airport" id="airport" required>
+      <option value="IST">Istanbul Airport (IST)</option>
+      <option value="SAW">Sabiha Gökçen Airport (SAW)</option>
+      <option value="AYT">Antalya Airport (AYT)</option>
+      <option value="ADB">Izmir Airport (ADB)</option>
+      <option value="YEI">Bursa Yenişehir Airport (YEI)</option>
+    </select>
+
+    <label for="hotel">Select Hotel:</label>
+    <select name="hotel" id="hotel" required>
+      <optgroup label="Istanbul">
+        <option value="Hilton Bosphorus">Hilton Bosphorus</option>
+        <option value="Swissotel The Bosphorus">Swissotel The Bosphorus</option>
+        <option value="Ritz-Carlton Istanbul">Ritz-Carlton Istanbul</option>
+        <option value="Ciragan Palace Kempinski">Ciragan Palace Kempinski</option>
+        <option value="Four Seasons Sultanahmet">Four Seasons Sultanahmet</option>
+        <option value="Pera Palace Hotel">Pera Palace Hotel</option>
+        <option value="Radisson Blu Şişli">Radisson Blu Şişli</option>
+        <option value="W Istanbul">W Istanbul</option>
+        <option value="Conrad Istanbul">Conrad Istanbul</option>
+        <option value="The Marmara Taksim">The Marmara Taksim</option>
+      </optgroup>
+      <optgroup label="Antalya">
+        <option value="Mardan Palace">Mardan Palace</option>
+        <option value="Rixos Premium Belek">Rixos Premium Belek</option>
+        <option value="Titanic Mardan Palace">Titanic Mardan Palace</option>
+        <option value="Maxx Royal Belek">Maxx Royal Belek</option>
+        <option value="Akra Hotel">Akra Hotel</option>
+        <option value="Kaya Palazzo Golf Resort">Kaya Palazzo Golf Resort</option>
+        <option value="Delphin Imperial">Delphin Imperial</option>
+        <option value="Regnum Carya">Regnum Carya</option>
+        <option value="Limak Lara Hotel">Limak Lara Hotel</option>
+        <option value="Sherwood Exclusive Lara">Sherwood Exclusive Lara</option>
+      </optgroup>
+      <optgroup label="Izmir">
+        <option value="Swissotel Grand Efes">Swissotel Grand Efes</option>
+        <option value="Wyndham Grand Izmir">Wyndham Grand Izmir</option>
+        <option value="Mövenpick Hotel Izmir">Mövenpick Hotel Izmir</option>
+        <option value="Renaissance Izmir Hotel">Renaissance Izmir Hotel</option>
+        <option value="Hilton Garden Inn Bayraklı">Hilton Garden Inn Bayraklı</option>
+        <option value="Key Hotel Izmir">Key Hotel Izmir</option>
+        <option value="DoubleTree by Hilton Alsancak">DoubleTree by Hilton Alsancak</option>
+        <option value="Kordon Hotel Çankaya">Kordon Hotel Çankaya</option>
+        <option value="Smart Hotel Izmir">Smart Hotel Izmir</option>
+        <option value="Izmir Marriott Hotel">Izmir Marriott Hotel</option>
+      </optgroup>
+      <optgroup label="Bursa">
+        <option value="Almira Hotel Bursa">Almira Hotel Bursa</option>
+        <option value="Hilton Bursa">Hilton Bursa</option>
+        <option value="Marigold Thermal">Marigold Thermal</option>
+        <option value="Crowne Plaza Bursa">Crowne Plaza Bursa</option>
+        <option value="Sheraton Bursa">Sheraton Bursa</option>
+        <option value="Holiday Inn Bursa">Holiday Inn Bursa</option>
+        <option value="Divan Bursa">Divan Bursa</option>
+        <option value="Ibis Hotel Bursa">Ibis Hotel Bursa</option>
+        <option value="Kitapevi Hotel">Kitapevi Hotel</option>
+        <option value="Grand Swiss-Belhotel Celik Palas">Celik Palas</option>
+      </optgroup>
+      <optgroup label="Muğla">
+        <option value="D-Hotel Maris">D-Hotel Maris</option>
+        <option value="Hilton Dalaman">Hilton Dalaman</option>
+        <option value="Kempinski Hotel Barbaros Bay">Kempinski Barbaros Bay</option>
+        <option value="Six Senses Kaplankaya">Six Senses Kaplankaya</option>
+        <option value="Yazıcı Hotel Marmaris">Yazıcı Hotel Marmaris</option>
+        <option value="Casa dell’Arte">Casa dell’Arte</option>
+        <option value="Mandarin Oriental Bodrum">Mandarin Oriental</option>
+        <option value="Lujo Hotel Bodrum">Lujo Hotel Bodrum</option>
+        <option value="TUI Blue Sarigerme">TUI Blue Sarigerme</option>
+        <option value="Sundia By Liberty Ölüdeniz">Sundia Liberty</option>
+      </optgroup>
+    </select>
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" name="fullname" required />
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required />
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" name="phone" required />
+
+    <label for="pickup">Pickup Location:</label>
+    <input type="text" name="pickup" required />
+
+    <label for="dropoff">Drop-off Location:</label>
+    <input type="text" name="dropoff" required />
+
+    <label for="datetime">Transfer Date & Time:</label>
+    <input type="datetime-local" name="datetime" required />
+
+    <label for="passengers">Passenger Count:</label>
+    <input type="number" name="passengers" min="1" required />
+
+    <label for="note">Additional Notes:</label>
+    <textarea name="note"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
