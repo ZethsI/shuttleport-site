@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Tours | ShuttlePort</title>
+    <meta name="description" content="Discover Istanbul, Antalya, Izmir, Dalaman and Bursa with our premium city tours. Comfortable, private and customized experiences.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+        .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
+        .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 2rem; }
+        .city { text-align: center; }
+        .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
+        .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0055aa; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Explore Cities with ShuttlePort</h1>
+    <p>Comfortable and Private City Tours</p>
+</header>
+
+<div class="banner"></div>
+
+<section class="cities">
+    <div class="city">
+        <a href="https://istanbul.com/">
+            <img src="istanbul-icon.jpg" alt="Istanbul">
+            <h2>Istanbul</h2>
+        </a>
+        <p>Discover Istanbul’s vibrant culture, historical wonders, and scenic Bosphorus views with our exclusive city tours.</p>
+    </div>
+
+    <div class="city">
+        <a href="https://www.tripadvisor.com/Tourism-g297962-Antalya_Turkish_Mediterranean_Coast-Vacations.html">
+            <img src="antalya-icon.jpg" alt="Antalya">
+            <h2>Antalya</h2>
+        </a>
+        <p>Relax on Mediterranean beaches, explore ancient ruins, and experience Antalya's colorful bazaars and nightlife.</p>
+    </div>
+
+    <div class="city">
+        <a href="https://www.tripadvisor.com/Tourism-g298006-Izmir_Izmir_Province_Turkish_Aegean_Coast-Vacations.html">
+            <img src="izmir-icon.jpg" alt="Izmir">
+            <h2>Izmir</h2>
+        </a>
+        <p>Visit the beautiful coastal city of Izmir, known for its historic sites, seaside promenades, and vibrant atmosphere.</p>
+    </div>
+
+    <div class="city">
+        <a href="https://www.tripadvisor.com/Tourism-g311295-Dalaman_Mugla_Province_Turkish_Aegean_Coast-Vacations.html">
+            <img src="dalaman-icon.jpg" alt="Dalaman">
+            <h2>Dalaman</h2>
+        </a>
+        <p>Explore the turquoise waters, stunning beaches, and serene landscapes of Dalaman, a hidden gem in Turkey.</p>
+    </div>
+
+    <div class="city">
+        <a href="https://www.tripadvisor.com/Tourism-g297977-Bursa-Vacations.html">
+            <img src="bursa-icon.jpg" alt="Bursa">
+            <h2>Bursa</h2>
+        </a>
+        <p>Experience the historical richness, natural beauty, and traditional flavors of Bursa, the first capital of the Ottoman Empire.</p>
+    </div>
+</section>
+
+<section class="reservation-form">
+    <h2>Book Your City Tour</h2>
+    <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+        <input type="text" name="Full Name" placeholder="Full Name" required>
+        <input type="email" name="Email" placeholder="Email" required>
+        <input type="text" name="Phone" placeholder="Phone Number" required>
+        <select name="City" required>
+            <option value="">Select City</option>
+            <option value="Istanbul">Istanbul</option>
+            <option value="Antalya">Antalya</option>
+            <option value="Izmir">Izmir</option>
+            <option value="Dalaman">Dalaman</option>
+            <option value="Bursa">Bursa</option>
+        </select>
+        <input type="date" name="Tour Date" required>
+        <textarea name="Notes" placeholder="Additional Notes (Optional)"></textarea>
+        <button type="submit">Reserve Now</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
