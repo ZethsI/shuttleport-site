@@ -1,98 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Tours | ShuttlePort</title>
-    <meta name="description" content="Discover Istanbul, Antalya, Izmir, Dalaman and Bursa with our premium city tours. Comfortable, private and customized experiences.">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
-        .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
-        .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 2rem; }
-        .city { text-align: center; }
-        .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
-        .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
-        input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
-        button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background-color: #0055aa; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City Tours | ShuttlePort</title>
+  <meta name="description" content="Discover Istanbul, Antalya, Izmir, Dalaman, Bursa with ShuttlePort's exclusive city tours. Experience culture, history, and beauty in Turkey's top cities.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+    .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
+    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
+    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
+    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
+    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #0055aa; }
+    a { text-decoration: none; color: inherit; }
+    .social-media { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+    .social-media img { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+    .map-container { text-align: center; margin: 40px 0; }
+    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Explore Cities with ShuttlePort</h1>
-    <p>Comfortable and Private City Tours</p>
+  <h1>Explore Turkey's Top Cities</h1>
+  <p>Premium and Private City Tours by ShuttlePort</p>
 </header>
 
 <div class="banner"></div>
 
 <section class="cities">
-    <div class="city">
-        <a href="https://istanbul.com/">
-            <img src="istanbul-icon.jpg" alt="Istanbul">
-            <h2>Istanbul</h2>
-        </a>
-        <p>Discover Istanbul’s vibrant culture, historical wonders, and scenic Bosphorus views with our exclusive city tours.</p>
-    </div>
 
-    <div class="city">
-        <a href="https://www.tripadvisor.com/Tourism-g297962-Antalya_Turkish_Mediterranean_Coast-Vacations.html">
-            <img src="antalya-icon.jpg" alt="Antalya">
-            <h2>Antalya</h2>
-        </a>
-        <p>Relax on Mediterranean beaches, explore ancient ruins, and experience Antalya's colorful bazaars and nightlife.</p>
-    </div>
+  <div class="city">
+    <a href="https://istanbul.com/">
+      <img src="istanbul-icon.jpg" alt="Istanbul">
+      <h2>Istanbul</h2>
+    </a>
+    <p>Walk through history in Istanbul, where East meets West. Visit Hagia Sophia, Blue Mosque, and cruise along the magical Bosphorus.</p>
+  </div>
 
-    <div class="city">
-        <a href="https://www.tripadvisor.com/Tourism-g298006-Izmir_Izmir_Province_Turkish_Aegean_Coast-Vacations.html">
-            <img src="izmir-icon.jpg" alt="Izmir">
-            <h2>Izmir</h2>
-        </a>
-        <p>Visit the beautiful coastal city of Izmir, known for its historic sites, seaside promenades, and vibrant atmosphere.</p>
-    </div>
+  <div class="city">
+    <a href="https://antalya.com.tr/">
+      <img src="antalya-icon.jpg" alt="Antalya">
+      <h2>Antalya</h2>
+    </a>
+    <p>Enjoy Antalya's turquoise beaches, ancient cities like Perge and Side, and the breathtaking Düden Waterfalls.</p>
+  </div>
 
-    <div class="city">
-        <a href="https://www.tripadvisor.com/Tourism-g311295-Dalaman_Mugla_Province_Turkish_Aegean_Coast-Vacations.html">
-            <img src="dalaman-icon.jpg" alt="Dalaman">
-            <h2>Dalaman</h2>
-        </a>
-        <p>Explore the turquoise waters, stunning beaches, and serene landscapes of Dalaman, a hidden gem in Turkey.</p>
-    </div>
+  <div class="city">
+    <a href="https://gocekinfo.com/">
+      <img src="dalaman-icon.jpg" alt="Dalaman & Göcek">
+      <h2>Dalaman & Göcek</h2>
+    </a>
+    <p>Discover hidden bays in Göcek, explore the stunning beaches of Sarigerme, and take a relaxing boat tour through Dalyan's ancient tombs.</p>
+  </div>
 
-    <div class="city">
-        <a href="https://www.tripadvisor.com/Tourism-g297977-Bursa-Vacations.html">
-            <img src="bursa-icon.jpg" alt="Bursa">
-            <h2>Bursa</h2>
-        </a>
-        <p>Experience the historical richness, natural beauty, and traditional flavors of Bursa, the first capital of the Ottoman Empire.</p>
-    </div>
+  <div class="city">
+    <a href="https://izmir.bel.tr/">
+      <img src="izmir-icon.jpg" alt="Izmir">
+      <h2>Izmir</h2>
+    </a>
+    <p>Experience the Aegean spirit in Izmir. Stroll along Kordonboyu, visit historical Agora, and explore the lively streets of Alsancak.</p>
+  </div>
+
+  <div class="city">
+    <a href="https://bursa.bel.tr/">
+      <img src="bursa-icon.jpg" alt="Bursa">
+      <h2>Bursa</h2>
+    </a>
+    <p>Visit the Green Mosque, experience the famous Turkish baths, and enjoy the cable car ride to Uludağ Mountain.</p>
+  </div>
+
 </section>
 
 <section class="reservation-form">
-    <h2>Book Your City Tour</h2>
-    <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
-        <input type="text" name="Full Name" placeholder="Full Name" required>
-        <input type="email" name="Email" placeholder="Email" required>
-        <input type="text" name="Phone" placeholder="Phone Number" required>
-        <select name="City" required>
-            <option value="">Select City</option>
-            <option value="Istanbul">Istanbul</option>
-            <option value="Antalya">Antalya</option>
-            <option value="Izmir">Izmir</option>
-            <option value="Dalaman">Dalaman</option>
-            <option value="Bursa">Bursa</option>
-        </select>
-        <input type="date" name="Tour Date" required>
-        <textarea name="Notes" placeholder="Additional Notes (Optional)"></textarea>
-        <button type="submit">Reserve Now</button>
-    </form>
+  <h2>Book Your City Tour</h2>
+  <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+    <input type="text" name="Full Name" placeholder="Full Name" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="text" name="Phone" placeholder="Phone Number" required>
+    <select name="City" required>
+      <option value="">Select City</option>
+      <option value="Istanbul">Istanbul</option>
+      <option value="Antalya">Antalya</option>
+      <option value="Dalaman & Göcek">Dalaman & Göcek</option>
+      <option value="Izmir">Izmir</option>
+      <option value="Bursa">Bursa</option>
+    </select>
+    <input type="date" name="Tour Date" required>
+    <textarea name="Notes" placeholder="Additional Notes (Optional)"></textarea>
+    <button type="submit">Reserve Now</button>
+  </form>
+</section>
+
+<section class="map-container">
+  <h2>Explore Our Cities on the Map</h2>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e__1IS_Y_cD-vI2QxMGlT0m2K2pkJb8j" title="City Tours Map"></iframe>
+</section>
+
+<section class="social-media">
+  <a href="https://www.instagram.com/shuttleport/" target="_blank">
+    <img src="instagram-icon.jpg" alt="Instagram">
+  </a>
+  <a href="https://www.tiktok.com/@shuttleport" target="_blank">
+    <img src="tiktok-icon.jpg" alt="TikTok">
+  </a>
 </section>
 
 <footer>
-    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+  <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
 </footer>
 
 </body>
