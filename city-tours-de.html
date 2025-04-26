@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stadtrundfahrten | ShuttlePort</title>
+  <meta name="description" content="Entdecken Sie Istanbul, Antalya, Izmir, Dalaman, Bursa mit exklusiven Stadtrundfahrten von ShuttlePort. Erleben Sie Kultur, Geschichte und Schönheit in den Top-Städten der Türkei.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+    .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
+    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
+    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
+    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
+    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #0055aa; }
+    a { text-decoration: none; color: inherit; }
+    .social-media { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+    .social-media img { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+    .map-container { text-align: center; margin: 40px 0; }
+    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Entdecken Sie die besten Städte der Türkei</h1>
+  <p>Exklusive und private Stadtrundfahrten von ShuttlePort</p>
+</header>
+
+<div class="banner"></div>
+
+<section class="cities">
+
+  <div class="city">
+    <a href="https://istanbul.com/">
+      <img src="istanbul-icon.jpg" alt="Istanbul">
+      <h2>Istanbul</h2>
+    </a>
+    <p>Erleben Sie die Geschichte in Istanbul, wo der Osten auf den Westen trifft. Besuchen Sie die Hagia Sophia, die Blaue Moschee und fahren Sie mit dem Boot über den magischen Bosporus.</p>
+  </div>
+
+  <div class="city">
+    <a href="https://antalya.com.tr/">
+      <img src="antalya-icon.jpg" alt="Antalya">
+      <h2>Antalya</h2>
+    </a>
+    <p>Genießen Sie die türkisfarbenen Strände Antalyas, antike Städte wie Perge und Side sowie die atemberaubenden Düden-Wasserfälle.</p>
+  </div>
+
+  <div class="city">
+    <a href="https://gocekinfo.com/">
+      <img src="dalaman-icon.jpg" alt="Dalaman & Göcek">
+      <h2>Dalaman & Göcek</h2>
+    </a>
+    <p>Entdecken Sie die versteckten Buchten in Göcek, erkunden Sie die atemberaubenden Strände von Sarigerme und machen Sie eine entspannende Bootstour durch die antiken Gräber von Dalyan.</p>
+  </div>
+
+  <div class="city">
+    <a href="https://izmir.bel.tr/">
+      <img src="izmir-icon.jpg" alt="Izmir">
+      <h2>Izmir</h2>
+    </a>
+    <p>Erleben Sie den Geist der Ägäis in Izmir. Bummeln Sie entlang des Kordonboyu, besuchen Sie das historische Agora und erkunden Sie die lebhaften Straßen von Alsancak.</p>
+  </div>
+
+  <div class="city">
+    <a href="https://bursa.bel.tr/">
+      <img src="bursa-icon.jpg" alt="Bursa">
+      <h2>Bursa</h2>
+    </a>
+    <p>Besuchen Sie die Grüne Moschee, genießen Sie die berühmten türkischen Bäder und fahren Sie mit der Seilbahn auf den Uludağ-Berg.</p>
+  </div>
+
+</section>
+
+<section class="reservation-form">
+  <h2>Jetzt Ihre Stadtrundfahrt Buchen</h2>
+  <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+    <input type="text" name="Full Name" placeholder="Vollständiger Name" required>
+    <input type="email" name="Email" placeholder="E-Mail" required>
+    <input type="text" name="Phone" placeholder="Telefonnummer" required>
+    <select name="City" required>
+      <option value="">Wählen Sie die Stadt</option>
+      <option value="Istanbul">Istanbul</option>
+      <option value="Antalya">Antalya</option>
+      <option value="Dalaman & Göcek">Dalaman & Göcek</option>
+      <option value="Izmir">Izmir</option>
+      <option value="Bursa">Bursa</option>
+    </select>
+    <input type="date" name="Tour Date" required>
+    <textarea name="Notes" placeholder="Zusätzliche Hinweise (Optional)"></textarea>
+    <button type="submit">Jetzt Reservieren</button>
+  </form>
+</section>
+
+<section class="map-container">
+  <h2>Entdecken Sie unsere Städte auf der Karte</h2>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e__1IS_Y_cD-vI2QxMGlT0m2K2pkJb8j" title="City Tours Map"></iframe>
+</section>
+
+<section class="social-media">
+  <a href="https://www.instagram.com/shuttleport/" target="_blank">
+    <img src="instagram-icon.jpg" alt="Instagram">
+  </a>
+  <a href="https://www.tiktok.com/@shuttleport" target="_blank">
+    <img src="tiktok-icon.jpg" alt="TikTok">
+  </a>
+</section>
+
+<footer>
+  <p>&copy; 2025 ShuttlePort. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>
