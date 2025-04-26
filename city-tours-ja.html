@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>都市ツアー | ShuttlePort</title>
+  <meta name="description" content="ShuttlePortでイスタンブール、アンタルヤ、イズミル、ダラマン、ブルサを含むトルコの主要都市のプライベートツアーを体験してください。歴史、文化、美しい風景を楽しんでください。">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+    .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
+    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
+    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
+    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
+    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #0055aa; }
+    a { text-decoration: none; color: inherit; }
+    .social-media { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+    .social-media img { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+    .map-container { text-align: center; margin: 40px 0; }
+    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>トルコの都市を発見しよう</h1>
+  <p>ShuttlePortでの専用プライベートツアー</p>
+</header>
+
+<div class="banner"></div>
+
+<section class="cities">
+
+  <div class="city">
+    <a href="https://istanbul.com/">
+      <img src="istanbul-icon.jpg" alt="イスタンブール">
+      <h2>イスタンブール</h2>
+    </a>
+    <p>イスタンブールでオリエントとオクシデントが交わる歴史を体験してください。アヤソフィア、ブルーモスクを訪れ、ボスフォラス海峡をクルーズしましょう。</p>
+  </div>
+
+  <div class="city">
+    <a href="https://antalya.com.tr/">
+      <img src="antalya-icon.jpg" alt="アンタルヤ">
+      <h2>アンタルヤ</h2>
+    </a>
+    <p>アンタルヤのターコイズブルーのビーチ、ペルゲやサイドなどの古代都市、デュデンの滝をお楽しみください。</p>
+  </div>
+
+  <div class="city">
+    <a href="https://gocekinfo.com/">
+      <img src="dalaman-icon.jpg" alt="ダラマン＆ゴチェック">
+      <h2>ダラマン＆ゴチェック</h2>
+    </a>
+    <p>ゴチェックの隠れた湾を探索し、サリゲルメのビーチでリラックスし、ダリアンの古代の墓地を巡りましょう。</p>
+  </div>
+
+  <div class="city">
+    <a href="https://izmir.bel.tr/">
+      <img src="izmir-icon.jpg" alt="イズミル">
+      <h2>イズミル</h2>
+    </a>
+    <p>エーゲ海の雰囲気を感じるイズミル。コルドンボユを散歩し、歴史的なアゴラを訪れ、アルサンチャクの賑やかな通りを探索しましょう。</p>
+  </div>
+
+  <div class="city">
+    <a href="https://bursa.bel.tr/">
+      <img src="bursa-icon.jpg" alt="ブルサ">
+      <h2>ブルサ</h2>
+    </a>
+    <p>ブルサのグリーンモスクを訪れ、有名なトルコ式浴場を楽しみ、ウルダ山のケーブルカーに乗りましょう。</p>
+  </div>
+
+</section>
+
+<section class="reservation-form">
+  <h2>今すぐ都市ツアーを予約</h2>
+  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <input type="text" name="Full Name" placeholder="フルネーム" required>
+    <input type="email" name="Email" placeholder="メールアドレス" required>
+    <input type="text" name="Phone" placeholder="電話番号" required>
+    <select name="City" required>
+      <option value="">都市を選択してください</option>
+      <option value="Istanbul">イスタンブール</option>
+      <option value="Antalya">アンタルヤ</option>
+      <option value="Dalaman & Göcek">ダラマン＆ゴチェック</option>
+      <option value="Izmir">イズミル</option>
+      <option value="Bursa">ブルサ</option>
+    </select>
+    <input type="date" name="Tour Date" required>
+    <textarea name="Notes" placeholder="追加のメモ（オプション）"></textarea>
+    <button type="submit">今すぐ予約</button>
+  </form>
+</section>
+
+<section class="map-container">
+  <h2>マップで私たちの都市を発見</h2>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e__1IS_Y_cD-vI2QxMGlT0m2K2pkJb8j" title="City Tours Map"></iframe>
+</section>
+
+<section class="social-media">
+  <a href="https://www.instagram.com/shuttleport/" target="_blank">
+    <img src="instagram-icon.jpg" alt="Instagram">
+  </a>
+  <a href="https://www.tiktok.com/@shuttleport" target="_blank">
+    <img src="tiktok-icon.jpg" alt="TikTok">
+  </a>
+</section>
+
+<footer>
+  <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
