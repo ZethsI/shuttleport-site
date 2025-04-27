@@ -3,17 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Experience premium Private Shuttle Services in Turkey. Door-to-door VIP transfers with professional drivers. Book your ride now!">
-  <meta name="keywords" content="Private Shuttle Turkey, VIP Transfer, Airport Shuttle, Private Car Service">
-  <meta name="author" content="ShuttlePort">
-  <title>Private Shuttle Services | ShuttlePort</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Book a private shuttle with ShuttlePort for a comfortable, secure, and luxurious transfer experience.">
+  <title>Private Shuttle | ShuttlePort</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basit stil eklemeleri */
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #333; color: white; padding: 10px 0; }
+    header .logo { text-align: center; font-size: 24px; margin-bottom: 5px; }
+    nav ul { list-style: none; display: flex; justify-content: center; padding: 0; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: white; text-decoration: none; }
+    nav ul li a.active { text-decoration: underline; }
+    .hero { background: url('https://images.unsplash.com/photo-1502920917128-1aa500764b9e') no-repeat center center/cover; color: white; padding: 100px 20px; text-align: center; }
+    .about-private-shuttle, .reservation, .map-section, .social-section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    .about-private-shuttle ul { padding-left: 20px; }
+    form { display: flex; flex-direction: column; gap: 15px; }
+    form input, form textarea, form button { padding: 10px; font-size: 16px; }
+    form button { background-color: #007BFF; color: white; border: none; cursor: pointer; }
+    form button:hover { background-color: #0056b3; }
+    iframe { width: 100%; height: 400px; border: none; margin-top: 20px; }
+    footer { background: #222; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .footer-links { margin-bottom: 10px; }
+    .footer-links a { color: #ddd; margin: 0 10px; text-decoration: none; }
+    .footer-links a:hover { text-decoration: underline; }
+    .social-icons img { width: 50px; margin: 0 10px; }
+  </style>
 </head>
+
 <body>
 
   <header>
     <div class="logo">
-      <a href="index-en.html"><img src="logo.png" alt="ShuttlePort Logo"></a>
+      <a href="index-en.html" style="color:white;">ShuttlePort</a>
     </div>
     <nav>
       <ul>
@@ -26,59 +48,55 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="images/private-shuttle-banner.jpg" alt="Private Shuttle Banner" class="hero-image">
-      <div class="hero-text">
-        <h1>Private Shuttle Services</h1>
-        <p>Exclusive Private Transfers — Comfort, Privacy, and Style!</p>
-      </div>
-    </section>
+  <section class="hero">
+    <h1>Private Shuttle Service</h1>
+    <p>Enjoy the luxury of private travel with ShuttlePort. Personalized, professional, and punctual.</p>
+  </section>
 
-    <section class="intro">
-      <h2>Private Transfers Across Turkey</h2>
-      <p>At ShuttlePort, we offer you a tailored transportation service. Whether you need a private ride from the airport to your hotel, from the hotel to a meeting, or to explore different cities, our professional drivers and luxurious vehicles are at your service.</p>
-    </section>
+  <section class="about-private-shuttle">
+    <h2>Why Choose Our Private Shuttle?</h2>
+    <p>Our private shuttle service offers you complete flexibility and comfort. Whether you're traveling for business, vacation, or a special event, we provide seamless, door-to-door transportation with professional drivers and premium vehicles.</p>
+    <ul>
+      <li>Customized pick-up and drop-off locations</li>
+      <li>24/7 service availability</li>
+      <li>Luxurious and sanitized vehicles</li>
+      <li>English-speaking drivers</li>
+      <li>Fixed and transparent pricing</li>
+    </ul>
+  </section>
 
-    <section class="features">
-      <div class="feature">
-        <img src="images/private-vehicle.jpg" alt="Private Vehicle">
-        <h3>Personalized Service</h3>
-        <p>We provide door-to-door service tailored to your schedule and preferences, ensuring maximum comfort and safety.</p>
-      </div>
+  <section class="reservation">
+    <h2>Book Your Private Shuttle</h2>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <input type="hidden" name="_next" value="https://www.shuttleport.net/thank-you-en.html">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="pickup" placeholder="Pick-up Location" required>
+      <input type="text" name="dropoff" placeholder="Drop-off Location" required>
+      <input type="datetime-local" name="date" required>
+      <textarea name="notes" placeholder="Additional Notes (optional)"></textarea>
+      <button type="submit">Reserve Now</button>
+    </form>
+  </section>
 
-      <div class="feature">
-        <img src="images/professional-driver.jpg" alt="Professional Driver">
-        <h3>Professional Drivers</h3>
-        <p>Our experienced and English-speaking drivers guarantee a safe and pleasant journey.</p>
-      </div>
+  <section class="map-section">
+    <h2>Our Service Area</h2>
+    <!-- Doğru çalışan Google Maps embed kodu -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12030.02422744587!2d28.9760189!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba8f76d95b7d%3A0x51b88ab6525cb364!2sIstanbul!5e0!3m2!1sen!2str!4v1714158301801" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
 
-      <div class="feature">
-        <img src="images/luxury-fleet.jpg" alt="Luxury Fleet">
-        <h3>Luxury Fleet</h3>
-        <p>Choose from a wide range of top-tier vehicles including sedans, minivans, and VIP minibuses — all perfectly maintained and fully insured.</p>
-      </div>
-    </section>
-
-    <section class="reservation">
-      <h2>Book Your Private Shuttle</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="text" name="pickup" placeholder="Pick-up Location" required>
-        <input type="text" name="dropoff" placeholder="Drop-off Location" required>
-        <input type="datetime-local" name="date" required>
-        <textarea name="notes" placeholder="Additional Notes (optional)"></textarea>
-        <button type="submit">Reserve Now</button>
-      </form>
-    </section>
-
-    <section class="map-section">
-      <h2>Our Main Service Areas</h2>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1l9q6V3rB3n0c5m5kXsK0HgC8sT4&hl=en" width="100%" height="480"></iframe>
-    </section>
-  </main>
+  <section class="social-section">
+    <h2>Follow Our Journeys</h2>
+    <div class="social-icons" style="text-align:center;">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok">
+      </a>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-links">
