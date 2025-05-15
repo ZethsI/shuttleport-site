@@ -2,133 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>City Tours | ShuttlePort</title>
-  <meta name="description" content="Discover Istanbul, Antalya, Izmir, Dalaman, Bursa with ShuttlePort's exclusive city tours. Experience culture, history, and beauty in Turkey's top cities.">
+  <meta name="description" content="Discover Istanbul, Antalya, Izmir, Dalaman, Bursa with ShuttlePort's exclusive city tours. Experience culture, history, and beauty in Turkey's top cities." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="favicon.png"/>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffffff; }
     header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
-    nav { display: flex; justify-content: space-between; align-items: center; background-color: #002244; padding: 0.5rem 2rem; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-    .lang-select select { padding: 4px; border-radius: 4px; }
+    h1, h2 { margin-top: 0; }
     .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
-    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
-    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
-    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
-    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
-    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
-    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background-color: #0055aa; }
-    .social-media { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
-    .social-media img { width: 40px; height: 40px; border-radius: 50%; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .city-card { background: #f8f8f8; padding: 1rem; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .city-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
+    .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 2rem 0; }
+    .buttons a button { padding: 12px 24px; font-size: 16px; border-radius: 30px; color: white; border: none; cursor: pointer; }
+    .blue { background-color: #007bff; }
+    .green { background-color: #28a745; }
+    .aqua { background-color: #17a2b8; }
+    .yellow { background-color: #ffc107; color: black; }
+    .red { background-color: #dc3545; }
+    .slider { overflow-x: scroll; white-space: nowrap; background: #f8f9fa; padding: 20px; border-radius: 10px; }
+    .slider img { height: 200px; margin-right: 10px; border-radius: 10px; }
+    form input, form select, form textarea, form button {
+      width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box;
+    }
+    form button { background-color: #003366; color: white; border: none; cursor: pointer; }
+    form button:hover { background-color: #0055aa; }
+    iframe { border: 0; border-radius: 10px; width: 100%; height: 450px; }
+    .social-media { text-align: center; margin: 30px 0; }
+    .social-media a img { width: 40px; height: 40px; border-radius: 50%; margin: 0 10px; }
   </style>
 </head>
 
 <body>
+  <header>
+    <h1>Explore Turkey's Top Cities</h1>
+    <p>Premium and Private City Tours by ShuttlePort</p>
+  </header>
 
-<nav>
-  <div><a href="index-en.html">ShuttlePort</a></div>
-  <div>
-    <a href="index-en.html">Home</a>
-    <a href="city-tours-en.html">City Tours</a>
-    <a href="faq-en.html">FAQ</a>
-  </div>
-  <div class="lang-select">
-    <select onchange="location = this.value;">
-      <option value="city-tours-en.html" selected>EN</option>
-      <option value="city-tours-de.html">DE</option>
-      <option value="city-tours-es.html">ES</option>
-      <option value="city-tours-ja.html">日本語</option>
-    </select>
-  </div>
-</nav>
+  <div class="banner"></div>
 
-<header>
-  <h1>Explore Turkey's Top Cities</h1>
-  <p>Premium and Private City Tours by ShuttlePort</p>
-</header>
+  <main class="container">
 
-<div class="banner"></div>
+    <h2 style="text-align:center;">Top City Destinations</h2>
+    <section class="grid">
+      <div class="city-card">
+        <a href="https://istanbul.com/">
+          <img src="istanbul-icon.jpg" alt="Istanbul" />
+          <h3>Istanbul</h3>
+        </a>
+        <p>Walk through history in Istanbul, where East meets West. Visit Hagia Sophia, Blue Mosque, and cruise along the magical Bosphorus.</p>
+      </div>
+      <div class="city-card">
+        <a href="https://antalya.com.tr/">
+          <img src="antalya-icon.jpg" alt="Antalya" />
+          <h3>Antalya</h3>
+        </a>
+        <p>Enjoy Antalya's turquoise beaches, ancient cities like Perge and Side, and the breathtaking Düden Waterfalls.</p>
+      </div>
+      <div class="city-card">
+        <a href="https://gocekonline.com/">
+          <img src="dalaman-icon.jpg" alt="Dalaman" />
+          <h3>Dalaman & Göcek</h3>
+        </a>
+        <p>Discover hidden bays in Göcek, explore the stunning beaches of Sarigerme, and take a relaxing boat tour through Dalyan's ancient tombs.</p>
+      </div>
+      <div class="city-card">
+        <a href="https://izmir.bel.tr/">
+          <img src="izmir-icon.jpg" alt="Izmir" />
+          <h3>Izmir</h3>
+        </a>
+        <p>Experience the Aegean spirit in Izmir. Stroll along Kordonboyu, visit historical Agora, and explore the lively streets of Alsancak.</p>
+      </div>
+      <div class="city-card">
+        <a href="https://bursa.bel.tr/">
+          <img src="bursa-icon.jpg" alt="Bursa" />
+          <h3>Bursa</h3>
+        </a>
+        <p>Visit the Green Mosque, experience the famous Turkish baths, and enjoy the cable car ride to Uludağ Mountain.</p>
+      </div>
+    </section>
 
-<section class="cities">
+    <section class="buttons">
+      <a href="https://istanbul.com/" target="_blank"><button class="blue">Istanbul</button></a>
+      <a href="https://tripadvisor.com/Tourism-g297962" target="_blank"><button class="green">Antalya</button></a>
+      <a href="https://tripadvisor.com/Tourism-g298006" target="_blank"><button class="aqua">Izmir</button></a>
+      <a href="https://tripadvisor.com/Tourism-g311230" target="_blank"><button class="yellow">Dalaman</button></a>
+      <a href="https://tripadvisor.com/Tourism-g297977" target="_blank"><button class="red">Bursa</button></a>
+    </section>
 
-  <div class="city">
-    <a href="https://istanbul.com/"><img src="istanbul-icon.jpg" alt="Istanbul" /><h2>Istanbul</h2></a>
-    <p>Walk through history in Istanbul, where East meets West. Visit Hagia Sophia, Blue Mosque, and cruise along the magical Bosphorus.</p>
-  </div>
+    <div class="slider">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Topkapi_Palace_in_Istanbul.jpg/640px-Topkapi_Palace_in_Istanbul.jpg" alt="Istanbul">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Antalya_Kaleici.jpg/640px-Antalya_Kaleici.jpg" alt="Antalya">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Izmir_Clock_Tower.jpg/640px-Izmir_Clock_Tower.jpg" alt="Izmir">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Dalaman_Bridge.jpg/640px-Dalaman_Bridge.jpg" alt="Dalaman">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Green_Mosque_Bursa.jpg/640px-Green_Mosque_Bursa.jpg" alt="Bursa">
+    </div>
 
-  <div class="city">
-    <a href="https://antalya.com.tr/"><img src="antalya-icon.jpg" alt="Antalya" /><h2>Antalya</h2></a>
-    <p>Enjoy Antalya's turquoise beaches, ancient cities like Perge and Side, and the breathtaking Düden Waterfalls.</p>
-  </div>
+    <h2 style="margin-top: 50px;">Book Your City Tour</h2>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <input type="text" name="Full Name" placeholder="Full Name" required />
+      <input type="email" name="Email" placeholder="Email" required />
+      <input type="text" name="Phone" placeholder="Phone Number" required />
+      <select name="City" required>
+        <option value="">Select City</option>
+        <option value="Istanbul">Istanbul</option>
+        <option value="Antalya">Antalya</option>
+        <option value="Dalaman & Göcek">Dalaman & Göcek</option>
+        <option value="Izmir">Izmir</option>
+        <option value="Bursa">Bursa</option>
+      </select>
+      <input type="date" name="Tour Date" required />
+      <textarea name="Notes" placeholder="Additional Notes (Optional)"></textarea>
+      <button type="submit">Reserve Now</button>
+    </form>
 
-  <div class="city">
-    <a href="https://gocekonline.com/"><img src="dalaman-icon.jpg" alt="Dalaman & Göcek" /><h2>Dalaman & Göcek</h2></a>
-    <p>Discover hidden bays in Göcek, explore the stunning beaches of Sarigerme, and take a relaxing boat tour through Dalyan's ancient tombs.</p>
-  </div>
+    <h2>Explore Our Cities on the Map</h2>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e__1IS_Y_cD-vI2QxMGlT0m2K2pkJb8j" title="City Tours Map"></iframe>
 
-  <div class="city">
-    <a href="https://izmir.bel.tr/"><img src="izmir-icon.jpg" alt="Izmir" /><h2>Izmir</h2></a>
-    <p>Experience the Aegean spirit in Izmir. Stroll along Kordonboyu, visit historical Agora, and explore the lively streets of Alsancak.</p>
-  </div>
+    <div class="social-media">
+      <a href="https://www.instagram.com/shuttleport/" target="_blank">
+        <img src="instagram-icon.jpg" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@shuttleport" target="_blank">
+        <img src="tiktok-icon.jpg" alt="TikTok">
+      </a>
+    </div>
 
-  <div class="city">
-    <a href="https://bursa.bel.tr/"><img src="bursa-icon.jpg" alt="Bursa" /><h2>Bursa</h2></a>
-    <p>Visit the Green Mosque, experience the famous Turkish baths, and enjoy the cable car ride to Uludağ Mountain.</p>
-  </div>
-</section>
+  </main>
 
-<section class="map-container">
-  <h2>Explore Our Cities on the Map</h2>
-  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e__1IS_Y_cD-vI2QxMGlT0m2K2pkJb8j" title="City Tours Map"></iframe>
-</section>
-
-<section style="padding: 0 2rem;">
-  <h2 style="text-align: center; margin-top: 40px;">City Highlights</h2>
-  <div style="overflow-x: auto; white-space: nowrap; padding: 20px 0;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Topkapi_Palace_in_Istanbul.jpg/640px-Topkapi_Palace_in_Istanbul.jpg" style="height:200px; margin-right:10px; border-radius:10px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Antalya_Kaleici.jpg/640px-Antalya_Kaleici.jpg" style="height:200px; margin-right:10px; border-radius:10px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Izmir_Clock_Tower.jpg/640px-Izmir_Clock_Tower.jpg" style="height:200px; margin-right:10px; border-radius:10px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Dalaman_Bridge.jpg/640px-Dalaman_Bridge.jpg" style="height:200px; margin-right:10px; border-radius:10px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Green_Mosque_Bursa.jpg/640px-Green_Mosque_Bursa.jpg" style="height:200px; margin-right:10px; border-radius:10px;">
-  </div>
-</section>
-
-<section class="reservation-form">
-  <h2>Book Your City Tour</h2>
-  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-    <input type="text" name="Full Name" placeholder="Full Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <input type="text" name="Phone" placeholder="Phone Number" required>
-    <select name="City" required>
-      <option value="">Select City</option>
-      <option value="Istanbul">Istanbul</option>
-      <option value="Antalya">Antalya</option>
-      <option value="Dalaman & Göcek">Dalaman & Göcek</option>
-      <option value="Izmir">Izmir</option>
-      <option value="Bursa">Bursa</option>
-    </select>
-    <input type="date" name="Tour Date" required>
-    <textarea name="Notes" placeholder="Additional Notes (Optional)"></textarea>
-    <button type="submit">Reserve Now</button>
-  </form>
-</section>
-
-<section class="social-media">
-  <a href="https://www.instagram.com/shuttleport/" target="_blank">
-    <img src="instagram-icon.jpg" alt="Instagram">
-  </a>
-  <a href="https://www.tiktok.com/@shuttleport" target="_blank">
-    <img src="tiktok-icon.jpg" alt="TikTok">
-  </a>
-</section>
-
-<footer>
-  <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
-</footer>
-
+  <footer>
+    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+  </footer>
 </body>
 </html>
