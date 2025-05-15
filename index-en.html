@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,21 +9,84 @@
   <title>ShuttlePort - VIP Transfer Services</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #f2f2f2; padding: 1em; }
-    nav ul { list-style-type: none; display: flex; justify-content: center; gap: 2em; padding: 0; }
-    nav ul li a { text-decoration: none; color: #007BFF; font-weight: bold; }
-    .language-selector { position: absolute; top: 1em; right: 1em; }
-    main { padding: 2em; }
-    form { max-width: 600px; margin: auto; }
-    form label { display: block; margin-top: 1em; }
-    form input, form select, form textarea, form button {
-      width: 100%; padding: 0.5em; margin-top: 0.5em;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
+
+    header, footer { background: #fff; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; list-style: none; }
+    nav a { color: #007BFF; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    nav a:hover { text-decoration: underline; }
+
+    .language-selector {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
     }
-    section { margin-bottom: 2em; }
-    h2 { color: #007BFF; }
-    footer ul { list-style-type: none; padding: 0; }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section { margin-bottom: 2.5rem; }
+    h1, h2 { margin-bottom: 1rem; color: #007BFF; }
+    p, li { margin-bottom: 1rem; }
+
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    form label {
+      margin-top: 1rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      margin-top: 1.5rem;
+      background-color: #007BFF;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      margin-top: 4rem;
+      background: #f1f1f1;
+    }
+
+    footer h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    footer ul { list-style: none; margin-top: 1rem; }
     footer ul li a { color: #007BFF; text-decoration: none; }
+    footer ul li a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .language-selector { position: static; margin: 1rem auto; text-align: center; }
+      nav ul { flex-direction: column; align-items: center; }
+    }
   </style>
 </head>
 <body>
@@ -51,37 +113,19 @@
   <main>
     <section id="services">
       <h2>Our Services</h2>
-      <ul>
-        <li><a href="index-en.html#vip-airport">VIP Airport Transfers</a></li>
-        
-<p> ShuttlePort ensures a seamless and comfortable travel experience. We offer premium transfers to and from all major airports including Sabiha Gökçen, Istanbul Airport, Antalya, Izmir, Dalaman, and Bursa. Our VIP vehicles guarantee a smooth, on-time journey, no matter when your flight arrives. Book your transfer now and enjoy the comfort of a reliable ride. </p>
-        
-        <li><a href="city-tours-en.html">City Tours</a></li>
-
-<p> Discover the beauty of Istanbul with our exclusive day tours. From the iconic Bosphorus to historical landmarks like the Topkapi Palace, you’ll get a chance to explore the rich culture and history of Istanbul. Our expert guides will make sure you have an unforgettable experience. </p>
-        
-        <li><a href="private-shuttle-en.html">Private Transfers</a></li>
-
-        <p> Whether you’re traveling between hotels, business meetings, or events, ShuttlePort provides efficient and reliable city transfers. Our fleet of vehicles ensures a comfortable and smooth ride within the city </p>
-        
-      </ul>
+      <p><strong>VIP Airport Transfers:</strong> ShuttlePort ensures a seamless and comfortable travel experience. We offer premium transfers to and from all major airports including Sabiha Gökçen, Istanbul Airport, Antalya, Izmir, Dalaman, and Bursa.</p>
+      <p><strong>City Tours:</strong> Discover the beauty of Istanbul with our exclusive day tours. From the Bosphorus to Topkapi Palace, enjoy a rich cultural experience with our expert guides.</p>
+      <p><strong>Private Transfers:</strong> Whether it’s a hotel, business meeting, or event – we provide efficient and reliable city transport with our modern vehicle fleet.</p>
     </section>
 
     <section id="why">
       <h2>Why Choose Us?</h2>
-      <p>We offer safe and comfortable multilingual transfer services. Our experienced drivers ensure a smooth and pleasant journey. ShuttlePort is your trusted gateway to luxury transportation in Turkey. 
-
-At ShuttlePort, we prioritize your comfort and safety. Here’s why you should choose us for your next journey:
-
-Safe and Comfortable Vehicles: Our vehicles meet the highest safety standards and are equipped with the latest technology for your comfort.
-
-Timely Service: We value your time. Our punctuality ensures that you’ll never miss a flight or an important event.
-
-Customer Satisfaction: Our customers love our services, as evidenced by our high satisfaction ratings.
-
-Multilingual Support: Our customer service is available in English, German, Spanish, and Japanese to assist you in your preferred language.
-        
-      </p>
+      <ul>
+        <li>✔ Safe and Comfortable Vehicles</li>
+        <li>✔ Timely & Reliable Service</li>
+        <li>✔ High Customer Satisfaction</li>
+        <li>✔ Multilingual Support (EN, DE, ES, JP)</li>
+      </ul>
     </section>
 
     <h1>Book Your Transfer</h1>
@@ -119,48 +163,34 @@ Multilingual Support: Our customer service is available in English, German, Span
       </select>
 
       <label for="notes">Additional Notes:</label>
-      <textarea id="notes" name="notes"></textarea>
+      <textarea id="notes" name="notes" rows="4"></textarea>
 
       <button type="submit">Book Now</button>
     </form>
   </main>
 
   <footer>
-    <section>
+    <section style="padding: 2rem;">
       <h2>FAQ</h2>
-      <p>If you have any questions, please check our FAQ or contact us directly. </p>
+      <p><strong>What information do I need to make a reservation?</strong><br>
+      Name, email, phone number, pickup/drop-off locations, date & time.</p>
 
-<h1>"What information do I need to make a reservation?" </h1>
+      <p><strong>What payment methods are accepted?</strong><br>
+      Cash payment at the end of the journey.</p>
 
-<p>A: "To make a reservation, you need to provide your name, email address, phone number, pickup and drop-off locations, and the date and time of your transfer."</p>
+      <p><strong>Do you offer discounts for children?</strong><br>
+      Yes, 50% discount for children under 12.</p>
 
+      <p><strong>Which airports do you serve?</strong><br>
+      Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, Bursa.</p>
 
-<h1>"What payment methods are accepted?"</h1>
-
-<p>"A: "Payment is made in cash at the end of the journey. It is simple, secure, and easy to complete."</p>
-
-
-<h1>"Do you offer discounts for children?"</h1>
-
-<p>A: "Yes, we offer special discounts for children. Children under 12 years old travel at a 50% discount."</p>
-
-
-<h1>"Which airports do you serve?"</h1>
-
-<p>A: "We provide transfer services to all major airports, including Sabiha Gökçen, Istanbul Airport, Antalya, Izmir, Dalaman, and Bursa."</p>
-        
-      
-
-<h2> Customer Reviews </h2>
-
-<p> "Traveling with ShuttlePort was a fantastic experience! We had a smooth, on-time transfer from Istanbul Airport to our hotel in the city. Highly recommend!" – John D. </p>
-
-<p>"The day tour of Istanbul was amazing! Our guide was knowledgeable and the transportation was very comfortable. We saw all the major attractions and learned a lot about the history." – Sophia L. </p>
-
-<p> "I used ShuttlePort for a transfer from Sabiha Gökçen Airport. The driver was professional and the vehicle was comfortable. Will definitely use the service again!" – Mark T. </p>
-      
+      <h2>Customer Reviews</h2>
+      <p>"Fantastic experience from Istanbul Airport to our hotel. Highly recommend!" – John D.</p>
+      <p>"Amazing Istanbul tour, great guide and comfortable transport." – Sophia L.</p>
+      <p>"Great driver and vehicle from Sabiha Gökçen. Will use again!" – Mark T.</p>
     </section>
-    <section>
+
+    <section style="padding: 1rem 2rem;">
       <h2>Supported Airports</h2>
       <ul>
         <li><a href="https://www.istairport.com">Istanbul Airport</a></li>
@@ -198,7 +228,7 @@ Multilingual Support: Our customer service is available in English, German, Span
 
     function changeLanguage(select) {
       const lang = select.value;
-      location.href = `index-${lang}.html`;
+      window.location.href = `index-${lang}.html`;
     }
   </script>
 </body>
