@@ -3,94 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Experience unforgettable city tours with ShuttlePort. Explore historical sites, vibrant neighborhoods, and hidden gems with our professional drivers.">
-  <meta name="keywords" content="city tours, Istanbul tours, shuttle tours, guided tours, daily city tours, ShuttlePort">
+  <meta name="description" content="Explore the city with our professional city tour services. Comfort, safety, and unforgettable experiences await you.">
+  <meta name="keywords" content="City Tour, Istanbul, Antalya, Shuttle, Transfer, ShuttlePort">
   <meta name="author" content="ShuttlePort">
-  <title>City Tours | ShuttlePort</title>
+  <title>ShuttlePort | City Tours</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
   <header>
-    <h1>ShuttlePort</h1>
+    <div class="logo">
+      <a href="index-en.html"><img src="logo.png" alt="ShuttlePort Logo" /></a>
+    </div>
     <nav>
       <ul>
         <li><a href="index-en.html">Home</a></li>
-        <li><a href="airport-transfers-en.html">Airport Transfers</a></li>
-        <li><a href="city-tours-en.html">City Tours</a></li>
-        <li><a href="corporate-transfers-en.html">Corporate Transfers</a></li>
-        <li><a href="faq-en.html">FAQ</a></li>
-        <li><a href="contact-en.html">Contact</a></li>
-        <li>
-          <select onchange="changeLanguage(this)">
-            <option value="city-tours-en.html" selected>English</option>
-            <option value="city-tours-de.html">Deutsch</option>
-            <option value="city-tours-es.html">Español</option>
-            <option value="city-tours-ja.html">日本語</option>
-          </select>
-        </li>
+        <li><a href="airport-transfer-en.html">Airport Transfers</a></li>
+        <li><a href="city-tours-en.html" class="active">City Tours</a></li>
+        <li><a href="inner-city-transfer-en.html">Inner-City Transfer</a></li>
       </ul>
     </nav>
+    <div class="language-dropdown">
+      <button class="dropbtn"><img src="flags/en.png" alt="English"/> English</button>
+      <div class="dropdown-content">
+        <a href="city-tours-de.html"><img src="flags/de.png" alt="German"/> Deutsch</a>
+        <a href="city-tours-es.html"><img src="flags/es.png" alt="Spanish"/> Español</a>
+        <a href="city-tours-ja.html"><img src="flags/ja.png" alt="Japanese"/> 日本語</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Unforgettable City Tours</h2>
-      <p>Explore Istanbul and beyond with our premium city tour service. From ancient landmarks to modern hotspots, ShuttlePort offers guided city tours that bring history and culture to life. Let our experienced drivers take you through the heart of the city comfortably and safely.</p>
+    <section class="hero">
+      <h1>Unforgettable City Tours</h1>
+      <p>Discover hidden gems, rich history, and vibrant culture with our guided city tours across Istanbul, Antalya, Izmir, and more.</p>
     </section>
 
-    <section>
-      <h3>What’s Included</h3>
+    <section class="content">
+      <h2>Why Choose Our City Tours?</h2>
       <ul>
-        <li>Private vehicle and professional driver</li>
-        <li>Flexible schedule tailored to your interests</li>
-        <li>Pickup and drop-off at your location</li>
-        <li>Local recommendations and insights</li>
+        <li>Professional, multilingual local guides</li>
+        <li>Comfortable and air-conditioned vehicles</li>
+        <li>Customizable routes and flexible schedules</li>
+        <li>Free pick-up and drop-off at your hotel</li>
+        <li>Affordable pricing with no hidden costs</li>
       </ul>
     </section>
 
-    <section>
-      <h3>Popular Destinations</h3>
-      <ul>
-        <li>Sultanahmet & Blue Mosque</li>
-        <li>Hagia Sophia & Topkapı Palace</li>
-        <li>Bosphorus Coastline</li>
-        <li>Grand Bazaar & Spice Market</li>
-        <li>Asian Side Highlights</li>
-      </ul>
+    <section class="form-section">
+      <h2>Book a City Tour</h2>
+      <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="thank-you-en.html">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="Full Name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="Phone" required />
+
+        <label for="pickup">Pick-up Location:</label>
+        <input type="text" id="pickup" name="Pick-up Location" required />
+
+        <label for="destination">Tour Destination:</label>
+        <input type="text" id="destination" name="Tour Destination" required />
+
+        <label for="date">Tour Date & Time:</label>
+        <input type="datetime-local" id="date" name="Tour Date & Time" required />
+
+        <label for="passengers">Number of Guests:</label>
+        <input type="number" id="passengers" name="Number of Guests" min="1" required />
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="Notes"></textarea>
+
+        <p class="payment-info">Payment Method: Cash at the end of the tour.</p>
+
+        <button type="submit">Book Now</button>
+      </form>
     </section>
 
-    <section>
-      <h3>Interactive Map</h3>
-      <div style="width: 100%; max-width: 800px; height: 400px;">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.593838489396!2d28.97695935!3d41.0082378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9b8a1b93e23%3A0x80a35b7a2c5ad1c!2sSultanahmet%2C%20Fatih%2Fİstanbul!5e0!3m2!1sen!2str!4v1654108357770!5m2!1sen!2str" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </section>
-
-    <section>
-      <h3>Reserve Now</h3>
-      <p>Book your personalized city tour today and enjoy a seamless sightseeing experience with ShuttlePort.</p>
-      <a href="contact-en.html" class="button">Contact Us</a>
+    <section class="map">
+      <h2>Service Coverage</h2>
+      <div id="map" style="width:100%;height:400px;"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
-    <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+    <div class="footer-content">
+      <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+      <p>Contact: info@shuttleport.net</p>
+    </div>
   </footer>
 
   <script>
-    function changeLanguage(select) {
-      const page = select.value;
-      window.location.href = page;
+    function initMap() {
+      var location = { lat: 41.0082, lng: 28.9784 }; // Istanbul
+      var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: location,
+      });
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+      });
     }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap">
   </script>
 </body>
 </html>
