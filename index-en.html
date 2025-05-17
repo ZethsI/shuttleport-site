@@ -91,6 +91,23 @@
         <input type="tel" name="Phone" placeholder="Phone Number" required>
         <input type="text" name="Pickup Location" placeholder="Pickup Location" required>
         <input type="text" name="Dropoff Location" placeholder="Dropoff Location" required>
+
+      <label for="city">Stadt:</label>
+      <select id="city" name="city" required onchange="updateHotels()">
+        <option value="">Stadt wählen</option>
+        <option value="istanbul">Istanbul</option>
+        <option value="antalya">Antalya</option>
+        <option value="izmir">Izmir</option>
+        <option value="bursa">Bursa</option>
+        <option value="dalaman">Dalaman</option>
+      </select>
+
+      <label for="hotel">Hotel auswählen:</label>
+      <select id="hotel" name="hotel" required>
+        <option value="">Hotel wählen</option>
+      </select>
+
+        
         <input type="datetime-local" name="Transfer Date & Time" required>
         <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
         <select name="Payment Method">
