@@ -6,94 +6,58 @@
   <meta name="description" content="Book VIP airport transfers, city tours, and private transportation with ShuttlePort. Reliable multilingual service.">
   <meta name="keywords" content="VIP transfer, airport transfer, Istanbul shuttle, city tour, private driver">
   <meta name="author" content="ShuttlePort">
+  <meta property="og:title" content="ShuttlePort - VIP Transfer Services">
+  <meta property="og:description" content="Reliable VIP airport transfers and city tours across Turkey.">
+  <meta property="og:image" content="https://shuttleport.net/images/og-image.jpg">
+  <meta property="og:url" content="https://shuttleport.net/">
   <title>ShuttlePort - VIP Transfer Services</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Temel stil ayarları */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* Genel Stil Ayarları */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+    /* Header ve Footer */
+    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; list-style: none; }
+    nav a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    nav a:hover { text-decoration: underline; }
 
-    header, footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
+    /* Dil Seçici */
     .language-selector {
       position: absolute;
       top: 1rem;
       right: 1rem;
     }
-
-    .language-selector select {
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: none;
+    .language-selector img {
+      width: 24px;
+      height: 16px;
+      margin-left: 8px;
       cursor: pointer;
     }
 
+    /* Ana İçerik */
     main {
       max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+    section { margin-bottom: 2.5rem; }
+    h1, h2 { margin-bottom: 1rem; color: #007BFF; }
+    p, li { margin-bottom: 1rem; }
 
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    h1, h2 {
-      margin-bottom: 1rem;
-      color: #007BFF;
-    }
-
-    p, li {
-      margin-bottom: 1rem;
-    }
-
+    /* Form Stilleri */
     form {
       background: #fff;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
-
     form label {
       margin-top: 1rem;
       display: block;
       font-weight: 600;
     }
-
     form input, form select, form textarea {
       width: 100%;
       padding: 0.75rem;
@@ -101,7 +65,6 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
-
     form button {
       margin-top: 1.5rem;
       background-color: #007BFF;
@@ -112,70 +75,44 @@
       cursor: pointer;
       font-size: 1rem;
     }
-
     form button:hover {
       background-color: #0056b3;
     }
 
-    .map-container {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 450px;
-      border: 0;
-      border-radius: 10px;
-    }
-
+    /* Footer */
     footer {
-      margin-top: 4rem;
-      background: #f1f1f1;
-      color: #333;
+      background-color: #003366;
+      color: white;
+      padding: 2rem;
     }
-
     footer h2 {
       margin-bottom: 0.5rem;
     }
+    footer ul { list-style: none; margin-top: 1rem; }
+    footer ul li a { color: white; text-decoration: none; }
+    footer ul li a:hover { text-decoration: underline; }
 
-    footer ul {
-      list-style: none;
-      margin-top: 1rem;
-      padding: 0;
-    }
-
-    footer ul li a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-
-    footer ul li a:hover {
-      text-decoration: underline;
-    }
-
+    /* Responsive */
     @media (max-width: 600px) {
-      .language-selector {
-        position: static;
-        margin: 1rem auto;
-        text-align: center;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+      .language-selector { position: static; margin: 1rem auto; text-align: center; }
+      nav ul { flex-direction: column; align-items: center; }
     }
   </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
   <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="en" selected>English</option>
-      <option value="de">Deutsch</option>
-      <option value="es">Español</option>
-      <option value="ja">日本語</option>
-    </select>
+    <a href="index-en.html"><img src="flags/en.png" alt="English"></a>
+    <a href="index-de.html"><img src="flags/de.png" alt="Deutsch"></a>
+    <a href="index-es.html"><img src="flags/es.png" alt="Español"></a>
+    <a href="index-ja.html"><img src="flags/ja.png" alt="日本語"></a>
   </div>
 
   <header>
@@ -207,61 +144,52 @@
       </ul>
     </section>
 
-    <section id="booking">
-      <h1>Book Your Transfer</h1>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html" />
+    <h1>Book Your Transfer</h1>
+    <form action="https://formsubmit.co/your-email@example.com" method="POST">
+      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html" />
 
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required />
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required />
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required />
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
 
-        <label for="datetime">Date & Time:</label>
-        <input type="datetime-local" id="datetime" name="datetime" required />
+      <label for="datetime">Date & Time:</label>
+      <input type="datetime-local" id="datetime" name="datetime" required />
 
-        <label for="passengers">Number of Passengers:</label>
-        <input type="number" id="passengers" name="passengers" required />
+      <label for="passengers">Number of Passengers:</label>
+      <input type="number" id="passengers" name="passengers" required />
 
-        <label for="city">Select City:</label>
-        <select id="city" name="city" required onchange="updateHotels()">
-          <option value="">Choose a city</option>
-          <option value="istanbul">Istanbul</option>
-          <option value="antalya">Antalya</option>
-          <option value="izmir">Izmir</option>
-          <option value="bursa">Bursa</option>
-          <option value="dalaman">Dalaman</option>
-        </select>
+      <label for="city">Select City:</label>
+      <select id="city" name="city" required onchange="updateHotels()">
+        <option value="">Choose a city</option>
+        <option value="istanbul">Istanbul</option>
+        <option value="antalya">Antalya</option>
+        <option value="izmir">Izmir</option>
+        <option value="bursa">Bursa</option>
+        <option value="dalaman">Dalaman</option>
+      </select>
 
-        <label for="hotel">Select Hotel:</label>
-        <select id="hotel" name="hotel" required>
-          <option value="">Choose a hotel</option>
-        </select>
+      <label for="hotel">Select Hotel:</label>
+      <select id="hotel" name="hotel" required>
+        <option value="">Choose a hotel</option>
+      </select>
 
-        <label for="flight">Flight Number:</label>
-        <input type="text" id="flight" name="flight" />
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
 
-        <label for="notes">Additional Notes:</label>
-        <textarea id="notes" name="notes" rows="4"></textarea>
-
-        <button type="submit">Book Now</button>
-      </form>
-    </section>
-
-    <section id="coverage">
-      <h2>Service Coverage</h2>
-      <p>We proudly serve major airports and cities across Turkey. Whether you’re arriving at Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, or Bursa – we’re ready to drive you with comfort and safety.</p>
-      <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </section>
+      <button type="submit">Book Now</button>
+    </form>
   </main>
-  
+
+  <section id="coverage">
+    <h2>Service Coverage</h2>
+    <p>We proudly serve major airports and cities across Turkey. Whether you’re arriving at Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, or Bursa – we’re ready to drive you with comfort and safety.</p>
+    <div style="margin-top:20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1
+::contentReference[oaicite:30]{index=30}
+ 
