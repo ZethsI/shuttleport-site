@@ -9,23 +9,6 @@
   <title>ShuttlePort - VIP Transfer Services</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-
-   body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
-    .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
-    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
-    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
-    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
-    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
-    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background-color: #0055aa; }
-    a { text-decoration: none; color: inherit; }
-    .social-media { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
-    .social-media img { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
-    .map-container { text-align: center; margin: 40px 0; }
-    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
-    
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
 
@@ -90,15 +73,24 @@
     footer {
       margin-top: 4rem;
       background: #f1f1f1;
+      padding: 2rem;
     }
 
-    footer h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    footer ul { list-style: none; margin-top: 1rem; }
+    footer ul { list-style: none; margin-top: 1rem; padding-left: 0; }
     footer ul li a { color: #007BFF; text-decoration: none; }
     footer ul li a:hover { text-decoration: underline; }
+
+    .map-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 10px;
+    }
 
     @media (max-width: 600px) {
       .language-selector { position: static; margin: 1rem auto; text-align: center; }
@@ -130,9 +122,9 @@
   <main>
     <section id="services">
       <h2>Our Services</h2>
-      <p><strong>VIP Airport Transfers:</strong> ShuttlePort ensures a seamless and comfortable travel experience. We offer premium transfers to and from all major airports including Sabiha Gökçen, Istanbul Airport, Antalya, Izmir, Dalaman, and Bursa.</p>
-      <p><strong>City Tours:</strong> Discover the beauty of Istanbul with our exclusive day tours. From the Bosphorus to Topkapi Palace, enjoy a rich cultural experience with our expert guides.</p>
-      <p><strong>Private Transfers:</strong> Whether it’s a hotel, business meeting, or event – we provide efficient and reliable city transport with our modern vehicle fleet.</p>
+      <p><strong>VIP Airport Transfers:</strong> Premium transfers from/to all major airports including Istanbul, Sabiha Gökçen, Antalya, Izmir, Dalaman, and Bursa.</p>
+      <p><strong>City Tours:</strong> Explore Istanbul’s historical and cultural gems with our expert guides and comfortable vehicles.</p>
+      <p><strong>Private Transfers:</strong> For hotels, meetings or events – safe, timely and efficient transportation with modern fleet.</p>
     </section>
 
     <section id="why">
@@ -186,78 +178,68 @@
     </form>
   </main>
 
-  <section id="coverage">
-  <h2>Service Coverage</h2>
-  <p>We proudly serve major airports and cities across Turkey. Whether you’re arriving at Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, or Bursa – we’re ready to drive you with comfort and safety.</p>
-  <div style="margin-top:20px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
-      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-  
+  <section class="map-container">
+    <h2>Service Coverage</h2>
+    <p>Covering major Turkish airports with top-quality service.</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
   <footer>
-    <section style="padding: 2rem;">
-      <h2>FAQ</h2>
-      <p><strong>What information do I need to make a reservation?</strong><br>
-      Name, email, phone number, pickup/drop-off locations, date & time.</p>
+    <h2>FAQ</h2>
+    <p><strong>What information do I need to make a reservation?</strong><br>
+    Name, email, phone number, pickup/drop-off locations, date & time.</p>
 
-      <p><strong>What payment methods are accepted?</strong><br>
-      Cash payment at the end of the journey.</p>
+    <p><strong>What payment methods are accepted?</strong><br>
+    Cash payment at the end of the journey.</p>
 
-      <p><strong>Do you offer discounts for children?</strong><br>
-      Yes, 50% discount for children under 12.</p>
+    <p><strong>Do you offer discounts for children?</strong><br>
+    Yes, 50% discount for children under 12.</p>
 
-      <p><strong>Which airports do you serve?</strong><br>
-      Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, Bursa.</p>
+    <p><strong>Which airports do you serve?</strong><br>
+    Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, Bursa.</p>
 
-      <h2>Customer Reviews</h2>
-      <p>"Fantastic experience from Istanbul Airport to our hotel. Highly recommend!" – John D.</p>
-      <p>"Amazing Istanbul tour, great guide and comfortable transport." – Sophia L.</p>
-      <p>"Great driver and vehicle from Sabiha Gökçen. Will use again!" – Mark T.</p>
-    </section>
+    <h2>Customer Reviews</h2>
+    <p>"Fantastic experience from Istanbul Airport to our hotel. Highly recommend!" – John D.</p>
+    <p>"Amazing Istanbul tour, great guide and comfortable transport." – Sophia L.</p>
+    <p>"Great driver and vehicle from Sabiha Gökçen. Will use again!" – Mark T.</p>
 
-    <section style="padding: 1rem 2rem;">
-      <h2>Supported Airports</h2>
-      <ul>
-        <li><a href="https://www.istairport.com">Istanbul Airport</a></li>
-        <li><a href="https://www.sabihagokcen.aero/homepage">Sabiha Gökçen Airport</a></li>
-        <li><a href="https://www.antalya-airport.aero/">Antalya Airport</a></li>
-        <li><a href="https://www.adnanmenderesairport.com/">Izmir Airport</a></li>
-        <li><a href="https://www.dhmi.gov.tr/Sayfalar/Havalimani/Yenisehir/AnaSayfa.aspx">Bursa Airport</a></li>
-        <li><a href="https://www.dalamanairport.aero/">Dalaman Airport</a></li>
-      </ul>
-    </section>
+    <h2>Supported Airports</h2>
+    <ul>
+      <li><a href="https://www.istairport.com">Istanbul Airport</a></li>
+      <li><a href="https://www.sabihagokcen.aero/homepage">Sabiha Gökçen Airport</a></li>
+      <li><a href="https://www.antalya-airport.aero/">Antalya Airport</a></li>
+      <li><a href="https://www.adnanmenderesairport.com/">Izmir Airport</a></li>
+      <li><a href="https://www.dhmi.gov.tr/Sayfalar/Havalimani/Yenisehir/AnaSayfa.aspx">Bursa Airport</a></li>
+      <li><a href="https://www.dalamanairport.aero/">Dalaman Airport</a></li>
+    </ul>
   </footer>
 
   <script>
+    function changeLanguage(select) {
+      const lang = select.value;
+      window.location.href = `index-${lang}.html`;
+    }
+
     const hotels = {
       istanbul: ["Swissôtel The Bosphorus", "Çırağan Palace Kempinski", "Four Seasons Sultanahmet", "The Marmara Taksim", "Raffles Istanbul", "W Istanbul", "Hilton Istanbul Bosphorus", "Pera Palace Hotel", "Radisson Blu Şişli", "InterContinental Istanbul"],
-      antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Beach Lara", "Delphin Imperial", "Lara Barut Collection", "Concorde De Luxe", "Swandor Topkapi Palace", "Aska Lara Resort", "Royal Seginus", "Fame Residence Lara"],
-      izmir: ["Swissôtel Grand Efes", "Mövenpick Izmir", "Hilton Garden Inn", "DoubleTree by Hilton", "Izmir Marriott", "Wyndham Grand Izmir", "Key Hotel", "Renaissance Izmir", "Tav Airport Hotel", "Orty Hotel"],
-      bursa: ["Almira Hotel", "Sheraton Bursa", "Hilton Bursa", "Holiday Inn Bursa", "Ramada Bursa", "Crowne Plaza Bursa", "Hotel Anatolia", "Tiara Termal Hotel", "Baia Bursa", "Divan Bursa"],
-      dalaman: ["Hilton Dalaman", "TUI Blue Sarigerme", "D Resort Gocek", "Robinson Club Sarigerme", "Liberty Hotels Lykia", "Jiva Beach Resort", "Sentido Lykia Resort", "Hotel Greenland", "Blue Lagoon Hotel", "Alesta Yacht Hotel"]
+      antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Deluxe Lara", "Delphin Imperial", "Concorde De Luxe", "Limak Lara", "Barut Lara", "Sherwood Exclusive", "Aska Lara", "Crowne Plaza Antalya"],
+      izmir: ["Swissôtel Büyük Efes", "Wyndham Grand", "Hilton Garden Inn", "Mövenpick Hotel", "DoubleTree by Hilton", "Renaissance Izmir", "Kaya Izmir", "Park Inn by Radisson", "Ibis Hotel", "Key Hotel"],
+      bursa: ["Almira Hotel", "Crowne Plaza Bursa", "Sheraton Bursa", "Holiday Inn Bursa", "Hilton Bursa", "Divan Bursa", "Marigold Thermal", "Mövenpick Hotel", "Kervansaray Thermal", "Baia Bursa"],
+      dalaman: ["Hilton Dalaman", "TUI Magic Life", "Hotel Cactus", "Dalaman Airport Lykia Resort", "Therme Maris", "Karacan Park", "Romantik Villa Dalla", "Dalaman Resort", "Airport Guesthouse", "Otel Inci"]
     };
 
     function updateHotels() {
       const city = document.getElementById("city").value;
       const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>Choose a hotel</option>";
+      hotelSelect.innerHTML = '<option value="">Choose a hotel</option>';
       if (hotels[city]) {
         hotels[city].forEach(hotel => {
           const option = document.createElement("option");
           option.value = hotel;
-          option.textContent = hotel;
+          option.text = hotel;
           hotelSelect.appendChild(option);
         });
       }
-    }
-
-    function changeLanguage(select) {
-      const lang = select.value;
-      window.location.href = `index-${lang}.html`;
     }
   </script>
 </body>
