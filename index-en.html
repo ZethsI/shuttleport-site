@@ -6,99 +6,8 @@
   <meta name="description" content="Book VIP airport transfers, city tours, and private transportation with ShuttlePort. Reliable multilingual service.">
   <meta name="keywords" content="VIP transfer, airport transfer, Istanbul shuttle, city tour, private driver">
   <meta name="author" content="ShuttlePort">
-  <meta property="og:title" content="ShuttlePort - VIP Transfer Services">
-  <meta property="og:description" content="Reliable VIP airport transfers and city tours across Turkey.">
-  <meta property="og:image" content="https://shuttleport.net/images/og-image.jpg">
-  <meta property="og:url" content="https://shuttleport.net/">
   <title>ShuttlePort - VIP Transfer Services</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Genel Stil Ayarları */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
-
-    /* Header ve Footer */
-    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
-    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; list-style: none; }
-    nav a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
-    nav a:hover { text-decoration: underline; }
-
-    /* Dil Seçici */
-    .language-selector {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-    }
-    .language-selector img {
-      width: 24px;
-      height: 16px;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-
-    /* Ana İçerik */
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section { margin-bottom: 2.5rem; }
-    h1, h2 { margin-bottom: 1rem; color: #007BFF; }
-    p, li { margin-bottom: 1rem; }
-
-    /* Form Stilleri */
-    form {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    form label {
-      margin-top: 1rem;
-      display: block;
-      font-weight: 600;
-    }
-    form input, form select, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    form button {
-      margin-top: 1.5rem;
-      background-color: #007BFF;
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    form button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #003366;
-      color: white;
-      padding: 2rem;
-    }
-    footer h2 {
-      margin-bottom: 0.5rem;
-    }
-    footer ul { list-style: none; margin-top: 1rem; }
-    footer ul li a { color: white; text-decoration: none; }
-    footer ul li a:hover { text-decoration: underline; }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .language-selector { position: static; margin: 1rem auto; text-align: center; }
-      nav ul { flex-direction: column; align-items: center; }
-    }
-  </style>
-  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -106,16 +15,41 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
+    section { margin-bottom: 2rem; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #0055aa; }
+    iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+    footer p { margin: 0.5rem 0; }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
   <div class="language-selector">
-    <a href="index-en.html"><img src="flags/en.png" alt="English"></a>
-    <a href="index-de.html"><img src="flags/de.png" alt="Deutsch"></a>
-    <a href="index-es.html"><img src="flags/es.png" alt="Español"></a>
-    <a href="index-ja.html"><img src="flags/ja.png" alt="日本語"></a>
+    <select onchange="changeLanguage(this)">
+      <option value="en" selected>English</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="ja">日本語</option>
+    </select>
   </div>
 
   <header>
+    <h1>Welcome to ShuttlePort</h1>
     <nav>
       <ul>
         <li><a href="index-en.html">Home</a></li>
@@ -129,67 +63,70 @@
   <main>
     <section id="services">
       <h2>Our Services</h2>
-      <p><strong>VIP Airport Transfers:</strong> ShuttlePort ensures a seamless and comfortable travel experience. We offer premium transfers to and from all major airports including Sabiha Gökçen, Istanbul Airport, Antalya, Izmir, Dalaman, and Bursa.</p>
-      <p><strong>City Tours:</strong> Discover the beauty of Istanbul with our exclusive day tours. From the Bosphorus to Topkapi Palace, enjoy a rich cultural experience with our expert guides.</p>
-      <p><strong>Private Transfers:</strong> Whether it’s a hotel, business meeting, or event – we provide efficient and reliable city transport with our modern vehicle fleet.</p>
+      <ul>
+        <li>✔ Airport to Hotel VIP Transfers (Istanbul, Antalya, Izmir, Dalaman, Bursa)</li>
+        <li>✔ One-day City Tours with Private Chauffeurs</li>
+        <li>✔ Hotel to Factory or Office Private Transfers</li>
+      </ul>
     </section>
 
     <section id="why">
       <h2>Why Choose Us?</h2>
       <ul>
-        <li>✔ Safe and Comfortable Vehicles</li>
-        <li>✔ Timely & Reliable Service</li>
-        <li>✔ High Customer Satisfaction</li>
-        <li>✔ Multilingual Support (EN, DE, ES, JP)</li>
+        <li>✅ Multilingual Support (EN, DE, ES, JA)</li>
+        <li>✅ Fixed pricing per km - No hidden fees</li>
+        <li>✅ Pay in cash at the end of the trip</li>
+        <li>✅ Trusted by 10+ international hotels</li>
       </ul>
     </section>
 
-    <h1>Book Your Transfer</h1>
-    <form action="https://formsubmit.co/your-email@example.com" method="POST">
-      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html" />
+    <section id="form">
+      <h2>Reservation Form</h2>
+      <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received. We’ll contact you shortly.">
+        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
+        <input type="text" name="Full Name" placeholder="Full Name" required>
+        <input type="email" name="Email" placeholder="Email Address" required>
+        <input type="tel" name="Phone" placeholder="Phone Number" required>
+        <input type="text" name="Pickup Location" placeholder="Pickup Location" required>
+        <input type="text" name="Dropoff Location" placeholder="Dropoff Location" required>
+        <input type="datetime-local" name="Transfer Date & Time" required>
+        <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
+        <select name="Payment Method">
+          <option selected>Cash at the end of the trip</option>
+        </select>
+        <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
 
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required />
+    <section id="map">
+      <h2>We Serve These Airports</h2>
+      <p>Istanbul Airport (IST), Sabiha Gökçen (SAW), Antalya (AYT), Izmir (ADB), Dalaman (DLM), Bursa (YEI)</p>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1EJvZ6QKLRLLrLPvZsNj-n4oTkUebhV0&ehbc=2E312F" loading="lazy"></iframe>
+    </section>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required />
-
-      <label for="datetime">Date & Time:</label>
-      <input type="datetime-local" id="datetime" name="datetime" required />
-
-      <label for="passengers">Number of Passengers:</label>
-      <input type="number" id="passengers" name="passengers" required />
-
-      <label for="city">Select City:</label>
-      <select id="city" name="city" required onchange="updateHotels()">
-        <option value="">Choose a city</option>
-        <option value="istanbul">Istanbul</option>
-        <option value="antalya">Antalya</option>
-        <option value="izmir">Izmir</option>
-        <option value="bursa">Bursa</option>
-        <option value="dalaman">Dalaman</option>
-      </select>
-
-      <label for="hotel">Select Hotel:</label>
-      <select id="hotel" name="hotel" required>
-        <option value="">Choose a hotel</option>
-      </select>
-
-      <label for="notes">Additional Notes:</label>
-      <textarea id="notes" name="notes" rows="4"></textarea>
-
-      <button type="submit">Book Now</button>
-    </form>
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <ul>
+        <li><strong>How can I pay?</strong> — You pay in cash at the end of the trip.</li>
+        <li><strong>Can I cancel my booking?</strong> — Yes, up to 12 hours before your trip.</li>
+        <li><strong>Do you offer round-trip options?</strong> — Yes, contact us for more info.</li>
+      </ul>
+    </section>
   </main>
 
-  <section id="coverage">
-    <h2>Service Coverage</h2>
-    <p>We proudly serve major airports and cities across Turkey. Whether you’re arriving at Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman, or Bursa – we’re ready to drive you with comfort and safety.</p>
-    <div style="margin-top:20px;">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1
-::contentReference[oaicite:30]{index=30}
- 
+  <footer>
+    <p>&copy; 2025 ShuttlePort. All Rights Reserved.</p>
+    <p>Email: <a href="mailto:contact@shuttleport.net" style="color:white;">contact@shuttleport.net</a></p>
+  </footer>
+
+  <script>
+    function changeLanguage(select) {
+      const lang = select.value;
+      window.location.href = `index-${lang}.html`;
+    }
+  </script>
+</body>
+</html>
