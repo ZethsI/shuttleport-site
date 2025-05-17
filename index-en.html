@@ -92,9 +92,9 @@
         <input type="text" name="Pickup Location" placeholder="Pickup Location" required>
         <input type="text" name="Dropoff Location" placeholder="Dropoff Location" required>
 
-      <label for="city">Stadt:</label>
+      <label for="city">City:</label>
       <select id="city" name="city" required onchange="updateHotels()">
-        <option value="">Stadt wählen</option>
+        <option value="">City of Airport</option>
         <option value="istanbul">Istanbul</option>
         <option value="antalya">Antalya</option>
         <option value="izmir">Izmir</option>
@@ -102,17 +102,19 @@
         <option value="dalaman">Dalaman</option>
       </select>
 
-      <label for="hotel">Hotel auswählen:</label>
+      <label for="hotel">Hotel:</label>
       <select id="hotel" name="hotel" required>
-        <option value="">Hotel wählen</option>
+        <option value="">Select Hotel</option>
       </select>
 
         
         <input type="datetime-local" name="Transfer Date & Time" required>
         <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
+
         <select name="Payment Method">
           <option selected>Cash at the end of the trip</option>
         </select>
+        
         <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
         <button type="submit">Book Now</button>
       </form>
