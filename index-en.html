@@ -176,7 +176,7 @@
     function updateHotels() {
       const city = document.getElementById("city").value;
       const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>Hotel wählen</option>";
+      hotelSelect.innerHTML = "<option value=''>Select Hotel</option>";
       if (hotels[city]) {
         hotels[city].forEach(hotel => {
           const option = document.createElement("option");
