@@ -7,10 +7,42 @@
   <meta name="description" content="Find answers to frequently asked questions about airport transfers, private shuttles, and city tours with ShuttlePort.">
   <meta name="keywords" content="airport transfer FAQ, private shuttle FAQ, city tour FAQ, ShuttlePort transfers">
   <meta name="author" content="ShuttlePort">
-  <link rel="stylesheet" href="styles.css"> <!-- Eğer ortak CSS dosyan varsa -->
+ <!-- <link rel="stylesheet" href="styles.css"> <!-- Eğer ortak CSS dosyan varsa -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
+    section { margin-bottom: 2rem; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #0055aa; }
+    iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+    footer p { margin: 0.5rem 0; }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this)">
+      <option value="index-en.html" selected>English</option>
+      <option value="index-de.html">Deutsch</option>
+      <option value="index-es.html">Español</option>
+      <option value="index-ja.html">日本語</option>
+    </select>
+  </div>
+
 
 <header>
   <div class="container">
