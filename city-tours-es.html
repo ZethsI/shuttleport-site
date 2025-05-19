@@ -14,8 +14,30 @@
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
     header, footer { background: #fff; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
     
-    .logo img { height: 50px; }
-    nav ul { display: flex; flex-wrap: wrap; gap: 1.5rem; list-style: none; }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #003366; /* Arka plan isteğe göre değiştirilebilir */
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 140px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .logo-img {
+    width: 100px; /* Mobilde daha küçük göster */
+  }
+}
     
     nav a { color: #007BFF; text-decoration: none; font-weight: bold; transition: 0.3s; }
     nav a:hover, nav .active { text-decoration: underline; }
@@ -108,12 +130,14 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <a href="index-es.html"><img src="logo.png" alt="ShuttlePort Logo" /></a>
-    </div>
-    <nav>
-      <ul>
+
+<header class="site-header">
+  <div class="logo-container">
+    <a href="index-es.html">
+      <img src="VIP Ikonos Logo.jpeg" alt="ShuttlePort Logo" class="logo-img">
+    </a>
+  </div>
+  
         <li><a href="index-es.html">Inicio</a></li>
         <li><a href="airport-transfer-es.html">Traslados al Aeropuerto</a></li>
         <li><a href="city-tours-es.html" class="active">Tours por la Ciudad</a></li>
