@@ -1,243 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Explora la ciudad con nuestros tours profesionales. Comodidad, seguridad y experiencias inolvidables te esperan.">
-  <meta name="keywords" content="Tour por la ciudad, Estambul, Antalya, Shuttle, Transferencia, ShuttlePort">
-  <meta name="author" content="ShuttlePort">
-  <title>ShuttlePort | Tours por la Ciudad</title>
-  <link rel="icon" type="image/png" href="favicon.png"/>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tours por la Ciudad | ShuttlePort</title>
+  <meta name="description" content="Descubre Estambul, Antalya, Esmirna, Dalaman y Bursa con los exclusivos tours por ciudad de ShuttlePort. Experimenta la cultura, historia y belleza de los principales destinos de Turquía.">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; }
-    header, footer { background: #fff; padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-    
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #003366; /* Arka plan isteğe göre değiştirilebilir */
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.logo-container {
-  flex-shrink: 0;
-}
-
-.logo-img {
-  width: 140px;
-  height: auto;
-}
-
-@media (max-width: 600px) {
-  .logo-img {
-    width: 100px; /* Mobilde daha küçük göster */
-  }
-}
-    
-    nav a { color: #007BFF; text-decoration: none; font-weight: bold; transition: 0.3s; }
-    nav a:hover, nav .active { text-decoration: underline; }
-    .language-dropdown { position: relative; }
-    .dropbtn {
-      background-color: #fff;
-      color: #333;
-      border: 1px solid #ccc;
-      padding: 0.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .dropdown-content {
-      display: none;
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+    nav { background-color: #002244; display: flex; justify-content: center; gap: 20px; padding: 0.5rem 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-switcher {
       position: absolute;
-      right: 0;
-      background-color: #fff;
-      min-width: 160px;
-      border: 1px solid #ccc;
-      z-index: 1;
+      top: 20px;
+      right: 20px;
     }
-    .dropdown-content a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem;
-      text-decoration: none;
-      color: #333;
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-    .language-dropdown:hover .dropdown-content {
-      display: block;
-    }
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section { margin-bottom: 2.5rem; }
-    h1, h2 { margin-bottom: 1rem; color: #007BFF; }
-    p, li { margin-bottom: 1rem; }
-    form {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    form label {
-      margin-top: 1rem;
-      display: block;
-      font-weight: 600;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    form button {
-      margin-top: 1.5rem;
-      background-color: #007BFF;
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    form button:hover {
-      background-color: #0056b3;
-    }
-    .map {
-      width: 100%;
-      height: 400px;
+    .language-switcher select {
+      padding: 6px 10px;
+      border-radius: 5px;
       border: 1px solid #ccc;
     }
-    footer {
-      text-align: center;
-      background: #f1f1f1;
-      padding: 1.5rem 1rem;
-      margin-top: 4rem;
+    .language-option {
+      padding-left: 25px;
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      background-size: 20px 14px;
     }
-    @media (max-width: 600px) {
-      nav ul { flex-direction: column; align-items: center; }
-      .language-dropdown { width: 100%; text-align: center; margin-top: 1rem; }
-    }
+    .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
+    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
+    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
+    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
+    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #0055aa; }
+    a { text-decoration: none; color: inherit; }
+    .social-media { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+    .social-media img { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+    .map-container { text-align: center; margin: 40px 0; }
+    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
   </style>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="logo-container">
-    <a href="index-es.html">
-      <img src="VIP Ikonos Logo.jpeg" alt="ShuttlePort Logo" class="logo-img">
-    </a>
-  </div>
-  
-        <li><a href="index-es.html">Inicio</a></li>
-        <li><a href="airport-transfer-es.html">Traslados al Aeropuerto</a></li>
-        <li><a href="city-tours-es.html" class="active">Tours por la Ciudad</a></li>
-        <li><a href="inner-city-transfer-es.html">Traslados Urbanos</a></li>
-      </ul>
-    </nav>
-    <div class="language-dropdown">
-      <button class="dropbtn"><img src="flags/es.png" alt="Español" width="20"/> Español</button>
-      <div class="dropdown-content">
-        <a href="city-tours-en.html"><img src="flags/en.png" alt="English" width="20"/> English</a>
-        <a href="city-tours-de.html"><img src="flags/de.png" alt="Deutsch" width="20"/> Deutsch</a>
-        <a href="city-tours-ja.html"><img src="flags/ja.png" alt="日本語" width="20"/> 日本語</a>
-      </div>
+  <header>
+    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort Logo">
+    
+    <div class="language-switcher">
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
+        <option value="index-en.html" class="language-option">English 🇬🇧</option>
+        <option value="index-es.html" selected class="language-option">Español 🇪🇸</option>
+        <option value="index-ja.html" class="language-option">日本語 🇯🇵</option>
+      </select>
     </div>
+    <h1>Descubre las Principales Ciudades de Turquía</h1>
+    <p>Tours privados y exclusivos por ciudad con ShuttlePort</p>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Tours por la Ciudad Inolvidables</h1>
-      <p>Descubre joyas ocultas, historia rica y cultura vibrante con nuestros tours guiados en Estambul, Antalya, Izmir y más.</p>
-    </section>
+  <nav>
+    <a href="index-es.html">Transfer VIP Aeropuerto</a>
+    <a href="city-tours-es.html">Tours por la Ciudad</a>
+    <a href="private-shuttle-es.html">Transporte Privado</a>
+    <a href="faq-es.html">Preguntas Frecuentes</a>
+  </nav>
 
-    <section class="content">
-      <h2>¿Por Qué Elegir Nuestros Tours?</h2>
-      <ul>
-        <li>✔ Guías locales profesionales y multilingües</li>
-        <li>✔ Vehículos cómodos con aire acondicionado</li>
-        <li>✔ Rutas personalizadas y horarios flexibles</li>
-        <li>✔ Recogida y devolución gratuita en tu hotel</li>
-        <li>✔ Precios accesibles sin costos ocultos</li>
-      </ul>
-    </section>
+  <div class="banner"></div>
 
-    <section class="form-section">
-      <h2>Reserva un Tour por la Ciudad</h2>
-      <form action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="thank-you-es.html">
+  <section class="cities">
+    <div class="city">
+      <a href="https://istanbul.com/">
+        <img src="istanbul-icon.jpg" alt="Estambul">
+        <h2>Estambul</h2>
+      </a>
+      <p>Explora la rica historia de Estambul, donde Oriente se encuentra con Occidente. Visita Santa Sofía, la Mezquita Azul y disfruta de un crucero mágico por el Bósforo.</p>
+    </div>
 
-        <label for="name">Nombre Completo:</label>
-        <input type="text" id="name" name="Nombre Completo" required />
+    <div class="city">
+      <a href="https://antalya.com.tr">
+        <img src="antalya-icon.jpg" alt="Antalya">
+        <h2>Antalya</h2>
+      </a>
+      <p>Disfruta de las playas turquesas de Antalya, las antiguas ciudades como Perge y Side, y las impresionantes cascadas de Düden.</p>
+    </div>
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="Correo Electrónico" required />
+    <div class="city">
+      <a href="https://gocekonline.com">
+        <img src="dalaman-icon.jpg" alt="Dalaman y Göcek">
+        <h2>Dalaman</h2>
+      </a>
+      <p>Descubre bahías escondidas en Göcek, explora las playas de Sarigerme y haz un relajante tour en barco por las tumbas antiguas de Dalyan.</p>
+    </div>
 
-        <label for="phone">Teléfono:</label>
-        <input type="tel" id="phone" name="Teléfono" required />
+    <div class="city">
+      <a href="https://izmir.bel.tr/">
+        <img src="izmir-icon.jpg" alt="Esmirna">
+        <h2>Esmirna</h2>
+      </a>
+      <p>Siente el espíritu del Egeo en Esmirna. Pasea por el Kordon, visita el Agora histórico y explora las animadas calles de Alsancak.</p>
+    </div>
 
-        <label for="pickup">Lugar de Recogida:</label>
-        <input type="text" id="pickup" name="Lugar de Recogida" required />
+    <div class="city">
+      <a href="https://bursa.bel.tr">
+        <img src="bursa-icon.jpg" alt="Bursa">
+        <h2>Bursa</h2>
+      </a>
+      <p>Visita la Mezquita Verde, disfruta de los famosos baños turcos y sube al monte Uludağ en teleférico.</p>
+    </div>
+  </section>
 
-        <label for="destination">Destino del Tour:</label>
-        <input type="text" id="destination" name="Destino del Tour" required />
+  <section class="reservation-form">
+    <h2>Reserva Tu Tour Ahora</h2>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <input type="text" name="Full Name" placeholder="Nombre completo" required>
+      <input type="email" name="Email" placeholder="Correo electrónico" required>
+      <input type="text" name="Phone" placeholder="Número de teléfono" required>
+      <select name="City" required>
+        <option value="">Selecciona una ciudad</option>
+        <option value="Istanbul">Estambul</option>
+        <option value="Antalya">Antalya</option>
+        <option value="Dalaman & Göcek">Dalaman & Göcek</option>
+        <option value="Izmir">Esmirna</option>
+        <option value="Bursa">Bursa</option>
+      </select>
+      <input type="date" name="Tour Date" required>
+      <textarea name="Notes" placeholder="Notas adicionales (opcional)"></textarea>
+      <button type="submit">Reservar</button>
+    </form>
+  </section>
 
-        <label for="date">Fecha y Hora del Tour:</label>
-        <input type="datetime-local" id="date" name="Fecha y Hora del Tour" required />
+  <section id="coverage">
+    <h2>Área de Servicio</h2>
+    <p>Atendemos con orgullo los principales aeropuertos y ciudades de Turquía. Ya sea que llegues al Aeropuerto de Estambul, Sabiha Gökçen, Antalya, Esmirna, Dalaman o Bursa – te llevaremos a tu destino de manera cómoda y segura.</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1ses!2str!4v1683100000000!5m2!1ses!2str"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
-        <label for="passengers">Número de Personas:</label>
-        <input type="number" id="passengers" name="Número de Personas" min="1" required />
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">Síguenos en Nuestro Viaje</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
 
-        <label for="notes">Notas Adicionales:</label>
-        <textarea id="notes" name="Notas" rows="4"></textarea>
-
-        <p class="payment-info"><strong>Método de Pago:</strong> Efectivo al finalizar el tour.</p>
-
-        <button type="submit">Reservar Ahora</button>
-      </form>
-    </section>
-
-    <section id="coverage">
-      <h2>Cobertura del Servicio</h2>
-      <p>Ofrecemos nuestros servicios en los principales aeropuertos y ciudades de Turquía. Ya sea que llegues al aeropuerto de Estambul, Sabiha Gökçen, Antalya, Izmir, Dalaman o Bursa, estamos listos para llevarte con comodidad y seguridad.</p>
-      <div style="margin-top:20px;">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1ses!2str!4v1683100000000!5m2!1ses!2str"
-          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </section>
-  </main>
+  <style>
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+  </style>
 
   <footer>
     <p>&copy; 2025 ShuttlePort. Todos los derechos reservados.</p>
-    <p>Contacto: info@shuttleport.net</p>
   </footer>
 
   <script>
-    function initMap() {
-      var location = { lat: 41.0082, lng: 28.9784 };
-      var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 10,
-        center: location,
-      });
-      var marker = new google.maps.Marker({
-        position: location,
-        map: map,
-      });
+    function changeLanguage() {
+      const selected = document.getElementById("languageSelect").value;
+      window.location.href = selected;
     }
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+
 </body>
 </html>
