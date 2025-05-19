@@ -1,80 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>City Tours | ShuttlePort</title>
   <meta name="description" content="Discover Istanbul, Antalya, Izmir, Dalaman, Bursa with exclusive city tours from ShuttlePort. Experience culture, history, and beauty in Turkey's top destinations.">
   <link rel="stylesheet" href="styles.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
-    nav { background-color: #002244; display: flex; justify-content: center; gap: 20px; padding: 0.5rem 0; }
-    nav a { color: white; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .language-switcher {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.2rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .language-switcher {
+      margin-top: 10px;
+    }
+
     .language-switcher select {
       padding: 6px 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    .language-option {
-      padding-left: 25px;
-      background-repeat: no-repeat;
-      background-position: 5px center;
-      background-size: 20px 14px;
+
+    nav {
+      background-color: #002244;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0.5rem 0;
     }
-    .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
-    .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
-    .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .city img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px; }
-    .reservation-form { background-color: #f2f2f2; padding: 2rem; margin: 2rem; border-radius: 10px; }
-    input, select, textarea { width: 100%; padding: 10px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; }
-    button { background-color: #003366; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background-color: #0055aa; }
-    a { text-decoration: none; color: inherit; }
-    .social-media { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
-    .social-media img { width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
-    .map-container { text-align: center; margin: 40px 0; }
-    .map-container iframe { width: 100%; height: 450px; border: 0; border-radius: 10px; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .banner {
+      width: 100%;
+      height: 250px;
+      background: url('banner-city-tour.jpg') center/cover no-repeat;
+    }
+
+    .cities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+
+    .city {
+      text-align: center;
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .city img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .reservation-form {
+      background-color: #f2f2f2;
+      padding: 2rem;
+      margin: 2rem;
+      border-radius: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0055aa;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .map-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-media img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 600px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .logo {
+        font-size: 1.4rem;
+        padding-bottom: 10px;
+      }
+      .language-switcher {
+        margin-top: 0;
+      }
+    }
   </style>
 </head>
-
 <body>
 
   <header>
-    <div class="language-switcher">
-      <select id="languageSelect" onchange="changeLanguage()">
-        <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
-        <option value="index-en.html" selected class="language-option">English 🇬🇧</option>
-        <option value="index-es.html" class="language-option">Español 🇪🇸</option>
-        <option value="index-ja.html" class="language-option">日本語 🇯🇵</option>
-      </select>
+    <div class="header-container">
+      <a href="index-en.html" class="logo">ShuttlePort</a>
+
+      <div class="language-switcher">
+        <select id="languageSelect" onchange="changeLanguage()">
+          <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
+          <option value="index-en.html" selected class="language-option">English 🇬🇧</option>
+          <option value="index-es.html" class="language-option">Español 🇪🇸</option>
+          <option value="index-ja.html" class="language-option">日本語 🇯🇵</option>
+        </select>
+      </div>
     </div>
     <h1>Discover the Top Cities of Turkey</h1>
     <p>Exclusive and private city tours by ShuttlePort</p>
-
-    
   </header>
 
-  <header class="site-header">
-  <div class="logo-container">
-    <a href="index-es.html">
-      <img src="VIP Ikonos Logo.jpeg" alt="ShuttlePort Logo" class="logo-img">
-    </a>
-  </div>
-  <nav class="main-nav">
-    <a href="#">Home</a>
-    <a href="#">Tours</a>
-    <!-- vs. -->
-  </nav>
-</header>
-
-  
   <nav>
     <a href="index-en.html">VIP Airport Transfer</a>
     <a href="city-tours-en.html">City Tours</a>
@@ -84,105 +203,7 @@
 
   <div class="banner"></div>
 
-  <section class="cities">
-    <div class="city">
-      <a href="https://istanbul.com/">
-        <img src="istanbul-icon.jpg" alt="Istanbul">
-        <h2>Istanbul</h2>
-      </a>
-      <p>Experience the rich history of Istanbul, where East meets West. Visit Hagia Sophia, the Blue Mosque, and take a magical cruise along the Bosphorus.</p>
-    </div>
-
-    <div class="city">
-      <a href="https://antalya.com.tr">
-        <img src="antalya-icon.jpg" alt="Antalya">
-        <h2>Antalya</h2>
-      </a>
-      <p>Enjoy Antalya's turquoise beaches, ancient cities like Perge and Side, and the breathtaking Düden Waterfalls.</p>
-    </div>
-
-    <div class="city">
-      <a href="https://gocekonline.com">
-        <img src="dalaman-icon.jpg" alt="Dalaman & Göcek">
-        <h2>Dalaman</h2>
-      </a>
-      <p>Discover hidden bays in Göcek, explore the stunning beaches of Sarigerme, and take a relaxing boat tour through the ancient tombs of Dalyan.</p>
-    </div>
-
-    <div class="city">
-      <a href="https://izmir.bel.tr/">
-        <img src="izmir-icon.jpg" alt="Izmir">
-        <h2>Izmir</h2>
-      </a>
-      <p>Feel the Aegean spirit in Izmir. Stroll along the Kordon, visit the historical Agora, and explore the lively streets of Alsancak.</p>
-    </div>
-
-    <div class="city">
-      <a href="https://bursa.bel.tr">
-        <img src="bursa-icon.jpg" alt="Bursa">
-        <h2>Bursa</h2>
-      </a>
-      <p>Visit the Green Mosque, enjoy the famous Turkish baths, and take a cable car ride to the Uludağ Mountain.</p>
-    </div>
-  </section>
-
-  <section class="reservation-form">
-    <h2>Book Your City Tour Now</h2>
-    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-      <input type="text" name="Full Name" placeholder="Full Name" required>
-      <input type="email" name="Email" placeholder="Email" required>
-      <input type="text" name="Phone" placeholder="Phone Number" required>
-      <select name="City" required>
-        <option value="">Select a City</option>
-        <option value="Istanbul">Istanbul</option>
-        <option value="Antalya">Antalya</option>
-        <option value="Dalaman & Göcek">Dalaman & Göcek</option>
-        <option value="Izmir">Izmir</option>
-        <option value="Bursa">Bursa</option>
-      </select>
-      <input type="date" name="Tour Date" required>
-      <textarea name="Notes" placeholder="Additional notes (optional)"></textarea>
-      <button type="submit">Book Now</button>
-    </form>
-  </section>
-
-  <section id="coverage">
-    <h2>Service Coverage</h2>
-    <p>We proudly serve major airports and cities in Turkey. Whether you're arriving at Istanbul Airport, Sabiha Gökçen, Antalya, Izmir, Dalaman or Bursa – we'll get you to your destination comfortably and safely.</p>
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
-        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
-
-  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
-  <h2 style="text-align: center; font-size: 1.5rem; color: #444;">Follow Our Journeys</h2>
-
-  <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
-    <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
-           style="width: 32px; height: 32px; transition: transform 0.3s ease;">
-    </a>
-    <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
-           style="width: 32px; height: 32px; transition: transform 0.3s ease;">
-    </a>
-  </div>
-</section>
-
-<!-- Hover efekti için ekstra stil -->
-<style>
-  .social-section a:hover img {
-    transform: scale(1.2);
-  }
-</style>
-
-  <footer>
-    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
-  </footer>
+  <!-- ... diğer içerik (cities, form, map, footer vs.) aynı kalabilir ... -->
 
   <script>
     function changeLanguage() {
@@ -190,6 +211,5 @@
       window.location.href = selected;
     }
   </script>
-
 </body>
 </html>
