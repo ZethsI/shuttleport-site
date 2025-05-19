@@ -3,154 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ShuttlePortでVIP空港送迎、シティツアー、プライベート送迎を予約しましょう。信頼できる多言語サービスをご提供します。">
-  <meta name="keywords" content="VIP送迎, 空港送迎, イスタンブール送迎, シティツアー, プライベートドライバー">
+  <meta name="description" content="ShuttlePortでは、イスタンブール、アンタルヤ、イズミル、ブルサ、ダラマンでVIP空港送迎、観光ツアー、専用シャトルサービスを多言語対応でご提供します。">
+  <meta name="keywords" content="VIP送迎, 空港トランスファー, シャトルサービス, 都市ツアー, イスタンブール, アンタルヤ, ダラマン, イズミル, ブルサ">
   <meta name="author" content="ShuttlePort">
-  <title>ShuttlePort - VIP送迎サービス</title>
+  <title>ShuttlePort - VIP空港送迎</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header, footer {
-      background-color: #f2f2f2;
-      padding: 1em;
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      padding: 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #007BFF;
-      font-weight: bold;
-    }
-    .language-selector {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-    }
-    main {
-      padding: 2em;
-    }
-    form {
-      max-width: 600px;
-      margin: auto;
-    }
-    form label {
-      display: block;
-      margin-top: 1em;
-    }
-    form input, form select, form textarea, form button {
-      width: 100%;
-      padding: 0.5em;
-      margin-top: 0.5em;
-    }
-    section {
-      margin-bottom: 2em;
-    }
-    h2 {
-      color: #007BFF;
-    }
-    footer ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    footer ul li a {
-      color: #007BFF;
-      text-decoration: none;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: white; text-align: center; padding: 1rem 0; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: white; }
+    section { margin-bottom: 2rem; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #0055aa; }
+    iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+    footer p { margin: 0.5rem 0; }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; }
+      .language-selector { position: static; text-align: center; margin-bottom: 1rem; }
     }
   </style>
 </head>
 <body>
   <div class="language-selector">
     <select onchange="changeLanguage(this)">
-      <option value="en">English</option>
-      <option value="de">Deutsch</option>
-      <option value="es">Español</option>
-      <option value="ja" selected>日本語</option>
+      <option value="index-en.html">English</option>
+      <option value="index-de.html">Deutsch</option>
+      <option value="index-es.html">Español</option>
+      <option value="index-ja.html" selected>日本語</option>
     </select>
   </div>
 
   <header>
+    <h1>ShuttlePortへようこそ</h1>
     <nav>
       <ul>
         <li><a href="index-ja.html">ホーム</a></li>
-        <li><a href="city-tours-ja.html">シティツアー</a></li>
-        <li><a href="private-shuttle-ja.html">プライベート送迎</a></li>
-        <li><a href="faq-ja.html">FAQ</a></li>
+        <li><a href="city-tours-ja.html">市内観光ツアー</a></li>
+        <li><a href="private-shuttle-ja.html">専用シャトル</a></li>
+        <li><a href="faq-ja.html">よくある質問</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="services">
-      <h2>サービス内容</h2>
+    <section>
+      <h2>当社のサービス</h2>
       <ul>
-        <li><a href="index-ja.html#vip-airport">VIP空港送迎</a></li>
-        <li><a href="city-tours-ja.html">シティツアー</a></li>
-        <li><a href="private-shuttle-ja.html">プライベート送迎</a></li>
+        <li>✔ 空港〜ホテル送迎（イスタンブール、アンタルヤ、イズミル、ダラマン、ブルサ）</li>
+        <li>✔ プライベートドライバー付き日帰りツアー</li>
+        <li>✔ ホテル〜工場・オフィス間の都市内移動</li>
       </ul>
     </section>
 
-    <section id="why">
-      <h2>なぜ私たちを選ぶのか？</h2>
-      <p>私たちは安全で快適な多言語送迎サービスを提供しています。経験豊富なドライバーがスムーズで楽しい旅をサポートします。ShuttlePortは、トルコで信頼できるラグジュアリーな交通手段への入り口です。</p>
-    </section>
-
-    <h1>送迎予約</h1>
-    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-      <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-ja.html" />
-
-      <label for="name">氏名:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">メールアドレス:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="phone">電話番号:</label>
-      <input type="tel" id="phone" name="phone" required />
-
-      <label for="datetime">日時:</label>
-      <input type="datetime-local" id="datetime" name="datetime" required />
-
-      <label for="passengers">乗客数:</label>
-      <input type="number" id="passengers" name="passengers" required />
-
-      <label for="city">都市を選択:</label>
-      <select id="city" name="city" required onchange="updateHotels()">
-        <option value="">都市を選択</option>
-        <option value="istanbul">イスタンブール</option>
-        <option value="antalya">アンタルヤ</option>
-        <option value="izmir">イズミル</option>
-        <option value="bursa">ブルサ</option>
-        <option value="dalaman">ダラマン</option>
-      </select>
-
-      <label for="hotel">ホテルを選択:</label>
-      <select id="hotel" name="hotel" required>
-        <option value="">ホテルを選択</option>
-      </select>
-
-      <label for="notes">その他のご要望:</label>
-      <textarea id="notes" name="notes"></textarea>
-
-      <button type="submit">今すぐ予約</button>
-    </form>
-  </main>
-
-  <footer>
     <section>
-      <h2>FAQ</h2>
-      <p>ご不明な点がございましたら、FAQをご覧いただくか、お気軽にお問い合わせください。</p>
+      <h2>ShuttlePortを選ぶ理由</h2>
+      <ul>
+        <li>✅ 多言語対応：日本語、英語、ドイツ語、スペイン語</li>
+        <li>✅ 距離に基づいた固定価格 – 隠れた料金なし</li>
+        <li>✅ 支払いは乗車後、現金でOK</li>
+        <li>✅ 有名ホテルとの提携実績</li>
+      </ul>
     </section>
+
+    <section>
+      <h2>予約フォーム</h2>
+      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="ご予約ありがとうございます。まもなくご連絡いたします。">
+        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-ja.html">
+
+        <input type="text" name="お名前" placeholder="フルネーム" required>
+        <input type="email" name="メール" placeholder="メールアドレス" required>
+        <input type="tel" name="電話番号" placeholder="電話番号" required>
+        <input type="text" name="出発地" placeholder="出発地" required>
+        <input type="text" name="目的地" placeholder="目的地" required>
+
+        <label for="city">都市を選択:</label>
+        <select id="city" name="都市" required onchange="updateHotels()">
+          <option value="">都市を選択してください</option>
+          <option value="istanbul">イスタンブール</option>
+          <option value="antalya">アンタルヤ</option>
+          <option value="izmir">イズミル</option>
+          <option value="bursa">ブルサ</option>
+          <option value="dalaman">ダラマン</option>
+        </select>
+
+        <label for="hotel">ホテルを選択:</label>
+        <select id="hotel" name="ホテル" required>
+          <option value="">ホテルを選択してください</option>
+        </select>
+
+        <input type="datetime-local" name="日付と時間" required>
+        <input type="number" name="乗客数" placeholder="乗客数" min="1" required>
+
+        <select name="支払い方法">
+          <option selected>現金支払い（乗車終了時）</option>
+        </select>
+
+        <textarea name="追加のご要望" placeholder="追加のご要望..." rows="4"></textarea>
+        <button type="submit">今すぐ予約</button>
+      </form>
+    </section>
+
     <section>
       <h2>対応空港</h2>
+      <p>イスタンブール（IST）、サビハ・ギョクチェン（SAW）、アンタルヤ（AYT）、イズミル（ADB）、ダラマン（DLM）、ブルサ（YEI）</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section>
+      <h2>よくある質問</h2>
+      <ul>
+        <li><strong>支払い方法は？</strong> — 乗車終了時に現金で支払い可能です。</li>
+        <li><strong>キャンセル可能ですか？</strong> — 出発の12時間前までキャンセル無料。</li>
+        <li><strong>往復予約もできますか？</strong> — はい、詳細はお問い合わせください。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>空港リンク</h2>
       <ul>
         <li><a href="https://www.istairport.com">イスタンブール空港</a></li>
         <li><a href="https://www.sabihagokcen.aero/homepage">サビハ・ギョクチェン空港</a></li>
@@ -159,6 +138,11 @@
         <li><a href="https://www.dalamanairport.aero/">ダラマン空港</a></li>
       </ul>
     </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
+    <p>メール: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
   </footer>
 
   <script>
@@ -173,7 +157,7 @@
     function updateHotels() {
       const city = document.getElementById("city").value;
       const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>ホテルを選択</option>";
+      hotelSelect.innerHTML = "<option value=''>ホテルを選択してください</option>";
       if (hotels[city]) {
         hotels[city].forEach(hotel => {
           const option = document.createElement("option");
@@ -185,8 +169,7 @@
     }
 
     function changeLanguage(select) {
-      const lang = select.value;
-      location.href = `index-${lang}.html`;
+      window.location.href = select.value;
     }
   </script>
 </body>
