@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>都市ツアー | ShuttlePort</title>
-  <meta name="description" content="ShuttlePortでイスタンブール、アンタルヤ、イズミル、ダラマン、ブルサを含むトルコの主要都市のプライベートツアーを体験してください。歴史、文化、美しい風景を楽しんでください。">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="イスタンブール、アンタルヤ、イズミル、ダラマン、ブルサを巡る、ShuttlePortのプレミアム都市ツアーをご体験ください。トルコの魅力をプロフェッショナルガイドと共に堪能しましょう。">
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
     header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
+    nav { background-color: #002244; display: flex; justify-content: center; gap: 20px; padding: 0.5rem 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .language-switcher select {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .language-option {
+      padding-left: 25px;
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      background-size: 20px 14px;
+    }
     .banner { width: 100%; height: 250px; background: url('banner-city-tour.jpg') center/cover no-repeat; }
     .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 2rem; }
     .city { text-align: center; background: #f8f8f8; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
@@ -27,94 +46,134 @@
 
 <body>
 
-<header>
-  <h1>トルコの都市を発見しよう</h1>
-  <p>ShuttlePortでの専用プライベートツアー</p>
-</header>
+  <header>
+    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort ロゴ">
+    
+    <div class="language-switcher">
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
+        <option value="index-en.html" class="language-option">English 🇬🇧</option>
+        <option value="index-es.html" class="language-option">Español 🇪🇸</option>
+        <option value="index-ja.html" selected class="language-option">日本語 🇯🇵</option>
+      </select>
+    </div>
+    <h1>トルコの主要都市を巡る旅へようこそ</h1>
+    <p>ShuttlePortのプレミアムシティツアーで新しい発見を</p>
+  </header>
 
-<div class="banner"></div>
+  <nav>
+    <a href="index-ja.html">空港送迎</a>
+    <a href="city-tours-ja.html">都市ツアー</a>
+    <a href="private-shuttle-ja.html">市内シャトル</a>
+    <a href="faq-ja.html">よくある質問</a>
+  </nav>
 
-<section class="cities">
+  <div class="banner"></div>
 
-  <div class="city">
-    <a href="https://istanbul.com/">
-      <img src="istanbul-icon.jpg" alt="イスタンブール">
-      <h2>イスタンブール</h2>
-    </a>
-    <p>イスタンブールでオリエントとオクシデントが交わる歴史を体験してください。アヤソフィア、ブルーモスクを訪れ、ボスフォラス海峡をクルーズしましょう。</p>
-  </div>
+  <section class="cities">
+    <div class="city">
+      <a href="https://istanbul.com/">
+        <img src="istanbul-icon.jpg" alt="イスタンブール">
+        <h2>イスタンブール</h2>
+      </a>
+      <p>歴史と文化が交差する街、イスタンブール。アヤソフィア、ブルーモスク、ボスポラス海峡クルーズを体験。</p>
+    </div>
 
-  <div class="city">
-    <a href="https://antalya.com.tr/">
-      <img src="antalya-icon.jpg" alt="アンタルヤ">
-      <h2>アンタルヤ</h2>
-    </a>
-    <p>アンタルヤのターコイズブルーのビーチ、ペルゲやサイドなどの古代都市、デュデンの滝をお楽しみください。</p>
-  </div>
+    <div class="city">
+      <a href="https://antalya.com.tr">
+        <img src="antalya-icon.jpg" alt="アンタルヤ">
+        <h2>アンタルヤ</h2>
+      </a>
+      <p>エメラルドグリーンの海、古代遺跡、滝の街。ペルゲ、サイド、デュデン滝を巡る癒しの旅へ。</p>
+    </div>
 
-  <div class="city">
-    <a href="https://gocekonline.com/">
-      <img src="dalaman-icon.jpg" alt="ダラマン＆ゴチェック">
-      <h2>ダラマン＆ゴチェック</h2>
-    </a>
-    <p>ゴチェックの隠れた湾を探索し、サリゲルメのビーチでリラックスし、ダリアンの古代の墓地を巡りましょう。</p>
-  </div>
+    <div class="city">
+      <a href="https://gocekonline.com">
+        <img src="dalaman-icon.jpg" alt="ダラマン・ギョジェク">
+        <h2>ダラマン</h2>
+      </a>
+      <p>隠れた湾と静かな自然を楽しめるギョジェク。ダルヤンの古代墓やボートツアーもおすすめ。</p>
+    </div>
 
-  <div class="city">
-    <a href="https://izmir.bel.tr/">
-      <img src="izmir-icon.jpg" alt="イズミル">
-      <h2>イズミル</h2>
-    </a>
-    <p>エーゲ海の雰囲気を感じるイズミル。コルドンボユを散歩し、歴史的なアゴラを訪れ、アルサンチャクの賑やかな通りを探索しましょう。</p>
-  </div>
+    <div class="city">
+      <a href="https://izmir.bel.tr/">
+        <img src="izmir-icon.jpg" alt="イズミル">
+        <h2>イズミル</h2>
+      </a>
+      <p>エーゲ海の風を感じる港町。コルドン、アゴラ遺跡、アルサンジャクの街歩きを満喫。</p>
+    </div>
 
-  <div class="city">
-    <a href="https://bursa.bel.tr/">
-      <img src="bursa-icon.jpg" alt="ブルサ">
-      <h2>ブルサ</h2>
-    </a>
-    <p>ブルサのグリーンモスクを訪れ、有名なトルコ式浴場を楽しみ、ウルダ山のケーブルカーに乗りましょう。</p>
-  </div>
+    <div class="city">
+      <a href="https://bursa.bel.tr">
+        <img src="bursa-icon.jpg" alt="ブルサ">
+        <h2>ブルサ</h2>
+      </a>
+      <p>緑のモスク、歴史的温泉、ウルダー山のロープウェイで自然と歴史を満喫。</p>
+    </div>
+  </section>
 
-</section>
+  <section class="reservation-form">
+    <h2>今すぐツアーを予約する</h2>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <input type="text" name="Full Name" placeholder="お名前（フルネーム）" required>
+      <input type="email" name="Email" placeholder="メールアドレス" required>
+      <input type="text" name="Phone" placeholder="電話番号" required>
+      <select name="City" required>
+        <option value="">都市を選択してください</option>
+        <option value="Istanbul">イスタンブール</option>
+        <option value="Antalya">アンタルヤ</option>
+        <option value="Dalaman & Göcek">ダラマン・ギョジェク</option>
+        <option value="Izmir">イズミル</option>
+        <option value="Bursa">ブルサ</option>
+      </select>
+      <input type="date" name="Tour Date" required>
+      <textarea name="Notes" placeholder="ご要望・備考欄（任意）"></textarea>
+      <button type="submit">予約する</button>
+    </form>
+  </section>
 
-<section class="reservation-form">
-  <h2>今すぐ都市ツアーを予約</h2>
-  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-    <input type="text" name="Full Name" placeholder="フルネーム" required>
-    <input type="email" name="Email" placeholder="メールアドレス" required>
-    <input type="text" name="Phone" placeholder="電話番号" required>
-    <select name="City" required>
-      <option value="">都市を選択してください</option>
-      <option value="Istanbul">イスタンブール</option>
-      <option value="Antalya">アンタルヤ</option>
-      <option value="Dalaman & Göcek">ダラマン＆ゴチェック</option>
-      <option value="Izmir">イズミル</option>
-      <option value="Bursa">ブルサ</option>
-    </select>
-    <input type="date" name="Tour Date" required>
-    <textarea name="Notes" placeholder="追加のメモ（オプション）"></textarea>
-    <button type="submit">今すぐ予約</button>
-  </form>
-</section>
+  <section id="coverage">
+    <h2>対応エリア</h2>
+    <p>イスタンブール空港、サビハ・ギョクチェン空港、アンタルヤ、イズミル、ダラマン、ブルサの各都市でサービスをご提供しております。空港から都市内への快適で安全な送迎をお約束します。</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sja!2str!4v1683100000000!5m2!1sja!2str"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
-<section class="map-container">
-  <h2>マップで私たちの都市を発見</h2>
-  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1e__1IS_Y_cD-vI2QxMGlT0m2K2pkJb8j" title="City Tours Map"></iframe>
-</section>
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">私たちの旅をSNSでフォロー</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
 
-<section class="social-media">
-  <a href="https://www.instagram.com/shuttleport/" target="_blank">
-    <img src="instagram-icon.jpg" alt="Instagram">
-  </a>
-  <a href="https://www.tiktok.com/@shuttleport" target="_blank">
-    <img src="tiktok-icon.jpg" alt="TikTok">
-  </a>
-</section>
+  <style>
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+  </style>
 
-<footer>
-  <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
+  </footer>
+
+  <script>
+    function changeLanguage() {
+      const selected = document.getElementById("languageSelect").value;
+      window.location.href = selected;
+    }
+  </script>
 
 </body>
 </html>
