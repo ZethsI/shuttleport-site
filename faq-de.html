@@ -3,87 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FAQ - ShuttlePort</title>
+  <title>FAQ – ShuttlePort</title>
   <meta name="description" content="Hier finden Sie Antworten auf häufig gestellte Fragen zu Flughafentransfers, privaten Shuttles und Stadtrundfahrten mit ShuttlePort.">
-  <meta name="keywords" content="Flughafentransfer FAQ, privater Shuttle FAQ, Stadttour FAQ, ShuttlePort Transfers">
+  <meta name="keywords" content="Flughafentransfer FAQ, privater Shuttle FAQ, Stadtrundfahrt FAQ, ShuttlePort Transfers">
   <meta name="author" content="ShuttlePort">
-  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
+    section { margin-bottom: 2rem; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #0055aa; }
+    iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+    footer p { margin: 0.5rem 0; }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this)">
+      <option value="index-en.html">English</option>
+      <option value="index-de.html" selected>Deutsch</option>
+      <option value="index-es.html">Español</option>
+      <option value="index-ja.html">日本語</option>
+    </select>
+  </div>
 
 <header>
+  <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort Logo">
   <div class="container">
-    <h1>Häufig gestellte Fragen</h1>
-    <nav>
-      <a href="index-de.html">Startseite</a> |
-      <a href="city-tours-de.html">Stadttouren</a> |
-      <a href="private-shuttle-de.html">Privater Shuttle</a> |
-      <a href="faq-de.html" class="active">FAQ</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section class="faq">
-    <h2>Allgemeine Fragen</h2>
-
-    <div class="faq-item">
-      <h3>Wie buche ich eine Fahrt?</h3>
-      <p>Nutzen Sie einfach unser Online-Buchungsformular auf jeder Serviceseite. Füllen Sie Ihre Reisedaten aus und senden Sie das Formular ab. Wir bestätigen Ihre Buchung per E-Mail.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Welche Zahlungsmethoden werden akzeptiert?</h3>
-      <p>Wir akzeptieren derzeit Barzahlung direkt beim Fahrer am Ende der Fahrt. Einfach und sicher!</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Kann ich meine Buchung stornieren?</h3>
-      <p>Ja. Sie können Ihre Buchung bis zu 12 Stunden vor der geplanten Abholung kostenlos stornieren.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Ist der Preis fest?</h3>
-      <p>Ja, sobald Sie buchen, ist Ihr Preis garantiert. Keine versteckten Kosten oder Überraschungen!</p>
-    </div>
-
-    <h2>Flughafentransfers</h2>
-
-    <div class="faq-item">
-      <h3>Wartet der Fahrer, wenn mein Flug verspätet ist?</h3>
-      <p>Natürlich. Wir überwachen Ihren Flug in Echtzeit und passen Ihre Abholzeit ohne zusätzliche Kosten an.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Wo treffe ich den Fahrer am Flughafen?</h3>
-      <p>Unser Fahrer wartet am Ausgangstor des Flughafens und hält ein Schild mit Ihrem Namen für eine einfache Erkennung.</p>
-    </div>
-
-    <h2>Stadttouren</h2>
-
-    <div class="faq-item">
-      <h3>Was beinhaltet die Stadttour?</h3>
-      <p>Die Stadttouren beinhalten privaten Transport mit einem professionellen Fahrer. Reiseleiter und Eintrittskarten zu Sehenswürdigkeiten können auf Wunsch hinzugefügt werden.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Kann ich meine Stadttour anpassen?</h3>
-      <p>Absolut! Wir bieten flexible Reiserouten basierend auf Ihren Wünschen an. Teilen Sie uns dies einfach während des Buchungsprozesses mit.</p>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Haben Sie weitere Fragen?</h2>
-    <p>Kontaktieren Sie unser Support-Team über <a href="mailto:book@shuttleport.net">book@shuttleport.net</a>. Wir sind 24/7 für Sie da!</p>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2025 ShuttlePort. Alle Rechte vorbehalten.</p>
-  </div>
-</footer>
-
-</body>
-</html>
+    <h1>Häufig
