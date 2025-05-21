@@ -4,86 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>よくある質問 - ShuttlePort</title>
-  <meta name="description" content="ShuttlePortの空港送迎、プライベート送迎、シティツアーに関するよくある質問をご確認ください。">
-  <meta name="keywords" content="空港送迎FAQ, プライベート送迎FAQ, シティツアーFAQ, ShuttlePort トランスファー">
+  <meta name="description" content="ShuttlePortの空港送迎、プライベートシャトル、シティツアーに関するよくある質問をチェック。">
+  <meta name="keywords" content="空港送迎, よくある質問, プライベートシャトル, シティツアー, シャトルポート">
   <meta name="author" content="ShuttlePort">
-  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item h3 { margin-bottom: 0.5rem; }
+    footer p { margin: 0.5rem 0; }
+    @media (max-width: 600px) {
+      nav a { display: block; margin: 0.5rem 0; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+  </style>
+  <script>
+    function changeLanguage(sel) {
+      window.location.href = sel.value;
+    }
+  </script>
 </head>
 <body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this)">
+      <option value="index-en.html">English</option>
+      <option value="index-de.html">Deutsch</option>
+      <option value="index-es.html">Español</option>
+      <option value="index-ja.html" selected>日本語</option>
+    </select>
+  </div>
 
-<header>
-  <div class="container">
-    <h1>よくある質問</h1>
+  <header>
+    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort Logo">
+    <h1>よくある質問（FAQ）</h1>
     <nav>
-      <a href="index-ja.html">ホーム</a> |
+      <a href="index-ja.html">VIP送迎</a> |
       <a href="city-tours-ja.html">シティツアー</a> |
-      <a href="private-shuttle-ja.html">プライベート送迎</a> |
+      <a href="private-shuttle-ja.html">プライベートシャトル</a> |
       <a href="faq-ja.html" class="active">FAQ</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section class="faq">
-    <h2>一般的な質問</h2>
+  <main>
+    <section>
+      <h2>一般的な質問</h2>
+      <div class="faq-item">
+        <h3>予約方法は？</h3>
+        <p>各サービスページにある予約フォームから必要事項を記入して送信してください。確認メールをお送りします。</p>
+      </div>
+      <div class="faq-item">
+        <h3>支払い方法は？</h3>
+        <p>現在は、ドライバーへの現金支払い（乗車終了時）に対応しています。</p>
+      </div>
+      <div class="faq-item">
+        <h3>予約のキャンセルは可能ですか？</h3>
+        <p>はい。出発12時間前までのキャンセルは無料です。</p>
+      </div>
+      <div class="faq-item">
+        <h3>料金は固定ですか？</h3>
+        <p>はい、予約時の料金が確定料金です。追加料金や隠れた費用はありません。</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>どのように送迎を予約できますか？</h3>
-      <p>各サービスページにあるオンライン予約フォームに必要事項を入力し送信してください。ご予約完了後、確認メールをお送りします。</p>
-    </div>
+      <h2>空港送迎</h2>
+      <div class="faq-item">
+        <h3>フライトが遅れた場合は？</h3>
+        <p>ご安心ください。フライト情報をリアルタイムで確認し、送迎時間を無料で調整します。</p>
+      </div>
+      <div class="faq-item">
+        <h3>空港でのドライバーとの待ち合わせ場所は？</h3>
+        <p>到着ロビーでお客様の名前が書かれたサインを持ってお待ちしております。</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>支払い方法は何ですか？</h3>
-      <p>現在、移動終了後にドライバーへ現金でのお支払いをお願いしています。簡単かつ安全です！</p>
-    </div>
+      <h2>シティツアー</h2>
+      <div class="faq-item">
+        <h3>ツアーに何が含まれていますか？</h3>
+        <p>専用車とプロドライバーによる送迎が含まれます。観光地入場料やガイドはご希望に応じて追加可能です。</p>
+      </div>
+      <div class="faq-item">
+        <h3>ツアーをカスタマイズできますか？</h3>
+        <p>もちろん可能です！ご希望に応じたプランを柔軟にご提案します。</p>
+      </div>
+    </section>
 
-    <div class="faq-item">
-      <h3>予約をキャンセルできますか？</h3>
-      <p>はい。お迎え時間の12時間前までにご連絡いただければ、無料でキャンセルが可能です。</p>
-    </div>
+    <section>
+      <h2>その他のご質問は？</h2>
+      <p>お気軽に <a href="mailto:book@shuttleport.net">book@shuttleport.net</a> までお問い合わせください。年中無休で対応しております。</p>
+    </section>
+  </main>
 
-    <div class="faq-item">
-      <h3>料金は固定されていますか？</h3>
-      <p>はい。ご予約後の料金は確定し、追加料金は一切ありませんのでご安心ください。</p>
-    </div>
-
-    <h2>空港送迎</h2>
-
-    <div class="faq-item">
-      <h3>フライトが遅延した場合でもドライバーは待ってくれますか？</h3>
-      <p>もちろんです。フライト状況をリアルタイムで確認し、お迎え時間を調整いたしますのでご安心ください。</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>空港ではどこでドライバーと会えますか？</h3>
-      <p>到着ゲートの出口で、お客様のお名前が書かれたボードを持ったドライバーがお待ちしております。</p>
-    </div>
-
-    <h2>シティツアー</h2>
-
-    <div class="faq-item">
-      <h3>シティツアーには何が含まれていますか？</h3>
-      <p>プロフェッショナルなドライバーによるプライベート送迎が含まれています。観光ガイドや入場チケットはご希望に応じて追加可能です。</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>ツアー内容をカスタマイズできますか？</h3>
-      <p>はい、可能です！お客様のご希望に合わせた柔軟なプランをご提供しています。ご予約時にご相談ください。</p>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>さらに質問がありますか？</h2>
-    <p><a href="mailto:book@shuttleport.net">book@shuttleport.net</a> 宛てにご連絡ください。24時間365日対応しています！</p>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
-  </div>
-</footer>
-
+  <footer>
+    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+  </footer>
 </body>
 </html>
