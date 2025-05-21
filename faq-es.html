@@ -1,128 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Respuestas a preguntas comunes sobre ShuttlePort: servicios, pagos, reservas y más." />
-  <meta name="keywords" content="Preguntas frecuentes, ShuttlePort, Transferencias VIP, Reservas, Servicios de traslado" />
-  <meta name="author" content="ShuttlePort" />
-  <title>Preguntas Frecuentes - ShuttlePort</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ - ShuttlePort</title>
+  <meta name="description" content="Encuentra respuestas a preguntas frecuentes sobre traslados al aeropuerto, traslados privados y tours por la ciudad con ShuttlePort.">
+  <meta name="keywords" content="traslado aeropuerto preguntas frecuentes, shuttle privado, tour por la ciudad, ShuttlePort traslados">
+  <meta name="author" content="ShuttlePort">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #002244;
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 20px;
-    }
-
-    .language-selector select {
-      padding: 5px;
-      font-size: 14px;
-      border-radius: 4px;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      color: #002244;
-    }
-
-    .faq-item {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-    }
-
-    footer {
-      background-color: #002244;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
+    section { margin-bottom: 2rem; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #0055aa; }
+    iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+    footer p { margin: 0.5rem 0; }
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .language-selector {
-        margin-top: 10px;
-      }
+      nav ul { flex-direction: column; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
     }
   </style>
+  <script>
+    function changeLanguage(sel) {
+      window.location.href = sel.value;
+    }
+  </script>
 </head>
 <body>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this)">
+      <option value="index-en.html">English</option>
+      <option value="index-de.html">Deutsch</option>
+      <option value="index-es.html" selected>Español</option>
+      <option value="index-ja.html">日本語</option>
+    </select>
+  </div>
 
   <header>
-    <h1>ShuttlePort - Preguntas Frecuentes</h1>
-    <div class="language-selector">
-      <select onchange="location = this.value;">
-        <option value="faq-en.html">English</option>
-        <option value="faq-de.html">Deutsch</option>
-        <option value="faq-es.html" selected>Español</option>
-        <option value="faq-ja.html">日本語</option>
-      </select>
+    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort Logo">
+    <div class="container">
+      <h1>Preguntas Frecuentes</h1>
+      <nav>
+        <a href="index-es.html">Transfer VIP</a> |
+        <a href="city-tours-es.html">Tours por la ciudad</a> |
+        <a href="private-shuttle-es.html">Shuttle privado</a> |
+        <a href="faq-es.html" class="active">FAQ</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <div class="faq-item">
-      <h2>¿Cómo puedo reservar un traslado?</h2>
-      <p>Puede reservar fácilmente utilizando nuestro formulario en línea. Complete los detalles requeridos y recibirá una confirmación por correo electrónico.</p>
-    </div>
+  <main class="container">
+    <section class="faq">
+      <h2>Preguntas Generales</h2>
 
-    <div class="faq-item">
-      <h2>¿Qué métodos de pago aceptan?</h2>
-      <p>Aceptamos pagos en efectivo al final del viaje.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Cómo hago una reserva?</h3>
+        <p>Simplemente utiliza nuestro formulario de reserva en línea en cada página de servicio. Completa los detalles de tu viaje y envía el formulario. Confirmaremos tu reserva por correo electrónico.</p>
+      </div>
 
-    <div class="faq-item">
-      <h2>¿Cómo sabré que mi reserva está confirmada?</h2>
-      <p>Recibirá un correo electrónico de confirmación con todos los detalles de su reserva después de enviarla.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Qué métodos de pago se aceptan?</h3>
+        <p>Actualmente aceptamos pagos en efectivo directamente al conductor al final del viaje. ¡Fácil y seguro!</p>
+      </div>
 
-    <div class="faq-item">
-      <h2>¿Puedo cambiar o cancelar mi reserva?</h2>
-      <p>Sí, puede contactarnos para modificar o cancelar su reserva sin cargo hasta 12 horas antes del traslado.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Puedo cancelar mi reserva?</h3>
+        <p>Sí. Puedes cancelar tu reserva sin cargo hasta 12 horas antes de la hora programada de recogida.</p>
+      </div>
 
-    <div class="faq-item">
-      <h2>¿Qué sucede si mi vuelo se retrasa?</h2>
-      <p>Monitoreamos los vuelos en tiempo real, por lo que si su vuelo se retrasa, ajustaremos la hora de recogida sin costo adicional.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿El precio es fijo?</h3>
+        <p>Sí, una vez que reservas, tu precio está garantizado. ¡Sin cargos ocultos ni sorpresas!</p>
+      </div>
 
-    <div class="faq-item">
-      <h2>¿Puedo solicitar un asiento para niños?</h2>
-      <p>Sí, ofrecemos asientos para niños bajo pedido. Por favor, infórmenos durante el proceso de reserva.</p>
-    </div>
+      <h2>Traslados al Aeropuerto</h2>
+
+      <div class="faq-item">
+        <h3>¿El conductor me esperará si mi vuelo se retrasa?</h3>
+        <p>Por supuesto. Monitoreamos tu vuelo en tiempo real y ajustamos tu hora de recogida sin costo adicional.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Dónde encontraré al conductor en el aeropuerto?</h3>
+        <p>El conductor te esperará en la salida del aeropuerto con un cartel con tu nombre para fácil reconocimiento.</p>
+      </div>
+
+      <h2>Tours por la Ciudad</h2>
+
+      <div class="faq-item">
+        <h3>¿Qué incluye el Tour por la ciudad?</h3>
+        <p>Los tours incluyen transporte privado con conductor profesional. Las entradas y guías turísticos son opcionales y pueden añadirse a solicitud.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>¿Puedo personalizar mi tour por la ciudad?</h3>
+        <p>¡Por supuesto! Ofrecemos itinerarios flexibles según tus preferencias. Solo indícanoslo durante el proceso de reserva.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>¿Aún tienes preguntas?</h2>
+      <p>Contacta con nuestro equipo de soporte en <a href="mailto:book@shuttleport.net">book@shuttleport.net</a>. ¡Estamos disponibles 24/7 para ayudarte!</p>
+    </section>
   </main>
 
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">Síguenos en redes</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
+
+  <style>
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+  </style>
+
   <footer>
-    &copy; 2025 ShuttlePort. Todos los derechos reservados.
+    <div class="container">
+      <p>&copy; 2025 ShuttlePort. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
 </body>
