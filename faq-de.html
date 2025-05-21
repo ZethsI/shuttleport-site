@@ -2,104 +2,80 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ – ShuttlePort</title>
-  <meta name="description" content="Antworten auf häufig gestellte Fragen zu unseren Flughafentransfers, Stadtführungen und privaten Transfers." />
-  <meta name="keywords" content="Flughafentransfer, Stadtführung, privater Transport, ShuttlePort, FAQ" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Häufig gestellte Fragen (FAQ) - ShuttlePort</title>
+  <meta name="description" content="Antworten auf häufig gestellte Fragen zu Flughafentransfers, privaten Shuttles und Stadttouren mit ShuttlePort." />
+  <meta name="keywords" content="Flughafentransfer FAQ, privater Shuttle FAQ, Stadttour FAQ, ShuttlePort Transfers" />
   <meta name="author" content="ShuttlePort" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header, footer { background-color: #003366; color: white; text-align: center; padding: 1.5rem 1rem; position: relative; }
-    header img { position: absolute; top: 10px; left: 10px; height: 60px; }
-    nav ul { display: flex; justify-content: center; list-style: none; padding: 0; margin: 0; background-color: #00509e; flex-wrap: wrap; }
-    nav ul li { margin: 0.5rem 1rem; }
-    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
-    nav ul li a:hover { text-decoration: underline; }
-    .language-selector { position: absolute; top: 10px; right: 10px; }
-    .language-selector select { padding: 0.4rem; border-radius: 4px; border: none; }
-    main { max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #003366; }
-    h3 { color: #00509e; margin-top: 1.5rem; }
-    p { line-height: 1.6; margin-bottom: 1rem; }
-    footer p { margin: 0.5rem; }
-    @media (max-width: 768px) {
-      nav ul { flex-direction: column; align-items: center; }
-      .language-selector { position: static; margin-top: 1rem; }
-    }
-  </style>
-  <script>
-    function changeLanguage(select) {
-      window.location.href = select.value;
-    }
-  </script>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <h1>Häufig gestellte Fragen (FAQ)</h1>
+    <nav>
+      <a href="index-de.html">Startseite</a>
+      <a href="index-de.html#services">Unsere Dienstleistungen</a>
+      <a href="index-de.html#why-choose-us">Warum Wir?</a>
+      <a href="faq-de.html">FAQ</a>
+    </nav>
+  </header>
 
-<header>
-  <img src="VIP Ikonos Logo.jpeg" alt="ShuttlePort Logo" />
-  <h1>Häufig gestellte Fragen (FAQ)</h1>
-  <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="faq-en.html">English</option>
-      <option value="faq-de.html" selected>Deutsch</option>
-      <option value="faq-es.html">Español</option>
-      <option value="faq-ja.html">日本語</option>
-    </select>
-  </div>
-</header>
+  <main>
+    <section class="faq">
+      <h2>Allgemeine Fragen</h2>
 
-<nav>
-  <ul>
-    <li><a href="index-de.html">Startseite</a></li>
-    <li><a href="index-de.html#services">Dienstleistungen</a></li>
-    <li><a href="index-de.html#why">Warum wir</a></li>
-    <li><a href="faq-de.html">FAQ</a></li>
-    <li><a href="index-de.html#contact">Kontakt</a></li>
-  </ul>
-</nav>
+      <div class="question">
+        <h3>Wie kann ich einen Transfer buchen?</h3>
+        <p>Sie können ganz einfach über unser Online-Buchungsformular buchen, indem Sie Ihre Abhol- und Zielorte, das Datum, die Uhrzeit und die Anzahl der Passagiere angeben.</p>
+      </div>
 
-<main>
-  <h2>Allgemeine Informationen</h2>
+      <div class="question">
+        <h3>Welche Zahlungsmethoden akzeptieren Sie?</h3>
+        <p>Wir akzeptieren Barzahlung am Ende der Fahrt.</p>
+      </div>
 
-  <h3>Wie kann ich eine Buchung vornehmen?</h3>
-  <p>Füllen Sie einfach das Formular auf unserer Website aus und senden Sie es ab. Wir senden Ihnen eine Bestätigungs-E-Mail mit den Details.</p>
+      <div class="question">
+        <h3>Wie finde ich meinen Fahrer am Flughafen?</h3>
+        <p>Ihr Fahrer wird am Ausgang mit einem Schild mit Ihrem Namen auf Sie warten. Detaillierte Anweisungen erhalten Sie nach der Buchung per E-Mail.</p>
+      </div>
 
-  <h3>Welche Zahlungsmethoden bieten Sie an?</h3>
-  <p>Zurzeit akzeptieren wir ausschließlich Barzahlung am Ende der Fahrt.</p>
+      <div class="question">
+        <h3>Was passiert, wenn mein Flug Verspätung hat?</h3>
+        <p>Wir verfolgen Ihre Flugnummer und passen die Abholzeit entsprechend an, ohne zusätzliche Gebühren.</p>
+      </div>
 
-  <h3>Kann ich meine Buchung ändern oder stornieren?</h3>
-  <p>Ja, bitte kontaktieren Sie uns mindestens 12 Stunden vor dem geplanten Transferzeitpunkt.</p>
+      <div class="question">
+        <h3>Kann ich eine Fahrt stornieren?</h3>
+        <p>Ja, Sie können bis zu 12 Stunden vor der Abholzeit kostenfrei stornieren. Spätere Stornierungen können Gebühren verursachen.</p>
+      </div>
 
-  <h2>Fahrzeuge & Fahrer</h2>
+      <div class="question">
+        <h3>Bieten Sie Transfers in mehreren Sprachen an?</h3>
+        <p>Ja, unsere Website und unser Service sind in mehreren Sprachen verfügbar, darunter Englisch, Deutsch, Spanisch und Japanisch.</p>
+      </div>
 
-  <h3>Welche Fahrzeugtypen stehen zur Verfügung?</h3>
-  <p>Wir bieten komfortable VIP-Fahrzeuge wie Mercedes Vito, Sprinter und ähnliche Modelle mit Platz für 1–15 Passagiere.</p>
+      <div class="question">
+        <h3>Welche Regionen decken Sie ab?</h3>
+        <p>Wir bieten Transfers zu und von Flughäfen in Istanbul, Antalya, Izmir, Dalaman und Bursa an.</p>
+      </div>
 
-  <h3>Sind Ihre Fahrer professionell?</h3>
-  <p>Ja. Unsere Fahrer sind erfahren, mehrsprachig und kennen sich bestens mit lokalen Gegebenheiten aus.</p>
+      <div class="question">
+        <h3>Sind Ihre Fahrzeuge für Gruppen geeignet?</h3>
+        <p>Ja, wir haben eine Vielzahl von Fahrzeugen für Einzelpersonen, Familien und Gruppen.</p>
+      </div>
+    </section>
+  </main>
 
-  <h2>Dienstleistungen</h2>
-
-  <h3>Bieten Sie Flughafentransfers an?</h3>
-  <p>Ja. Wir bieten Transfers zu und von allen großen Flughäfen in Istanbul, Izmir, Antalya, Dalaman und Bursa.</p>
-
-  <h3>Kann ich auch eine Stadttour buchen?</h3>
-  <p>Selbstverständlich! Wir bieten private, maßgeschneiderte Stadttouren mit Fahrer und Fahrzeug an.</p>
-
-  <h2>Support</h2>
-
-  <h3>Wie kann ich Sie kontaktieren?</h3>
-  <p>Sie erreichen uns über das Kontaktformular auf der Website oder per E-Mail. Unser Team antwortet schnellstmöglich.</p>
-
-  <h3>Ist Ihre Website in mehreren Sprachen verfügbar?</h3>
-  <p>Ja. Unsere Website unterstützt derzeit Englisch, Deutsch, Spanisch und Japanisch.</p>
-</main>
-
-<footer>
-  <p>&copy; 2025 ShuttlePort. Alle Rechte vorbehalten.</p>
-  <p><a href="index-de.html#contact" style="color:white;">Kontaktieren Sie uns</a></p>
-</footer>
-
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 ShuttlePort. Alle Rechte vorbehalten.</p>
+      <nav>
+        <a href="index-de.html#services">Dienstleistungen</a>
+        <a href="index-de.html#why-choose-us">Warum Wir?</a>
+        <a href="faq-de.html">FAQ</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
