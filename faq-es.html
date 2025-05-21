@@ -9,83 +9,121 @@
   <title>Preguntas Frecuentes - ShuttlePort</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
-    .language-selector {
-      text-align: right;
-      margin-bottom: 10px;
+    header {
+      background-color: #002244;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
     }
 
     .language-selector select {
       padding: 5px;
       font-size: 14px;
+      border-radius: 4px;
     }
 
-    h1 {
-      color: #333;
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .faq {
-      background: #fff;
+    h2 {
+      color: #002244;
+    }
+
+    .faq-item {
+      background-color: #fff;
       padding: 20px;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-
-    .faq h2 {
-      color: #444;
-      margin-top: 20px;
-    }
-
-    .faq p {
-      line-height: 1.6;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
     footer {
-      margin-top: 40px;
+      background-color: #002244;
+      color: #fff;
       text-align: center;
-      font-size: 14px;
-      color: #999;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .language-selector {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="language-selector">
-    <select onchange="location = this.value;">
-      <option value="faq-en.html">English</option>
-      <option value="faq-de.html">Deutsch</option>
-      <option value="faq-es.html" selected>Español</option>
-      <option value="faq-ja.html">日本語</option>
-    </select>
-  </div>
 
-  <h1>Preguntas Frecuentes (FAQ)</h1>
-  <div class="faq">
-    <h2>¿Cómo puedo reservar un traslado?</h2>
-    <p>Puede reservar fácilmente utilizando nuestro formulario en línea. Complete los detalles requeridos y recibirá una confirmación por correo electrónico.</p>
+  <header>
+    <h1>ShuttlePort - Preguntas Frecuentes</h1>
+    <div class="language-selector">
+      <select onchange="location = this.value;">
+        <option value="faq-en.html">English</option>
+        <option value="faq-de.html">Deutsch</option>
+        <option value="faq-es.html" selected>Español</option>
+        <option value="faq-ja.html">日本語</option>
+      </select>
+    </div>
+  </header>
 
-    <h2>¿Qué métodos de pago aceptan?</h2>
-    <p>Aceptamos pagos en efectivo al final del viaje.</p>
+  <main>
+    <div class="faq-item">
+      <h2>¿Cómo puedo reservar un traslado?</h2>
+      <p>Puede reservar fácilmente utilizando nuestro formulario en línea. Complete los detalles requeridos y recibirá una confirmación por correo electrónico.</p>
+    </div>
 
-    <h2>¿Cómo sabré que mi reserva está confirmada?</h2>
-    <p>Recibirá un correo electrónico de confirmación con todos los detalles de su reserva después de enviarla.</p>
+    <div class="faq-item">
+      <h2>¿Qué métodos de pago aceptan?</h2>
+      <p>Aceptamos pagos en efectivo al final del viaje.</p>
+    </div>
 
-    <h2>¿Puedo cambiar o cancelar mi reserva?</h2>
-    <p>Sí, puede contactarnos para modificar o cancelar su reserva sin cargo hasta 12 horas antes del traslado.</p>
+    <div class="faq-item">
+      <h2>¿Cómo sabré que mi reserva está confirmada?</h2>
+      <p>Recibirá un correo electrónico de confirmación con todos los detalles de su reserva después de enviarla.</p>
+    </div>
 
-    <h2>¿Qué sucede si mi vuelo se retrasa?</h2>
-    <p>Monitoreamos los vuelos en tiempo real, por lo que si su vuelo se retrasa, ajustaremos la hora de recogida sin costo adicional.</p>
+    <div class="faq-item">
+      <h2>¿Puedo cambiar o cancelar mi reserva?</h2>
+      <p>Sí, puede contactarnos para modificar o cancelar su reserva sin cargo hasta 12 horas antes del traslado.</p>
+    </div>
 
-    <h2>¿Puedo solicitar un asiento para niños?</h2>
-    <p>Sí, ofrecemos asientos para niños bajo pedido. Por favor, infórmenos durante el proceso de reserva.</p>
-  </div>
+    <div class="faq-item">
+      <h2>¿Qué sucede si mi vuelo se retrasa?</h2>
+      <p>Monitoreamos los vuelos en tiempo real, por lo que si su vuelo se retrasa, ajustaremos la hora de recogida sin costo adicional.</p>
+    </div>
+
+    <div class="faq-item">
+      <h2>¿Puedo solicitar un asiento para niños?</h2>
+      <p>Sí, ofrecemos asientos para niños bajo pedido. Por favor, infórmenos durante el proceso de reserva.</p>
+    </div>
+  </main>
 
   <footer>
     &copy; 2025 ShuttlePort. Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
