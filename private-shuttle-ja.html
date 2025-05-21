@@ -1,107 +1,132 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="イスタンブール、アンタルヤ、イズミール、ダラマン、ブルサの空港へのプライベート送迎サービスを予約。快適でストレスのない移動をご提供します。">
-    <meta name="keywords" content="プライベート送迎, 空港送迎, 高級移動, イスタンブール, アンタルヤ, イズミール, ダラマン, ブルサ">
-    <meta name="author" content="ShuttlePort">
-    <title>プライベート送迎 - ShuttlePort</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="快適で安全なシャトルポートのプライベート送迎サービスを予約しましょう。" />
+  <title>プライベート送迎 | ShuttlePort</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .language-selector { position: absolute; top: 1rem; right: 1rem; }
+    .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
+    section { margin-bottom: 2rem; }
+    h2 { color: #003366; margin-bottom: 1rem; }
+    form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #003366; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 5px; cursor: pointer; }
+    form button:hover { background: #0055aa; }
+    iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+    footer p { margin: 0.5rem 0; }
+    @media (max-width: 600px) {
+      nav ul { flex-direction: column; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index-ja.html">ホーム</a></li>
-                <li><a href="city-tours-ja.html">シティツアー</a></li>
-                <li><a href="private-shuttle-ja.html">プライベート送迎</a></li>
-                <li><a href="faq-ja.html">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="language-selector">
+    <select onchange="changeLanguage(this)">
+      <option value="private-shuttle-en.html">English</option>
+      <option value="private-shuttle-de.html">Deutsch</option>
+      <option value="private-shuttle-es.html">Español</option>
+      <option value="private-shuttle-ja.html" selected>日本語</option>
+    </select>
+  </div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>空港へのプライベート送迎</h1>
-            <p>快適でストレスのない移動を提供します。イスタンブール、アンタルヤ、イズミール、ダラマン、ブルサの空港への送迎を今すぐ予約しましょう。</p>
-        </div>
-    </section>
+  <header>
+    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort ロゴ">
+    <div class="logo">
+      <a href="index-ja.html" style="color:white;">ShuttlePort</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index-ja.html">空港VIP送迎</a></li>
+        <li><a href="city-tours-ja.html">市内ツアー</a></li>
+        <li><a href="private-shuttle-ja.html" class="active">プライベート送迎</a></li>
+        <li><a href="faq-ja.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="shuttle-info">
-        <h2>プライベート送迎を選ぶ</h2>
-        <p>私たちは、イスタンブール、アンタルヤ、イズミール、ダラマン、ブルサの主要空港への安全で快適な送迎サービスを提供します。個別のニーズに合わせて、グループでの移動も対応可能です。</p>
+  <section class="hero">
+    <h1>プライベート送迎サービス</h1>
+    <p>ShuttlePortのプライベート送迎でラグジュアリーな移動体験を。</p>
+  </section>
 
-        <div class="airport-options">
-            <div class="airport-option">
-                <h3>イスタンブール</h3>
-                <p>イスタンブールの空港間の快適な送迎サービスをご提供します。プライバシーと正確な時間通りの到着を保証します。</p>
-            </div>
-            <div class="airport-option">
-                <h3>アンタルヤ</h3>
-                <p>美しいアンタルヤのビーチへ向かう快適な送迎サービスを提供します。高品質なサービスをお楽しみください。</p>
-            </div>
-            <div class="airport-option">
-                <h3>イズミール</h3>
-                <p>イズミール空港からホテルまでの直行送迎を提供します。ストレスのない快適な移動をお約束します。</p>
-            </div>
-            <div class="airport-option">
-                <h3>ダラマン</h3>
-                <p>ダラマン空港から目的地までの快適な移動をお楽しみください。個別対応のサービスです。</p>
-            </div>
-            <div class="airport-option">
-                <h3>ブルサ</h3>
-                <p>ブルサでの目的地までの高品質なプライベート送迎サービスをご提供します。</p>
-            </div>
-        </div>
-    </section>
+  <section class="about-private-shuttle">
+    <h2>なぜ当社のプライベート送迎を選ぶべきか？</h2>
+    <p>完全カスタマイズのドア・ツー・ドアサービスで、ビジネスや観光、イベントなどに最適です。プロフェッショナルなドライバーと快適な車両で、どこへでもお連れします。</p>
+    <ul>
+      <li>希望の場所でのピックアップ・ドロップオフ</li>
+      <li>24時間対応</li>
+      <li>清潔で高級な車両</li>
+      <li>英語対応ドライバー</li>
+      <li>固定料金・隠れ費用なし</li>
+    </ul>
+  </section>
 
-    <section class="reservation-form">
-        <h2>今すぐ送迎を予約</h2>
-        <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-            <label for="name">名前と苗字：</label>
-            <input type="text" id="name" name="name" required>
+  <section class="reservation">
+    <h2>今すぐ予約する</h2>
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+      <input type="hidden" name="_next" value="https://www.shuttleport.net/thank-you-ja.html">
+      <input type="text" name="name" placeholder="お名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <input type="tel" name="phone" placeholder="電話番号" required>
+      <input type="text" name="pickup" placeholder="出発地" required>
+      <input type="text" name="dropoff" placeholder="目的地" required>
+      <input type="datetime-local" name="date" required>
+      <textarea name="notes" placeholder="特記事項（任意）"></textarea>
+      <button type="submit">送信する</button>
+    </form>
+  </section>
 
-            <label for="email">メールアドレス：</label>
-            <input type="email" id="email" name="email" required>
+  <section class="map-section">
+    <h2>サービスエリア</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12030.02422744587!2d28.9760189!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba8f76d95b7d%3A0x51b88ab6525cb364!2sIstanbul!5e0!3m2!1sja!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
 
-            <label for="phone">電話番号：</label>
-            <input type="tel" id="phone" name="phone" required>
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">SNSでフォロー</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
 
-            <label for="pickup-location">ピックアップ場所：</label>
-            <input type="text" id="pickup-location" name="pickup-location" required>
+  <style>
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+  </style>
 
-            <label for="dropoff-location">ドロップオフ場所：</label>
-            <input type="text" id="dropoff-location" name="dropoff-location" required>
+  <footer>
+    <div class="footer-links">
+      <a href="index-ja.html">ホーム</a> |
+      <a href="vip-airport-transfer-ja.html">空港送迎</a> |
+      <a href="city-tours-ja.html">市内ツアー</a> |
+      <a href="private-shuttle-ja.html">プライベート送迎</a> |
+      <a href="faq-ja.html">FAQ</a>
+    </div>
+    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
+  </footer>
 
-            <label for="pickup-date">ピックアップ日時：</label>
-            <input type="datetime-local" id="pickup-date" name="pickup-date" required>
-
-            <label for="passenger-count">乗客数：</label>
-            <input type="number" id="passenger-count" name="passenger-count" required>
-
-            <label for="payment-method">支払い方法：</label>
-            <input type="text" id="payment-method" name="payment-method" value="旅行終了時に現金支払い" readonly>
-
-            <label for="extra-notes">追加のご要望：</label>
-            <textarea id="extra-notes" name="extra-notes"></textarea>
-
-            <button type="submit">今すぐ予約</button>
-        </form>
-    </section>
-
-    <section class="map">
-        <h2>空港の場所</h2>
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Kv7PAwwnmrS1tKdpd3yH9W8z3QzdgFYw" width="640" height="480" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
-        <p><a href="privacy-policy-ja.html">プライバシーポリシー</a> | <a href="terms-and-conditions-ja.html">利用規約</a></p>
-    </footer>
-
+  <script>
+    function changeLanguage(select) {
+      const selectedPage = select.value;
+      window.location.href = selectedPage;
+    }
+  </script>
 </body>
-
 </html>
