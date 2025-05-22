@@ -38,17 +38,22 @@
   </script>
 </head>
 <body>
-  <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="faq-en.html">English</option>
-      <option value="faq-de.html">Deutsch</option>
-      <option value="faq-es.html" selected>Español</option>
-      <option value="faq-ja.html">日本語</option>
-    </select>
-  </div>
+
 
   <header>
-    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort Logo">
+
+       <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
+    <div class="language-switcher">
+      <select id="languageSelect" onchange="changeLanguage(this)">
+        <option value="faq-es.html" selected class="language-option">Español 🇪🇸</option>
+        <option value="faq-en.html" class="language-option">English 🇬🇧</option>
+        <option value="faq-de.html" class="language-option">Deutsch 🇩🇪</option>
+        <option value="faq-ja.html" class="language-option">日本語 🇯🇵</option>
+      </select>
+    </div>
+  </div>
+
     <div class="container">
       <h1>Preguntas Frecuentes</h1>
       <nav>
