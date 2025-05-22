@@ -30,17 +30,22 @@
   </style>
 </head>
 <body>
-  <div class="language-selector">
-    <select onchange="changeLanguage(this)">
-      <option value="private-shuttle-en.html">English</option>
-      <option value="private-shuttle-de.html">Deutsch</option>
-      <option value="private-shuttle-es.html">Español</option>
-      <option value="private-shuttle-ja.html" selected>日本語</option>
-    </select>
-  </div>
+
 
   <header>
-    <img src="VIP Ikonos Logo.jpeg" style="position: absolute; top: 10px; left: 10px;" alt="ShuttlePort ロゴ">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
+    <div class="language-switcher">
+      <select id="languageSelect" onchange="changeLanguage(this)">
+        <option value="city-tours-ja.html" selected class="language-option">日本語 🇯🇵</option>
+        <option value="city-tours-es.html" class="language-option">Español 🇪🇸</option>
+        <option value="city-tours-de.html" class="language-option">Deutsch 🇩🇪</option>
+        <option value="city-tours-en.html" class="language-option">English 🇬🇧</option>
+      </select>
+    </div>
+  </div>
+    
     <div class="logo">
       <a href="index-ja.html" style="color:white;">ShuttlePort</a>
     </div>
