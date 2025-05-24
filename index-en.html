@@ -89,9 +89,11 @@
 
 <!-- Gelişmiş ShuttlePort Formu -->
 
+<!-- Gelişmiş ShuttlePort Formu -->
+
 <form id="booking-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
 
-  <div class="route-buttons">
+  <div class="route-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
     <button type="button" id="btn-airport-to-hotel" class="active">Airport to Hotel</button>
     <button type="button" id="btn-hotel-to-airport">Hotel to Airport</button>
   </div>
@@ -99,7 +101,6 @@
   <input type="hidden" name="Route Type" id="route-type" value="airportToHotel">
   <input type="hidden" name="Calculated Price (€)" id="calculated-price" value="">
   <input type="hidden" id="route-direction" name="Route Direction" value="Airport to Hotel">
-
 
   <label for="airport">Select Airport</label>
   <select id="airport" name="Airport" required>
@@ -117,10 +118,10 @@
 
   <label for="vehicle">Vehicle Type</label>
 
-<div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
-  Selected Route: Airport to Hotel
-</div>
-  
+  <div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
+    Selected Route: Airport to Hotel
+  </div>
+
   <select id="vehicle" name="Vehicle" required>
     <option value="Standard Van">Standard Van</option>
     <option value="Luxury Van">Luxury Van</option>
@@ -151,98 +152,127 @@
   <button type="submit" id="confirm-price-btn" style="display: none;">✅ Confirm Price & Book</button>
 </form>
 
-<script>
-const routeButtons = document.querySelectorAll(".route-buttons button");
-const routeTypeInput = document.getElementById("route-type");
-const airportSelect = document.getElementById("airport");
-const hotelSelect = document.getElementById("hotel");
-const priceDisplay = document.getElementById("price-display");
-const confirmButton = document.getElementById("confirm-price-btn");
-const calculatedPriceInput = document.getElementById("calculated-price");
-
-const hotelData = {
-  IST: ["Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim", "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"],
-  SAW: ["Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir", "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"],
-  AYT: ["Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya", "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"],
-  ADB: ["Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak", "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"],
-  DLM: ["Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek", "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"]
-};
-
-routeButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    routeButtons.forEach(btn => btn.classList.remove("active"));
-    button.classList.add("active");
-    routeTypeInput.value = button.id === "btn-airport-to-hotel" ? "airportToHotel" : "hotelToAirport";
-    populateHotels();
-    priceDisplay.innerText = "Please select route to see price";
-    confirmButton.style.display = "none";
-  });
-});
-
-airportSelect.addEventListener("change", populateHotels);
-hotelSelect.addEventListener("change", calculatePrice);
-document.getElementById("vehicle").addEventListener("change", calculatePrice);
-
-function populateHotels() {
-  const airport = airportSelect.value;
-  hotelSelect.innerHTML = "";
-  if (hotelData[airport]) {
-    hotelData[airport].forEach(hotel => {
-      const opt = document.createElement("option");
-      opt.value = hotel;
-      opt.textContent = hotel;
-      hotelSelect.appendChild(opt);
-    });
+<style>
+  .route-buttons button.active {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
   }
-  calculatePrice();
-}
 
-function calculatePrice() {
-  const airport = airportSelect.value;
-  const hotel = hotelSelect.value;
-  const vehicle = document.getElementById("vehicle").value;
-  if (!airport || !hotel || !vehicle) return;
+  .route-buttons button {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 
-  const basePrices = {
-    "Standard Van": 50,
-    "Luxury Van": 70,
-    "Minibus": 60,
-    "Business Class": 80,
-    "VIP Shuttle": 90
+  .route-buttons button:hover {
+    background-color: #e0e0e0;
+  }
+</style>
+
+<script>
+  const routeButtons = document.querySelectorAll(".route-buttons button");
+  const routeTypeInput = document.getElementById("route-type");
+  const airportSelect = document.getElementById("airport");
+  const hotelSelect = document.getElementById("hotel");
+  const priceDisplay = document.getElementById("price-display");
+  const confirmButton = document.getElementById("confirm-price-btn");
+  const calculatedPriceInput = document.getElementById("calculated-price");
+  const routeDisplay = document.getElementById("route-display");
+  const routeDirectionInput = document.getElementById("route-direction");
+
+  let routeType = "airportToHotel";
+
+  const hotelData = {
+    IST: ["Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim", "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"],
+    SAW: ["Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir", "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"],
+    AYT: ["Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya", "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"],
+    ADB: ["Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak", "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"],
+    DLM: ["Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek", "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"]
   };
 
-  const multiplier = 1 + (Math.random() * 0.2 - 0.1);
-  let avgRefPrice = basePrices[vehicle] * multiplier;
-  const finalPrice = Math.max(15, Math.floor(avgRefPrice - 5));
-
-  priceDisplay.innerText = `Calculated Price: €${finalPrice}`;
-  calculatedPriceInput.value = finalPrice;
-  confirmButton.style.display = "block";
-}
-
-   let routeType = "airportToHotel";
-
-  const btnAirportToHotel = document.getElementById("btn-airport-to-hotel");
-  const btnHotelToAirport = document.getElementById("btn-hotel-to-airport");
+  routeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedType = button.id === "btn-airport-to-hotel" ? "airportToHotel" : "hotelToAirport";
+      updateRouteType(selectedType);
+    });
+  });
 
   function updateRouteType(type) {
     routeType = type;
-    btnAirportToHotel.classList.toggle("active", type === "airportToHotel");
-    btnHotelToAirport.classList.toggle("active", type === "hotelToAirport");
 
-    const routeDisplay = document.getElementById("route-display");
-    routeDisplay.textContent = type === "airportToHotel"
-      ? "Selected Route: Airport to Hotel"
-      : "Selected Route: Hotel to Airport";
+    // Güncel butonları vurgula
+    document.getElementById("btn-airport-to-hotel").classList.remove("active");
+    document.getElementById("btn-hotel-to-airport").classList.remove("active");
 
-    document.getElementById("route-direction").value = (type === "airportToHotel")
-      ? "Airport to Hotel"
-      : "Hotel to Airport";
-  
-populateHotels();
+    if (type === "airportToHotel") {
+      document.getElementById("btn-airport-to-hotel").classList.add("active");
+      routeDisplay.textContent = "Selected Route: Airport to Hotel";
+      routeDirectionInput.value = "Airport to Hotel";
+      routeTypeInput.value = "airportToHotel";
+    } else {
+      document.getElementById("btn-hotel-to-airport").classList.add("active");
+      routeDisplay.textContent = "Selected Route: Hotel to Airport";
+      routeDirectionInput.value = "Hotel to Airport";
+      routeTypeInput.value = "hotelToAirport";
+    }
+
+    populateHotels();
+    priceDisplay.textContent = "Please select route to see price";
+    confirmButton.style.display = "none";
+  }
+
+  function populateHotels() {
+    const airport = airportSelect.value;
+    hotelSelect.innerHTML = "";
+    if (hotelData[airport]) {
+      hotelData[airport].forEach(hotel => {
+        const opt = document.createElement("option");
+        opt.value = hotel;
+        opt.textContent = hotel;
+        hotelSelect.appendChild(opt);
+      });
+    }
+    calculatePrice();
+  }
+
+  function calculatePrice() {
+    const airport = airportSelect.value;
+    const hotel = hotelSelect.value;
+    const vehicle = document.getElementById("vehicle").value;
+    if (!airport || !hotel || !vehicle) return;
+
+    const basePrices = {
+      "Standard Van": 50,
+      "Luxury Van": 70,
+      "Minibus": 60,
+      "Business Class": 80,
+      "VIP Shuttle": 90
+    };
+
+    const multiplier = 1 + (Math.random() * 0.2 - 0.1);
+    let avgRefPrice = basePrices[vehicle] * multiplier;
+    const finalPrice = Math.max(15, Math.floor(avgRefPrice - 5));
+
+    priceDisplay.textContent = `Calculated Price: €${finalPrice}`;
+    calculatedPriceInput.value = finalPrice;
+    confirmButton.style.display = "block";
+  }
+
+  airportSelect.addEventListener("change", populateHotels);
+  hotelSelect.addEventListener("change", calculatePrice);
+  document.getElementById("vehicle").addEventListener("change", calculatePrice);
+
+  // Sayfa yüklendiğinde otel listesini başlat
+  window.addEventListener("DOMContentLoaded", populateHotels);
 </script>
-
-    
 <!-- Bitiş: Form Bölümü -->
     
     <section id="map">
