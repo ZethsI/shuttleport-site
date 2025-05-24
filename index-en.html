@@ -89,7 +89,7 @@
 
 <!-- Gelişmiş ShuttlePort Formu -->
 
-<form id="booking-form" action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+<form id="booking-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
 
   <div class="route-buttons">
     <button type="button" id="btn-airport-to-hotel" class="active">Airport to Hotel</button>
@@ -98,6 +98,8 @@
 
   <input type="hidden" name="Route Type" id="route-type" value="airportToHotel">
   <input type="hidden" name="Calculated Price (€)" id="calculated-price" value="">
+  <input type="hidden" id="route-direction" name="Route Direction" value="Airport to Hotel">
+
 
   <label for="airport">Select Airport</label>
   <select id="airport" name="Airport" required>
@@ -114,6 +116,11 @@
   </select>
 
   <label for="vehicle">Vehicle Type</label>
+
+<div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
+  Selected Route: Airport to Hotel
+</div>
+  
   <select id="vehicle" name="Vehicle" required>
     <option value="Standard Van">Standard Van</option>
     <option value="Luxury Van">Luxury Van</option>
@@ -213,6 +220,25 @@ function calculatePrice() {
   confirmButton.style.display = "block";
 }
 
+   let routeType = "airportToHotel";
+
+  const btnAirportToHotel = document.getElementById("btn-airport-to-hotel");
+  const btnHotelToAirport = document.getElementById("btn-hotel-to-airport");
+
+  function updateRouteType(type) {
+    routeType = type;
+    btnAirportToHotel.classList.toggle("active", type === "airportToHotel");
+    btnHotelToAirport.classList.toggle("active", type === "hotelToAirport");
+
+    const routeDisplay = document.getElementById("route-display");
+    routeDisplay.textContent = type === "airportToHotel"
+      ? "Selected Route: Airport to Hotel"
+      : "Selected Route: Hotel to Airport";
+
+    document.getElementById("route-direction").value = (type === "airportToHotel")
+      ? "Airport to Hotel"
+      : "Hotel to Airport";
+  
 populateHotels();
 </script>
 
