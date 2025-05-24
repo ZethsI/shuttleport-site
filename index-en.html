@@ -109,6 +109,8 @@
     <input type="text" name="Full Name" placeholder="Full Name" required>
     <input type="email" name="Email" placeholder="Email Address" required>
     <input type="tel" name="Phone" placeholder="Phone Number" required>
+    <input type="hidden" name="Route Type" id="route-type-field" value="Airport to Hotel">
+
 
     <!-- Airport Selection -->
     <label for="airport-select">Airport:</label>
@@ -264,19 +266,22 @@
   }
 
   // Route Toggle
-  routeTypeButtons.airportToHotel.addEventListener("click", () => {
-    routeType = "airportToHotel";
-    routeTypeButtons.airportToHotel.classList.add("active");
-    routeTypeButtons.hotelToAirport.classList.remove("active");
-    updatePrice();
-  });
+routeTypeButtons.airportToHotel.addEventListener("click", () => {
+  routeType = "airportToHotel";
+  routeTypeButtons.airportToHotel.classList.add("active");
+  routeTypeButtons.hotelToAirport.classList.remove("active");
+  document.getElementById("route-type-field").value = "Airport to Hotel";
+  updatePrice();
+});
 
-  routeTypeButtons.hotelToAirport.addEventListener("click", () => {
-    routeType = "hotelToAirport";
-    routeTypeButtons.hotelToAirport.classList.add("active");
-    routeTypeButtons.airportToHotel.classList.remove("active");
-    updatePrice();
-  });
+routeTypeButtons.hotelToAirport.addEventListener("click", () => {
+  routeType = "hotelToAirport";
+  routeTypeButtons.hotelToAirport.classList.add("active");
+  routeTypeButtons.airportToHotel.classList.remove("active");
+  document.getElementById("route-type-field").value = "Hotel to Airport";
+  updatePrice();
+});
+
 
   airportSelect.addEventListener("change", () => {
     updateHotelOptions();
