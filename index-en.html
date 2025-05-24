@@ -88,6 +88,7 @@
     </section>
 
 <!-- Gelişmiş ShuttlePort Formu -->
+<!-- Başlangıç: Form Bölümü -->
 <section id="form">
   <h2>VIP Airport Transfer Reservation</h2>
 
@@ -98,36 +99,34 @@
   </div>
 
   <!-- Form -->
-  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+  <form id="transfer-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
     <!-- Hidden FormSubmit Settings -->
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received.">
     <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
-    <input type="hidden" name="Payment Method" value="Cash at the end of the trip">
+
+    <!-- Route Type Hidden for Email -->
+    <input type="hidden" name="Route Type" id="route-type-input" value="airportToHotel">
 
     <!-- User Info -->
     <input type="text" name="Full Name" placeholder="Full Name" required>
     <input type="email" name="Email" placeholder="Email Address" required>
     <input type="tel" name="Phone" placeholder="Phone Number" required>
-    <input type="hidden" name="Route Type" id="route-type-field" value="Airport to Hotel">
 
-
-    <!-- Airport Selection -->
+    <!-- Airport & Hotel -->
     <label for="airport-select">Airport:</label>
     <select id="airport-select" name="Airport" required></select>
 
-    <!-- Hotel Selection -->
     <label for="hotel-select">Hotel:</label>
     <select id="hotel-select" name="Hotel" required></select>
 
-    <!-- Date & Pax -->
+    <!-- Date / Pax -->
     <input type="datetime-local" name="Transfer Date & Time" required>
     <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
 
     <!-- Vehicle -->
     <label for="vehicle-select">Select Vehicle:</label>
     <select id="vehicle-select" name="Vehicle Type" required>
-      <option value="">-- Select Vehicle --</option>
       <option value="sedan">Sedan</option>
       <option value="van">Van</option>
       <option value="luxury_sedan">Luxury Sedan</option>
@@ -138,14 +137,19 @@
     <!-- Price Display -->
     <div id="price-display">Select route to see price</div>
 
+    <!-- Confirm Button -->
+    <button type="submit" id="confirm-price-btn" style="display:none; margin-top:10px;">✅ Confirm Price & Book Now</button>
+
     <!-- Notes -->
     <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
 
-    <button type="submit">Book Now</button>
+    <!-- Payment Info -->
+    <input type="hidden" name="Payment Method" value="Cash at the end of the trip">
+
   </form>
 </section>
 
-<!-- Styles -->
+<!-- Style -->
 <style>
   .toggle-btn {
     padding: 10px 20px;
@@ -166,6 +170,7 @@
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
+    box-sizing: border-box;
   }
   #price-display {
     margin-top: 10px;
@@ -173,127 +178,316 @@
     font-size: 18px;
     color: #2c3e50;
   }
+  #confirm-price-btn {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+  }
+  #confirm-price-btn:hover {
+    background-color: #218838;
+  }
 </style>
 
 <!-- Script -->
 <script>
-  const routeTypeButtons = {
-    airportToHotel: document.getElementById("btn-airport-to-hotel"),
-    hotelToAirport: document.getElementById("btn-hotel-to-airport"),
-  };
-
-  let routeType = "airportToHotel";
-
+  const btnAirportToHotel = document.getElementById("btn-airport-to-hotel");
+  const btnHotelToAirport = document.getElementById("btn-hotel-to-airport");
   const airportSelect = document.getElementById("airport-select");
   const hotelSelect = document.getElementById("hotel-select");
+  const vehicleSelect = document.getElementById("vehicle-select");
   const priceDisplay = document.getElementById("price-display");
+  const confirmBtn = document.getElementById("confirm-price-btn");
+  const routeTypeInput = document.getElementById("route-type-input");
+  const form = document.getElementById("transfer-form");
 
-  const airportData = {
-    IST: { name: "Istanbul Airport (IST)", city: "Istanbul", active: true },
-    SAW: { name: "Sabiha Gökçen Airport (SAW)", city: "Istanbul", active: true },
-    AYT: { name: "Antalya Airport (AYT)", city: "Antalya", active: true },
-    ADB: { name: "Izmir Airport (ADB)", city: "Izmir", active: true },
-    DLM: { name: "Dalaman Airport (DLM)", city: "Dalaman", active: true },
+  // Route type: airportToHotel or hotelToAirport
+  let routeType = "airportToHotel";
+
+  // Havaalanları (5 adet)
+  const airports = {
+    IST: "Istanbul Airport (IST)",
+    SAW: "Sabiha Gökçen Airport (SAW)",
+    AYT: "Antalya Airport (AYT)",
+    ADB: "Izmir Airport (ADB)",
+    DLM: "Dalaman Airport (DLM)"
   };
 
-  const hotelData = {
-    Istanbul: [
-      "Swissotel", "Ritz Carlton", "Hilton", "CVK Park Bosphorus", "Four Seasons", "Shangri-La", "W Istanbul", "Conrad", "Fairmont", "Radisson Blu"
+  // Oteller (şehir bazlı, her şehir için 10 otel, bazıları deaktif)
+  const hotels = {
+    IST: [
+      { name: "Swissotel", active: true },
+      { name: "Ritz Carlton", active: true },
+      { name: "Hilton Istanbul", active: true },
+      { name: "Marriott Istanbul", active: false },
+      { name: "Four Seasons Istanbul", active: true },
+      { name: "Radisson Blu Istanbul", active: true },
+      { name: "Sheraton Istanbul", active: false },
+      { name: "Sofitel Istanbul", active: true },
+      { name: "W Istanbul", active: true },
+      { name: "Intercontinental Istanbul", active: true }
     ],
-    Antalya: [
-      "Rixos Downtown", "Akra Hotel", "Titanic Deluxe", "Maxx Royal", "Kaya Palazzo", "Delphin Imperial", "IC Hotels", "Mardan Palace", "Sherwood Exclusive", "Barut Lara"
+    SAW: [
+      { name: "Hotel Sabiha 1", active: true },
+      { name: "Hotel Sabiha 2", active: true },
+      { name: "Hotel Sabiha 3", active: true },
+      { name: "Hotel Sabiha 4", active: false },
+      { name: "Hotel Sabiha 5", active: true },
+      { name: "Hotel Sabiha 6", active: true },
+      { name: "Hotel Sabiha 7", active: true },
+      { name: "Hotel Sabiha 8", active: false },
+      { name: "Hotel Sabiha 9", active: true },
+      { name: "Hotel Sabiha 10", active: true }
     ],
-    Izmir: [
-      "Swissotel Grand Efes", "Mövenpick", "Wyndham Grand", "Hilton Garden Inn", "Renaissance", "Marriott", "DoubleTree", "İbis Styles", "Orty Airport Hotel", "Anemon"
+    AYT: [
+      { name: "Hotel Antalya 1", active: true },
+      { name: "Hotel Antalya 2", active: true },
+      { name: "Hotel Antalya 3", active: true },
+      { name: "Hotel Antalya 4", active: false },
+      { name: "Hotel Antalya 5", active: true },
+      { name: "Hotel Antalya 6", active: true },
+      { name: "Hotel Antalya 7", active: true },
+      { name: "Hotel Antalya 8", active: false },
+      { name: "Hotel Antalya 9", active: true },
+      { name: "Hotel Antalya 10", active: true }
     ],
-    Dalaman: [
-      "Hilton Sarigerme", "TUI Blue", "D-Resort Gocek", "Liberty Hotels", "Hilton Dalaman", "Jiva Beach", "Sundia", "Green Anatolia", "Yacht Classic", "Orka Sunlife"
+    ADB: [
+      { name: "Hotel Izmir 1", active: true },
+      { name: "Hotel Izmir 2", active: true },
+      { name: "Hotel Izmir 3", active: true },
+      { name: "Hotel Izmir 4", active: false },
+      { name: "Hotel Izmir 5", active: true },
+      { name: "Hotel Izmir 6", active: true },
+      { name: "Hotel Izmir 7", active: true },
+      { name: "Hotel Izmir 8", active: false },
+      { name: "Hotel Izmir 9", active: true },
+      { name: "Hotel Izmir 10", active: true }
+    ],
+    DLM: [
+      { name: "Hotel Dalaman 1", active: true },
+      { name: "Hotel Dalaman 2", active: true },
+      { name: "Hotel Dalaman 3", active: true },
+      { name: "Hotel Dalaman 4", active: false },
+      { name: "Hotel Dalaman 5", active: true },
+      { name: "Hotel Dalaman 6", active: true },
+      { name: "Hotel Dalaman 7", active: true },
+      { name: "Hotel Dalaman 8", active: false },
+      { name: "Hotel Dalaman 9", active: true },
+      { name: "Hotel Dalaman 10", active: true }
     ]
   };
 
+  // Fiyatlar (key: "airport_hotel" veya "hotel_airport")
   const prices = {
-    "IST_Swissotel": 25,
-    "Swissotel_IST": 28,
-    "AYT_Rixos Downtown": 35,
-    "Rixos Downtown_AYT": 37,
-    "DLM_Hilton Sarigerme": 40,
-    "Hilton Sarigerme_DLM": 43,
-    // tüm kombinasyonlar burada genişletilebilir
-  };
+    "IST_Swissotel": 45,
+    "IST_Ritz Carlton": 50,
+    "IST_Hilton Istanbul": 48,
+    "IST_Marriott Istanbul": 55,
+    "IST_Four Seasons Istanbul": 60,
+    "IST_Radisson Blu Istanbul": 47,
+    "IST_Sheraton Istanbul": 53,
+    "IST_Sofitel Istanbul": 52,
+    "IST_W Istanbul": 51,
+    "IST_Intercontinental Istanbul": 58,
 
-  function updateAirportOptions() {
-    airportSelect.innerHTML = '<option value="">-- Select Airport --</option>';
-    Object.entries(airportData).forEach(([code, data]) => {
-      if (data.active) {
-        const opt = document.createElement("option");
-        opt.value = code;
-        opt.textContent = data.name;
-        airportSelect.appendChild(opt);
-      }
-    });
-  }
+    "SAW_Hotel Sabiha 1": 40,
+"SAW_Hotel Sabiha 2": 42,
+"SAW_Hotel Sabiha 3": 43,
+"SAW_Hotel Sabiha 4": 45,
+"SAW_Hotel Sabiha 5": 41,
+"SAW_Hotel Sabiha 6": 39,
+"SAW_Hotel Sabiha 7": 44,
+"SAW_Hotel Sabiha 8": 46,
+"SAW_Hotel Sabiha 9": 47,
+"SAW_Hotel Sabiha 10": 49,
 
-  function updateHotelOptions() {
-    hotelSelect.innerHTML = '<option value="">-- Select Hotel --</option>';
-    const airportCode = airportSelect.value;
-    if (!airportCode) return;
+"AYT_Hotel Antalya 1": 38,
+"AYT_Hotel Antalya 2": 39,
+"AYT_Hotel Antalya 3": 40,
+"AYT_Hotel Antalya 4": 42,
+"AYT_Hotel Antalya 5": 37,
+"AYT_Hotel Antalya 6": 36,
+"AYT_Hotel Antalya 7": 41,
+"AYT_Hotel Antalya 8": 43,
+"AYT_Hotel Antalya 9": 45,
+"AYT_Hotel Antalya 10": 46,
 
-    const airport = airportData[airportCode];
-    const cityHotels = hotelData[airport.city];
-    cityHotels.forEach(hotel => {
-      const opt = document.createElement("option");
-      opt.value = hotel;
-      opt.textContent = hotel;
-      hotelSelect.appendChild(opt);
-    });
-  }
+"ADB_Hotel Izmir 1": 34,
+"ADB_Hotel Izmir 2": 35,
+"ADB_Hotel Izmir 3": 36,
+"ADB_Hotel Izmir 4": 37,
+"ADB_Hotel Izmir 5": 38,
+"ADB_Hotel Izmir 6": 39,
+"ADB_Hotel Izmir 7": 40,
+"ADB_Hotel Izmir 8": 41,
+"ADB_Hotel Izmir 9": 42,
+"ADB_Hotel Izmir 10": 43,
 
-  function updatePrice() {
-    const airport = airportSelect.value;
-    const hotel = hotelSelect.value;
-    if (!airport || !hotel) {
-      priceDisplay.textContent = "Select route to see price";
-      return;
-    }
+"DLM_Hotel Dalaman 1": 30,
+"DLM_Hotel Dalaman 2": 31,
+"DLM_Hotel Dalaman 3": 32,
+"DLM_Hotel Dalaman 4": 33,
+"DLM_Hotel Dalaman 5": 34,
+"DLM_Hotel Dalaman 6": 35,
+"DLM_Hotel Dalaman 7": 36,
+"DLM_Hotel Dalaman 8": 37,
+"DLM_Hotel Dalaman 9": 38,
+"DLM_Hotel Dalaman 10": 39,
 
-    const key = routeType === "airportToHotel"
-      ? `${airport}_${hotel}`
-      : `${hotel}_${airport}`;
-    const price = prices[key];
-    priceDisplay.textContent = price !== undefined
-      ? `Only €${price} (cash at arrival)`
-      : "Contact us for price";
-  }
+// Ters yön fiyatları
+"Swissotel_IST": 47,
+"Ritz Carlton_IST": 52,
+"Hilton Istanbul_IST": 50,
+"Marriott Istanbul_IST": 57,
+"Four Seasons Istanbul_IST": 62,
+"Radisson Blu Istanbul_IST": 49,
+"Sheraton Istanbul_IST": 55,
+"Sofitel Istanbul_IST": 54,
+"W Istanbul_IST": 53,
+"Intercontinental Istanbul_IST": 60,
 
-  // Route Toggle
-routeTypeButtons.airportToHotel.addEventListener("click", () => {
-  routeType = "airportToHotel";
-  routeTypeButtons.airportToHotel.classList.add("active");
-  routeTypeButtons.hotelToAirport.classList.remove("active");
-  document.getElementById("route-type-field").value = "Airport to Hotel";
-  updatePrice();
+"Hotel Sabiha 1_SAW": 42,
+"Hotel Sabiha 2_SAW": 44,
+"Hotel Sabiha 3_SAW": 45,
+"Hotel Sabiha 4_SAW": 47,
+"Hotel Sabiha 5_SAW": 43,
+"Hotel Sabiha 6_SAW": 41,
+"Hotel Sabiha 7_SAW": 46,
+"Hotel Sabiha 8_SAW": 48,
+"Hotel Sabiha 9_SAW": 49,
+"Hotel Sabiha 10_SAW": 51,
+
+"Hotel Antalya 1_AYT": 39,
+"Hotel Antalya 2_AYT": 40,
+"Hotel Antalya 3_AYT": 41,
+"Hotel Antalya 4_AYT": 43,
+"Hotel Antalya 5_AYT": 38,
+"Hotel Antalya 6_AYT": 37,
+"Hotel Antalya 7_AYT": 42,
+"Hotel Antalya 8_AYT": 44,
+"Hotel Antalya 9_AYT": 46,
+"Hotel Antalya 10_AYT": 47,
+
+"Hotel Izmir 1_ADB": 35,
+"Hotel Izmir 2_ADB": 36,
+"Hotel Izmir 3_ADB": 37,
+"Hotel Izmir 4_ADB": 38,
+"Hotel Izmir 5_ADB": 39,
+"Hotel Izmir 6_ADB": 40,
+"Hotel Izmir 7_ADB": 41,
+"Hotel Izmir 8_ADB": 42,
+"Hotel Izmir 9_ADB": 43,
+"Hotel Izmir 10_ADB": 44,
+
+"Hotel Dalaman 1_DLM": 31,
+"Hotel Dalaman 2_DLM": 32,
+"Hotel Dalaman 3_DLM": 33,
+"Hotel Dalaman 4_DLM": 34,
+"Hotel Dalaman 5_DLM": 35,
+"Hotel Dalaman 6_DLM": 36,
+"Hotel Dalaman 7_DLM": 37,
+"Hotel Dalaman 8_DLM": 38,
+"Hotel Dalaman 9_DLM": 39,
+"Hotel Dalaman 10_DLM": 40
+};
+
+// --- Fonksiyonlar ---
+
+// Otelleri seçime doldur
+function populateHotels(cityCode) {
+hotelSelect.innerHTML = "";
+hotels[cityCode].forEach(hotel => {
+if(hotel.active){
+const option = document.createElement("option");
+option.value = hotel.name;
+option.textContent = hotel.name;
+hotelSelect.appendChild(option);
+}
+});
+}
+
+// Havalimanlarını seçime doldur
+function populateAirports() {
+airportSelect.innerHTML = "";
+Object.entries(airports).forEach(([code, name]) => {
+const option = document.createElement("option");
+option.value = code;
+option.textContent = name;
+airportSelect.appendChild(option);
+});
+}
+
+// Fiyat güncelleme ve gösterme
+function updatePrice() {
+let key;
+if(routeType === "airportToHotel"){
+key = airportSelect.value + "" + hotelSelect.value;
+} else {
+key = hotelSelect.value + "" + airportSelect.value;
+}
+
+const price = prices[key];
+if(price !== undefined){
+  priceDisplay.textContent = `Only €${price} (cash at arrival)`;
+  confirmBtn.style.display = "block";
+  confirmBtn.disabled = false;
+} else {
+  priceDisplay.textContent = "Contact us for price";
+  confirmBtn.style.display = "none";
+  confirmBtn.disabled = true;
+}
+}
+
+// Event Listeners
+btnAirportToHotel.addEventListener("click", () => {
+routeType = "airportToHotel";
+routeTypeInput.value = routeType;
+btnAirportToHotel.classList.add("active");
+btnHotelToAirport.classList.remove("active");
+populateAirports();
+populateHotels(airportSelect.value);
+updatePrice();
 });
 
-routeTypeButtons.hotelToAirport.addEventListener("click", () => {
-  routeType = "hotelToAirport";
-  routeTypeButtons.hotelToAirport.classList.add("active");
-  routeTypeButtons.airportToHotel.classList.remove("active");
-  document.getElementById("route-type-field").value = "Hotel to Airport";
-  updatePrice();
+btnHotelToAirport.addEventListener("click", () => {
+routeType = "hotelToAirport";
+routeTypeInput.value = routeType;
+btnHotelToAirport.classList.add("active");
+btnAirportToHotel.classList.remove("active");
+populateAirports();
+populateHotels(airportSelect.value);
+updatePrice();
 });
 
+airportSelect.addEventListener("change", () => {
+if(routeType === "airportToHotel"){
+populateHotels(airportSelect.value);
+}
+updatePrice();
+});
 
-  airportSelect.addEventListener("change", () => {
-    updateHotelOptions();
-    updatePrice();
-  });
+hotelSelect.addEventListener("change", updatePrice);
+vehicleSelect.addEventListener("change", updatePrice);
 
-  hotelSelect.addEventListener("change", updatePrice);
+// Form gönderme engelleme
+form.addEventListener("submit", e => {
+if(confirmBtn.style.display === "none"){
+e.preventDefault();
+alert("Please confirm the price before submitting your reservation.");
+}
+});
 
-  updateAirportOptions();
+// İlk yüklemede airportToHotel seçili ve doldurulmuş olsun
+window.addEventListener("load", () => {
+populateAirports();
+populateHotels(Object.keys(airports)[0]);
+updatePrice();
+});
 </script>
-
-
 
 
     <section id="map">
