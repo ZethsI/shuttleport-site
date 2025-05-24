@@ -87,6 +87,7 @@
       </ul>
     </section>
 
+<!-- Başlangıç: Form Bölümü -->
 <section id="form">
   <h2>VIP Airport Transfer Reservation</h2>
 
@@ -98,9 +99,9 @@
 
   <!-- Form -->
   <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-    <!-- Hidden FormSubmit settings -->
+    <!-- Hidden FormSubmit Settings -->
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received. We’ll contact you shortly.">
+    <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received.">
     <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
 
     <!-- User Info -->
@@ -114,6 +115,8 @@
       <option value="IST">Istanbul Airport (IST)</option>
       <option value="SAW">Sabiha Gökçen Airport (SAW)</option>
       <option value="AYT">Antalya Airport (AYT)</option>
+      <option value="ADB">Izmir Airport (ADB)</option>
+      <option value="DLM">Dalaman Airport (DLM)</option>
     </select>
 
     <label for="hotel-select">Hotel:</label>
@@ -143,13 +146,14 @@
     <!-- Notes -->
     <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
 
-    <!-- Payment Info (Not selectable anymore) -->
+    <!-- Payment Info -->
     <input type="hidden" name="Payment Method" value="Cash at the end of the trip">
 
     <button type="submit">Book Now</button>
   </form>
 </section>
 
+<!-- Style -->
 <style>
   .toggle-btn {
     padding: 10px 20px;
@@ -179,6 +183,7 @@
   }
 </style>
 
+<!-- Script -->
 <script>
   let routeType = "airportToHotel";
 
@@ -192,20 +197,19 @@
     "IST_Swissotel": 25,
     "SAW_RitzCarlton": 30,
     "AYT_Hilton": 40,
+    "ADB_Swissotel": 35,
+    "DLM_RitzCarlton": 45,
     "Swissotel_IST": 28,
     "RitzCarlton_SAW": 33,
-    "Hilton_AYT": 43
+    "Hilton_AYT": 43,
+    "Swissotel_ADB": 37,
+    "RitzCarlton_DLM": 48
   };
 
   function updateRouteType(type) {
     routeType = type;
-    if (type === "airportToHotel") {
-      btnAirportToHotel.classList.add("active");
-      btnHotelToAirport.classList.remove("active");
-    } else {
-      btnAirportToHotel.classList.remove("active");
-      btnHotelToAirport.classList.add("active");
-    }
+    btnAirportToHotel.classList.toggle("active", type === "airportToHotel");
+    btnHotelToAirport.classList.toggle("active", type === "hotelToAirport");
     updatePrice();
   }
 
@@ -214,21 +218,19 @@
       ? airportSelect.value + "_" + hotelSelect.value
       : hotelSelect.value + "_" + airportSelect.value;
     const price = prices[key];
-    if (price !== undefined) {
-      priceDisplay.textContent = `Only €${price} (cash at arrival)`;
-    } else {
-      priceDisplay.textContent = "Contact us for price";
-    }
+    priceDisplay.textContent = price !== undefined
+      ? `Only €${price} (cash at arrival)`
+      : "Contact us for price";
   }
 
   btnAirportToHotel.addEventListener("click", () => updateRouteType("airportToHotel"));
   btnHotelToAirport.addEventListener("click", () => updateRouteType("hotelToAirport"));
-
   airportSelect.addEventListener("change", updatePrice);
   hotelSelect.addEventListener("change", updatePrice);
 
   updateRouteType("airportToHotel");
 </script>
+
 
 
     <section id="map">
