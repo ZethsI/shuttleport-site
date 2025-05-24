@@ -87,45 +87,149 @@
       </ul>
     </section>
 
-    <section id="form">
-      <h2>Reservation Form</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received. We’ll contact you shortly.">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
-        <input type="text" name="Full Name" placeholder="Full Name" required>
-        <input type="email" name="Email" placeholder="Email Address" required>
-        <input type="tel" name="Phone" placeholder="Phone Number" required>
-        <input type="text" name="Pickup Location" placeholder="Pickup Location" required>
-        <input type="text" name="Dropoff Location" placeholder="Dropoff Location" required>
+<section id="form">
+  <h2>VIP Airport Transfer Reservation</h2>
 
-      <label for="city">City:</label>
-      <select id="city" name="city" required onchange="updateHotels()">
-        <option value="">City of Airport</option>
-        <option value="istanbul">Istanbul</option>
-        <option value="antalya">Antalya</option>
-        <option value="izmir">Izmir</option>
-        <option value="bursa">Bursa</option>
-        <option value="dalaman">Dalaman</option>
-      </select>
+  <!-- Route Toggle -->
+  <div>
+    <span id="btn-airport-to-hotel" class="toggle-btn active">Airport to Hotel</span>
+    <span id="btn-hotel-to-airport" class="toggle-btn">Hotel to Airport</span>
+  </div>
 
-      <label for="hotel">Hotel:</label>
-      <select id="hotel" name="hotel" required>
-        <option value="">Select Hotel</option>
-      </select>
+  <!-- Form -->
+  <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <!-- Hidden FormSubmit settings -->
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received. We’ll contact you shortly.">
+    <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
 
-        
-        <input type="datetime-local" name="Transfer Date & Time" required>
-        <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
+    <!-- User Info -->
+    <input type="text" name="Full Name" placeholder="Full Name" required>
+    <input type="email" name="Email" placeholder="Email Address" required>
+    <input type="tel" name="Phone" placeholder="Phone Number" required>
 
-        <select name="Payment Method">
-          <option selected>Cash at the end of the trip</option>
-        </select>
-        
-        <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
-        <button type="submit">Book Now</button>
-      </form>
-    </section>
+    <!-- Airport & Hotel -->
+    <label for="airport-select">Airport:</label>
+    <select id="airport-select" name="Airport" required>
+      <option value="IST">Istanbul Airport (IST)</option>
+      <option value="SAW">Sabiha Gökçen Airport (SAW)</option>
+      <option value="AYT">Antalya Airport (AYT)</option>
+    </select>
+
+    <label for="hotel-select">Hotel:</label>
+    <select id="hotel-select" name="Hotel" required>
+      <option value="Swissotel">Swissotel</option>
+      <option value="RitzCarlton">Ritz Carlton</option>
+      <option value="Hilton">Hilton</option>
+    </select>
+
+    <!-- Date / Pax -->
+    <input type="datetime-local" name="Transfer Date & Time" required>
+    <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
+
+    <!-- Vehicle -->
+    <label for="vehicle-select">Select Vehicle:</label>
+    <select id="vehicle-select" name="Vehicle Type">
+      <option value="sedan">Sedan</option>
+      <option value="van">Van</option>
+      <option value="luxury_sedan">Luxury Sedan</option>
+      <option value="suv">SUV</option>
+      <option value="minibus">Minibus</option>
+    </select>
+
+    <!-- Price Display -->
+    <div id="price-display">Select route to see price</div>
+
+    <!-- Notes -->
+    <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
+
+    <!-- Payment Info (Not selectable anymore) -->
+    <input type="hidden" name="Payment Method" value="Cash at the end of the trip">
+
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<style>
+  .toggle-btn {
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    color: #007bff;
+    background-color: white;
+    margin: 10px 5px;
+    border-radius: 4px;
+    user-select: none;
+  }
+  .toggle-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  select, input, textarea, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+  #price-display {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2c3e50;
+  }
+</style>
+
+<script>
+  let routeType = "airportToHotel";
+
+  const btnAirportToHotel = document.getElementById("btn-airport-to-hotel");
+  const btnHotelToAirport = document.getElementById("btn-hotel-to-airport");
+  const airportSelect = document.getElementById("airport-select");
+  const hotelSelect = document.getElementById("hotel-select");
+  const priceDisplay = document.getElementById("price-display");
+
+  const prices = {
+    "IST_Swissotel": 25,
+    "SAW_RitzCarlton": 30,
+    "AYT_Hilton": 40,
+    "Swissotel_IST": 28,
+    "RitzCarlton_SAW": 33,
+    "Hilton_AYT": 43
+  };
+
+  function updateRouteType(type) {
+    routeType = type;
+    if (type === "airportToHotel") {
+      btnAirportToHotel.classList.add("active");
+      btnHotelToAirport.classList.remove("active");
+    } else {
+      btnAirportToHotel.classList.remove("active");
+      btnHotelToAirport.classList.add("active");
+    }
+    updatePrice();
+  }
+
+  function updatePrice() {
+    let key = routeType === "airportToHotel"
+      ? airportSelect.value + "_" + hotelSelect.value
+      : hotelSelect.value + "_" + airportSelect.value;
+    const price = prices[key];
+    if (price !== undefined) {
+      priceDisplay.textContent = `Only €${price} (cash at arrival)`;
+    } else {
+      priceDisplay.textContent = "Contact us for price";
+    }
+  }
+
+  btnAirportToHotel.addEventListener("click", () => updateRouteType("airportToHotel"));
+  btnHotelToAirport.addEventListener("click", () => updateRouteType("hotelToAirport"));
+
+  airportSelect.addEventListener("change", updatePrice);
+  hotelSelect.addEventListener("change", updatePrice);
+
+  updateRouteType("airportToHotel");
+</script>
+
 
     <section id="map">
       <h2>We Serve These Airports</h2>
