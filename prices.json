@@ -1,0 +1,99 @@
+{
+  "airports": {
+    "IST": "Istanbul Airport",
+    "SAW": "Sabiha Gökçen Airport",
+    "AYT": "Antalya Airport",
+    "ADB": "Izmir Airport",
+    "DLM": "Dalaman Airport"
+  },
+  "hotels": {
+    "IST": [
+      "Swissotel Bosphorus",
+      "CVK Park Bosphorus",
+      "Radisson Blu Şişli",
+      "Hilton Bomonti",
+      "The Marmara Taksim",
+      "Rixos Pera",
+      "Divan Taksim",
+      "Elite World Istanbul",
+      "Point Hotel Barbaros",
+      "Titanic City Taksim"
+    ],
+    "SAW": [
+      "Dedeman Bostancı",
+      "ByOtell Kozyatağı",
+      "Wyndham Kalamış Marina",
+      "Istanbul Marriott Asia",
+      "Radisson Blu Ataşehir",
+      "Hilton Kozyatağı",
+      "Elite World Asia",
+      "The Green Park Bostancı",
+      "İnterContinental Ataşehir",
+      "Park Dedeman Levent"
+    ],
+    "AYT": [
+      "Rixos Downtown Antalya",
+      "Akra Hotel",
+      "Titanic Beach Lara",
+      "Delphin Imperial",
+      "Crowne Plaza Antalya",
+      "Hotel Su & Aqualand",
+      "Concorde De Luxe",
+      "Lara Barut Collection",
+      "Limak Lara Hotel",
+      "Royal Wings Hotel"
+    ],
+    "ADB": [
+      "Swissotel Büyük Efes İzmir",
+      "Wyndham Grand İzmir",
+      "Mövenpick İzmir",
+      "Key Hotel",
+      "DoubleTree Alsancak",
+      "Renaissance İzmir",
+      "Hilton Garden Inn",
+      "Kaya İzmir Thermal",
+      "Izmir Palas",
+      "Ramada Encore Bayraklı"
+    ],
+    "DLM": [
+      "Hilton Dalaman",
+      "Jiva Beach Resort",
+      "Club Tuana",
+      "Liberty Hotels Lykia",
+      "D-Resort Göcek",
+      "Alesta Yacht Hotel",
+      "Hotel Greenland",
+      "Orka Sunlife Resort",
+      "Montana Pine Resort",
+      "Garcia Resort"
+    ]
+  },
+  "vehicles": [
+    "Standard Van",
+    "Luxury Van",
+    "Minibus",
+    "Business Class",
+    "VIP Shuttle"
+  ],
+  "basePrices": {
+    "Standard Van": 50,
+    "Luxury Van": 70,
+    "Minibus": 60,
+    "Business Class": 80,
+    "VIP Shuttle": 90
+  },
+  "distanceKm": {
+    // Örnek: "IST-Swissotel Bosphorus": 20,
+    // Dinamik şekilde scraping sonrası eklenecek
+  },
+  "kmPrice": 1.5,
+  "discount": {
+    "fixedAmount": 5,
+    "minPercent": 0.85
+  },
+  "scraperSources": [
+    "https://safeairporttransfer.com",
+    "https://istanbulelitetransfer.com",
+    "https://istanbulrides.com"
+  ]
+}
