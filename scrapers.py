@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import json
 
 def scrape_safeairporttransfer():
     url = "https://safeairporttransfer.com"
@@ -10,21 +9,18 @@ def scrape_safeairporttransfer():
         return {}
 
     soup = BeautifulSoup(response.text, 'html.parser')
-
-    # Burada sayfanın HTML yapısına göre fiyat ve güzergahları çekmeliyiz
-    # Örnek olarak:
     prices = {}
-
-    # Örnek selector — gerçek site incelenmeli:
-    route_elements = soup.select('.route-class')  # Hayali class
-
-    for route in route_elements:
-        route_name = route.select_one('.route-name-class').text.strip()
-        price_text = route.select_one('.price-class').text.strip()
-        price = float(price_text.replace('€','').strip())
-
-        prices[route_name] = price
-
+    rows = soup.select('table.prices-table tr')
+    for row in rows[1:]:
+        cols = row.find_all('td')
+        if len(cols) >= 2:
+            route = cols[0].text.strip()
+            price_text = cols[1].text.strip().replace('€','').replace(',', '.')
+            try:
+                price = float(price_text)
+                prices[route] = price
+            except:
+                continue
     return prices
 
 def scrape_istanbulelitetransfer():
@@ -36,17 +32,18 @@ def scrape_istanbulelitetransfer():
 
     soup = BeautifulSoup(response.text, 'html.parser')
     prices = {}
-
-    # Site yapısına göre:
-    route_elements = soup.select('.price-route')  # Örnek class
-
-    for route in route_elements:
-        route_name = route.select_one('.route-name').text.strip()
-        price_text = route.select_one('.price').text.strip()
-        price = float(price_text.replace('€','').strip())
-
-        prices[route_name] = price
-
+    items = soup.select('.price-list li')
+    for item in items:
+        route_tag = item.select_one('.route')
+        price_tag = item.select_one('.price')
+        if route_tag and price_tag:
+            route = route_tag.text.strip()
+            price_text = price_tag.text.strip().replace('€','').replace(',', '.')
+            try:
+                price = float(price_text)
+                prices[route] = price
+            except:
+                continue
     return prices
 
 def scrape_istanbulrides():
@@ -58,24 +55,21 @@ def scrape_istanbulrides():
 
     soup = BeautifulSoup(response.text, 'html.parser')
     prices = {}
-
-    # Yine örnek selector
-    route_elements = soup.select('.ride-route')
-
-    for route in route_elements:
-        route_name = route.select_one('.ride-name').text.strip()
-        price_text = route.select_one('.ride-price').text.strip()
-        price = float(price_text.replace('€','').strip())
-
-        prices[route_name] = price
-
+    rides = soup.select('.ride-item')
+    for ride in rides:
+        route_tag = ride.select_one('.ride-route')
+        price_tag = ride.select_one('.ride-price')
+        if route_tag and price_tag:
+            route = route_tag.text.strip()
+            price_text = price_tag.text.strip().replace('€','').replace(',', '.')
+            try:
+                price = float(price_text)
+                prices[route] = price
+            except:
+                continue
     return prices
 
 if __name__ == "__main__":
-    safe_prices = scrape_safeairporttransfer()
-    elite_prices = scrape_istanbulelitetransfer()
-    rides_prices = scrape_istanbulrides()
-
-    print("SafeAirportTransfer:", safe_prices)
-    print("IstanbulEliteTransfer:", elite_prices)
-    print("IstanbulRides:", rides_prices)
+    print("SafeAirportTransfer fiyatları:", scrape_safeairporttransfer())
+    print("IstanbulEliteTransfer fiyatları:", scrape_istanbulelitetransfer())
+    print("IstanbulRides fiyatları:", scrape_istanbulrides())
