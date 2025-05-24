@@ -36,7 +36,7 @@
       nav ul { flex-direction: column; }
       .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
     }
-  </st yle>
+  </style>
 </head>
 <body>
 
@@ -89,405 +89,239 @@
 
 <!-- Gelişmiş ShuttlePort Formu -->
 <!-- Başlangıç: Form Bölümü -->
-<section id="form">
-  <h2>VIP Airport Transfer Reservation</h2>
 
-  <!-- Route Toggle -->
-  <div>
-    <span id="btn-airport-to-hotel" class="toggle-btn active">Airport to Hotel</span>
-    <span id="btn-hotel-to-airport" class="toggle-btn">Hotel to Airport</span>
-  </div>
+  <title>ShuttlePort Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .route-buttons button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #ccc;
+    }
+    .route-buttons button.active {
+      background: #007bff;
+      color: white;
+    }
+    #price-display {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    #confirm-price-btn {
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: none;
+    }
+    #confirm-price-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- Form -->
-  <form id="transfer-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-    <!-- Hidden FormSubmit Settings -->
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_autoresponse" value="Thank you! Your reservation has been received.">
-    <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-en.html">
+  <h2>Book Your Airport Transfer</h2>
 
-    <!-- Route Type Hidden for Email -->
-    <input type="hidden" name="Route Type" id="route-type-input" value="airportToHotel">
+  <form id="booking-form" action="https://formsubmit.co/serdarunalan@sonorgroup.com" method="POST">
+    <div class="route-buttons">
+      <button type="button" id="btn-airport-to-hotel" class="active">Airport to Hotel</button>
+      <button type="button" id="btn-hotel-to-airport">Hotel to Airport</button>
+    </div>
 
-    <!-- User Info -->
-    <input type="text" name="Full Name" placeholder="Full Name" required>
-    <input type="email" name="Email" placeholder="Email Address" required>
-    <input type="tel" name="Phone" placeholder="Phone Number" required>
+    <input type="hidden" name="routeType" id="route-type" value="airportToHotel">
 
-    <!-- Airport & Hotel -->
-    <label for="airport-select">Airport:</label>
-    <select id="airport-select" name="Airport" required></select>
+    <label for="airport">Airport</label>
+    <select id="airport" name="airport" required></select>
 
-    <label for="hotel-select">Hotel:</label>
-    <select id="hotel-select" name="Hotel" required></select>
+    <label for="hotel">Hotel</label>
+    <select id="hotel" name="hotel" required></select>
 
-    <!-- Date / Pax -->
-    <input type="datetime-local" name="Transfer Date & Time" required>
-    <input type="number" name="Number of Passengers" placeholder="Number of Passengers" min="1" required>
-
-    <!-- Vehicle -->
-    <label for="vehicle-select">Select Vehicle:</label>
-    <select id="vehicle-select" name="Vehicle Type" required>
-      <option value="sedan">Sedan</option>
-      <option value="van">Van</option>
-      <option value="luxury_sedan">Luxury Sedan</option>
-      <option value="suv">SUV</option>
-      <option value="minibus">Minibus</option>
+    <label for="vehicle">Vehicle</label>
+    <select id="vehicle" name="vehicle" required>
+      <option value="Standard Van">Standard Van</option>
+      <option value="Luxury Van">Luxury Van</option>
+      <option value="Minibus">Minibus</option>
     </select>
 
-    <!-- Price Display -->
+    <label for="full-name">Full Name</label>
+    <input type="text" id="full-name" name="Full Name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="Phone" required>
+
+    <label for="transfer-date">Transfer Date & Time</label>
+    <input type="datetime-local" id="transfer-date" name="Transfer Date & Time" required>
+
+    <label for="passengers">Number of Passengers</label>
+    <input type="number" id="passengers" name="Passengers" required min="1" max="20">
+
+    <label for="note">Additional Notes</label>
+    <textarea id="note" name="Note" rows="3"></textarea>
+
     <div id="price-display">Select route to see price</div>
-
-    <!-- Confirm Button -->
-    <button type="submit" id="confirm-price-btn" style="display:none; margin-top:10px;">✅ Confirm Price & Book Now</button>
-
-    <!-- Notes -->
-    <textarea name="Additional Notes" placeholder="Any additional information..." rows="4"></textarea>
-
-    <!-- Payment Info -->
-    <input type="hidden" name="Payment Method" value="Cash at the end of the trip">
-
+    <button type="submit" id="confirm-price-btn">✅ Confirm Price & Book Now</button>
   </form>
-</section>
 
-<!-- Style -->
-<style>
-  .toggle-btn {
-    padding: 10px 20px;
-    border: 1px solid #007bff;
-    cursor: pointer;
-    color: #007bff;
-    background-color: white;
-    margin: 10px 5px;
-    border-radius: 4px;
-    user-select: none;
-  }
-  .toggle-btn.active {
-    background-color: #007bff;
-    color: white;
-  }
-  select, input, textarea, button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-  }
-  #price-display {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    color: #2c3e50;
-  }
-  #confirm-price-btn {
-    background-color: #28a745;
-    border: none;
-    color: white;
-    font-size: 18px;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    user-select: none;
-  }
-  #confirm-price-btn:hover {
-    background-color: #218838;
-  }
-</style>
+  <script>
+    const form = document.getElementById("booking-form");
+    const airportSelect = document.getElementById("airport");
+    const hotelSelect = document.getElementById("hotel");
+    const vehicleSelect = document.getElementById("vehicle");
+    const btnAirportToHotel = document.getElementById("btn-airport-to-hotel");
+    const btnHotelToAirport = document.getElementById("btn-hotel-to-airport");
+    const priceDisplay = document.getElementById("price-display");
+    const confirmBtn = document.getElementById("confirm-price-btn");
+    const routeTypeInput = document.getElementById("route-type");
 
-<!-- Script -->
-<script>
-  const btnAirportToHotel = document.getElementById("btn-airport-to-hotel");
-  const btnHotelToAirport = document.getElementById("btn-hotel-to-airport");
-  const airportSelect = document.getElementById("airport-select");
-  const hotelSelect = document.getElementById("hotel-select");
-  const vehicleSelect = document.getElementById("vehicle-select");
-  const priceDisplay = document.getElementById("price-display");
-  const confirmBtn = document.getElementById("confirm-price-btn");
-  const routeTypeInput = document.getElementById("route-type-input");
-  const form = document.getElementById("transfer-form");
+    let routeType = "airportToHotel";
 
-  // Route type: airportToHotel or hotelToAirport
-  let routeType = "airportToHotel";
+    const airports = {
+      IST: "Istanbul Airport",
+      SAW: "Sabiha Gokcen Airport",
+      AYT: "Antalya Airport",
+      ADB: "Izmir Airport",
+      DLM: "Dalaman Airport"
+    };
 
-  // Havaalanları (5 adet)
-  const airports = {
-    IST: "Istanbul Airport (IST)",
-    SAW: "Sabiha Gökçen Airport (SAW)",
-    AYT: "Antalya Airport (AYT)",
-    ADB: "Izmir Airport (ADB)",
-    DLM: "Dalaman Airport (DLM)"
-  };
+    const hotels = {
+      IST: ["Swissotel", "Ritz Carlton", "Hilton Istanbul", "Marriott Istanbul", "Four Seasons Istanbul", "Radisson Blu Istanbul", "Sheraton Istanbul", "Sofitel Istanbul", "W Istanbul", "Intercontinental Istanbul"],
+      SAW: ["Hotel Sabiha 1", "Hotel Sabiha 2", "Hotel Sabiha 3", "Hotel Sabiha 4", "Hotel Sabiha 5", "Hotel Sabiha 6", "Hotel Sabiha 7", "Hotel Sabiha 8", "Hotel Sabiha 9", "Hotel Sabiha 10"],
+      AYT: ["Hotel Antalya 1", "Hotel Antalya 2", "Hotel Antalya 3", "Hotel Antalya 4", "Hotel Antalya 5", "Hotel Antalya 6", "Hotel Antalya 7", "Hotel Antalya 8", "Hotel Antalya 9", "Hotel Antalya 10"],
+      ADB: ["Hotel Izmir 1", "Hotel Izmir 2", "Hotel Izmir 3", "Hotel Izmir 4", "Hotel Izmir 5", "Hotel Izmir 6", "Hotel Izmir 7", "Hotel Izmir 8", "Hotel Izmir 9", "Hotel Izmir 10"],
+      DLM: ["Hotel Dalaman 1", "Hotel Dalaman 2", "Hotel Dalaman 3", "Hotel Dalaman 4", "Hotel Dalaman 5", "Hotel Dalaman 6", "Hotel Dalaman 7", "Hotel Dalaman 8", "Hotel Dalaman 9", "Hotel Dalaman 10"]
+    };
 
-  // Oteller (şehir bazlı, her şehir için 10 otel, bazıları deaktif)
-  const hotels = {
-    IST: [
-      { name: "Swissotel", active: true },
-      { name: "Ritz Carlton", active: true },
-      { name: "Hilton Istanbul", active: true },
-      { name: "Marriott Istanbul", active: false },
-      { name: "Four Seasons Istanbul", active: true },
-      { name: "Radisson Blu Istanbul", active: true },
-      { name: "Sheraton Istanbul", active: false },
-      { name: "Sofitel Istanbul", active: true },
-      { name: "W Istanbul", active: true },
-      { name: "Intercontinental Istanbul", active: true }
-    ],
-    SAW: [
-      { name: "Hotel Sabiha 1", active: true },
-      { name: "Hotel Sabiha 2", active: true },
-      { name: "Hotel Sabiha 3", active: true },
-      { name: "Hotel Sabiha 4", active: false },
-      { name: "Hotel Sabiha 5", active: true },
-      { name: "Hotel Sabiha 6", active: true },
-      { name: "Hotel Sabiha 7", active: true },
-      { name: "Hotel Sabiha 8", active: false },
-      { name: "Hotel Sabiha 9", active: true },
-      { name: "Hotel Sabiha 10", active: true }
-    ],
-    AYT: [
-      { name: "Hotel Antalya 1", active: true },
-      { name: "Hotel Antalya 2", active: true },
-      { name: "Hotel Antalya 3", active: true },
-      { name: "Hotel Antalya 4", active: false },
-      { name: "Hotel Antalya 5", active: true },
-      { name: "Hotel Antalya 6", active: true },
-      { name: "Hotel Antalya 7", active: true },
-      { name: "Hotel Antalya 8", active: false },
-      { name: "Hotel Antalya 9", active: true },
-      { name: "Hotel Antalya 10", active: true }
-    ],
-    ADB: [
-      { name: "Hotel Izmir 1", active: true },
-      { name: "Hotel Izmir 2", active: true },
-      { name: "Hotel Izmir 3", active: true },
-      { name: "Hotel Izmir 4", active: false },
-      { name: "Hotel Izmir 5", active: true },
-      { name: "Hotel Izmir 6", active: true },
-      { name: "Hotel Izmir 7", active: true },
-      { name: "Hotel Izmir 8", active: false },
-      { name: "Hotel Izmir 9", active: true },
-      { name: "Hotel Izmir 10", active: true }
-    ],
-    DLM: [
-      { name: "Hotel Dalaman 1", active: true },
-      { name: "Hotel Dalaman 2", active: true },
-      { name: "Hotel Dalaman 3", active: true },
-      { name: "Hotel Dalaman 4", active: false },
-      { name: "Hotel Dalaman 5", active: true },
-      { name: "Hotel Dalaman 6", active: true },
-      { name: "Hotel Dalaman 7", active: true },
-      { name: "Hotel Dalaman 8", active: false },
-      { name: "Hotel Dalaman 9", active: true },
-      { name: "Hotel Dalaman 10", active: true }
-    ]
-  };
+    const prices = {
+      "IST_Swissotel": 45, "Swissotel_IST": 47,
+      "IST_Ritz Carlton": 50, "Ritz Carlton_IST": 52,
+      "IST_Hilton Istanbul": 48, "Hilton Istanbul_IST": 50,
+      // SAW - Hotels
+      "SAW_Hotel Sabiha 1": 40, "Hotel Sabiha 1_SAW": 42,
+      "SAW_Hotel Sabiha 2": 42, "Hotel Sabiha 2_SAW": 44,
+      // AYT - Hotels
+      "AYT_Hotel Antalya 1": 38, "Hotel Antalya 1_AYT": 39,
+      "AYT_Hotel Antalya 2": 39, "Hotel Antalya 2_AYT": 40,
+      // ... devamı eklenebilir ...
+    };
 
-  // Fiyatlar (key: "airport_hotel" veya "hotel_airport")
-  const prices = {
-    "IST_Swissotel": 45,
-    "IST_Ritz Carlton": 50,
-    "IST_Hilton Istanbul": 48,
-    "IST_Marriott Istanbul": 55,
-    "IST_Four Seasons Istanbul": 60,
-    "IST_Radisson Blu Istanbul": 47,
-    "IST_Sheraton Istanbul": 53,
-    "IST_Sofitel Istanbul": 52,
-    "IST_W Istanbul": 51,
-    "IST_Intercontinental Istanbul": 58,
+    function populateAirports() {
+      airportSelect.innerHTML = "";
+      for (const code in airports) {
+        const option = document.createElement("option");
+        option.value = code;
+        option.textContent = airports[code];
+        airportSelect.appendChild(option);
+      }
+    }
 
-    "SAW_Hotel Sabiha 1": 40,
-"SAW_Hotel Sabiha 2": 42,
-"SAW_Hotel Sabiha 3": 43,
-"SAW_Hotel Sabiha 4": 45,
-"SAW_Hotel Sabiha 5": 41,
-"SAW_Hotel Sabiha 6": 39,
-"SAW_Hotel Sabiha 7": 44,
-"SAW_Hotel Sabiha 8": 46,
-"SAW_Hotel Sabiha 9": 47,
-"SAW_Hotel Sabiha 10": 49,
+    function populateHotels(cityCode) {
+      hotelSelect.innerHTML = "";
+      hotels[cityCode].forEach(hotel => {
+        const option = document.createElement("option");
+        option.value = hotel;
+        option.textContent = hotel;
+        hotelSelect.appendChild(option);
+      });
+    }
 
-"AYT_Hotel Antalya 1": 38,
-"AYT_Hotel Antalya 2": 39,
-"AYT_Hotel Antalya 3": 40,
-"AYT_Hotel Antalya 4": 42,
-"AYT_Hotel Antalya 5": 37,
-"AYT_Hotel Antalya 6": 36,
-"AYT_Hotel Antalya 7": 41,
-"AYT_Hotel Antalya 8": 43,
-"AYT_Hotel Antalya 9": 45,
-"AYT_Hotel Antalya 10": 46,
+    function updatePrice() {
+      let key = (routeType === "airportToHotel")
+        ? airportSelect.value + "_" + hotelSelect.value
+        : hotelSelect.value + "_" + airportSelect.value;
 
-"ADB_Hotel Izmir 1": 34,
-"ADB_Hotel Izmir 2": 35,
-"ADB_Hotel Izmir 3": 36,
-"ADB_Hotel Izmir 4": 37,
-"ADB_Hotel Izmir 5": 38,
-"ADB_Hotel Izmir 6": 39,
-"ADB_Hotel Izmir 7": 40,
-"ADB_Hotel Izmir 8": 41,
-"ADB_Hotel Izmir 9": 42,
-"ADB_Hotel Izmir 10": 43,
+      const price = prices[key];
+      if (price !== undefined) {
+        priceDisplay.textContent = `Only €${price} (cash at arrival)`;
+        confirmBtn.style.display = "block";
+        confirmBtn.disabled = false;
+      } else {
+        priceDisplay.textContent = "Contact us for price";
+        confirmBtn.style.display = "none";
+        confirmBtn.disabled = true;
+      }
+    }
 
-"DLM_Hotel Dalaman 1": 30,
-"DLM_Hotel Dalaman 2": 31,
-"DLM_Hotel Dalaman 3": 32,
-"DLM_Hotel Dalaman 4": 33,
-"DLM_Hotel Dalaman 5": 34,
-"DLM_Hotel Dalaman 6": 35,
-"DLM_Hotel Dalaman 7": 36,
-"DLM_Hotel Dalaman 8": 37,
-"DLM_Hotel Dalaman 9": 38,
-"DLM_Hotel Dalaman 10": 39,
+    btnAirportToHotel.addEventListener("click", () => {
+      routeType = "airportToHotel";
+      routeTypeInput.value = routeType;
+      btnAirportToHotel.classList.add("active");
+      btnHotelToAirport.classList.remove("active");
+      populateHotels(airportSelect.value);
+      updatePrice();
+    });
 
-// Ters yön fiyatları
-"Swissotel_IST": 47,
-"Ritz Carlton_IST": 52,
-"Hilton Istanbul_IST": 50,
-"Marriott Istanbul_IST": 57,
-"Four Seasons Istanbul_IST": 62,
-"Radisson Blu Istanbul_IST": 49,
-"Sheraton Istanbul_IST": 55,
-"Sofitel Istanbul_IST": 54,
-"W Istanbul_IST": 53,
-"Intercontinental Istanbul_IST": 60,
+    btnHotelToAirport.addEventListener("click", () => {
+      routeType = "hotelToAirport";
+      routeTypeInput.value = routeType;
+      btnHotelToAirport.classList.add("active");
+      btnAirportToHotel.classList.remove("active");
+      populateHotels(airportSelect.value);
+      updatePrice();
+    });
 
-"Hotel Sabiha 1_SAW": 42,
-"Hotel Sabiha 2_SAW": 44,
-"Hotel Sabiha 3_SAW": 45,
-"Hotel Sabiha 4_SAW": 47,
-"Hotel Sabiha 5_SAW": 43,
-"Hotel Sabiha 6_SAW": 41,
-"Hotel Sabiha 7_SAW": 46,
-"Hotel Sabiha 8_SAW": 48,
-"Hotel Sabiha 9_SAW": 49,
-"Hotel Sabiha 10_SAW": 51,
+    airportSelect.addEventListener("change", () => {
+      populateHotels(airportSelect.value);
+      updatePrice();
+    });
 
-"Hotel Antalya 1_AYT": 39,
-"Hotel Antalya 2_AYT": 40,
-"Hotel Antalya 3_AYT": 41,
-"Hotel Antalya 4_AYT": 43,
-"Hotel Antalya 5_AYT": 38,
-"Hotel Antalya 6_AYT": 37,
-"Hotel Antalya 7_AYT": 42,
-"Hotel Antalya 8_AYT": 44,
-"Hotel Antalya 9_AYT": 46,
-"Hotel Antalya 10_AYT": 47,
+    hotelSelect.addEventListener("change", updatePrice);
+    vehicleSelect.addEventListener("change", updatePrice);
 
-"Hotel Izmir 1_ADB": 35,
-"Hotel Izmir 2_ADB": 36,
-"Hotel Izmir 3_ADB": 37,
-"Hotel Izmir 4_ADB": 38,
-"Hotel Izmir 5_ADB": 39,
-"Hotel Izmir 6_ADB": 40,
-"Hotel Izmir 7_ADB": 41,
-"Hotel Izmir 8_ADB": 42,
-"Hotel Izmir 9_ADB": 43,
-"Hotel Izmir 10_ADB": 44,
+    form.addEventListener("submit", e => {
+      if (confirmBtn.style.display === "none") {
+        e.preventDefault();
+        alert("Please confirm the price before submitting.");
+      }
+    });
 
-"Hotel Dalaman 1_DLM": 31,
-"Hotel Dalaman 2_DLM": 32,
-"Hotel Dalaman 3_DLM": 33,
-"Hotel Dalaman 4_DLM": 34,
-"Hotel Dalaman 5_DLM": 35,
-"Hotel Dalaman 6_DLM": 36,
-"Hotel Dalaman 7_DLM": 37,
-"Hotel Dalaman 8_DLM": 38,
-"Hotel Dalaman 9_DLM": 39,
-"Hotel Dalaman 10_DLM": 40
-};
-
-// --- Fonksiyonlar ---
-
-// Otelleri seçime doldur
-function populateHotels(cityCode) {
-hotelSelect.innerHTML = "";
-hotels[cityCode].forEach(hotel => {
-if(hotel.active){
-const option = document.createElement("option");
-option.value = hotel.name;
-option.textContent = hotel.name;
-hotelSelect.appendChild(option);
-}
-});
-}
-
-// Havalimanlarını seçime doldur
-function populateAirports() {
-airportSelect.innerHTML = "";
-Object.entries(airports).forEach(([code, name]) => {
-const option = document.createElement("option");
-option.value = code;
-option.textContent = name;
-airportSelect.appendChild(option);
-});
-}
-
-// Fiyat güncelleme ve gösterme
-function updatePrice() {
-let key;
-if(routeType === "airportToHotel"){
-key = airportSelect.value + "" + hotelSelect.value;
-} else {
-key = hotelSelect.value + "" + airportSelect.value;
-}
-
-const price = prices[key];
-if(price !== undefined){
-  priceDisplay.textContent = `Only €${price} (cash at arrival)`;
-  confirmBtn.style.display = "block";
-  confirmBtn.disabled = false;
-} else {
-  priceDisplay.textContent = "Contact us for price";
-  confirmBtn.style.display = "none";
-  confirmBtn.disabled = true;
-}
-}
-
-// Event Listeners
-btnAirportToHotel.addEventListener("click", () => {
-routeType = "airportToHotel";
-routeTypeInput.value = routeType;
-btnAirportToHotel.classList.add("active");
-btnHotelToAirport.classList.remove("active");
-populateAirports();
-populateHotels(airportSelect.value);
-updatePrice();
-});
-
-btnHotelToAirport.addEventListener("click", () => {
-routeType = "hotelToAirport";
-routeTypeInput.value = routeType;
-btnHotelToAirport.classList.add("active");
-btnAirportToHotel.classList.remove("active");
-populateAirports();
-populateHotels(airportSelect.value);
-updatePrice();
-});
-
-airportSelect.addEventListener("change", () => {
-if(routeType === "airportToHotel"){
-populateHotels(airportSelect.value);
-}
-updatePrice();
-});
-
-hotelSelect.addEventListener("change", updatePrice);
-vehicleSelect.addEventListener("change", updatePrice);
-
-// Form gönderme engelleme
-form.addEventListener("submit", e => {
-if(confirmBtn.style.display === "none"){
-e.preventDefault();
-alert("Please confirm the price before submitting your reservation.");
-}
-});
-
-// İlk yüklemede airportToHotel seçili ve doldurulmuş olsun
-window.addEventListener("load", () => {
-populateAirports();
-populateHotels(Object.keys(airports)[0]);
-updatePrice();
-});
-</script>
+    window.addEventListener("load", () => {
+      populateAirports();
+      populateHotels(Object.keys(airports)[0]);
+      updatePrice();
+    });
+  </script>
+</body>
+</html>
 
 
     <section id="map">
