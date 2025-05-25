@@ -261,7 +261,7 @@
     let avgRefPrice = basePrices[vehicle] * multiplier;
     const finalPrice = Math.max(15, Math.floor(avgRefPrice - 5));
 
-    priceDisplay.textContent = `Calculated Price: €${finalPrice}`;
+    priceDisplay.textContent = `Best ShuttlePort Price: €${finalPrice}`;
     calculatedPriceInput.value = finalPrice;
     confirmButton.style.display = "block";
   }
