@@ -10,28 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repositories klonlanıyor
-        uses: actions/checkout@v3
+- name: Repositories klonlanıyor
+  uses: actions/checkout@v3
+  with:
+    persist-credentials: true
 
-      - name: Python kurulumu
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+- name: Python kurulumu
+  uses: actions/setup-python@v4
+  with:
+    python-version: '3.10'
 
-      - name: Bağımlılıkların kurulması
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+- name: Bağımlılıkların kurulması
+  run: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
 
-      - name: Fiyatlar güncelleniyor
-        run: |
-          python main.py
+- name: Fiyatlar güncelleniyor
+  run: python main.py
 
-      - name: Değişiklikleri commit et ve pushla
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add prices.json
-          git commit -m "Haftalık fiyat güncellemesi (auto)"
-          git push
+- name: Değişiklikleri commit et ve pushla
+  run: |
+    git config user.name "github-actions[bot]"
+    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    git add prices.json
+    git diff --cached --quiet || git commit -m "Haftalık fiyat güncellemesi (auto)"
+    git push
+
         continue-on-error: true  # Eğer değişiklik yoksa commit hatası olmasın
