@@ -250,7 +250,7 @@ async function calculatePrice() {
   if (!airport || !hotel || !vehicle) return;
 
   try {
-    const apiUrl = "https://YOUR-RENDER-URL.onrender.com/api/get_price";
+    const apiUrl = "https://shuttleport-site.onrender.com/api/get_price";
     const url = `${apiUrl}?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
     const response = await fetch(url);
     const data = await response.json();
