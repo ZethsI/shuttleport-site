@@ -83,8 +83,28 @@
     "VIP Shuttle": 90
   },
   "distanceKm": {
-    // Örnek: "IST-Swissotel Bosphorus": 20,
-    // Dinamik şekilde scraping sonrası eklenecek
+    "IST-Swissotel Bosphorus": 42,
+    "IST-CVK Park Bosphorus": 42,
+    "IST-Radisson Blu Şişli": 41,
+    "IST-Hilton Bomonti": 40,
+    "IST-The Marmara Taksim": 41,
+    "IST-Rixos Pera": 41,
+    "IST-Divan Taksim": 41,
+    "IST-Elite World Istanbul": 41,
+    "IST-Point Hotel Barbaros": 39,
+    "IST-Titanic City Taksim": 41,
+
+    "SAW-Dedeman Bostancı": 27,
+    "SAW-ByOtell Kozyatağı": 30,
+    "SAW-Wyndham Kalamış Marina": 34,
+    "SAW-Istanbul Marriott Asia": 28,
+    "SAW-Radisson Blu Ataşehir": 32,
+    "SAW-Hilton Kozyatağı": 29,
+    "SAW-Elite World Asia": 31,
+    "SAW-The Green Park Bostancı": 28,
+    "SAW-İnterContinental Ataşehir": 32,
+    "SAW-Park Dedeman Levent": 45
+    // Diğer kombinasyonları da ekleyebilirsin
   },
   "kmPrice": 1.5,
   "discount": {
