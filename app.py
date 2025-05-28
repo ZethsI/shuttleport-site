@@ -1,11 +1,15 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
+import os
 
 app = Flask(__name__)
+CORS(app)
 
-# Fiyat verilerini yükle
-with open('prices.json', encoding='utf-8') as f:
-    prices_data = json.load(f)
+# prices.json'u yükle
+def load_prices():
+    with open('prices.json', encoding='utf-8') as f:
+        return json.load(f)
 
 @app.route('/api/get_price', methods=['GET'])
 def get_price():
@@ -13,20 +17,32 @@ def get_price():
     hotel = request.args.get('hotel')
     vehicle = request.args.get('vehicle')
 
-    # Fiyatı bul
-    for item in prices_data:
-        if (item.get('hotel') == hotel
-            and item.get('site')
-            and (item.get('one_way') or item.get('vehicle_type_1'))):
+    data = load_prices()
+    base_prices = data['basePrices']
+    distance_km = data['distanceKm']
+    km_price = data['kmPrice']
+    discount = data['discount']
 
-            # Basit örnek: İstanbul için, one_way veya vehicle_type_1 fiyatı
-            if vehicle and 'vehicle_type_1' in item:
-                price = item.get('vehicle_type_1')
-            else:
-                price = item.get('one_way')
-            return jsonify({'price': price, 'site': item.get('site')})
+    key = f"{airport}-{hotel}"
+    base = base_prices.get(vehicle, 0)
+    dist = distance_km.get(key, 20)  # Varsayılan 20km, eğer mesafe yoksa
 
-    return jsonify({'price': None, 'site': None})
+    # Dinamik fiyat hesaplama (km + taban fiyat + indirim)
+    calc_price = max(
+        discount["minPercent"] * (base + dist * km_price) - discount["fixedAmount"],
+        15
+    )
+    final_price = round(calc_price, 2)
+
+    return jsonify({
+        "airport": airport,
+        "hotel": hotel,
+        "vehicle": vehicle,
+        "distance_km": dist,
+        "price": final_price,
+        "currency": "EUR"
+    })
 
 if __name__ == '__main__':
+    # Render'da start command ile başlatılır, burada local test için:
     app.run(debug=True)
