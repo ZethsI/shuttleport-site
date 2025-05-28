@@ -243,19 +243,30 @@
     calculatePrice();
   }
 
-  function calculatePrice() {
-    const airport = airportSelect.value;
-    const hotel = hotelSelect.value;
-    const vehicle = document.getElementById("vehicle").value;
-    if (!airport || !hotel || !vehicle) return;
+async function calculatePrice() {
+  const airport = airportSelect.value;
+  const hotel = hotelSelect.value;
+  const vehicle = document.getElementById("vehicle").value;
+  if (!airport || !hotel || !vehicle) return;
 
-    const basePrices = {
-      "Standard Van": 50,
-      "Luxury Van": 70,
-      "Minibus": 60,
-      "Business Class": 80,
-      "VIP Shuttle": 90
-    };
+  // API'den fiyat al
+  try {
+    const url = `http://localhost:5000/api/get_price?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.price) {
+      priceDisplay.textContent = `Best Price: €${data.price} (${data.site})`;
+      calculatedPriceInput.value = data.price;
+      confirmButton.style.display = "block";
+    } else {
+      priceDisplay.textContent = "No price found for selection.";
+      confirmButton.style.display = "none";
+    }
+  } catch (err) {
+    priceDisplay.textContent = "Error retrieving price.";
+    confirmButton.style.display = "none";
+  }
+}
 
     const multiplier = 1 + (Math.random() * 0.2 - 0.1);
     let avgRefPrice = basePrices[vehicle] * multiplier;
