@@ -249,13 +249,14 @@ async function calculatePrice() {
   const vehicle = document.getElementById("vehicle").value;
   if (!airport || !hotel || !vehicle) return;
 
-  // API'den fiyat al
   try {
-    const url = `http://localhost:5000/api/get_price?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
+    const apiUrl = "https://YOUR-RENDER-URL.onrender.com/api/get_price";
+    const url = `${apiUrl}?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
     const response = await fetch(url);
     const data = await response.json();
+
     if (data.price) {
-      priceDisplay.textContent = `Best Price: €${data.price} (${data.site})`;
+      priceDisplay.textContent = `Best Price: €${data.price} (${data.distance_km} km)`;
       calculatedPriceInput.value = data.price;
       confirmButton.style.display = "block";
     } else {
