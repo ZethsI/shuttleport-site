@@ -103,8 +103,40 @@
     "SAW-Elite World Asia": 31,
     "SAW-The Green Park Bostancı": 28,
     "SAW-İnterContinental Ataşehir": 32,
-    "SAW-Park Dedeman Levent": 45
-    // Diğer kombinasyonları da ekleyebilirsin
+    "SAW-Park Dedeman Levent": 45,
+
+    "AYT-Rixos Downtown Antalya": 15,
+    "AYT-Akra Hotel": 13,
+    "AYT-Titanic Beach Lara": 12,
+    "AYT-Delphin Imperial": 13,
+    "AYT-Crowne Plaza Antalya": 16,
+    "AYT-Hotel Su & Aqualand": 14,
+    "AYT-Concorde De Luxe": 15,
+    "AYT-Lara Barut Collection": 14,
+    "AYT-Limak Lara Hotel": 17,
+    "AYT-Royal Wings Hotel": 15,
+
+    "ADB-Swissotel Büyük Efes İzmir": 18,
+    "ADB-Wyndham Grand İzmir": 17,
+    "ADB-Mövenpick İzmir": 16,
+    "ADB-Key Hotel": 19,
+    "ADB-DoubleTree Alsancak": 20,
+    "ADB-Renaissance İzmir": 16,
+    "ADB-Hilton Garden Inn": 22,
+    "ADB-Kaya İzmir Thermal": 25,
+    "ADB-Izmir Palas": 18,
+    "ADB-Ramada Encore Bayraklı": 17,
+
+    "DLM-Hilton Dalaman": 10,
+    "DLM-Jiva Beach Resort": 12,
+    "DLM-Club Tuana": 15,
+    "DLM-Liberty Hotels Lykia": 30,
+    "DLM-D-Resort Göcek": 23,
+    "DLM-Alesta Yacht Hotel": 21,
+    "DLM-Hotel Greenland": 19,
+    "DLM-Orka Sunlife Resort": 17,
+    "DLM-Montana Pine Resort": 16,
+    "DLM-Garcia Resort": 18
   },
   "kmPrice": 1.5,
   "discount": {
