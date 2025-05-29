@@ -27,6 +27,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Mesafeler güncelleniyor (Google Maps API)
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: python generate_distances.py
+
       - name: Fiyatlar güncelleniyor
         run: python main.py
 
