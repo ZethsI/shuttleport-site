@@ -8,7 +8,7 @@ API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 if not API_KEY:
     raise Exception("GOOGLE_MAPS_API_KEY ortam değişkeni tanımlı değil!")
     
-API_KEY = "AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk"  # Buraya kendi güvenli Maps API anahtarını yaz!
+API_KEY = "GOOGLE_MAPS_API_KEY"  # Buraya kendi güvenli Maps API anahtarını yaz!
 
 prices_json_path = 'prices.json'
 output_json_path = 'airport_hotel_distances.json'
