@@ -4,10 +4,10 @@ import json
 
 import os
 
-API_KEY = os.getenv("AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk")
+API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 if not API_KEY:
-    raise Exception("AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk ortam değişkeni tanımlı değil!")
-
+    raise Exception("GOOGLE_MAPS_API_KEY ortam değişkeni tanımlı değil!")
+    
 API_KEY = "AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk"  # Buraya kendi güvenli Maps API anahtarını yaz!
 
 prices_json_path = 'prices.json'
