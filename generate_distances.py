@@ -2,6 +2,12 @@ import requests
 import time
 import json
 
+import os
+
+API_KEY = os.getenv("AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk")
+if not API_KEY:
+    raise Exception("AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk ortam değişkeni tanımlı değil!")
+
 API_KEY = "AIzaSyDs5yAaaQU96e92Lw7kpx2OkNlAmubpRVk"  # Buraya kendi güvenli Maps API anahtarını yaz!
 
 prices_json_path = 'prices.json'
