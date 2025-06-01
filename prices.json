@@ -1,504 +1,253 @@
 {
+  "airports": {
+    "IST": "Istanbul Havalimanı",
+    "SAW": "Sabiha Gökçen Havalimanı",
+    "AYT": "Antalya Havalimanı",
+    "ADB": "İzmir Adnan Menderes Havalimanı",
+    "DLM": "Dalaman Havalimanı"
+  },
+  "hotels": {
+    "IST": [
+      "Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim",
+      "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"
+    ],
+    "SAW": [
+      "Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir",
+      "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"
+    ],
+    "AYT": [
+      "Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya",
+      "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"
+    ],
+    "ADB": [
+      "Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak",
+      "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"
+    ],
+    "DLM": [
+      "Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek",
+      "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"
+    ]
+  },
+  "vehicles": [
+    "Standard Van", "Luxury Van", "Minibus", "Business Class", "VIP Shuttle"
+  ],
   "basePrices": {
     "IST": {
       "Swissotel Bosphorus": {
-        "Standard Van": "10",
-        "Luxury Van": "20",
-        "Minibus": "30",
-        "Business Class": "40",
-        "VIP Shuttle": "50"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "CVK Park Bosphorus": {
-        "Standard Van": "60",
-        "Luxury Van": "70",
-        "Minibus": "80",
-        "Business Class": "90",
-        "VIP Shuttle": "100"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Radisson Blu Şişli": {
-        "Standard Van": "110",
-        "Luxury Van": "120",
-        "Minibus": "130",
-        "Business Class": "140",
-        "VIP Shuttle": "150"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Hilton Bomonti": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "The Marmara Taksim": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Rixos Pera": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Divan Taksim": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Elite World Istanbul": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Point Hotel Barbaros": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Titanic City Taksim": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Dedeman Bostancı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "ByOtell Kozyatağı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Wyndham Kalamış Marina": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Istanbul Marriott Asia": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Radisson Blu Ataşehir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Hilton Kozyatağı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Elite World Asia": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "The Green Park Bostancı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "İnterContinental Ataşehir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Park Dedeman Levent": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       }
     },
     "SAW": {
-      "Swissotel Bosphorus": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "CVK Park Bosphorus": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Radisson Blu Şişli": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Hilton Bomonti": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "The Marmara Taksim": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Rixos Pera": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Divan Taksim": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Elite World Istanbul": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Point Hotel Barbaros": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
-      "Titanic City Taksim": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
-      },
       "Dedeman Bostancı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "ByOtell Kozyatağı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Wyndham Kalamış Marina": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Istanbul Marriott Asia": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Radisson Blu Ataşehir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Hilton Kozyatağı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Elite World Asia": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "The Green Park Bostancı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "İnterContinental Ataşehir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Park Dedeman Levent": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       }
     },
     "AYT": {
       "Rixos Downtown Antalya": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Akra Hotel": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Titanic Beach Lara": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Delphin Imperial": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Crowne Plaza Antalya": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Hotel Su & Aqualand": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Concorde De Luxe": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Lara Barut Collection": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Limak Lara Hotel": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Royal Wings Hotel": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       }
     },
     "ADB": {
       "Swissotel Büyük Efes İzmir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Wyndham Grand İzmir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Mövenpick İzmir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Key Hotel": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "DoubleTree Alsancak": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Renaissance İzmir": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Hilton Garden Inn": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Kaya İzmir Thermal": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Izmir Palas": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Ramada Encore Bayraklı": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       }
     },
     "DLM": {
       "Hilton Dalaman": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Jiva Beach Resort": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Club Tuana": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Liberty Hotels Lykia": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "D-Resort Göcek": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Alesta Yacht Hotel": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Hotel Greenland": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Orka Sunlife Resort": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Montana Pine Resort": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       },
       "Garcia Resort": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "auto", "Luxury Van": "auto", "Minibus": "auto", "Business Class": "auto", "VIP Shuttle": "auto"
       }
     }
+  },
+  "distanceKm": {
+    "IST-Swissotel Bosphorus": 42,
+    "IST-CVK Park Bosphorus": 41,
+    "IST-Radisson Blu Şişli": 40,
+    "IST-Hilton Bomonti": 39,
+    "IST-The Marmara Taksim": 38,
+    "IST-Rixos Pera": 37,
+    "IST-Divan Taksim": 36,
+    "IST-Elite World Istanbul": 35,
+    "IST-Point Hotel Barbaros": 34,
+    "IST-Titanic City Taksim": 33,
+    "SAW-Dedeman Bostancı": 30,
+    "SAW-ByOtell Kozyatağı": 32,
+    "SAW-Wyndham Kalamış Marina": 28,
+    "SAW-Istanbul Marriott Asia": 33,
+    "SAW-Radisson Blu Ataşehir": 31,
+    "SAW-Hilton Kozyatağı": 29,
+    "SAW-Elite World Asia": 34,
+    "SAW-The Green Park Bostancı": 27,
+    "SAW-İnterContinental Ataşehir": 36,
+    "SAW-Park Dedeman Levent": 39,
+    "AYT-Rixos Downtown Antalya": 16,
+    "AYT-Akra Hotel": 19,
+    "AYT-Titanic Beach Lara": 13,
+    "AYT-Delphin Imperial": 11,
+    "AYT-Crowne Plaza Antalya": 20,
+    "AYT-Hotel Su & Aqualand": 18,
+    "AYT-Concorde De Luxe": 14,
+    "AYT-Lara Barut Collection": 17,
+    "AYT-Limak Lara Hotel": 12,
+    "AYT-Royal Wings Hotel": 15,
+    "ADB-Swissotel Büyük Efes İzmir": 17,
+    "ADB-Wyndham Grand İzmir": 21,
+    "ADB-Mövenpick İzmir": 20,
+    "ADB-Key Hotel": 18,
+    "ADB-DoubleTree Alsancak": 19,
+    "ADB-Renaissance İzmir": 22,
+    "ADB-Hilton Garden Inn": 24,
+    "ADB-Kaya İzmir Thermal": 27,
+    "ADB-Izmir Palas": 23,
+    "ADB-Ramada Encore Bayraklı": 26,
+    "DLM-Hilton Dalaman": 18,
+    "DLM-Jiva Beach Resort": 34,
+    "DLM-Club Tuana": 41,
+    "DLM-Liberty Hotels Lykia": 70,
+    "DLM-D-Resort Göcek": 21,
+    "DLM-Alesta Yacht Hotel": 26,
+    "DLM-Hotel Greenland": 38,
+    "DLM-Orka Sunlife Resort": 42,
+    "DLM-Montana Pine Resort": 55,
+    "DLM-Garcia Resort": 59
+  },
+  "kmPrice": 1.5,
+  "discount": {
+    "fixedAmount": 5,
+    "minPercent": 0.85
   }
 }
