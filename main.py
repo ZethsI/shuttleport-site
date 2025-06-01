@@ -108,8 +108,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-from notifier import send_email
+#from notifier import send_email
 
-subject = "ShuttlePort - Yeni Fiyatlar Hesaplandı"
-body = "Merhaba Serdar,\n\nYeni fiyatlar başarıyla hesaplandı ve prices.json güncellendi.\n\nSelamlar,\nShuttlePort Bot"
-send_email(subject, body)
+#subject = "ShuttlePort - Yeni Fiyatlar Hesaplandı"
+#body = "Merhaba Serdar,\n\nYeni fiyatlar başarıyla hesaplandı ve prices.json güncellendi.\n\nSelamlar,\nShuttlePort Bot"
+#send_email(subject, body)
