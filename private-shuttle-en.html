@@ -88,7 +88,7 @@
         <input type="text" id="dropoff" placeholder="Enter dropoff address or click map" size="40" autocomplete="off">
       </label>
       <br>
-      <button type="button" onclick="routeAndPrice()">Calculate Route & Price</button>
+      <button type="button" id="calcBtn" onclick="routeAndPrice()">Calculate Route & Price</button>
     </div>
     <div id="map"></div>
     <div id="result" style="margin-top:15px;font-size:1.2em;"></div>
@@ -99,16 +99,17 @@
 
   <section class="reservation">
     <h2>Book Your Private Shuttle</h2>
-    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST" id="reservationForm">
       <input type="hidden" name="_next" value="https://www.shuttleport.net/thank-you-en.html">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="pickup" placeholder="Pick-up Location" required>
-      <input type="text" name="dropoff" placeholder="Drop-off Location" required>
+      <input type="text" name="pickup" id="form-pickup" placeholder="Pick-up Location" required readonly>
+      <input type="text" name="dropoff" id="form-dropoff" placeholder="Drop-off Location" required readonly>
+      <input type="text" name="price" id="price" placeholder="Calculated Price (€)" required readonly>
       <input type="datetime-local" name="date" required>
       <textarea name="notes" placeholder="Additional Notes (optional)"></textarea>
-      <button type="submit">Reserve Now</button>
+      <button type="submit" id="submitBtn" disabled>Confirm Reservation</button>
     </form>
   </section>
 
@@ -203,6 +204,8 @@
       let pickup = document.getElementById('pickup').value.trim();
       let dropoff = document.getElementById('dropoff').value.trim();
       let pickupCoords, dropoffCoords;
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true; // Hesaplama bitene kadar formu kilitle
 
       try {
         if (pickup.includes(',') && pickup.split(',').length === 2) {
@@ -246,14 +249,31 @@
             <b>Distance:</b> ${distance_km.toFixed(1)} km<br>
             <b>Estimated Price:</b> €${base_price.toFixed(2)}
           `;
+          // Fiyatı forma yaz
+          document.getElementById('price').value = base_price.toFixed(2) + ' €';
+          document.getElementById('form-pickup').value = document.getElementById('pickup').value;
+          document.getElementById('form-dropoff').value = document.getElementById('dropoff').value;
+          submitBtn.disabled = false;
         } else {
           document.getElementById('result').innerHTML = "Route not found.";
+          document.getElementById('price').value = '';
+          submitBtn.disabled = true;
         }
       } catch (err) {
         document.getElementById('result').innerHTML = "Error: " + err.message;
+        document.getElementById('price').value = '';
+        submitBtn.disabled = true;
       }
     }
-  </script>
 
+    // Formda ücret olmadan gönderimi engelle (ek güvenlik)
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+      if (!document.getElementById('price').value) {
+        alert('Please calculate your route and price before confirming your reservation.');
+        e.preventDefault();
+      }
+    });
+
+  </script>
 </body>
 </html>
