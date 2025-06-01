@@ -27,12 +27,21 @@ def get_price():
     base = base_prices.get(vehicle, 0)
     dist = distance_km.get(key, 20)  # Varsayılan 20km, eğer mesafe yoksa
 
-    # Dinamik fiyat hesaplama (km + taban fiyat + indirim)
-    calc_price = max(
-        discount["minPercent"] * (base + dist * km_price) - discount["fixedAmount"],
-        15
-    )
-    final_price = round(calc_price, 2)
+    # Eğer base price "auto" ise, otomatik hesapla:
+    try:
+        base_val = float(base)
+    except (ValueError, TypeError):
+        # Otomasyonun yazacağı base fiyat yoksa, base=0 kabul et
+        base_val = 0
+
+    try:
+        calc_price = max(
+            discount["minPercent"] * (base_val + dist * km_price) - discount["fixedAmount"],
+            15
+        )
+        final_price = round(calc_price, 2)
+    except Exception as e:
+        return jsonify({"error": f"Fiyat hesaplanamadı: {str(e)}"}), 400
 
     return jsonify({
         "airport": airport,
