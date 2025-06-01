@@ -36,148 +36,210 @@
       nav ul { flex-direction: column; }
       .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
     }
+    /* Route buttons */
+    .route-buttons button.active {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+    .route-buttons button {
+      background-color: #f0f0f0;
+      color: #333;
+      font-weight: normal;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .route-buttons button:hover {
+      background-color: #e0e0e0;
+    }
+    /* Social icon hover */
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
   </style>
 </head>
 <body>
 
-
-  <header>
-
-     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
     <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
-    <div class="language-switcher">
+    <div class="language-selector">
       <select id="languageSelect" onchange="changeLanguage(this)">
-        <option value="index-en.html" selected class="language-option">English 🇬🇧</option>
-        <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
-        <option value="index-es.html" class="language-option">Español 🇪🇸</option>
-        <option value="index-ja.html" class="language-option">日本語 🇯🇵</option>
+        <option value="index-en.html" selected>English 🇬🇧</option>
+        <option value="index-de.html">Deutsch 🇩🇪</option>
+        <option value="index-es.html">Español 🇪🇸</option>
+        <option value="index-ja.html">日本語 🇯🇵</option>
       </select>
     </div>
   </div>
+  <h1>Welcome to ShuttlePort</h1>
+  <nav>
+    <ul>
+      <li><a href="index-en.html">VIP Airport Transfer</a></li>
+      <li><a href="city-tours-en.html">City Tours</a></li>
+      <li><a href="private-shuttle-en.html">Private Shuttle</a></li>
+      <li><a href="faq-en.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
 
-    
-    <h1>Welcome to ShuttlePort</h1>
-    <nav>
-      <ul>
-        <li><a href="index-en.html">VIP Airport Transfer</a></li>
-        <li><a href="city-tours-en.html">City Tours</a></li>
-        <li><a href="private-shuttle-en.html">Private Shuttle</a></li>
-        <li><a href="faq-en.html">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
+<main>
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>✔ Airport to Hotel VIP Transfers (Istanbul, Antalya, Izmir, Dalaman, Bursa)</li>
+      <li>✔ One-day City Tours with Private Chauffeurs</li>
+      <li>✔ Hotel to Factory or Office Private Transfers</li>
+    </ul>
+  </section>
 
-  <main>
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li>✔ Airport to Hotel VIP Transfers (Istanbul, Antalya, Izmir, Dalaman, Bursa)</li>
-        <li>✔ One-day City Tours with Private Chauffeurs</li>
-        <li>✔ Hotel to Factory or Office Private Transfers</li>
-      </ul>
-    </section>
+  <section id="why">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>✅ Multilingual Support (EN, DE, ES, JA)</li>
+      <li>✅ Fixed pricing per km - No hidden fees</li>
+      <li>✅ Pay in cash at the end of the trip</li>
+      <li>✅ Trusted by 10+ international hotels</li>
+    </ul>
+  </section>
 
-    <section id="why">
-      <h2>Why Choose Us?</h2>
-      <ul>
-        <li>✅ Multilingual Support (EN, DE, ES, JA)</li>
-        <li>✅ Fixed pricing per km - No hidden fees</li>
-        <li>✅ Pay in cash at the end of the trip</li>
-        <li>✅ Trusted by 10+ international hotels</li>
-      </ul>
-    </section>
+  <!-- ShuttlePort Booking Form -->
+  <form id="booking-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <div class="route-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <button type="button" id="btn-airport-to-hotel" class="active">Airport to Hotel</button>
+      <button type="button" id="btn-hotel-to-airport">Hotel to Airport</button>
+    </div>
 
-<!-- Gelişmiş ShuttlePort Formu -->
+    <input type="hidden" name="Route Type" id="route-type" value="airportToHotel">
+    <input type="hidden" name="Calculated Price (€)" id="calculated-price" value="">
+    <input type="hidden" id="route-direction" name="Route Direction" value="Airport to Hotel">
 
-<!-- Gelişmiş ShuttlePort Formu -->
+    <label for="airport">Select Airport</label>
+    <select id="airport" name="Airport" required>
+      <option value="IST">Istanbul Airport (IST)</option>
+      <option value="SAW">Sabiha Gökçen Airport (SAW)</option>
+      <option value="AYT">Antalya Airport (AYT)</option>
+      <option value="ADB">Izmir Airport (ADB)</option>
+      <option value="DLM">Dalaman Airport (DLM)</option>
+    </select>
 
-<form id="booking-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <label for="hotel">Select Hotel</label>
+    <select id="hotel" name="Hotel" required>
+      <!-- Dynamically populated -->
+    </select>
 
-  <div class="route-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
-    <button type="button" id="btn-airport-to-hotel" class="active">Airport to Hotel</button>
-    <button type="button" id="btn-hotel-to-airport">Hotel to Airport</button>
-  </div>
+    <label for="vehicle">Vehicle Type</label>
+    <div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
+      Selected Route: Airport to Hotel
+    </div>
+    <select id="vehicle" name="Vehicle" required>
+      <option value="Standard Van">Standard Van</option>
+      <option value="Luxury Van">Luxury Van</option>
+      <option value="Minibus">Minibus</option>
+      <option value="Business Class">Business Class</option>
+      <option value="VIP Shuttle">VIP Shuttle</option>
+    </select>
 
-  <input type="hidden" name="Route Type" id="route-type" value="airportToHotel">
-  <input type="hidden" name="Calculated Price (€)" id="calculated-price" value="">
-  <input type="hidden" id="route-direction" name="Route Direction" value="Airport to Hotel">
+    <label for="full-name">Full Name</label>
+    <input type="text" id="full-name" name="Full Name" required>
 
-  <label for="airport">Select Airport</label>
-  <select id="airport" name="Airport" required>
-    <option value="IST">Istanbul Airport (IST)</option>
-    <option value="SAW">Sabiha Gökçen Airport (SAW)</option>
-    <option value="AYT">Antalya Airport (AYT)</option>
-    <option value="ADB">Izmir Airport (ADB)</option>
-    <option value="DLM">Dalaman Airport (DLM)</option>
-  </select>
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="Email" required>
 
-  <label for="hotel">Select Hotel</label>
-  <select id="hotel" name="Hotel" required>
-    <!-- Dynamically populated -->
-  </select>
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="Phone Number" required>
 
-  <label for="vehicle">Vehicle Type</label>
+    <label for="transfer-date">Transfer Date & Time</label>
+    <input type="datetime-local" id="transfer-date" name="Transfer Date & Time" required>
 
-  <div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
-    Selected Route: Airport to Hotel
-  </div>
+    <label for="passengers">Number of Passengers</label>
+    <input type="number" id="passengers" name="Passengers" min="1" max="20" required>
 
-  <select id="vehicle" name="Vehicle" required>
-    <option value="Standard Van">Standard Van</option>
-    <option value="Luxury Van">Luxury Van</option>
-    <option value="Minibus">Minibus</option>
-    <option value="Business Class">Business Class</option>
-    <option value="VIP Shuttle">VIP Shuttle</option>
-  </select>
+    <label for="note">Additional Notes</label>
+    <textarea id="note" name="Notes" rows="3"></textarea>
 
-  <label for="full-name">Full Name</label>
-  <input type="text" id="full-name" name="Full Name" required>
+    <div id="price-display">Please select route to see price</div>
+    <button type="submit" id="confirm-price-btn" style="display: none;">✅ Confirm Price & Book</button>
+  </form>
+  <!-- End Form Section -->
 
-  <label for="email">Email Address</label>
-  <input type="email" id="email" name="Email" required>
+  <section id="map">
+    <h2>We Serve These Airports</h2>
+    <p>Istanbul Airport (IST), Sabiha Gökçen (SAW), Antalya (AYT), Izmir (ADB), Dalaman (DLM), Bursa (YEI)</p>
+    <div style="margin-top:20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
-  <label for="phone">Phone Number</label>
-  <input type="tel" id="phone" name="Phone Number" required>
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">Follow Our Journeys</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
 
-  <label for="transfer-date">Transfer Date & Time</label>
-  <input type="datetime-local" id="transfer-date" name="Transfer Date & Time" required>
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <ul>
+      <li><strong>How can I pay?</strong> — You pay in cash at the end of the trip.</li>
+      <li><strong>Can I cancel my booking?</strong> — Yes, up to 12 hours before your trip.</li>
+      <li><strong>Do you offer round-trip options?</strong> — Yes, contact us for more info.</li>
+    </ul>
+  </section>
 
-  <label for="passengers">Number of Passengers</label>
-  <input type="number" id="passengers" name="Passengers" min="1" max="20" required>
+  <section>
+    <h2>Airports</h2>
+    <ul>
+      <li><a href="https://www.istairport.com">Istanbul Flughafen</a></li>
+      <li><a href="https://www.sabihagokcen.aero/homepage">Sabiha Gökçen Flughafen</a></li>
+      <li><a href="https://www.antalya-airport.aero/">Antalya Flughafen</a></li>
+      <li><a href="https://www.adnanmenderesairport.com/">Izmir Flughafen</a></li>
+      <li><a href="https://www.dalamanairport.aero/">Dalaman Flughafen</a></li>
+    </ul>
+  </section>
+</main>
 
-  <label for="note">Additional Notes</label>
-  <textarea id="note" name="Notes" rows="3"></textarea>
-
-  <div id="price-display">Please select route to see price</div>
-  <button type="submit" id="confirm-price-btn" style="display: none;">✅ Confirm Price & Book</button>
-</form>
-
-<style>
-  .route-buttons button.active {
-    background-color: #007BFF;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-  }
-
-  .route-buttons button {
-    background-color: #f0f0f0;
-    color: #333;
-    font-weight: normal;
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-
-  .route-buttons button:hover {
-    background-color: #e0e0e0;
-  }
-</style>
+<footer>
+  <p>&copy; 2025 ShuttlePort. All Rights Reserved.</p>
+  <p>Email: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
+  <section>
+    <h2>FAQ</h2>
+    <p>Haben Sie Fragen? Schauen Sie in unsere FAQs oder kontaktieren Sie uns jederzeit.</p>
+  </section>
+</footer>
 
 <script>
+  // Language switch
+  function changeLanguage(select) {
+    const selectedPage = select.value;
+    window.location.href = selectedPage;
+  }
+
+  // Hotel data for the airport select
+  const hotelData = {
+    IST: ["Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim", "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"],
+    SAW: ["Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir", "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"],
+    AYT: ["Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya", "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"],
+    ADB: ["Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak", "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"],
+    DLM: ["Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek", "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"]
+  };
+
   const routeButtons = document.querySelectorAll(".route-buttons button");
   const routeTypeInput = document.getElementById("route-type");
   const airportSelect = document.getElementById("airport");
@@ -190,14 +252,7 @@
 
   let routeType = "airportToHotel";
 
-  const hotelData = {
-    IST: ["Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim", "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"],
-    SAW: ["Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir", "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"],
-    AYT: ["Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya", "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"],
-    ADB: ["Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak", "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"],
-    DLM: ["Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek", "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"]
-  };
-
+  // Route switch button logic
   routeButtons.forEach(button => {
     button.addEventListener("click", () => {
       const selectedType = button.id === "btn-airport-to-hotel" ? "airportToHotel" : "hotelToAirport";
@@ -207,8 +262,6 @@
 
   function updateRouteType(type) {
     routeType = type;
-
-    // Güncel butonları vurgula
     document.getElementById("btn-airport-to-hotel").classList.remove("active");
     document.getElementById("btn-hotel-to-airport").classList.remove("active");
 
@@ -223,7 +276,6 @@
       routeDirectionInput.value = "Hotel to Airport";
       routeTypeInput.value = "hotelToAirport";
     }
-
     populateHotels();
     priceDisplay.textContent = "Please select route to see price";
     confirmButton.style.display = "none";
@@ -243,151 +295,38 @@
     calculatePrice();
   }
 
-async function calculatePrice() {
-  const airport = airportSelect.value;
-  const hotel = hotelSelect.value;
-  const vehicle = document.getElementById("vehicle").value;
-  if (!airport || !hotel || !vehicle) return;
+  async function calculatePrice() {
+    const airport = airportSelect.value;
+    const hotel = hotelSelect.value;
+    const vehicle = document.getElementById("vehicle").value;
+    if (!airport || !hotel || !vehicle) return;
 
-  try {
-    const apiUrl = "https://shuttleport-site.onrender.com/api/get_price";
-    const url = `${apiUrl}?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    try {
+      const apiUrl = "https://shuttleport-site.onrender.com/api/get_price";
+      const url = `${apiUrl}?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
+      const response = await fetch(url);
+      const data = await response.json();
 
-    if (data.price) {
-      priceDisplay.textContent = `Best Price: €${data.price} (${data.distance_km} km)`;
-      calculatedPriceInput.value = data.price;
-      confirmButton.style.display = "block";
-    } else {
-      priceDisplay.textContent = "No price found for selection.";
+      if (data.price) {
+        priceDisplay.textContent = `Best Price: €${data.price} (${data.distance_km} km)`;
+        calculatedPriceInput.value = data.price;
+        confirmButton.style.display = "block";
+      } else {
+        priceDisplay.textContent = "No price found for selection.";
+        confirmButton.style.display = "none";
+      }
+    } catch (err) {
+      priceDisplay.textContent = "Error retrieving price.";
       confirmButton.style.display = "none";
     }
-  } catch (err) {
-    priceDisplay.textContent = "Error retrieving price.";
-    confirmButton.style.display = "none";
-  }
-}
-
-    const multiplier = 1 + (Math.random() * 0.2 - 0.1);
-    let avgRefPrice = basePrices[vehicle] * multiplier;
-    const finalPrice = Math.max(15, Math.floor(avgRefPrice - 5));
-
-    priceDisplay.textContent = `Best ShuttlePort Price: €${finalPrice}`;
-    calculatedPriceInput.value = finalPrice;
-    confirmButton.style.display = "block";
   }
 
   airportSelect.addEventListener("change", populateHotels);
   hotelSelect.addEventListener("change", calculatePrice);
   document.getElementById("vehicle").addEventListener("change", calculatePrice);
 
-  // Sayfa yüklendiğinde otel listesini başlat
   window.addEventListener("DOMContentLoaded", populateHotels);
 </script>
-<!-- Bitiş: Form Bölümü -->
-    
-    <section id="map">
-      <h2>We Serve These Airports</h2>
-      <p>Istanbul Airport (IST), Sabiha Gökçen (SAW), Antalya (AYT), Izmir (ADB), Dalaman (DLM), Bursa (YEI)</p>
-       <div style="margin-top:20px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
-      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-
-      <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
-  <h2 style="text-align: center; font-size: 1.5rem; color: #444;">Follow Our Journeys</h2>
-
-  <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
-    <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
-           style="width: 32px; height: 32px; transition: transform 0.3s ease;">
-    </a>
-    <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
-           style="width: 32px; height: 32px; transition: transform 0.3s ease;">
-    </a>
-  </div>
-</section>
-
-<!-- Hover efekti için ekstra stil -->
-<style>
-  .social-section a:hover img {
-    transform: scale(1.2);
-  }
-</style>
-
-    <section id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <ul>
-        <li><strong>How can I pay?</strong> — You pay in cash at the end of the trip.</li>
-        <li><strong>Can I cancel my booking?</strong> — Yes, up to 12 hours before your trip.</li>
-        <li><strong>Do you offer round-trip options?</strong> — Yes, contact us for more info.</li>
-</ul>
- 
-      
-<section>
-      <h2>Airports</h2>
-
-      <ul>
-        <li><a href="https://www.istairport.com">Istanbul Flughafen</a></li>
-        <li><a href="https://www.sabihagokcen.aero/homepage">Sabiha Gökçen Flughafen</a></li>
-        <li><a href="https://www.antalya-airport.aero/">Antalya Flughafen</a></li>
-        <li><a href="https://www.adnanmenderesairport.com/">Izmir Flughafen</a></li>
-        <li><a href="https://www.dalamanairport.aero/">Dalaman Flughafen</a></li>
-
-</section>
-        
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 ShuttlePort. All Rights Reserved.</p>
-    <p>Email: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
-  </footer>
-
-  <footer>
-    <section>
-      <h2>FAQ</h2>
-      <p>Haben Sie Fragen? Schauen Sie in unsere FAQs oder kontaktieren Sie uns jederzeit.</p>
-    </section>
-
-  </footer>
-
-  <script>
-    const hotels = {
-      istanbul: ["Swissôtel The Bosphorus", "Çırağan Palace Kempinski", "Four Seasons Sultanahmet", "The Marmara Taksim", "Raffles Istanbul", "W Istanbul", "Hilton Istanbul Bosphorus", "Pera Palace Hotel", "Radisson Blu Şişli", "InterContinental Istanbul"],
-      antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Beach Lara", "Delphin Imperial", "Lara Barut Collection", "Concorde De Luxe", "Swandor Topkapi Palace", "Aska Lara Resort", "Royal Seginus", "Fame Residence Lara"],
-      izmir: ["Swissôtel Grand Efes", "Mövenpick Izmir", "Hilton Garden Inn", "DoubleTree by Hilton", "Izmir Marriott", "Wyndham Grand Izmir", "Key Hotel", "Renaissance Izmir", "Tav Airport Hotel", "Orty Hotel"],
-      bursa: ["Almira Hotel", "Sheraton Bursa", "Hilton Bursa", "Holiday Inn Bursa", "Ramada Bursa", "Crowne Plaza Bursa", "Hotel Anatolia", "Tiara Termal Hotel", "Baia Bursa", "Divan Bursa"],
-      dalaman: ["Hilton Dalaman", "TUI Blue Sarigerme", "D Resort Gocek", "Robinson Club Sarigerme", "Liberty Hotels Lykia", "Jiva Beach Resort", "Sentido Lykia Resort", "Hotel Greenland", "Blue Lagoon Hotel", "Alesta Yacht Hotel"]
-    };
-
-    function updateHotels() {
-      const city = document.getElementById("city").value;
-      const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>Select Hotel</option>";
-      if (hotels[city]) {
-        hotels[city].forEach(hotel => {
-          const option = document.createElement("option");
-          option.value = hotel;
-          option.textContent = hotel;
-          hotelSelect.appendChild(option);
-        });
-      }
-    }
-
-    function changeLanguage(select) {
-      const selectedPage = select.value;
-      window.location.href = selectedPage;
-    }
-  </script>
-
-  
 
 </body>
 </html>
