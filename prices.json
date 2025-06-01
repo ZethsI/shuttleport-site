@@ -2,25 +2,25 @@
   "basePrices": {
     "IST": {
       "Swissotel Bosphorus": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "10",
+        "Luxury Van": "20",
+        "Minibus": "30",
+        "Business Class": "40",
+        "VIP Shuttle": "50"
       },
       "CVK Park Bosphorus": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "60",
+        "Luxury Van": "70",
+        "Minibus": "80",
+        "Business Class": "90",
+        "VIP Shuttle": "100"
       },
       "Radisson Blu Şişli": {
-        "Standard Van": "auto",
-        "Luxury Van": "auto",
-        "Minibus": "auto",
-        "Business Class": "auto",
-        "VIP Shuttle": "auto"
+        "Standard Van": "110",
+        "Luxury Van": "120",
+        "Minibus": "130",
+        "Business Class": "140",
+        "VIP Shuttle": "150"
       },
       "Hilton Bomonti": {
         "Standard Van": "auto",
