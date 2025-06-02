@@ -195,77 +195,77 @@
       const res = await fetch(url);
       const data = await res.json();
       if(data && data.features && data.features.length > 0) {
-        return data.features[0].geometry.coordinates.reverse(); // [lat, lng]
+        return data.features[0].geometry.coordinates; // [lng, lat]
       }
       throw new Error("Address not found");
     }
 
-    async function routeAndPrice() {
-      let pickup = document.getElementById('pickup').value.trim();
-      let dropoff = document.getElementById('dropoff').value.trim();
-      let pickupCoords, dropoffCoords;
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true; // Hesaplama bitene kadar formu kilitle
+async function routeAndPrice() {
+  let pickup = document.getElementById('pickup').value.trim();
+  let dropoff = document.getElementById('dropoff').value.trim();
+  let pickupCoords, dropoffCoords;
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
 
-      try {
-        if (pickup.includes(',') && pickup.split(',').length === 2) {
-          pickupCoords = pickup.split(',').map(Number);
-        } else {
-          pickupCoords = await addressToCoords(pickup);
-        }
-        if (dropoff.includes(',') && dropoff.split(',').length === 2) {
-          dropoffCoords = dropoff.split(',').map(Number);
-        } else {
-          dropoffCoords = await addressToCoords(dropoff);
-        }
-
-        // Rotayı çek
-        const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${ORS_API_KEY}`;
-        const body = {
-          coordinates: [
-            [pickupCoords[1], pickupCoords[0]],
-            [dropoffCoords[1], dropoffCoords[0]]
-          ]
-        };
-        const res = await fetch(url, {
-          method:"POST",
-          headers:{"Content-Type":"application/json"},
-          body:JSON.stringify(body)
-        });
-        const data = await res.json();
-
-        if(data && data.features && data.features[0]) {
-          // Rota çiz
-          const coords = data.features[0].geometry.coordinates.map(c => [c[1],c[0]]);
-          if(window.routeLine) map.removeLayer(window.routeLine);
-          window.routeLine = L.polyline(coords, {color:'blue'}).addTo(map);
-          map.fitBounds(window.routeLine.getBounds());
-
-          // Mesafe & fiyat
-          const distance_km = data.features[0].properties.summary.distance / 1000;
-          const base_price = Math.max(25, distance_km * 1.5); // Min 25€, km başı 1.5€
-
-          document.getElementById('result').innerHTML = `
-            <b>Distance:</b> ${distance_km.toFixed(1)} km<br>
-            <b>Estimated Price:</b> €${base_price.toFixed(2)}
-          `;
-          // Fiyatı forma yaz
-          document.getElementById('price').value = base_price.toFixed(2) + ' €';
-          document.getElementById('form-pickup').value = document.getElementById('pickup').value;
-          document.getElementById('form-dropoff').value = document.getElementById('dropoff').value;
-          submitBtn.disabled = false;
-        } else {
-          document.getElementById('result').innerHTML = "Route not found.";
-          document.getElementById('price').value = '';
-          submitBtn.disabled = true;
-        }
-      } catch (err) {
-        document.getElementById('result').innerHTML = "Error: " + err.message;
-        document.getElementById('price').value = '';
-        submitBtn.disabled = true;
-      }
+  try {
+    if (pickup.includes(',') && pickup.split(',').length === 2) {
+      let arr = pickup.split(',').map(Number);
+      pickupCoords = [arr[1], arr[0]]; // [lng, lat]
+    } else {
+      pickupCoords = await addressToCoords(pickup); // [lng, lat]
+    }
+    if (dropoff.includes(',') && dropoff.split(',').length === 2) {
+      let arr = dropoff.split(',').map(Number);
+      dropoffCoords = [arr[1], arr[0]]; // [lng, lat]
+    } else {
+      dropoffCoords = await addressToCoords(dropoff);
     }
 
+    // Rotayı çek
+    const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${ORS_API_KEY}`;
+    const body = {
+      coordinates: [
+        pickupCoords,
+        dropoffCoords
+      ]
+    };
+    const res = await fetch(url, {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(body)
+    });
+    const data = await res.json();
+
+    if(data && data.features && data.features[0]) {
+      // Rota çiz
+      const coords = data.features[0].geometry.coordinates.map(c => [c[1],c[0]]);
+      if(window.routeLine) map.removeLayer(window.routeLine);
+      window.routeLine = L.polyline(coords, {color:'blue'}).addTo(map);
+      map.fitBounds(window.routeLine.getBounds());
+
+      // Mesafe & fiyat
+      const distance_km = data.features[0].properties.summary.distance / 1000;
+      const base_price = Math.max(25, distance_km * 1.5);
+
+      document.getElementById('result').innerHTML = `
+        <b>Distance:</b> ${distance_km.toFixed(1)} km<br>
+        <b>Estimated Price:</b> €${base_price.toFixed(2)}
+      `;
+      document.getElementById('price').value = base_price.toFixed(2) + ' €';
+      document.getElementById('form-pickup').value = document.getElementById('pickup').value;
+      document.getElementById('form-dropoff').value = document.getElementById('dropoff').value;
+      submitBtn.disabled = false;
+    } else {
+      document.getElementById('result').innerHTML = "Route not found.";
+      document.getElementById('price').value = '';
+      submitBtn.disabled = true;
+    }
+  } catch (err) {
+    document.getElementById('result').innerHTML = "Error: " + err.message;
+    document.getElementById('price').value = '';
+    submitBtn.disabled = true;
+  }
+}
     // Formda ücret olmadan gönderimi engelle (ek güvenlik)
     document.getElementById('reservationForm').addEventListener('submit', function(e) {
       if (!document.getElementById('price').value) {
