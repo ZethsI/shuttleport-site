@@ -42,6 +42,7 @@ nav ul li a:hover {
 }
 
 .hero {
+  background-color: #003366; /* veya istediğin koyu bir renk */
   background-size: cover;
   background-position: center;
   color: white;
