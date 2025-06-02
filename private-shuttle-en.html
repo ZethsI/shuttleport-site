@@ -35,7 +35,7 @@
 <body>
 
   <header>
-    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <div style="display: flex-start/flex-end; justify-content: space-between; align-items: center; padding: 10px;">
       <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
       <div class="language-switcher">
         <select id="languageSelect" onchange="changeLanguage(this)">
@@ -224,11 +224,12 @@ async function addressToCoords(address) {
 const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${ORS_API_KEY}`;
 const body = {
   "coordinates": [
-    [28.9784, 41.0082],   // [lng, lat] - örnek
-    [28.99, 41.015]
+    pickupCoords,
+    dropoffCoords
   ]
-}
-const res = await fetch(url, {
+};
+  
+  const res = await fetch(url, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(body)
