@@ -190,12 +190,14 @@
 
     // Geocoding: adresi koordinata çevir
 async function addressToCoords(address) {
-  const url = `https://api.openrouteservice.org/geocode/search?api_key=${ORS_API_KEY}&text=${encodeURIComponent(address)}`;
+  const url = `/api/geocode?text=${encodeURIComponent(address)}`; // Artık kendi backend'in
   const res = await fetch(url);
   const data = await res.json();
   if(data && data.features && data.features.length > 0) {
     return data.features[0].geometry.coordinates; // [lng, lat]
   }
+  throw new Error("Address not found");
+}
   throw new Error("Address not found");
 }async function routeAndPrice() {
   let pickup = document.getElementById('pickup').value.trim();
