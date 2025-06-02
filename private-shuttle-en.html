@@ -198,8 +198,7 @@ async function addressToCoords(address) {
     return data.features[0].geometry.coordinates; // [lng, lat]
   }
   throw new Error("Address not found");
-}
-async function routeAndPrice() {
+}async function routeAndPrice() {
   let pickup = document.getElementById('pickup').value.trim();
   let dropoff = document.getElementById('dropoff').value.trim();
   let pickupCoords, dropoffCoords;
@@ -207,20 +206,21 @@ async function routeAndPrice() {
   submitBtn.disabled = true;
 
   try {
+    // Kullanıcı koordinat girerse [lat, lng] → [lng, lat] çevir
     if (pickup.includes(',') && pickup.split(',').length === 2) {
       let arr = pickup.split(',').map(Number);
-      pickupCoords = [arr[1], arr[0]]; // [lng, lat]
+      pickupCoords = [arr[1], arr[0]];
     } else {
       pickupCoords = await addressToCoords(pickup); // [lng, lat]
     }
     if (dropoff.includes(',') && dropoff.split(',').length === 2) {
       let arr = dropoff.split(',').map(Number);
-      dropoffCoords = [arr[1], arr[0]]; // [lng, lat]
+      dropoffCoords = [arr[1], arr[0]];
     } else {
-      dropoffCoords = await addressToCoords(dropoff);
+      dropoffCoords = await addressToCoords(dropoff); // [lng, lat]
     }
 
-    // Rotayı çek
+    // Post body *doğru* olmalı
     const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${ORS_API_KEY}`;
     const body = {
       coordinates: [
@@ -236,13 +236,11 @@ async function routeAndPrice() {
     const data = await res.json();
 
     if(data && data.features && data.features[0]) {
-      // Rota çiz
       const coords = data.features[0].geometry.coordinates.map(c => [c[1],c[0]]);
       if(window.routeLine) map.removeLayer(window.routeLine);
       window.routeLine = L.polyline(coords, {color:'blue'}).addTo(map);
       map.fitBounds(window.routeLine.getBounds());
 
-      // Mesafe & fiyat
       const distance_km = data.features[0].properties.summary.distance / 1000;
       const base_price = Math.max(25, distance_km * 1.5);
 
