@@ -156,8 +156,7 @@
       window.location.href = selectedPage;
     }
 
-    // --- OpenRouteService API KEYİNİ BURAYA EKLE! ---
-    const ORS_API_KEY = "5b3ce3597851110001cf6248c41d2df650a449c8a3defe462262cd1c"; // <-- BURAYI DEĞİŞTİR
+
 
     // Harita başlat
     const map = L.map('map').setView([41.01, 28.98], 11);
@@ -221,15 +220,16 @@ async function addressToCoords(address) {
     }
 
     // Post body *doğru* olmalı
-const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${ORS_API_KEY}`;
+const url = "/api/route"; // Eskiden doğrudan OpenRouteService idi, şimdi kendi endpoint'in
+
 const body = {
-  "coordinates": [
-    pickupCoords,
-    dropoffCoords
+  coordinates: [
+    pickupCoords,   // [lng, lat]
+    dropoffCoords   // [lng, lat]
   ]
 };
-  
-  const res = await fetch(url, {
+
+const res = await fetch(url, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(body)
