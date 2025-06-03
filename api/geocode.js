@@ -24,6 +24,9 @@ export default async function handler(req, res) {
     });
     const data = await response.json();
     console.log("ORS API response:", data); // <-- ekle
+
+    console.log('ORS_API_KEY:', (process.env.ORS_API_KEY || '').slice(0,4) + '...' + (process.env.ORS_API_KEY || '').slice(-4));
+    
     res.status(200).json(data);
   } catch (err) {
     res.status(500).json({ error: err.toString() });
