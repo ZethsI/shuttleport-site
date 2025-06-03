@@ -13,7 +13,12 @@
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
     header, footer { background: #003366; color: #fff; padding: 0.5rem 0; text-align: center; }
     nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
-    nav a { color: white; text-decoration: none; font-weight: bold; }
+    
+    nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
     nav a:hover { text-decoration: underline; }
     .language-selector { position: absolute; top: 1rem; right: 1rem; }
     .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
@@ -44,10 +49,11 @@ header, footer {
   align-items: center;
   max-width: 950px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 4px;
+  font-size: 0.97rem;
 }
 .logo-img {
-  height: 42px;
+  height: 30px;
 }
 .language-switcher select {
   padding: 0.5rem;
@@ -62,11 +68,13 @@ nav ul {
   gap: 1.5rem;
   padding: 0;
   margin: 0;
+  font-size: 0.97rem;
 }
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 400;
+  font-size: 0.97rem;
 }
 nav a.active {
   text-decoration: underline;
