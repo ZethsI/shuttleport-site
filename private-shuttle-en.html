@@ -31,6 +31,41 @@
       nav ul { flex-direction: column; }
       .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
     }
+
+    .header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.logo-img {
+  height: 45px;
+}
+.language-switcher select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+@media (max-width: 600px) {
+  .header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .logo-img {
+    height: 38px;
+  }
+}
+header, footer {
+  background: #003366;
+  color: #fff;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+    
   </style>
 </head>
 <body>
