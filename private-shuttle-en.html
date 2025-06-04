@@ -94,6 +94,27 @@ nav a.active {
     gap: 0.8rem;
   }
 }
+
+    #route-calc-container input[type="text"] {
+  width: 80%;
+  max-width: 350px;
+  min-width: 140px;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 0.7em;
+}
+
+@media (max-width: 700px) {
+  #route-calc-container input[type="text"] {
+    width: 98%;
+    max-width: 99vw;
+    font-size: 1.05em;
+  }
+  #route-calc-container label {
+    display: block;
+    margin-bottom: 1.1em;
+  }
+}
     
   </style>
 </head>
@@ -187,11 +208,11 @@ nav a.active {
     <h2>Calculate Your Route & Price</h2>
     <div style="margin:10px 0 20px 0;">
       <label>Pickup Address: 
-        <input type="text" id="pickup" placeholder="Enter pickup address or click map" size="40" autocomplete="off">
+        <input type="text" id="pickup" placeholder="Enter pickup address or click map" autocomplete="off">
       </label>
       <br>
       <label>Dropoff Address: 
-        <input type="text" id="dropoff" placeholder="Enter dropoff address or click map" size="40" autocomplete="off">
+        <input type="text" id="dropoff" placeholder="Enter dropoff address or click map" autocomplete="off">
       </label>
       <br>
       <button type="button" id="calcBtn" onclick="routeAndPrice()">Calculate Route & Price</button>
