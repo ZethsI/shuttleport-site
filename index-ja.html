@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ShuttlePortでは、イスタンブール、アンタルヤ、イズミル、ブルサ、ダラマンでVIP空港送迎、観光ツアー、専用シャトルサービスを多言語対応でご提供します。">
-  <meta name="keywords" content="VIP送迎, 空港トランスファー, シャトルサービス, 都市ツアー, イスタンブール, アンタルヤ, ダラマン, イズミル, ブルサ">
+  <meta name="description" content="ShuttlePortでVIP空港送迎、シティツアー、プライベート送迎を予約。信頼できる多言語サービス。">
+  <meta name="keywords" content="VIP送迎, 空港送迎, イスタンブールシャトル, シティツアー, プライベートドライバー">
   <meta name="author" content="ShuttlePort">
-  <title>ShuttlePort - VIP空港送迎</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>ShuttlePort - VIP送迎サービス</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
-    header, footer { background: #003366; color: white; text-align: center; padding: 1rem 0; }
-    nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
     nav a { color: white; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
     .language-selector { position: absolute; top: 1rem; right: 1rem; }
     .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
-    main { max-width: 1000px; margin: auto; padding: 2rem; background: white; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
     section { margin-bottom: 2rem; }
     h2 { color: #003366; margin-bottom: 1rem; }
     form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
@@ -27,156 +34,371 @@
     footer p { margin: 0.5rem 0; }
     @media (max-width: 600px) {
       nav ul { flex-direction: column; }
-      .language-selector { position: static; text-align: center; margin-bottom: 1rem; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+    .route-buttons button.active {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+    .route-buttons button {
+      background-color: #f0f0f0;
+      color: #333;
+      font-weight: normal;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .route-buttons button:hover {
+      background-color: #e0e0e0;
+    }
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+    section {
+      margin: 2rem 0;
+      padding: 1.5rem 1.5rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      color: #003366;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    a {
+      color: #0077cc;
+      word-break: break-all;
+    }
+    @media (max-width: 700px) {
+      section {
+        padding: 1.2rem 2vw;
+        margin: 1.2rem 0;
+        box-shadow: none;
+        border-radius: 0.7rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+        margin-bottom: 0.7rem;
+        text-align: left;
+      }
+      p {
+        font-size: 1rem;
+      }
+      a {
+        font-size: 1.01em;
+      }
     }
   </style>
 </head>
 <body>
 
-
-  <header>
-
+<header>
   <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
-    <div class="language-switcher">
+    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePortロゴ">
+    <div class="language-selector">
       <select id="languageSelect" onchange="changeLanguage(this)">
-        <option value="index-ja.html" selected class="language-option">日本語 🇯🇵</option>
-        <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
-        <option value="index-en.html" class="language-option">English 🇬🇧</option>
-        <option value="index-es.html" class="language-option">Español 🇪🇸</option>
+        <option value="index-en.html">English 🇬🇧</option>
+        <option value="index-de.html">Deutsch 🇩🇪</option>
+        <option value="index-es.html">Español 🇪🇸</option>
+        <option value="index-ja.html" selected>日本語 🇯🇵</option>
       </select>
     </div>
   </div>
-    
-    <h1>ShuttlePortへようこそ</h1>
-    <nav>
-      <ul>
-        <li><a href="index-ja.html">VIP空港送迎</a></li>
-        <li><a href="city-tours-ja.html">市内観光ツアー</a></li>
-        <li><a href="private-shuttle-ja.html">専用シャトル</a></li>
-        <li><a href="faq-ja.html">よくある質問</a></li>
-      </ul>
-    </nav>
-  </header>
+  <h1>ShuttlePortへようこそ</h1>
+  <nav>
+    <ul>
+      <li><a href="index-ja.html">VIP空港送迎</a></li>
+      <li><a href="city-tours-ja.html">市内観光ツアー</a></li>
+      <li><a href="private-shuttle-ja.html">プライベートシャトル</a></li>
+      <li><a href="faq-ja.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
-    <section>
-      <h2>当社のサービス</h2>
-      <ul>
-        <li>✔ 空港〜ホテル送迎（イスタンブール、アンタルヤ、イズミル、ダラマン、ブルサ）</li>
-        <li>✔ プライベートドライバー付き日帰りツアー</li>
-        <li>✔ ホテル〜工場・オフィス間の都市内移動</li>
-      </ul>
-    </section>
+<section>
+  <h2>イスタンブール空港（IST）周辺のホテル</h2>
+  <p>
+    <strong>イスタンブール空港</strong>はヨーロッパとアジアの交差点に位置し、旅行者に素晴らしい宿泊施設を多数提供しています。究極の利便性を求めるなら<a href="https://www.istanbulairport.com/en/hotel" target="_blank">YOTEL Istanbul Airport</a>、またはスタイリッシュな<a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-istanbul-ottomare" target="_blank">Radisson Blu Hotel Istanbul Ottomare</a>。エレガントな<a href="https://www.marriott.com/en-us/hotels/istdt-istanbul-marriott-hotel-sisli/overview/" target="_blank">Marriott Hotel Sisli</a>や象徴的な<a href="https://www.hilton.com/en/hotels/istaphi-hilton-istanbul-bomonti/" target="_blank">Hilton Istanbul Bomonti</a>は市の中心で快適な滞在を提供します。ビジネストラベラーには<a href="https://all.accor.com/hotel/9544/index.en.shtml" target="_blank">Pullman Istanbul Hotel & Convention Center</a>、宮殿のような滞在なら<a href="https://www.kempinski.com/en/istanbul/ciragan-palace" target="_blank">Çırağan Palace Kempinski</a>。リバーサイドの魅力は<a href="https://www.fourseasons.com/bosphorus/" target="_blank">Four Seasons Hotel Istanbul at the Bosphorus</a>、ラグジュアリーな<a href="https://www.divan.com.tr/EN/Hotel/Divan-Istanbul" target="_blank">Divan Istanbul</a>。素晴らしい景色と最高のサービスは<a href="https://www.ritzcarlton.com/en/hotels/europe/istanbul" target="_blank">The Ritz-Carlton Istanbul</a>や<a href="https://www.sheratonistanbulcitycenter.com/" target="_blank">Sheraton Istanbul City Center</a>で体験できます。
+  </p>
+</section>
+<section>
+  <h2>サビハ・ギョクチェン空港（SAW）周辺のホテル</h2>
+  <p>
+    <strong>サビハ・ギョクチェン空港</strong>近く、イスタンブールのアジア側で快適さと利便性を体験してください。<a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-istanbul-asia" target="_blank">Radisson Blu Hotel Istanbul Asia</a>のモダンなラグジュアリーや、ビジネス向けの<a href="https://www.ihg.com/crowneplaza/hotels/us/en/istanbul/istsp/hoteldetail" target="_blank">Crowne Plaza Istanbul Asia</a>。<a href="https://www.dedeman.com/hotels/istanbul/dedeman-bostanci-hotel-convention-center" target="_blank">Dedeman Bostancı</a>や<a href="https://www.hilton.com/en/hotels/istgchi-hilton-garden-inn-istanbul-sabiha-gokcen-airport/" target="_blank">Hilton Garden Inn Sabiha Gökçen</a>は家族やビジネスに最適です。<a href="https://www.parkinn.com/hotel-istanbul-airport" target="_blank">Park Inn by Radisson Istanbul Ataturk Airport</a>や<a href="https://www.divan.com.tr/EN/Hotel/Divan-Istanbul-Asia" target="_blank">Divan Istanbul Asia</a>で現代的なエレガンスを。<a href="https://www.titanic.com.tr/en/titanic-business-kartal-hotel" target="_blank">Titanic Business Kartal</a>、<a href="https://www.ramadaencorekartal.com/" target="_blank">Ramada Encore Istanbul Kartal</a>、<a href="https://www.emirtimeshotel.com/" target="_blank">Emirtimes Hotel Tuzla</a>、<a href="https://www.marriott.com/en-us/hotels/istaw-istanbul-marriott-hotel-asia/overview/" target="_blank">Istanbul Marriott Hotel Asia</a>もおすすめです。
+  </p>
+</section>
+<section>
+  <h2>アンタルヤ空港（AYT）周辺のホテル</h2>
+  <p>
+    <strong>アンタルヤ空港</strong>は地中海への玄関口であり、トルコで最も人気のリゾートにアクセスできます。<a href="https://www.baruthotels.com/en/barut-lara" target="_blank">Barut Lara</a>のオールインクルーシブ・ラグジュアリー、<a href="https://www.titanic.com.tr/en/titanic-deluxe-lara" target="_blank">Titanic Deluxe Lara</a>の見事な施設。<a href="https://www.kayahotels.com/en/hotels/kaya-palazzo-golf-resort" target="_blank">Kaya Palazzo Golf Resort</a>のゴルフ・スパ・エレガンス、<a href="https://www.dedeman.com/hotels/antalya/dedeman-antalya-hotel-resort-convention-center" target="_blank">Dedeman Antalya</a>のクラシックな快適さ。<a href="https://www.ihg.com/crowneplaza/hotels/us/en/antalya/aytap/hoteldetail" target="_blank">Crowne Plaza Antalya</a>や<a href="https://www.sheraton.com/en-us/hotels/aytsh-sheraton-antalya-convention-center/overview/" target="_blank">Sheraton Convention Center Antalya</a>はビジネスにもレジャーにも最適。<a href="https://www.mardanpalace.com/" target="_blank">Mardan Palace</a>や<a href="https://www.limakhotels.com/en/limak-lara-deluxe-hotel-resort" target="_blank">Limak Lara Deluxe Hotel & Resort</a>で贅沢な滞在。<a href="https://www.rixos.com/en/hotel-resort/rixos-downtown-antalya" target="_blank">Rixos Downtown Antalya</a>や家族向けの<a href="https://www.concordehotel.com.tr/en" target="_blank">Concorde De Luxe Resort</a>もおすすめです。
+  </p>
+</section>
+<section>
+  <h2>イズミル・アドナン・メンデレス空港（ADB）周辺のホテル</h2>
+  <p>
+    <strong>イズミル・アドナン・メンデレス空港</strong>はエーゲ海の中心地。<a href="https://www.swissotel.com/hotels/izmir/" target="_blank">Swissotel Büyük Efes Izmir</a>の5つ星の快適さや、<a href="https://www.movenpick.com/en/europe/turkey/izmir/hotel-izmir/overview.html" target="_blank">Mövenpick Hotel Izmir</a>の海沿いのエレガンスを満喫。現代的なデザインと便利さなら<a href="https://www.wyndhamhotels.com/en-uk/ramada/izmir-turkey/ramada-encore-izmir/overview" target="_blank">Ramada Encore Izmir</a>や、リラックスしたいなら<a href="https://www.kayahotels.com/en/hotels/kaya-izmir-thermal-spa" target="_blank">Kaya Izmir Thermal & Spa</a>。<a href="https://www.hilton.com/en/hotels/adbanhi-hilton-garden-inn-izmir-bayrakli/" target="_blank">Hilton Garden Inn Izmir Bayraklı</a>や<a href="https://www.marriott.com/en-us/hotels/adbbr-renaissance-izmir-hotel/overview/" target="_blank">Renaissance Izmir Hotel</a>もおすすめ。<a href="https://www.izmirpalas.com.tr/" target="_blank">Izmir Palas Hotel</a>、<a href="https://www.otelizmir.com/" target="_blank">Otel Izmir</a>、<a href="https://www.balcovatermal.com/" target="_blank">Balçova Termal Otel</a>では本格的なトルコのホスピタリティを体験できます。
+  </p>
+</section>
+<section>
+  <h2>ダラマン空港（DLM）周辺のホテル</h2>
+  <p>
+    <strong>ダラマン空港</strong>はトルコのターコイズコーストへの出発点です。<a href="https://www.d-resortgocek.com/" target="_blank">D-Resort Göcek</a>の海の眺め、<a href="https://www.hilton.com/en/hotels/dlmdihi-hilton-dalaman-sarigerme-resort-and-spa/" target="_blank">Hilton Dalaman Sarigerme Resort & Spa</a>のビーチフロントラグジュアリー。<a href="https://www.tui.com/hotels/gocek-marina-hotel" target="_blank">Göcek Marina Hotel</a>や<a href="https://www.letoonia.com/" target="_blank">Letoonia Club & Hotel</a>のマリーナの雰囲気。<a href="https://www.yachtclassic.com/" target="_blank">Yacht Classic Hotel</a>や<a href="https://www.libertyhotelslari.com/" target="_blank">Liberty Hotels Lari</a>のブティック体験。<a href="https://www.jiva.com.tr/en" target="_blank">Jiva Beach Resort</a>、<a href="https://www.greenlandhotel.com.tr/" target="_blank">Greenland Hotel</a>、<a href="https://www.orangeresidence.com.tr/" target="_blank">Orange Residence</a>、<a href="https://www.turuncresort.com/" target="_blank">Turunç Resort</a>でオールインクルーシブの楽しみとリラクゼーションをどうぞ。
+  </p>
+</section>
 
-    <section>
-      <h2>ShuttlePortを選ぶ理由</h2>
-      <ul>
-        <li>✅ 多言語対応：日本語、英語、ドイツ語、スペイン語</li>
-        <li>✅ 距離に基づいた固定価格 – 隠れた料金なし</li>
-        <li>✅ 支払いは乗車後、現金でOK</li>
-        <li>✅ 有名ホテルとの提携実績</li>
-      </ul>
-    </section>
+<main>
+  <section id="services">
+    <h2>サービス内容</h2>
+    <ul>
+      <li>✔ 空港〜ホテルVIP送迎（イスタンブール、アンタルヤ、イズミル、ダラマン、ブルサ）</li>
+      <li>✔ プライベートドライバーによる1日ツアー</li>
+      <li>✔ ホテル〜工場・オフィスのプライベート送迎</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>予約フォーム</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_autoresponse" value="ご予約ありがとうございます。まもなくご連絡いたします。">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-ja.html">
+  <section id="why">
+    <h2>ShuttlePortが選ばれる理由</h2>
+    <ul>
+      <li>✅ 多言語サポート（JA, EN, DE, ES）</li>
+      <li>✅ 距離ごとの固定料金－隠れた費用なし</li>
+      <li>✅ 乗車後の現金払いOK</li>
+      <li>✅ 10以上の国際的なホテルに信頼されています</li>
+    </ul>
+  </section>
 
-        <input type="text" name="お名前" placeholder="フルネーム" required>
-        <input type="email" name="メール" placeholder="メールアドレス" required>
-        <input type="tel" name="電話番号" placeholder="電話番号" required>
-        <input type="text" name="出発地" placeholder="出発地" required>
-        <input type="text" name="目的地" placeholder="目的地" required>
+  <!-- ShuttlePort予約フォーム -->
+  <form id="booking-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <div class="route-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <button type="button" id="btn-airport-to-hotel" class="active">空港→ホテル</button>
+      <button type="button" id="btn-hotel-to-airport">ホテル→空港</button>
+    </div>
 
-        <label for="city">都市を選択:</label>
-        <select id="city" name="都市" required onchange="updateHotels()">
-          <option value="">都市を選択してください</option>
-          <option value="istanbul">イスタンブール</option>
-          <option value="antalya">アンタルヤ</option>
-          <option value="izmir">イズミル</option>
-          <option value="bursa">ブルサ</option>
-          <option value="dalaman">ダラマン</option>
-        </select>
+    <input type="hidden" name="Route Type" id="route-type" value="airportToHotel">
+    <input type="hidden" name="Calculated Price (€)" id="calculated-price" value="">
+    <input type="hidden" id="route-direction" name="Route Direction" value="空港→ホテル">
 
-        <label for="hotel">ホテルを選択:</label>
-        <select id="hotel" name="ホテル" required>
-          <option value="">ホテルを選択してください</option>
-        </select>
+    <label for="airport">空港を選択</label>
+    <select id="airport" name="Airport" required>
+      <option value="IST">イスタンブール空港（IST）</option>
+      <option value="SAW">サビハ・ギョクチェン空港（SAW）</option>
+      <option value="AYT">アンタルヤ空港（AYT）</option>
+      <option value="ADB">イズミル空港（ADB）</option>
+      <option value="DLM">ダラマン空港（DLM）</option>
+    </select>
 
-        <input type="datetime-local" name="日付と時間" required>
-        <input type="number" name="乗客数" placeholder="乗客数" min="1" required>
+    <label for="hotel">ホテルを選択</label>
+    <select id="hotel" name="Hotel" required>
+      <!-- 動的に追加されます -->
+    </select>
 
-        <select name="支払い方法">
-          <option selected>現金支払い（乗車終了時）</option>
-        </select>
+    <label for="vehicle">車種</label>
+    <div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
+      選択ルート: 空港→ホテル
+    </div>
+    <select id="vehicle" name="Vehicle" required>
+      <option value="Standard Van">セダン クラス I</option>
+      <option value="Luxury Van">セダン クラス II</option>
+      <option value="Minibus">VIPバン</option>
+      <option value="Business Class">ミニバス</option>
+      <option value="VIP Shuttle">VIPバス</option>
+    </select>
 
-        <textarea name="追加のご要望" placeholder="追加のご要望..." rows="4"></textarea>
-        <button type="submit">今すぐ予約</button>
-      </form>
-    </section>
+    <label for="full-name">お名前（フルネーム）</label>
+    <input type="text" id="full-name" name="Full Name" required>
 
-    <section>
-      <h2>対応空港</h2>
-      <p>イスタンブール（IST）、サビハ・ギョクチェン（SAW）、アンタルヤ（AYT）、イズミル（ADB）、ダラマン（DLM）、ブルサ（YEI）</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+    <label for="email">メールアドレス</label>
+    <input type="email" id="email" name="Email" required>
 
-    <section>
-      <h2>よくある質問</h2>
-      <ul>
-        <li><strong>支払い方法は？</strong> — 乗車終了時に現金で支払い可能です。</li>
-        <li><strong>キャンセル可能ですか？</strong> — 出発の12時間前までキャンセル無料。</li>
-        <li><strong>往復予約もできますか？</strong> — はい、詳細はお問い合わせください。</li>
-      </ul>
-    </section>
+    <label for="phone">電話番号</label>
+    <input type="tel" id="phone" name="Phone Number" required>
 
-    <section>
-      <h2>空港リンク</h2>
-      <ul>
-        <li><a href="https://www.istairport.com">イスタンブール空港</a></li>
-        <li><a href="https://www.sabihagokcen.aero/homepage">サビハ・ギョクチェン空港</a></li>
-        <li><a href="https://www.antalya-airport.aero/">アンタルヤ空港</a></li>
-        <li><a href="https://www.adnanmenderesairport.com/">イズミル空港</a></li>
-        <li><a href="https://www.dalamanairport.aero/">ダラマン空港</a></li>
-      </ul>
-    </section>
-  </main>
+    <label for="transfer-date">送迎日時</label>
+    <input type="datetime-local" id="transfer-date" name="Transfer Date & Time" required>
 
-  <footer>
-    <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
-    <p>メール: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
-  </footer>
+    <label for="passengers">乗車人数</label>
+    <input type="number" id="passengers" name="Passengers" min="1" max="20" required>
 
-  <script>
-    const hotels = {
-      istanbul: ["Swissôtel The Bosphorus", "Çırağan Palace Kempinski", "Four Seasons Sultanahmet", "The Marmara Taksim", "Raffles Istanbul", "W Istanbul", "Hilton Istanbul Bosphorus", "Pera Palace Hotel", "Radisson Blu Şişli", "InterContinental Istanbul"],
-      antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Beach Lara", "Delphin Imperial", "Lara Barut Collection", "Concorde De Luxe", "Swandor Topkapi Palace", "Aska Lara Resort", "Royal Seginus", "Fame Residence Lara"],
-      izmir: ["Swissôtel Grand Efes", "Mövenpick Izmir", "Hilton Garden Inn", "DoubleTree by Hilton", "Izmir Marriott", "Wyndham Grand Izmir", "Key Hotel", "Renaissance Izmir", "Tav Airport Hotel", "Orty Hotel"],
-      bursa: ["Almira Hotel", "Sheraton Bursa", "Hilton Bursa", "Holiday Inn Bursa", "Ramada Bursa", "Crowne Plaza Bursa", "Hotel Anatolia", "Tiara Termal Hotel", "Baia Bursa", "Divan Bursa"],
-      dalaman: ["Hilton Dalaman", "TUI Blue Sarigerme", "D Resort Gocek", "Robinson Club Sarigerme", "Liberty Hotels Lykia", "Jiva Beach Resort", "Sentido Lykia Resort", "Hotel Greenland", "Blue Lagoon Hotel", "Alesta Yacht Hotel"]
-    };
+    <label for="note">ご要望・備考欄（任意）</label>
+    <textarea id="note" name="Notes" rows="3"></textarea>
 
-    function updateHotels() {
-      const city = document.getElementById("city").value;
-      const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>ホテルを選択してください</option>";
-      if (hotels[city]) {
-        hotels[city].forEach(hotel => {
-          const option = document.createElement("option");
-          option.value = hotel;
-          option.textContent = hotel;
-          hotelSelect.appendChild(option);
-        });
+    <div id="price-display">ルートを選択すると料金が表示されます</div>
+    <button type="submit" id="confirm-price-btn" style="display: none;">✅ 料金を確定して予約</button>
+  </form>
+  <!-- フォーム終わり -->
+
+  <section id="map">
+    <h2>サービス対象空港</h2>
+    <p>イスタンブール空港（IST）、サビハ・ギョクチェン（SAW）、アンタルヤ（AYT）、イズミル（ADB）、ダラマン（DLM）、ブルサ（YEI）</p>
+    <div style="margin-top:20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">私たちの旅をSNSでフォロー！</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>よくあるご質問</h2>
+    <ul>
+      <li><strong>支払い方法は？</strong> — 乗車後に現金でお支払いください。</li>
+      <li><strong>予約のキャンセルは可能ですか？</strong> — はい、出発の12時間前まで可能です。</li>
+      <li><strong>往復送迎はありますか？</strong> — はい、お問い合わせください。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>空港リンク</h2>
+    <ul>
+      <li><a href="https://www.istairport.com">イスタンブール空港</a></li>
+      <li><a href="https://www.sabihagokcen.aero/homepage">サビハ・ギョクチェン空港</a></li>
+      <li><a href="https://www.antalya-airport.aero/">アンタルヤ空港</a></li>
+      <li><a href="https://www.adnanmenderesairport.com/">イズミル空港</a></li>
+      <li><a href="https://www.dalamanairport.aero/">ダラマン空港</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 ShuttlePort. All Rights Reserved.</p>
+  <p>メール: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
+  <section>
+    <h2>FAQ</h2>
+    <p>ご質問がありますか？FAQをご覧いただくか、いつでもお問い合わせください。</p>
+  </section>
+</footer>
+
+<script>
+  // 言語切替
+  function changeLanguage(select) {
+    const selectedPage = select.value;
+    window.location.href = selectedPage;
+  }
+
+  // 各空港のホテルデータ
+  const hotelData = {
+    IST: ["Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim", "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"],
+    SAW: ["Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir", "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"],
+    AYT: ["Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya", "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"],
+    ADB: ["Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak", "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"],
+    DLM: ["Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek", "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"]
+  };
+
+  const routeButtons = document.querySelectorAll(".route-buttons button");
+  const routeTypeInput = document.getElementById("route-type");
+  const airportSelect = document.getElementById("airport");
+  const hotelSelect = document.getElementById("hotel");
+  const priceDisplay = document.getElementById("price-display");
+  const confirmButton = document.getElementById("confirm-price-btn");
+  const calculatedPriceInput = document.getElementById("calculated-price");
+  const routeDisplay = document.getElementById("route-display");
+  const routeDirectionInput = document.getElementById("route-direction");
+
+  let routeType = "airportToHotel";
+
+  // ルート切替
+  routeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedType = button.id === "btn-airport-to-hotel" ? "airportToHotel" : "hotelToAirport";
+      updateRouteType(selectedType);
+    });
+  });
+
+  function updateRouteType(type) {
+    routeType = type;
+    document.getElementById("btn-airport-to-hotel").classList.remove("active");
+    document.getElementById("btn-hotel-to-airport").classList.remove("active");
+
+    if (type === "airportToHotel") {
+      document.getElementById("btn-airport-to-hotel").classList.add("active");
+      routeDisplay.textContent = "選択ルート: 空港→ホテル";
+      routeDirectionInput.value = "空港→ホテル";
+      routeTypeInput.value = "airportToHotel";
+    } else {
+      document.getElementById("btn-hotel-to-airport").classList.add("active");
+      routeDisplay.textContent = "選択ルート: ホテル→空港";
+      routeDirectionInput.value = "ホテル→空港";
+      routeTypeInput.value = "hotelToAirport";
+    }
+    populateHotels();
+    priceDisplay.textContent = "ルートを選択すると料金が表示されます";
+    confirmButton.style.display = "none";
+  }
+
+  function populateHotels() {
+    const airport = airportSelect.value;
+    hotelSelect.innerHTML = "";
+    if (hotelData[airport]) {
+      hotelData[airport].forEach(hotel => {
+        const opt = document.createElement("option");
+        opt.value = hotel;
+        opt.textContent = hotel;
+        hotelSelect.appendChild(opt);
+      });
+    }
+    calculatePrice();
+  }
+
+  async function calculatePrice() {
+    const airport = airportSelect.value;
+    const hotel = hotelSelect.value;
+    const vehicle = document.getElementById("vehicle").value;
+    if (!airport || !hotel || !vehicle) return;
+
+    try {
+      const apiUrl = "https://shuttleport-site.onrender.com/api/get_price";
+      const url = `${apiUrl}?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.price) {
+        priceDisplay.textContent = `最安値: €${data.price} (${data.distance_km} km)`;
+        calculatedPriceInput.value = data.price;
+        confirmButton.style.display = "block";
+      } else {
+        priceDisplay.textContent = "この選択肢に料金が見つかりません。";
+        confirmButton.style.display = "none";
       }
+    } catch (err) {
+      priceDisplay.textContent = "料金の取得中にエラーが発生しました。";
+      confirmButton.style.display = "none";
     }
+  }
 
-    function changeLanguage(select) {
-      window.location.href = select.value;
-    }
-  </script>
+  airportSelect.addEventListener("change", populateHotels);
+  hotelSelect.addEventListener("change", calculatePrice);
+  document.getElementById("vehicle").addEventListener("change", calculatePrice);
+
+  window.addEventListener("DOMContentLoaded", populateHotels);
+</script>
+
 </body>
 </html>
