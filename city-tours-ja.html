@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>都市ツアー | ShuttlePort</title>
-  <meta name="description" content="イスタンブール、アンタルヤ、イズミル、ダラマン、ブルサを巡る、ShuttlePortのプレミアム都市ツアーをご体験ください。トルコの魅力をプロフェッショナルガイドと共に堪能しましょう。">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シティツアー | ShuttlePort</title>
+  <meta name="description" content="ShuttlePortの特別なシティツアーでイスタンブール、アンタルヤ、イズミル、ダラマン、ブルサを発見。トルコの人気都市で文化・歴史・美しさを体験。">
+  <link rel="stylesheet" href="styles.css">
   <style>
     body { font-family: Arial, sans-serif; padding-left: 10px; padding-right: 10px;  margin: auto; }
     header, footer { background-color: #003366; color: white; text-align: center; padding: 1rem; }
@@ -47,40 +47,95 @@
 <body>
 
   <header>
-    
+
   <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
+    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePortロゴ">
     <div class="language-switcher">
       <select id="languageSelect" onchange="changeLanguage()">
-        <option value="city-tours-ja.html" selected class="language-option">日本語 🇯🇵</option>
         <option value="city-tours-en.html" class="language-option">English 🇬🇧</option>
-        <option value="city-tours-es.html" class="language-option">Español 🇪🇸</option>
         <option value="city-tours-de.html" class="language-option">Deutsch 🇩🇪</option>
+        <option value="city-tours-es.html" class="language-option">Español 🇪🇸</option>
+        <option value="city-tours-ja.html" selected class="language-option">日本語 🇯🇵</option>
       </select>
     </div>
   </div>
 
-    
-    <h1>トルコの主要都市を巡る旅へようこそ</h1>
-    <p>ShuttlePortのプレミアムシティツアーで新しい発見を</p>
+    <h1>トルコの人気都市を体験</h1>
+    <p>ShuttlePortの特別・プライベートシティツアー</p>
   </header>
 
   <nav>
-    <a href="index-ja.html">空港送迎</a>
-    <a href="city-tours-ja.html">都市ツアー</a>
-    <a href="private-shuttle-ja.html">市内シャトル</a>
-    <a href="faq-ja.html">よくある質問</a>
+    <a href="index-ja.html">VIP空港送迎</a>
+    <a href="city-tours-ja.html">シティツアー</a>
+    <a href="private-shuttle-ja.html">プライベートシャトル</a>
+    <a href="faq-ja.html">FAQ</a>
   </nav>
 
   <div class="banner"></div>
 
+<section class="city-tours">
+  <h2>シティツアー：おすすめ都市</h2>
+  <ul>
+    <li>
+      <h3>イスタンブール</h3>
+      <ul>
+        <li><a href="https://muze.gen.tr/muze-detay/ayasofya" target="_blank">アヤソフィア</a></li>
+        <li><a href="https://topkapisarayi.gov.tr/" target="_blank">トプカプ宮殿</a></li>
+        <li><a href="https://yerebatan.com/" target="_blank">地下宮殿</a></li>
+        <li><a href="https://www.galata-tower.com/" target="_blank">ガラタ塔</a></li>
+        <li><a href="https://www.grandbazaaristanbul.org/" target="_blank">グランドバザール</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>アンタルヤ</h3>
+      <ul>
+        <li><a href="https://tr.wikipedia.org/wiki/Kalei%C3%A7i,_Antalya" target="_blank">カレイチ（旧市街）</a></li>
+        <li><a href="https://antalya.muzesi.gov.tr/" target="_blank">アンタルヤ博物館</a></li>
+        <li><a href="https://www.dudenwaterfalls.com/" target="_blank">デュデン滝</a></li>
+        <li><a href="https://www.kursunlu.gov.tr/" target="_blank">クルシュンル滝</a></li>
+        <li><a href="https://www.lara.com.tr/" target="_blank">ララビーチ</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>イズミル</h3>
+      <ul>
+        <li><a href="https://tr.wikipedia.org/wiki/Kordonboyu,_%C4%B0zmir" target="_blank">コルドンボユ</a></li>
+        <li><a href="https://www.agoraism.com/" target="_blank">アゴラ野外博物館</a></li>
+        <li><a href="https://www.kemeralti.org.tr/" target="_blank">ケメラルティバザール</a></li>
+        <li><a href="https://www.asansor.com.tr/" target="_blank">歴史的エレベーター</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/Kar%C5%9F%C4%B1yaka,_%C4%B0zmir" target="_blank">カルシュヤカ</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>アンカラ</h3>
+      <ul>
+        <li><a href="https://anitkabir.tsk.tr/" target="_blank">アタテュルク廟（アヌトカビル）</a></li>
+        <li><a href="https://museum.gov.tr/museum-detail/11" target="_blank">アナトリア文明博物館</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/Kocatepe_Camii" target="_blank">コジャテペ・モスク</a></li>
+        <li><a href="https://www.genclikparki.com/" target="_blank">ゲンチリク公園</a></li>
+        <li><a href="https://tr.wikipedia.org/wiki/Atat%C3%BCrk_Orman_%C3%87iftli%C4%9Fi" target="_blank">アタテュルク農林場</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>ムーラ（ダラマン）</h3>
+      <ul>
+        <li><a href="https://www.gocek.com.tr/" target="_blank">ギョジェク</a></li>
+        <li><a href="https://www.oludenizbeach.com/" target="_blank">オルデニズビーチ</a></li>
+        <li><a href="https://www.saklikentgorge.net/" target="_blank">サクルケント渓谷</a></li>
+        <li><a href="https://www.yuvarlakcay.com/" target="_blank">ユヴァルラクチャイ</a></li>
+        <li><a href="https://www.tlos.info/" target="_blank">トロス古代都市</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+  
   <section class="cities">
     <div class="city">
       <a href="https://istanbul.com/">
         <img src="istanbul-icon.jpg" alt="イスタンブール">
         <h2>イスタンブール</h2>
       </a>
-      <p>歴史と文化が交差する街、イスタンブール。アヤソフィア、ブルーモスク、ボスポラス海峡クルーズを体験。</p>
+      <p>東洋と西洋が交わるイスタンブールの豊かな歴史を体験。アヤソフィアやブルーモスクを訪れ、ボスポラス海峡クルーズで魔法の世界へ。</p>
     </div>
 
     <div class="city">
@@ -88,15 +143,15 @@
         <img src="antalya-icon.jpg" alt="アンタルヤ">
         <h2>アンタルヤ</h2>
       </a>
-      <p>エメラルドグリーンの海、古代遺跡、滝の街。ペルゲ、サイド、デュデン滝を巡る癒しの旅へ。</p>
+      <p>ターコイズブルーのビーチ、ペルゲやシデなどの古代都市、美しいデュデン滝を満喫。</p>
     </div>
 
     <div class="city">
       <a href="https://gocekonline.com">
-        <img src="dalaman-icon.jpg" alt="ダラマン・ギョジェク">
+        <img src="dalaman-icon.jpg" alt="ダラマン＆ギョジェク">
         <h2>ダラマン</h2>
       </a>
-      <p>隠れた湾と静かな自然を楽しめるギョジェク。ダルヤンの古代墓やボートツアーもおすすめ。</p>
+      <p>ギョジェクの隠れた入り江、サリゲルメの素晴らしいビーチ、ダリヤンの古代墓を巡るボートツアーでリラックス。</p>
     </div>
 
     <div class="city">
@@ -104,7 +159,7 @@
         <img src="izmir-icon.jpg" alt="イズミル">
         <h2>イズミル</h2>
       </a>
-      <p>エーゲ海の風を感じる港町。コルドン、アゴラ遺跡、アルサンジャクの街歩きを満喫。</p>
+      <p>エーゲ海の風を感じながら、コルドンボユを散歩し、歴史的なアゴラやアルサンジャクの賑やかな通りを探索。</p>
     </div>
 
     <div class="city">
@@ -112,12 +167,12 @@
         <img src="bursa-icon.jpg" alt="ブルサ">
         <h2>ブルサ</h2>
       </a>
-      <p>緑のモスク、歴史的温泉、ウルダー山のロープウェイで自然と歴史を満喫。</p>
+      <p>グリーン・モスクを訪れ、有名なトルコ式風呂を楽しみ、ウルダー山までロープウェイで登ろう。</p>
     </div>
   </section>
 
   <section class="reservation-form">
-    <h2>今すぐツアーを予約する</h2>
+    <h2>今すぐシティツアーを予約！</h2>
     <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
       <input type="text" name="Full Name" placeholder="お名前（フルネーム）" required>
       <input type="email" name="Email" placeholder="メールアドレス" required>
@@ -126,22 +181,33 @@
         <option value="">都市を選択してください</option>
         <option value="Istanbul">イスタンブール</option>
         <option value="Antalya">アンタルヤ</option>
-        <option value="Dalaman & Göcek">ダラマン・ギョジェク</option>
+        <option value="Dalaman & Göcek">ダラマン＆ギョジェク</option>
         <option value="Izmir">イズミル</option>
         <option value="Bursa">ブルサ</option>
       </select>
+
+    <select id="vehicle" name="Vehicle" required>
+      <option value="Standard Van">セダン クラス I</option>
+      <option value="Luxury Van">セダン クラス II</option>
+      <option value="Minibus">VIPバン</option>
+      <option value="Business Class">ミニバス</option>
+      <option value="VIP Shuttle">VIPバス</option>
+    </select>
+    <label for="passengers">乗車人数</label>
+    <input type="number" id="passengers" name="Passengers" min="1" max="20" required>
+      
       <input type="date" name="Tour Date" required>
       <textarea name="Notes" placeholder="ご要望・備考欄（任意）"></textarea>
-      <button type="submit">予約する</button>
+      <button type="submit">今すぐ予約</button>
     </form>
   </section>
 
   <section id="coverage">
-    <h2>対応エリア</h2>
-    <p>イスタンブール空港、サビハ・ギョクチェン空港、アンタルヤ、イズミル、ダラマン、ブルサの各都市でサービスをご提供しております。空港から都市内への快適で安全な送迎をお約束します。</p>
+    <h2>サービス提供エリア</h2>
+    <p>私たちはトルコの主要な空港と都市でサービスを提供しています。イスタンブール空港、サビハ・ギョクチェン、アンタルヤ、イズミル、ダラマン、ブルサ到着でも、目的地まで快適かつ安全にお送りします。</p>
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sja!2str!4v1683100000000!5m2!1sja!2str"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
         width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
@@ -149,27 +215,29 @@
   </section>
 
   <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
-    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">私たちの旅をSNSでフォロー</h2>
-    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
-      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
-             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
-      </a>
-      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
-             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
-      </a>
-    </div>
-  </section>
+  <h2 style="text-align: center; font-size: 1.5rem; color: #444;">私たちの旅をSNSでフォロー！</h2>
 
-  <style>
-    .social-section a:hover img {
-      transform: scale(1.2);
-    }
-  </style>
+  <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+    <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+           style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+    </a>
+    <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+           style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+    </a>
+  </div>
+</section>
+
+<!-- ホバー効果追加 -->
+<style>
+  .social-section a:hover img {
+    transform: scale(1.2);
+  }
+</style>
 
   <footer>
-    <p>&copy; 2025 ShuttlePort. 全著作権所有。</p>
+    <p>&copy; 2025 ShuttlePort. All rights reserved.</p>
   </footer>
 
   <script>
