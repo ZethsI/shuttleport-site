@@ -187,6 +187,17 @@
         <option value="Izmir">Izmir</option>
         <option value="Bursa">Bursa</option>
       </select>
+
+    <select id="vehicle" name="Vehicle" required>
+      <option value="Standard Van">Sedan Class I</option>
+      <option value="Luxury Van">Sedan Class II</option>
+      <option value="Minibus">VIP Van</option>
+      <option value="Business Class">Minibus</option>
+      <option value="VIP Shuttle">VIP Bus</option>
+    </select>
+    <label for="passengers">Number of Passengers</label>
+    <input type="number" id="passengers" name="Passengers" min="1" max="20" required>
+      
       <input type="date" name="Tour Date" required>
       <textarea name="Notes" placeholder="Additional notes (optional)"></textarea>
       <button type="submit">Book Now</button>
