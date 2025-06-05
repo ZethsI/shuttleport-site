@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reserve traslados VIP al aeropuerto, tours por la ciudad y servicios de transporte privado con ShuttlePort. Servicio multilingüe en Estambul, Antalya, Izmir, Bursa y Dalaman.">
-  <meta name="keywords" content="Traslado VIP, Transfer aeropuerto, Shuttle privado, Tour por la ciudad, Estambul, Antalya, Izmir, Dalaman, Bursa">
+  <meta name="description" content="Reserva traslados VIP al aeropuerto, tours por la ciudad y transporte privado con ShuttlePort. Servicio multilingüe confiable.">
+  <meta name="keywords" content="transfer VIP, traslado aeropuerto, shuttle Estambul, tour ciudad, chofer privado">
   <meta name="author" content="ShuttlePort">
-  <title>ShuttlePort - Transfer VIP Aeropuerto</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>ShuttlePort - Servicios de Transfer VIP</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; color: #333; }
-    header, footer { background: #003366; color: white; text-align: center; padding: 1rem 0; }
-    nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    header, footer { background: #003366; color: #fff; padding: 1rem 0; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
     nav a { color: white; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
     .language-selector { position: absolute; top: 1rem; right: 1rem; }
     .language-selector select { padding: 0.5rem; border-radius: 5px; border: none; }
-    main { max-width: 1000px; margin: auto; padding: 2rem; background: white; }
+    main { max-width: 1000px; margin: auto; padding: 2rem; background: #fff; }
     section { margin-bottom: 2rem; }
     h2 { color: #003366; margin-bottom: 1rem; }
     form input, form textarea, form select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
@@ -27,156 +34,371 @@
     footer p { margin: 0.5rem 0; }
     @media (max-width: 600px) {
       nav ul { flex-direction: column; }
-      .language-selector { position: static; text-align: center; margin-bottom: 1rem; }
+      .language-selector { position: static; margin-bottom: 1rem; text-align: center; }
+    }
+    .route-buttons button.active {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+    .route-buttons button {
+      background-color: #f0f0f0;
+      color: #333;
+      font-weight: normal;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .route-buttons button:hover {
+      background-color: #e0e0e0;
+    }
+    .social-section a:hover img {
+      transform: scale(1.2);
+    }
+    section {
+      margin: 2rem 0;
+      padding: 1.5rem 1.5rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      color: #003366;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    a {
+      color: #0077cc;
+      word-break: break-all;
+    }
+    @media (max-width: 700px) {
+      section {
+        padding: 1.2rem 2vw;
+        margin: 1.2rem 0;
+        box-shadow: none;
+        border-radius: 0.7rem;
+      }
+      h2 {
+        font-size: 1.15rem;
+        margin-bottom: 0.7rem;
+        text-align: left;
+      }
+      p {
+        font-size: 1rem;
+      }
+      a {
+        font-size: 1.01em;
+      }
     }
   </style>
 </head>
 <body>
 
-
-  <header>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="ShuttlePort Logo">
-    <div class="language-switcher">
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <img src="VIP Ikonos Logo.jpeg" style="height: 60px;" alt="Logo ShuttlePort">
+    <div class="language-selector">
       <select id="languageSelect" onchange="changeLanguage(this)">
-        <option value="index-es.html" selected class="language-option">Español 🇪🇸</option>
-        <option value="index-de.html" class="language-option">Deutsch 🇩🇪</option>
-        <option value="index-en.html" class="language-option">English 🇬🇧</option>
-        <option value="index-ja.html" class="language-option">日本語 🇯🇵</option>
+        <option value="index-en.html">English 🇬🇧</option>
+        <option value="index-de.html">Deutsch 🇩🇪</option>
+        <option value="index-es.html" selected>Español 🇪🇸</option>
+        <option value="index-ja.html">日本語 🇯🇵</option>
       </select>
     </div>
   </div>
-    
-    <h1>Bienvenido a ShuttlePort</h1>
-    <nav>
-      <ul>
-        <li><a href="index-es.html">Traslado VIP al Aeropuerto</a></li>
-        <li><a href="city-tours-es.html">Tours por la Ciudad</a></li>
-        <li><a href="private-shuttle-es.html">Shuttle Privado</a></li>
-        <li><a href="faq-es.html">Preguntas Frecuentes</a></li>
-      </ul>
-    </nav>
-  </header>
+  <h1>Bienvenido a ShuttlePort</h1>
+  <nav>
+    <ul>
+      <li><a href="index-es.html">Traslado VIP al Aeropuerto</a></li>
+      <li><a href="city-tours-es.html">Tours por la Ciudad</a></li>
+      <li><a href="private-shuttle-es.html">Shuttle Privado</a></li>
+      <li><a href="faq-es.html">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
-    <section>
-      <h2>Nuestros Servicios</h2>
-      <ul>
-        <li>✔ Traslados desde/hacia hoteles en Estambul, Antalya, Izmir, Dalaman y Bursa</li>
-        <li>✔ Excursiones de un día con conductor privado</li>
-        <li>✔ Transporte entre hotel y oficina/fábrica</li>
-      </ul>
-    </section>
+<section>
+  <h2>Hoteles Cerca del Aeropuerto de Estambul (IST)</h2>
+  <p>
+    <strong>Aeropuerto de Estambul</strong> es el punto de encuentro entre Europa y Asia, ofreciendo a los viajeros una gran variedad de opciones de alojamiento excepcionales. Para máxima comodidad, alójese dentro de la terminal en <a href="https://www.istanbulairport.com/en/hotel" target="_blank">YOTEL Istanbul Airport</a>, o elija el elegante <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-istanbul-ottomare" target="_blank">Radisson Blu Hotel Istanbul Ottomare</a> para lujo contemporáneo. El elegante <a href="https://www.marriott.com/en-us/hotels/istdt-istanbul-marriott-hotel-sisli/overview/" target="_blank">Marriott Hotel Sisli</a> y el icónico <a href="https://www.hilton.com/en/hotels/istaphi-hilton-istanbul-bomonti/" target="_blank">Hilton Istanbul Bomonti</a> ofrecen comodidad de clase mundial en el corazón de la ciudad. Para viajes de negocios, <a href="https://all.accor.com/hotel/9544/index.en.shtml" target="_blank">Pullman Istanbul Hotel & Convention Center</a> brinda comodidades modernas, mientras que el majestuoso <a href="https://www.kempinski.com/en/istanbul/ciragan-palace" target="_blank">Çırağan Palace Kempinski</a> ofrece una estadía palaciega en el Bósforo. Descubra el encanto junto al río en el <a href="https://www.fourseasons.com/bosphorus/" target="_blank">Four Seasons Hotel Istanbul at the Bosphorus</a> y el lujo en <a href="https://www.divan.com.tr/EN/Hotel/Divan-Istanbul" target="_blank">Divan Istanbul</a>. Para vistas impresionantes y servicio impecable, elija <a href="https://www.ritzcarlton.com/en/hotels/europe/istanbul" target="_blank">The Ritz-Carlton Istanbul</a> o <a href="https://www.sheratonistanbulcitycenter.com/" target="_blank">Sheraton Istanbul City Center</a>.
+  </p>
+</section>
+<section>
+  <h2>Hoteles Cerca del Aeropuerto Sabiha Gökçen (SAW)</h2>
+  <p>
+    Descubra comodidad y conveniencia en el lado asiático de Estambul cerca del <strong>Aeropuerto Sabiha Gökçen</strong>. Experimente el lujo moderno del <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-istanbul-asia" target="_blank">Radisson Blu Hotel Istanbul Asia</a> y el amigable <a href="https://www.ihg.com/crowneplaza/hotels/us/en/istanbul/istsp/hoteldetail" target="_blank">Crowne Plaza Istanbul Asia</a>. <a href="https://www.dedeman.com/hotels/istanbul/dedeman-bostanci-hotel-convention-center" target="_blank">Dedeman Bostancı</a> y <a href="https://www.hilton.com/en/hotels/istgchi-hilton-garden-inn-istanbul-sabiha-gokcen-airport/" target="_blank">Hilton Garden Inn Sabiha Gökçen</a> son excelentes opciones para familias y viajeros de negocios. Disfrute de la vibrante hospitalidad en <a href="https://www.parkinn.com/hotel-istanbul-airport" target="_blank">Park Inn by Radisson Istanbul Ataturk Airport</a> o relájese en la elegancia contemporánea de <a href="https://www.divan.com.tr/EN/Hotel/Divan-Istanbul-Asia" target="_blank">Divan Istanbul Asia</a>. Para una estancia perfecta, pruebe <a href="https://www.titanic.com.tr/en/titanic-business-kartal-hotel" target="_blank">Titanic Business Kartal</a>, <a href="https://www.ramadaencorekartal.com/" target="_blank">Ramada Encore Istanbul Kartal</a>, <a href="https://www.emirtimeshotel.com/" target="_blank">Emirtimes Hotel Tuzla</a>, o el lujoso <a href="https://www.marriott.com/en-us/hotels/istaw-istanbul-marriott-hotel-asia/overview/" target="_blank">Istanbul Marriott Hotel Asia</a>.
+  </p>
+</section>
+<section>
+  <h2>Hoteles Cerca del Aeropuerto de Antalya (AYT)</h2>
+  <p>
+    <strong>Aeropuerto de Antalya</strong> es su puerta de entrada al Mediterráneo, brindando acceso a los complejos turísticos más reconocidos de Turquía. Disfrute del lujo todo incluido en <a href="https://www.baruthotels.com/en/barut-lara" target="_blank">Barut Lara</a> y el impresionante <a href="https://www.titanic.com.tr/en/titanic-deluxe-lara" target="_blank">Titanic Deluxe Lara</a>. Golf, spa y elegancia se encuentran en <a href="https://www.kayahotels.com/en/hotels/kaya-palazzo-golf-resort" target="_blank">Kaya Palazzo Golf Resort</a>, mientras que <a href="https://www.dedeman.com/hotels/antalya/dedeman-antalya-hotel-resort-convention-center" target="_blank">Dedeman Antalya</a> brinda comodidad clásica. <a href="https://www.ihg.com/crowneplaza/hotels/us/en/antalya/aytap/hoteldetail" target="_blank">Crowne Plaza Antalya</a> y <a href="https://www.sheraton.com/en-us/hotels/aytsh-sheraton-antalya-convention-center/overview/" target="_blank">Sheraton Convention Center Antalya</a> son perfectos para negocios y placer, mientras que <a href="https://www.mardanpalace.com/" target="_blank">Mardan Palace</a> y <a href="https://www.limakhotels.com/en/limak-lara-deluxe-hotel-resort" target="_blank">Limak Lara Deluxe Hotel & Resort</a> prometen estancias opulentas. Complete su experiencia en <a href="https://www.rixos.com/en/hotel-resort/rixos-downtown-antalya" target="_blank">Rixos Downtown Antalya</a> o en el familiar <a href="https://www.concordehotel.com.tr/en" target="_blank">Concorde De Luxe Resort</a>.
+  </p>
+</section>
+<section>
+  <h2>Hoteles Cerca del Aeropuerto Izmir Adnan Menderes (ADB)</h2>
+  <p>
+    <strong>Aeropuerto Izmir Adnan Menderes</strong> le da la bienvenida al corazón del Egeo. Disfrute de la comodidad cinco estrellas en <a href="https://www.swissotel.com/hotels/izmir/" target="_blank">Swissotel Büyük Efes Izmir</a> o de la impresionante elegancia frente al mar en <a href="https://www.movenpick.com/en/europe/turkey/izmir/hotel-izmir/overview.html" target="_blank">Mövenpick Hotel Izmir</a>. Para diseño moderno y fácil acceso, elija <a href="https://www.wyndhamhotels.com/en-uk/ramada/izmir-turkey/ramada-encore-izmir/overview" target="_blank">Ramada Encore Izmir</a> o el relajante <a href="https://www.kayahotels.com/en/hotels/kaya-izmir-thermal-spa" target="_blank">Kaya Izmir Thermal & Spa</a>. Viajeros de negocios y ocio disfrutan del <a href="https://www.hilton.com/en/hotels/adbanhi-hilton-garden-inn-izmir-bayrakli/" target="_blank">Hilton Garden Inn Izmir Bayraklı</a> y el <a href="https://www.marriott.com/en-us/hotels/adbbr-renaissance-izmir-hotel/overview/" target="_blank">Renaissance Izmir Hotel</a>. La auténtica hospitalidad turca le espera en el <a href="https://www.izmirpalas.com.tr/" target="_blank">Izmir Palas Hotel</a>, <a href="https://www.otelizmir.com/" target="_blank">Otel Izmir</a> y el <a href="https://www.balcovatermal.com/" target="_blank">Balçova Termal Otel</a>.
+  </p>
+</section>
+<section>
+  <h2>Hoteles Cerca del Aeropuerto de Dalaman (DLM)</h2>
+  <p>
+    <strong>Aeropuerto de Dalaman</strong> es su punto de partida para la costa turquesa de Turquía. Disfrute de vistas exclusivas al mar en <a href="https://www.d-resortgocek.com/" target="_blank">D-Resort Göcek</a> o de la lujosa playa en <a href="https://www.hilton.com/en/hotels/dlmdihi-hilton-dalaman-sarigerme-resort-and-spa/" target="_blank">Hilton Dalaman Sarigerme Resort & Spa</a>. Descubra ambientes de marina en <a href="https://www.tui.com/hotels/gocek-marina-hotel" target="_blank">Göcek Marina Hotel</a> y en <a href="https://www.letoonia.com/" target="_blank">Letoonia Club & Hotel</a>. Las experiencias boutique brillan en <a href="https://www.yachtclassic.com/" target="_blank">Yacht Classic Hotel</a> y en <a href="https://www.libertyhotelslari.com/" target="_blank">Liberty Hotels Lari</a>, mientras que <a href="https://www.jiva.com.tr/en" target="_blank">Jiva Beach Resort</a>, <a href="https://www.greenlandhotel.com.tr/" target="_blank">Greenland Hotel</a>, <a href="https://www.orangeresidence.com.tr/" target="_blank">Orange Residence</a> y <a href="https://www.turuncresort.com/" target="_blank">Turunç Resort</a> ofrecen diversión y relajación todo incluido para cada viajero.
+  </p>
+</section>
 
-    <section>
-      <h2>¿Por Qué ShuttlePort?</h2>
-      <ul>
-        <li>✅ Soporte multilingüe: ES, EN, DE, JA</li>
-        <li>✅ Precio fijo por kilómetro – sin cargos ocultos</li>
-        <li>✅ Pago en efectivo al final del viaje</li>
-        <li>✅ Colaboración con los principales hoteles</li>
-      </ul>
-    </section>
+<main>
+  <section id="services">
+    <h2>Nuestros Servicios</h2>
+    <ul>
+      <li>✔ Traslados VIP del aeropuerto al hotel (Estambul, Antalya, Izmir, Dalaman, Bursa)</li>
+      <li>✔ Tours de un día con chofer privado</li>
+      <li>✔ Traslados privados de hotel a fábrica u oficina</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Formulario de Reserva</h2>
-      <form action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_autoresponse" value="¡Gracias! Su reserva ha sido recibida. Nos pondremos en contacto con usted pronto.">
-        <input type="hidden" name="_next" value="https://shuttleport.net/thank-you-es.html">
+  <section id="why">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+      <li>✅ Soporte multilingüe (ES, EN, DE, JA)</li>
+      <li>✅ Precio fijo por kilómetro – sin cargos ocultos</li>
+      <li>✅ Paga en efectivo al final del viaje</li>
+      <li>✅ De confianza por 10+ hoteles internacionales</li>
+    </ul>
+  </section>
 
-        <input type="text" name="Nombre" placeholder="Nombre completo" required>
-        <input type="email" name="Correo electrónico" placeholder="Correo electrónico" required>
-        <input type="tel" name="Teléfono" placeholder="Número de teléfono" required>
-        <input type="text" name="Lugar de recogida" placeholder="Lugar de recogida" required>
-        <input type="text" name="Destino" placeholder="Destino" required>
+  <!-- Formulario de reserva de ShuttlePort -->
+  <form id="booking-form" action="https://formsubmit.co/64273ee324c3c564e807981d98151119" method="POST">
+    <div class="route-buttons" style="display: flex; gap: 10px; margin-bottom: 10px;">
+      <button type="button" id="btn-airport-to-hotel" class="active">Aeropuerto a Hotel</button>
+      <button type="button" id="btn-hotel-to-airport">Hotel a Aeropuerto</button>
+    </div>
 
-        <label for="city">Ciudad:</label>
-        <select id="city" name="Ciudad" required onchange="updateHotels()">
-          <option value="">Seleccione una ciudad</option>
-          <option value="istanbul">Estambul</option>
-          <option value="antalya">Antalya</option>
-          <option value="izmir">Izmir</option>
-          <option value="bursa">Bursa</option>
-          <option value="dalaman">Dalaman</option>
-        </select>
+    <input type="hidden" name="Route Type" id="route-type" value="airportToHotel">
+    <input type="hidden" name="Calculated Price (€)" id="calculated-price" value="">
+    <input type="hidden" id="route-direction" name="Route Direction" value="Aeropuerto a Hotel">
 
-        <label for="hotel">Hotel:</label>
-        <select id="hotel" name="Hotel" required>
-          <option value="">Seleccione un hotel</option>
-        </select>
+    <label for="airport">Selecciona Aeropuerto</label>
+    <select id="airport" name="Airport" required>
+      <option value="IST">Aeropuerto de Estambul (IST)</option>
+      <option value="SAW">Aeropuerto Sabiha Gökçen (SAW)</option>
+      <option value="AYT">Aeropuerto de Antalya (AYT)</option>
+      <option value="ADB">Aeropuerto de Izmir (ADB)</option>
+      <option value="DLM">Aeropuerto de Dalaman (DLM)</option>
+    </select>
 
-        <input type="datetime-local" name="Fecha y hora" required>
-        <input type="number" name="Pasajeros" placeholder="Número de pasajeros" min="1" required>
+    <label for="hotel">Selecciona Hotel</label>
+    <select id="hotel" name="Hotel" required>
+      <!-- Se rellena dinámicamente -->
+    </select>
 
-        <select name="Método de pago">
-          <option selected>Pago en efectivo al final del viaje</option>
-        </select>
+    <label for="vehicle">Tipo de Vehículo</label>
+    <div id="route-display" style="font-weight:bold; margin:10px 0; color:#333;">
+      Ruta seleccionada: Aeropuerto a Hotel
+    </div>
+    <select id="vehicle" name="Vehicle" required>
+      <option value="Standard Van">Sedán Clase I</option>
+      <option value="Luxury Van">Sedán Clase II</option>
+      <option value="Minibus">VIP Van</option>
+      <option value="Business Class">Minibús</option>
+      <option value="VIP Shuttle">VIP Bus</option>
+    </select>
 
-        <textarea name="Notas adicionales" placeholder="Notas adicionales..." rows="4"></textarea>
-        <button type="submit">Reservar ahora</button>
-      </form>
-    </section>
+    <label for="full-name">Nombre completo</label>
+    <input type="text" id="full-name" name="Full Name" required>
 
-    <section>
-      <h2>Aeropuertos Atendidos</h2>
-      <p>Estambul (IST), Sabiha Gökçen (SAW), Antalya (AYT), Izmir (ADB), Dalaman (DLM), Bursa (YEI)</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="Email" required>
 
-    <section>
-      <h2>Preguntas Frecuentes</h2>
-      <ul>
-        <li><strong>¿Cómo puedo pagar?</strong> — En efectivo al final del viaje.</li>
-        <li><strong>¿Puedo cancelar?</strong> — Sí, hasta 12 horas antes sin cargo.</li>
-        <li><strong>¿Viaje de ida y vuelta disponible?</strong> — Sí, contáctenos para detalles.</li>
-      </ul>
-    </section>
+    <label for="phone">Número de teléfono</label>
+    <input type="tel" id="phone" name="Phone Number" required>
 
-    <section>
-      <h2>Enlaces de Aeropuertos</h2>
-      <ul>
-        <li><a href="https://www.istairport.com">Aeropuerto de Estambul</a></li>
-        <li><a href="https://www.sabihagokcen.aero/homepage">Aeropuerto Sabiha Gökçen</a></li>
-        <li><a href="https://www.antalya-airport.aero/">Aeropuerto de Antalya</a></li>
-        <li><a href="https://www.adnanmenderesairport.com/">Aeropuerto de Izmir</a></li>
-        <li><a href="https://www.dalamanairport.aero/">Aeropuerto de Dalaman</a></li>
-      </ul>
-    </section>
-  </main>
+    <label for="transfer-date">Fecha y hora de traslado</label>
+    <input type="datetime-local" id="transfer-date" name="Transfer Date & Time" required>
 
-  <footer>
-    <p>&copy; 2025 ShuttlePort. Todos los derechos reservados.</p>
-    <p>Correo: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
-  </footer>
+    <label for="passengers">Número de pasajeros</label>
+    <input type="number" id="passengers" name="Passengers" min="1" max="20" required>
 
-  <script>
-    const hotels = {
-      istanbul: ["Swissôtel The Bosphorus", "Çırağan Palace Kempinski", "Four Seasons Sultanahmet", "The Marmara Taksim", "Raffles Istanbul", "W Istanbul", "Hilton Istanbul Bosphorus", "Pera Palace Hotel", "Radisson Blu Şişli", "InterContinental Istanbul"],
-      antalya: ["Akra Hotel", "Rixos Downtown", "Titanic Beach Lara", "Delphin Imperial", "Lara Barut Collection", "Concorde De Luxe", "Swandor Topkapi Palace", "Aska Lara Resort", "Royal Seginus", "Fame Residence Lara"],
-      izmir: ["Swissôtel Grand Efes", "Mövenpick Izmir", "Hilton Garden Inn", "DoubleTree by Hilton", "Izmir Marriott", "Wyndham Grand Izmir", "Key Hotel", "Renaissance Izmir", "Tav Airport Hotel", "Orty Hotel"],
-      bursa: ["Almira Hotel", "Sheraton Bursa", "Hilton Bursa", "Holiday Inn Bursa", "Ramada Bursa", "Crowne Plaza Bursa", "Hotel Anatolia", "Tiara Termal Hotel", "Baia Bursa", "Divan Bursa"],
-      dalaman: ["Hilton Dalaman", "TUI Blue Sarigerme", "D Resort Gocek", "Robinson Club Sarigerme", "Liberty Hotels Lykia", "Jiva Beach Resort", "Sentido Lykia Resort", "Hotel Greenland", "Blue Lagoon Hotel", "Alesta Yacht Hotel"]
-    };
+    <label for="note">Notas adicionales</label>
+    <textarea id="note" name="Notes" rows="3"></textarea>
 
-    function updateHotels() {
-      const city = document.getElementById("city").value;
-      const hotelSelect = document.getElementById("hotel");
-      hotelSelect.innerHTML = "<option value=''>Seleccione un hotel</option>";
-      if (hotels[city]) {
-        hotels[city].forEach(hotel => {
-          const option = document.createElement("option");
-          option.value = hotel;
-          option.textContent = hotel;
-          hotelSelect.appendChild(option);
-        });
+    <div id="price-display">Selecciona una ruta para ver el precio</div>
+    <button type="submit" id="confirm-price-btn" style="display: none;">✅ Confirmar precio y reservar</button>
+  </form>
+  <!-- Fin del formulario -->
+
+  <section id="map">
+    <h2>Atendemos estos aeropuertos</h2>
+    <p>Aeropuerto de Estambul (IST), Sabiha Gökçen (SAW), Antalya (AYT), Izmir (ADB), Dalaman (DLM), Bursa (YEI)</p>
+    <div style="margin-top:20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6018.457954239265!2d28.9743795!3d41.0082376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bd3dd0c0c5%3A0xa12dfb27b9b6f11d!2sIstanbul%2C%20Turkey!5e0!3m2!1sen!2str!4v1683100000000!5m2!1sen!2str"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="social-section" style="background-color: #f9f9ff; padding: 2rem 0;">
+    <h2 style="text-align: center; font-size: 1.5rem; color: #444;">Síguenos en nuestras redes</h2>
+    <div style="max-width: 300px; margin: 1rem auto 0 auto; text-align: center;">
+      <a href="https://www.instagram.com/vipshuttleport/" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+      <a href="https://www.tiktok.com/@vipshuttleport" target="_blank" style="margin: 0 10px; display: inline-block;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"
+             style="width: 32px; height: 32px; transition: transform 0.3s ease;">
+      </a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <ul>
+      <li><strong>¿Cómo puedo pagar?</strong> — Pagas en efectivo al final del viaje.</li>
+      <li><strong>¿Puedo cancelar mi reserva?</strong> — Sí, hasta 12 horas antes del viaje.</li>
+      <li><strong>¿Ofrecen opción de ida y vuelta?</strong> — Sí, contáctanos para más información.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Aeropuertos</h2>
+    <ul>
+      <li><a href="https://www.istairport.com">Aeropuerto de Estambul</a></li>
+      <li><a href="https://www.sabihagokcen.aero/homepage">Aeropuerto Sabiha Gökçen</a></li>
+      <li><a href="https://www.antalya-airport.aero/">Aeropuerto de Antalya</a></li>
+      <li><a href="https://www.adnanmenderesairport.com/">Aeropuerto de Izmir</a></li>
+      <li><a href="https://www.dalamanairport.aero/">Aeropuerto de Dalaman</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 ShuttlePort. Todos los derechos reservados.</p>
+  <p>Email: <a href="mailto:book@shuttleport.net" style="color:white;">book@shuttleport.net</a></p>
+  <section>
+    <h2>FAQ</h2>
+    <p>¿Tienes preguntas? Consulta nuestras preguntas frecuentes o contáctanos en cualquier momento.</p>
+  </section>
+</footer>
+
+<script>
+  // Cambio de idioma
+  function changeLanguage(select) {
+    const selectedPage = select.value;
+    window.location.href = selectedPage;
+  }
+
+  // Hoteles para cada aeropuerto
+  const hotelData = {
+    IST: ["Swissotel Bosphorus", "CVK Park Bosphorus", "Radisson Blu Şişli", "Hilton Bomonti", "The Marmara Taksim", "Rixos Pera", "Divan Taksim", "Elite World Istanbul", "Point Hotel Barbaros", "Titanic City Taksim"],
+    SAW: ["Dedeman Bostancı", "ByOtell Kozyatağı", "Wyndham Kalamış Marina", "Istanbul Marriott Asia", "Radisson Blu Ataşehir", "Hilton Kozyatağı", "Elite World Asia", "The Green Park Bostancı", "İnterContinental Ataşehir", "Park Dedeman Levent"],
+    AYT: ["Rixos Downtown Antalya", "Akra Hotel", "Titanic Beach Lara", "Delphin Imperial", "Crowne Plaza Antalya", "Hotel Su & Aqualand", "Concorde De Luxe", "Lara Barut Collection", "Limak Lara Hotel", "Royal Wings Hotel"],
+    ADB: ["Swissotel Büyük Efes İzmir", "Wyndham Grand İzmir", "Mövenpick İzmir", "Key Hotel", "DoubleTree Alsancak", "Renaissance İzmir", "Hilton Garden Inn", "Kaya İzmir Thermal", "Izmir Palas", "Ramada Encore Bayraklı"],
+    DLM: ["Hilton Dalaman", "Jiva Beach Resort", "Club Tuana", "Liberty Hotels Lykia", "D-Resort Göcek", "Alesta Yacht Hotel", "Hotel Greenland", "Orka Sunlife Resort", "Montana Pine Resort", "Garcia Resort"]
+  };
+
+  const routeButtons = document.querySelectorAll(".route-buttons button");
+  const routeTypeInput = document.getElementById("route-type");
+  const airportSelect = document.getElementById("airport");
+  const hotelSelect = document.getElementById("hotel");
+  const priceDisplay = document.getElementById("price-display");
+  const confirmButton = document.getElementById("confirm-price-btn");
+  const calculatedPriceInput = document.getElementById("calculated-price");
+  const routeDisplay = document.getElementById("route-display");
+  const routeDirectionInput = document.getElementById("route-direction");
+
+  let routeType = "airportToHotel";
+
+  // Cambiar tipo de ruta
+  routeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const selectedType = button.id === "btn-airport-to-hotel" ? "airportToHotel" : "hotelToAirport";
+      updateRouteType(selectedType);
+    });
+  });
+
+  function updateRouteType(type) {
+    routeType = type;
+    document.getElementById("btn-airport-to-hotel").classList.remove("active");
+    document.getElementById("btn-hotel-to-airport").classList.remove("active");
+
+    if (type === "airportToHotel") {
+      document.getElementById("btn-airport-to-hotel").classList.add("active");
+      routeDisplay.textContent = "Ruta seleccionada: Aeropuerto a Hotel";
+      routeDirectionInput.value = "Aeropuerto a Hotel";
+      routeTypeInput.value = "airportToHotel";
+    } else {
+      document.getElementById("btn-hotel-to-airport").classList.add("active");
+      routeDisplay.textContent = "Ruta seleccionada: Hotel a Aeropuerto";
+      routeDirectionInput.value = "Hotel a Aeropuerto";
+      routeTypeInput.value = "hotelToAirport";
+    }
+    populateHotels();
+    priceDisplay.textContent = "Selecciona una ruta para ver el precio";
+    confirmButton.style.display = "none";
+  }
+
+  function populateHotels() {
+    const airport = airportSelect.value;
+    hotelSelect.innerHTML = "";
+    if (hotelData[airport]) {
+      hotelData[airport].forEach(hotel => {
+        const opt = document.createElement("option");
+        opt.value = hotel;
+        opt.textContent = hotel;
+        hotelSelect.appendChild(opt);
+      });
+    }
+    calculatePrice();
+  }
+
+  async function calculatePrice() {
+    const airport = airportSelect.value;
+    const hotel = hotelSelect.value;
+    const vehicle = document.getElementById("vehicle").value;
+    if (!airport || !hotel || !vehicle) return;
+
+    try {
+      const apiUrl = "https://shuttleport-site.onrender.com/api/get_price";
+      const url = `${apiUrl}?airport=${encodeURIComponent(airport)}&hotel=${encodeURIComponent(hotel)}&vehicle=${encodeURIComponent(vehicle)}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.price) {
+        priceDisplay.textContent = `Mejor precio: €${data.price} (${data.distance_km} km)`;
+        calculatedPriceInput.value = data.price;
+        confirmButton.style.display = "block";
+      } else {
+        priceDisplay.textContent = "No se encontró precio para esta selección.";
+        confirmButton.style.display = "none";
       }
+    } catch (err) {
+      priceDisplay.textContent = "Error al obtener el precio.";
+      confirmButton.style.display = "none";
     }
+  }
 
-    function changeLanguage(select) {
-      window.location.href = select.value;
-    }
-  </script>
+  airportSelect.addEventListener("change", populateHotels);
+  hotelSelect.addEventListener("change", calculatePrice);
+  document.getElementById("vehicle").addEventListener("change", calculatePrice);
+
+  window.addEventListener("DOMContentLoaded", populateHotels);
+</script>
+
 </body>
 </html>
